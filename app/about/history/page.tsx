@@ -85,7 +85,7 @@ export default function HistoryPage() {
             <div className="h-full w-full bg-[url('/images/historical-campus.jpg')] bg-cover bg-center" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a736]">
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
               About Us
             </p>
             <h1 className="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
@@ -104,7 +104,7 @@ export default function HistoryPage() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
                 <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl">
-                  <span className="text-[#d4a736]">Truth</span> and{" "}
+                  <span className="text-white/70">Truth</span> and{" "}
                   <span className="text-[#3d1a5c]">Light</span> Since 1884
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground">
@@ -169,7 +169,7 @@ export default function HistoryPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-card p-6 shadow-sm">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4a736] text-[#3d1a5c]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f0eef3] text-[#3d1a5c]">
                   <span className="text-lg font-bold">1976</span>
                 </div>
                 <h3 className="mt-4 text-lg font-bold text-card-foreground">NRHP Listed</h3>
@@ -223,7 +223,7 @@ export default function HistoryPage() {
                     {/* Content */}
                     <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
                       <div className="rounded-lg bg-card p-6 shadow-sm">
-                        <span className="inline-block rounded-full bg-[#d4a736] px-3 py-1 text-sm font-bold text-[#3d1a5c]">
+                        <span className="inline-block rounded-full bg-[#f0eef3] px-3 py-1 text-sm font-bold text-[#3d1a5c]">
                           {item.year}
                         </span>
                         <h3 className="mt-3 text-xl font-bold text-card-foreground">{item.title}</h3>
@@ -255,7 +255,7 @@ export default function HistoryPage() {
                   className="rounded-lg bg-white/10 p-6 text-center backdrop-blur-sm"
                 >
                   <h3 className="text-lg font-bold text-white">{president.name}</h3>
-                  <p className="mt-1 text-sm text-[#d4a736]">{president.role}</p>
+                  <p className="mt-1 text-sm text-white/70">{president.role}</p>
                   <p className="mt-2 text-sm text-white/60">{president.years}</p>
                 </div>
               ))}
@@ -277,7 +277,7 @@ export default function HistoryPage() {
                 </p>
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d4a736] text-[#3d1a5c] font-bold">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f0eef3] text-[#3d1a5c] font-bold">
                       LJ
                     </div>
                     <div>
@@ -299,7 +299,7 @@ export default function HistoryPage() {
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d4a736] text-[#3d1a5c] font-bold">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f0eef3] text-[#3d1a5c] font-bold">
                       LL
                     </div>
                     <div>
@@ -336,7 +336,7 @@ export default function HistoryPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" className="bg-[#d4a736] text-[#3d1a5c] hover:bg-[#c49a2f]" asChild>
+                <Button size="lg" className="bg-white text-[#3d1a5c] hover:bg-white/90" asChild>
                   <Link href="#">
                     Apply Now
                     <ArrowRight className="ml-2 h-4 w-4" />

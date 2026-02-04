@@ -10,7 +10,7 @@ const stats = [
   {
     value: "15:1",
     label: "Student-Faculty Ratio",
-    color: "gold" as const,
+    color: "light" as const,
   },
   {
     value: "20+",
@@ -20,7 +20,7 @@ const stats = [
   {
     value: "100%",
     label: "Commitment to Students",
-    color: "gold" as const,
+    color: "light" as const,
   },
 ]
 
@@ -31,9 +31,8 @@ export function ExcellenceSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="font-serif text-4xl font-bold leading-tight sm:text-5xl">
-              <span className="text-[#d4a736]">Excellence</span>{" "}
-              <span className="text-[#3d1a5c]">Through Faith</span>
+            <h2 className="font-serif text-4xl font-bold leading-tight sm:text-5xl text-[#3d1a5c]">
+              Excellence Through Faith
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
               Arkansas Baptist College is dedicated to providing quality education that transforms lives and empowers students to become leaders in their communities and beyond.
@@ -58,14 +57,14 @@ export function ExcellenceSection() {
                 className={`rounded-xl p-6 sm:p-8 ${
                   stat.color === "purple"
                     ? "bg-[#3d1a5c] text-white"
-                    : "bg-[#d4a736] text-[#3d1a5c]"
+                    : "bg-[#f0eef3] text-[#3d1a5c] border border-[#3d1a5c]/10"
                 }`}
               >
                 <p className="font-serif text-4xl font-bold sm:text-5xl lg:text-6xl">
                   {stat.value}
                 </p>
                 <p className={`mt-2 text-sm sm:text-base ${
-                  stat.color === "purple" ? "text-white/90" : "text-[#3d1a5c]/90"
+                  stat.color === "purple" ? "text-white/90" : "text-[#3d1a5c]/70"
                 }`}>
                   {stat.label}
                 </p>

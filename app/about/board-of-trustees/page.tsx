@@ -20,7 +20,7 @@ export default function BoardOfTrusteesPage() {
             <div className="h-full w-full bg-[url('/images/hero-campus.jpg')] bg-cover bg-center" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a736]">
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
               About Us
             </p>
             <h1 className="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
@@ -37,7 +37,7 @@ export default function BoardOfTrusteesPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
-                <div className="inline-block rounded-full bg-[#d4a736]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
+                <div className="inline-block rounded-full bg-[#f0eef3]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
                   Governance
                 </div>
                 <h2 className="mt-4 font-serif text-3xl font-bold text-foreground sm:text-4xl">
@@ -63,20 +63,20 @@ export default function BoardOfTrusteesPage() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg bg-[#3d1a5c] p-6">
-                  <Shield className="h-10 w-10 text-[#d4a736]" />
+                  <Shield className="h-10 w-10 text-white/70" />
                   <h3 className="mt-4 text-lg font-bold text-white">Governance</h3>
                   <p className="mt-2 text-sm text-white/70">
                     Providing strategic oversight and policy direction
                   </p>
                 </div>
-                <div className="rounded-lg bg-[#d4a736] p-6">
+                <div className="rounded-lg bg-[#f0eef3] p-6">
                   <Users className="h-10 w-10 text-[#3d1a5c]" />
                   <h3 className="mt-4 text-lg font-bold text-[#3d1a5c]">Leadership</h3>
                   <p className="mt-2 text-sm text-[#3d1a5c]/70">
                     Guiding the institution toward its vision
                   </p>
                 </div>
-                <div className="rounded-lg bg-[#d4a736] p-6">
+                <div className="rounded-lg bg-[#f0eef3] p-6">
                   <BookOpen className="h-10 w-10 text-[#3d1a5c]" />
                   <h3 className="mt-4 text-lg font-bold text-[#3d1a5c]">Academics</h3>
                   <p className="mt-2 text-sm text-[#3d1a5c]/70">
@@ -84,7 +84,7 @@ export default function BoardOfTrusteesPage() {
                   </p>
                 </div>
                 <div className="rounded-lg bg-[#3d1a5c] p-6">
-                  <Heart className="h-10 w-10 text-[#d4a736]" />
+                  <Heart className="h-10 w-10 text-white/70" />
                   <h3 className="mt-4 text-lg font-bold text-white">Stewardship</h3>
                   <p className="mt-2 text-sm text-white/70">
                     Responsible management of resources
@@ -204,7 +204,7 @@ export default function BoardOfTrusteesPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" className="bg-[#d4a736] text-[#3d1a5c] hover:bg-[#c49a2f]" asChild>
+                <Button size="lg" className="bg-[#f0eef3] text-[#3d1a5c] hover:bg-[#e8e5ed]" asChild>
                   <Link href="/about/office-of-the-president">
                     Office of the President
                     <ArrowRight className="ml-2 h-4 w-4" />

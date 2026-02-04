@@ -54,7 +54,7 @@ export default function MissionVisionPage() {
             <div className="h-full w-full bg-[url('/images/hero-campus.jpg')] bg-cover bg-center" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a736]">
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
               About Us
             </p>
             <h1 className="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
@@ -71,11 +71,11 @@ export default function MissionVisionPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
-                <div className="inline-block rounded-full bg-[#d4a736]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
+                <div className="inline-block rounded-full bg-[#f0eef3]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
                   Our Mission
                 </div>
                 <h2 className="mt-4 font-serif text-3xl font-bold text-foreground sm:text-4xl">
-                  <span className="text-[#d4a736]">Truth</span> and{" "}
+                  <span className="text-white/70">Truth</span> and{" "}
                   <span className="text-[#3d1a5c]">Light</span>
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground">
@@ -103,7 +103,7 @@ export default function MissionVisionPage() {
                     &ldquo;Our programs combine rigorous academics with spiritual development, 
                     preparing students for success in their careers and personal lives.&rdquo;
                   </p>
-                  <div className="mt-6 h-1 w-16 bg-[#d4a736]" />
+                  <div className="mt-6 h-1 w-16 bg-[#f0eef3]" />
                 </div>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function MissionVisionPage() {
                   </p>
                 </div>
                 <div className="rounded-lg bg-card p-6 shadow-sm">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#d4a736]">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#f0eef3]">
                     <BookOpen className="h-8 w-8 text-[#3d1a5c]" />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-card-foreground">Scholarship</h3>
@@ -164,7 +164,7 @@ export default function MissionVisionPage() {
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-block rounded-full bg-[#d4a736]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
+              <div className="inline-block rounded-full bg-[#f0eef3]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
                 Our Values
               </div>
               <h2 className="mt-4 font-serif text-3xl font-bold text-foreground sm:text-4xl">
@@ -180,7 +180,7 @@ export default function MissionVisionPage() {
                   key={value.title}
                   className="group rounded-lg border border-border bg-card p-6 transition-all hover:border-[#3d1a5c] hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#3d1a5c] text-white transition-colors group-hover:bg-[#d4a736] group-hover:text-[#3d1a5c]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#3d1a5c] text-white transition-colors group-hover:bg-[#f0eef3] group-hover:text-[#3d1a5c]">
                     <value.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-card-foreground">{value.title}</h3>
@@ -197,7 +197,7 @@ export default function MissionVisionPage() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
                 <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
-                  Faith and Education, <span className="text-[#d4a736]">United</span>
+                  Faith and Education, <span className="text-white/70">United</span>
                 </h2>
                 <div className="mt-6 space-y-4 text-white/80">
                   <p>
@@ -221,19 +221,19 @@ export default function MissionVisionPage() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <p className="text-4xl font-bold text-[#d4a736]">1884</p>
+                  <p className="text-4xl font-bold text-white/70">1884</p>
                   <p className="mt-2 text-white/80">Year Founded</p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <p className="text-4xl font-bold text-[#d4a736]">Only</p>
+                  <p className="text-4xl font-bold text-white/70">Only</p>
                   <p className="mt-2 text-white/80">Baptist HBCU West of the Mississippi</p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <p className="text-4xl font-bold text-[#d4a736]">5</p>
+                  <p className="text-4xl font-bold text-white/70">5</p>
                   <p className="mt-2 text-white/80">Bachelor&apos;s Degree Programs</p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <p className="text-4xl font-bold text-[#d4a736]">3</p>
+                  <p className="text-4xl font-bold text-white/70">3</p>
                   <p className="mt-2 text-white/80">Associate&apos;s Degree Programs</p>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function MissionVisionPage() {
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
-              <div className="rounded-lg border-l-4 border-[#d4a736] bg-muted p-8 md:p-12">
+              <div className="rounded-lg border-l-4 border-[#3d1a5c] bg-muted p-8 md:p-12">
                 <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">
                   A Voice for the Underrepresented
                 </h2>
@@ -286,7 +286,7 @@ export default function MissionVisionPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" className="bg-[#d4a736] text-[#3d1a5c] hover:bg-[#c49a2f]" asChild>
+                <Button size="lg" className="bg-white text-[#3d1a5c] hover:bg-white/90" asChild>
                   <Link href="#">
                     Apply Now
                     <ArrowRight className="ml-2 h-4 w-4" />

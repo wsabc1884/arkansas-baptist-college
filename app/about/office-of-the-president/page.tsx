@@ -20,7 +20,7 @@ export default function OfficeOfThePresidentPage() {
             <div className="h-full w-full bg-[url('/images/hero-campus.jpg')] bg-cover bg-center" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a736]">
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
               About Us
             </p>
             <h1 className="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
@@ -41,19 +41,19 @@ export default function OfficeOfThePresidentPage() {
                 <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-br from-[#3d1a5c] to-[#5a2d82]">
                   <div className="flex h-full flex-col items-center justify-center p-8 text-center">
                     <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white/10">
-                      <span className="font-serif text-5xl font-bold text-[#d4a736]">GH</span>
+                      <span className="font-serif text-5xl font-bold text-white/70">GH</span>
                     </div>
                     <p className="mt-6 font-serif text-2xl font-bold text-white">
                       Dr. George Hertz
                     </p>
-                    <p className="mt-2 text-[#d4a736]">Interim President</p>
+                    <p className="mt-2 text-white/70">Interim President</p>
                   </div>
                 </div>
               </div>
 
               {/* President Info */}
               <div className="lg:col-span-3">
-                <div className="inline-block rounded-full bg-[#d4a736]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
+                <div className="inline-block rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
                   Interim President
                 </div>
                 <h2 className="mt-4 font-serif text-3xl font-bold text-foreground sm:text-4xl">
@@ -85,8 +85,8 @@ export default function OfficeOfThePresidentPage() {
                 </div>
 
                 {/* Quote */}
-                <div className="mt-8 rounded-lg border-l-4 border-[#d4a736] bg-muted p-6">
-                  <Quote className="h-8 w-8 text-[#d4a736]" />
+                <div className="mt-8 rounded-lg border-l-4 border-[#3d1a5c] bg-muted p-6">
+                  <Quote className="h-8 w-8 text-white/70" />
                   <p className="mt-4 font-serif text-xl italic text-foreground">
                     &ldquo;Arkansas Baptist College remains committed to its founding mission of 
                     Truth and Light, preparing students to lead and serve with excellence.&rdquo;
@@ -138,7 +138,7 @@ export default function OfficeOfThePresidentPage() {
                 <p className="mt-2 text-muted-foreground">Years of Leadership</p>
               </div>
               <div className="rounded-lg bg-card p-6 text-center shadow-sm">
-                <p className="font-serif text-4xl font-bold text-[#d4a736]">17+</p>
+                <p className="font-serif text-4xl font-bold text-white/70">17+</p>
                 <p className="mt-2 text-muted-foreground">Presidents Served</p>
               </div>
               <div className="rounded-lg bg-card p-6 text-center shadow-sm">
@@ -146,7 +146,7 @@ export default function OfficeOfThePresidentPage() {
                 <p className="mt-2 text-muted-foreground">Founded</p>
               </div>
               <div className="rounded-lg bg-card p-6 text-center shadow-sm">
-                <p className="font-serif text-4xl font-bold text-[#d4a736]">Only</p>
+                <p className="font-serif text-4xl font-bold text-white/70">Only</p>
                 <p className="mt-2 text-muted-foreground">Baptist HBCU West of Mississippi</p>
               </div>
             </div>
@@ -178,19 +178,19 @@ export default function OfficeOfThePresidentPage() {
               </p>
               <div className="mt-12 grid gap-6 sm:grid-cols-3">
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <h3 className="text-lg font-bold text-[#d4a736]">Academic Excellence</h3>
+                  <h3 className="text-lg font-bold text-white/70">Academic Excellence</h3>
                   <p className="mt-2 text-sm text-white/70">
                     Ensuring quality education and continuous improvement of academic programs
                   </p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <h3 className="text-lg font-bold text-[#d4a736]">Student Success</h3>
+                  <h3 className="text-lg font-bold text-white/70">Student Success</h3>
                   <p className="mt-2 text-sm text-white/70">
                     Supporting students in achieving their academic and personal goals
                   </p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <h3 className="text-lg font-bold text-[#d4a736]">Community Impact</h3>
+                  <h3 className="text-lg font-bold text-white/70">Community Impact</h3>
                   <p className="mt-2 text-sm text-white/70">
                     Strengthening relationships with Little Rock and beyond
                   </p>
@@ -213,7 +213,7 @@ export default function OfficeOfThePresidentPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" className="bg-[#d4a736] text-[#3d1a5c] hover:bg-[#c49a2f]" asChild>
+                <Button size="lg" className="bg-white text-[#3d1a5c] hover:bg-white/90" asChild>
                   <Link href="#">
                     Apply Now
                     <ArrowRight className="ml-2 h-4 w-4" />

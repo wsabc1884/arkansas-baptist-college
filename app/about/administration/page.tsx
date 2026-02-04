@@ -43,7 +43,7 @@ export default function AdministrationPage() {
             <div className="h-full w-full bg-[url('/images/hero-campus.jpg')] bg-cover bg-center" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a736]">
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
               About Us
             </p>
             <h1 className="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
@@ -59,7 +59,7 @@ export default function AdministrationPage() {
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-block rounded-full bg-[#d4a736]/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
+              <div className="inline-block rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-[#3d1a5c]">
                 Our Team
               </div>
               <h2 className="mt-4 font-serif text-3xl font-bold text-foreground sm:text-4xl">
@@ -162,17 +162,17 @@ export default function AdministrationPage() {
               </p>
               <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <Phone className="mx-auto h-8 w-8 text-[#d4a736]" />
+                  <Phone className="mx-auto h-8 w-8 text-white/70" />
                   <h3 className="mt-4 text-lg font-bold text-white">Main Office</h3>
                   <p className="mt-2 text-white/70">(501) 420-1200</p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-                  <Mail className="mx-auto h-8 w-8 text-[#d4a736]" />
+                  <Mail className="mx-auto h-8 w-8 text-white/70" />
                   <h3 className="mt-4 text-lg font-bold text-white">Email</h3>
                   <p className="mt-2 text-white/70">info@arkansasbaptist.edu</p>
                 </div>
                 <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
-                  <Building className="mx-auto h-8 w-8 text-[#d4a736]" />
+                  <Building className="mx-auto h-8 w-8 text-white/70" />
                   <h3 className="mt-4 text-lg font-bold text-white">Campus</h3>
                   <p className="mt-2 text-white/70">
                     1621 Dr. Martin Luther King Jr. Drive<br />
@@ -188,7 +188,7 @@ export default function AdministrationPage() {
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
-              <div className="rounded-lg border-l-4 border-[#d4a736] bg-muted p-8 md:p-12">
+              <div className="rounded-lg border-l-4 border-[#3d1a5c] bg-muted p-8 md:p-12">
                 <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">
                   Our Commitment to You
                 </h2>
@@ -204,7 +204,7 @@ export default function AdministrationPage() {
                   that have guided Arkansas Baptist College for over 140 years.
                 </p>
                 <div className="mt-8">
-                  <Button className="bg-[#d4a736] text-[#3d1a5c] hover:bg-[#c49a2f]" asChild>
+                  <Button className="bg-white text-[#3d1a5c] hover:bg-white/90" asChild>
                     <Link href="#">
                       Apply Now
                       <ArrowRight className="ml-2 h-4 w-4" />
