@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <QuickLinks />
         <ExcellenceSection />

@@ -124,3 +124,44 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Document-style prose for compliance/policy pages */
+.prose-abc h2 {
+  @apply font-serif text-2xl font-bold text-foreground mt-10 mb-4 first:mt-0;
+}
+.prose-abc h3 {
+  @apply text-lg font-semibold text-foreground mt-8 mb-3;
+}
+.prose-abc p {
+  @apply text-base text-muted-foreground leading-relaxed mb-4;
+}
+.prose-abc ul,
+.prose-abc ol {
+  @apply mb-4 ml-6 text-muted-foreground leading-relaxed;
+}
+.prose-abc ul {
+  @apply list-disc;
+}
+.prose-abc ol {
+  @apply list-decimal;
+}
+.prose-abc li {
+  @apply mb-2;
+}
+.prose-abc a {
+  @apply font-medium underline;
+  color: #3d1a5c;
+}
+.prose-abc a:hover {
+  color: rgb(61 26 92 / 0.8);
+}
+.prose-abc strong {
+  @apply font-semibold text-foreground;
+}
+.prose-abc blockquote {
+  @apply border-l-4 pl-4 italic text-muted-foreground my-6;
+  border-color: rgb(61 26 92 / 0.2);
+}
+.prose-abc hr {
+  @apply my-8 border-border;
+}
