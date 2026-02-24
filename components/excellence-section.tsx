@@ -45,7 +45,7 @@ export function ExcellenceSection() {
               className="mt-8 bg-[#3d1a5c] hover:bg-[#2d1346] text-white"
               asChild
             >
-              <Link href="#">Learn More About ABC</Link>
+              <Link href="/about/history">Learn More About ABC</Link>
             </Button>
           </div>
 

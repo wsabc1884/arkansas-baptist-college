@@ -19,10 +19,10 @@ export function BuffaloRadioSection() {
                 <h3 className="mt-6 text-2xl font-bold text-card-foreground">Buffalo Radio</h3>
                 <p className="mt-2 text-muted-foreground">Arkansas Baptist College</p>
                 <Button asChild className="mt-6 bg-primary hover:bg-primary/90">
-                  <Link href="#">
+                  <a href="https://www.elasticplayer.xyz/buffaloradio/" target="_blank" rel="noopener noreferrer">
                     <Play className="mr-2 h-4 w-4" />
                     Listen Live
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -48,7 +48,7 @@ export function BuffaloRadioSection() {
             </div>
             <div className="mt-8">
               <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent">
-                <Link href="#">Learn More About Buffalo Radio</Link>
+                <a href="https://www.elasticplayer.xyz/buffaloradio/" target="_blank" rel="noopener noreferrer">Learn More About Buffalo Radio</a>
               </Button>
             </div>
           </div>

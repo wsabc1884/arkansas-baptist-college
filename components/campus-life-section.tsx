@@ -64,7 +64,7 @@ export function CampusLifeSection() {
               <div className="p-6">
                 <p className="text-muted-foreground">{item.description}</p>
                 <Link
-                  href="#"
+                  href="/student-life/campus-life"
                   className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
                 >
                   Learn More →
@@ -76,7 +76,7 @@ export function CampusLifeSection() {
 
         <div className="mt-12 text-center">
           <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent">
-            <Link href="#">Take a Tour of Our Campus</Link>
+            <Link href="/enrollment/campus-tour">Take a Tour of Our Campus</Link>
           </Button>
         </div>
       </div>

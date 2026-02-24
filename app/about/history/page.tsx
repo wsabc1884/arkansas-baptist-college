@@ -84,7 +84,7 @@ export default function HistoryPage() {
           subtitle="About Us"
           description="For over 140 years, Arkansas Baptist College has been a beacon of hope, education, and spiritual growth for generations of students."
           breadcrumbs={[
-            { label: "About Us", href: "#" },
+            { label: "About Us", href: "/about/history" },
             { label: "History", href: "/about/history" },
           ]}
         />
@@ -225,8 +225,8 @@ export default function HistoryPage() {
         <CTABand
           heading="Become Part of Our History"
           description="Join the legacy of excellence at Arkansas Baptist College."
-          primaryAction={{ label: "Apply Now", href: "#" }}
-          secondaryAction={{ label: "Schedule a Visit", href: "#" }}
+          primaryAction={{ label: "Apply Now", href: "/enrollment/apply" }}
+          secondaryAction={{ label: "Schedule a Visit", href: "/enrollment/campus-tour" }}
         />
       </main>
       <Footer />

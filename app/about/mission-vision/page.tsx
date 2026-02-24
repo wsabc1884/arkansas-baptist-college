@@ -57,7 +57,7 @@ export default function MissionVisionPage() {
           subtitle="About Us"
           description="Guided by faith, driven by excellence, committed to transforming lives and communities."
           breadcrumbs={[
-            { label: "About Us", href: "#" },
+            { label: "About Us", href: "/about/history" },
             { label: "Mission & Vision", href: "/about/mission-vision" },
           ]}
         />
@@ -194,7 +194,7 @@ export default function MissionVisionPage() {
               </p>
               <div className="mt-8">
                 <Button className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>
-                  <Link href="#">
+                  <Link href="/enrollment/financial-aid">
                     Learn About Financial Aid
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -207,7 +207,7 @@ export default function MissionVisionPage() {
         <CTABand
           heading="Join Our Mission"
           description="Become part of a community dedicated to Truth and Light."
-          primaryAction={{ label: "Apply Now", href: "#" }}
+          primaryAction={{ label: "Apply Now", href: "/enrollment/apply" }}
           secondaryAction={{ label: "Explore Our History", href: "/about/history" }}
         />
       </main>

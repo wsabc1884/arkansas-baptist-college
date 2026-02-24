@@ -23,7 +23,7 @@ export default function OfficeOfThePresidentPage() {
           subtitle="About Us"
           description="Leading Arkansas Baptist College with faith, vision, and dedication to academic excellence."
           breadcrumbs={[
-            { label: "About Us", href: "#" },
+            { label: "About Us", href: "/about/history" },
             { label: "Office of the President", href: "/about/office-of-the-president" },
           ]}
         />
@@ -98,7 +98,7 @@ export default function OfficeOfThePresidentPage() {
                 </div>
                 <div className="flex items-center gap-3 text-foreground">
                   <MapPin className="h-5 w-5 text-[#3d1a5c]" aria-hidden="true" />
-                  <span>1621 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202</span>
+                  <span>1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202</span>
                 </div>
               </address>
             </div>
@@ -161,8 +161,8 @@ export default function OfficeOfThePresidentPage() {
         <CTABand
           heading="Connect With Us"
           description="Learn more about Arkansas Baptist College and our leadership."
-          primaryAction={{ label: "Apply Now", href: "#" }}
-          secondaryAction={{ label: "Schedule a Visit", href: "#" }}
+          primaryAction={{ label: "Apply Now", href: "/enrollment/apply" }}
+          secondaryAction={{ label: "Schedule a Visit", href: "/enrollment/campus-tour" }}
           variant="light"
         />
       </main>

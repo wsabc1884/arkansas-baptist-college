@@ -19,8 +19,8 @@ export function ComplianceLayout({ title, subtitle, lastUpdated, children }: Com
           title={title}
           subtitle={subtitle || "Compliance"}
           breadcrumbs={[
-            { label: "Compliance", href: "#" },
-            { label: title, href: "#" },
+            { label: "Compliance", href: "/compliance/consumer-information" },
+            { label: title },
           ]}
         />
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">

@@ -46,7 +46,7 @@ export default function AdministrationPage() {
           subtitle="About Us"
           description="Dedicated professionals committed to supporting student success and institutional excellence."
           breadcrumbs={[
-            { label: "About Us", href: "#" },
+            { label: "About Us", href: "/about/history" },
             { label: "Administration", href: "/about/administration" },
           ]}
         />
@@ -133,7 +133,7 @@ export default function AdministrationPage() {
                 <Building className="mx-auto h-8 w-8 text-white/70" aria-hidden="true" />
                 <h3 className="mt-4 text-lg font-bold text-white">Campus</h3>
                 <p className="mt-2 text-white/70">
-                  1621 Dr. Martin Luther King Jr. Drive<br />
+                  1600 Dr. Martin Luther King Jr. Drive<br />
                   Little Rock, AR 72202
                 </p>
               </div>
@@ -161,7 +161,7 @@ export default function AdministrationPage() {
               </p>
               <div className="mt-8">
                 <Button className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>
-                  <Link href="#">
+                  <Link href="/enrollment/apply">
                     Apply Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

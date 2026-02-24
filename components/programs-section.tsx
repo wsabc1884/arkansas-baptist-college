@@ -8,31 +8,37 @@ const programs = [
     name: "Business Administration",
     icon: Briefcase,
     description: "Develop leadership skills and business acumen for the modern workplace.",
+    href: "/academics/business-administration",
   },
   {
     name: "Religious Studies",
     icon: Cross,
     description: "Explore theology, ministry, and faith-based leadership.",
+    href: "/academics/religious-studies",
   },
   {
     name: "Elementary Education",
     icon: BookOpen,
     description: "Prepare to shape the minds of future generations.",
+    href: "/academics/interdisciplinary-studies",
   },
   {
     name: "Fine Arts",
     icon: Music,
     description: "Express your creativity through visual and performing arts.",
+    href: "/academics/fine-arts",
   },
   {
     name: "Public Administration",
     icon: Building,
     description: "Lead change in government and nonprofit organizations.",
+    href: "/academics/public-administration",
   },
   {
     name: "Social & Behavioral Sciences",
     icon: Brain,
     description: "Understand human behavior and create positive impact.",
+    href: "/academics/social-behavioral-sciences",
   },
 ]
 
@@ -58,7 +64,7 @@ export function ProgramsSection() {
             </p>
             <div className="mt-8">
               <Button asChild className="bg-primary hover:bg-primary/90">
-                <Link href="#">Explore All Programs</Link>
+                <Link href="/academics/business-administration">Explore All Programs</Link>
               </Button>
             </div>
           </div>
@@ -77,7 +83,7 @@ export function ProgramsSection() {
           {programs.map((program) => (
             <Link
               key={program.name}
-              href="#"
+              href={program.href}
               className="group flex items-start gap-4 rounded-lg border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">

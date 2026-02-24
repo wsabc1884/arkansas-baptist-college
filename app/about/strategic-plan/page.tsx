@@ -104,7 +104,7 @@ export default function StrategicPlanPage() {
       <CTABand
         heading="Shape the Future of ABC"
         description="Your support helps Arkansas Baptist College achieve its strategic goals."
-        primaryAction={{ label: "Give to ABC", href: "#" }}
+        primaryAction={{ label: "Give to ABC", href: "/give" }}
         secondaryAction={{ label: "Contact Us", href: "/about/administration" }}
       />
     </main>

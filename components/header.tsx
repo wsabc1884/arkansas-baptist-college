@@ -255,16 +255,16 @@ export function Header() {
                 </span>
                 <span className="hidden items-center gap-1.5 sm:flex">
                   <MapPin className="h-3 w-3" aria-hidden="true" />
-                  <span>1621 Dr. Martin Luther King Jr. Drive, Little Rock, AR</span>
+                  <span>1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR</span>
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Link href="#" className="hidden hover:underline sm:inline">myABC Portal</Link>
-                <Link href="#" className="hidden hover:underline sm:inline">Email</Link>
-                <Link href="#" className="hidden hover:underline sm:inline">Blackboard</Link>
+                <a href="https://myabc.arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
+                <a href="https://mail.google.com/a/arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Email</a>
+                <a href="https://arkansasbaptist.blackboard.com" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Blackboard</a>
                 <span className="hidden h-3 w-px bg-secondary-foreground/20 sm:inline" aria-hidden="true" />
-                <Link href="#" className="hidden hover:underline sm:inline">Give to ABC</Link>
-                <Link href="#" className="flex items-center gap-1 hover:underline">
+                <Link href="/give" className="hidden hover:underline sm:inline">Give to ABC</Link>
+                <Link href="/enrollment/campus-tour" className="flex items-center gap-1 hover:underline">
                   <MapPin className="h-3 w-3 sm:hidden" aria-hidden="true" />
                   <span className="hidden sm:inline">Visit Campus</span>
                   <span className="sm:hidden">Visit</span>
@@ -354,10 +354,10 @@ export function Header() {
             <div className="mx-auto max-w-7xl space-y-1 px-4 pb-4 pt-2 sm:px-6">
               {/* Mobile utility links */}
               <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-secondary-foreground/10 pb-3 mb-2 text-sm opacity-80">
-                <Link href="#" onClick={() => setMobileMenuOpen(false)}>myABC Portal</Link>
-                <Link href="#" onClick={() => setMobileMenuOpen(false)}>Email</Link>
-                <Link href="#" onClick={() => setMobileMenuOpen(false)}>Blackboard</Link>
-                <Link href="#" onClick={() => setMobileMenuOpen(false)}>Give to ABC</Link>
+                <a href="https://myabc.arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>myABC Portal</a>
+                <a href="https://mail.google.com/a/arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Email</a>
+                <a href="https://arkansasbaptist.blackboard.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Blackboard</a>
+                <Link href="/give" onClick={() => setMobileMenuOpen(false)}>Give to ABC</Link>
               </div>
 
               {navigation.map((item) => (

@@ -36,7 +36,7 @@ export function GiveSection() {
           </p>
           <div className="mt-8">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="#">
+              <Link href="/give">
                 Donate Today
                 <Heart className="ml-2 h-4 w-4" />
               </Link>

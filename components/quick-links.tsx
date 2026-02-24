@@ -5,17 +5,17 @@ const quickLinks = [
   {
     title: "Admissions",
     icon: GraduationCap,
-    href: "#",
+    href: "/enrollment/office-of-admissions",
   },
   {
     title: "Programs",
     icon: BookOpen,
-    href: "#",
+    href: "/academics/business-administration",
   },
   {
     title: "Financial Aid",
     icon: Users,
-    href: "#",
+    href: "/enrollment/financial-aid",
   },
   {
     title: "Athletics",

@@ -25,11 +25,11 @@ const footerLinks = {
     { name: "Adult Education", href: "/academics/adult-education" },
   ],
   resources: [
-    { name: "myABC Portal", href: "/resources/directory" },
-    { name: "Blackboard", href: "/resources/directory" },
+    { name: "myABC Portal", href: "https://myabc.arkansasbaptist.edu", external: true },
+    { name: "Blackboard", href: "https://arkansasbaptist.blackboard.com", external: true },
     { name: "Campus Safety", href: "/compliance/campus-safety" },
     { name: "Directory", href: "/resources/directory" },
-    { name: "IT Help Desk", href: "/resources/directory" },
+    { name: "Give to ABC", href: "/give" },
   ],
 }
 
@@ -43,10 +43,10 @@ const complianceLinks = [
 ]
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "YouTube", icon: Youtube, href: "#" },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/abcbuffaloes/" },
+  { name: "X (Twitter)", icon: Twitter, href: "https://x.com/ArkBaptist" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/arbaptistcollege/" },
+  { name: "YouTube", icon: Youtube, href: "https://www.youtube.com/@arkansasbaptistcollege6306" },
 ]
 
 export function Footer() {
@@ -196,12 +196,23 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
-                  >
-                    {link.name}
-                  </Link>
+                  {'external' in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

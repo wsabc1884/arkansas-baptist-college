@@ -36,7 +36,7 @@ export function NewsSection() {
             </h2>
           </div>
           <Link
-            href="#"
+            href="/enrollment/event-calendar"
             className="text-sm font-semibold text-primary hover:underline"
           >
             View All News →
@@ -60,7 +60,7 @@ export function NewsSection() {
               </h3>
               <p className="mt-2 text-muted-foreground">{item.excerpt}</p>
               <Link
-                href="#"
+                href="/enrollment/event-calendar"
                 className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
               >
                 Read More →

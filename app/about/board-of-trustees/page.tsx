@@ -22,7 +22,7 @@ export default function BoardOfTrusteesPage() {
           subtitle="About Us"
           description="Dedicated leaders guiding Arkansas Baptist College with wisdom, faith, and commitment to excellence."
           breadcrumbs={[
-            { label: "About Us", href: "#" },
+            { label: "About Us", href: "/about/history" },
             { label: "Board of Trustees", href: "/about/board-of-trustees" },
           ]}
         />

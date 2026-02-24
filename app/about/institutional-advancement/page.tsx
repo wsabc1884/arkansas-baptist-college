@@ -58,7 +58,7 @@ export default function InstitutionalAdvancementPage() {
               Support Arkansas Baptist College through a donation of any amount.
             </p>
             <a
-              href="#"
+              href="/give"
               className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               Give to ABC
@@ -75,7 +75,7 @@ export default function InstitutionalAdvancementPage() {
       <CTABand
         heading="Invest in the Future of ABC"
         description="Your gift supports student scholarships, campus improvements, and academic excellence."
-        primaryAction={{ label: "Give to ABC", href: "#" }}
+        primaryAction={{ label: "Give to ABC", href: "/give" }}
         secondaryAction={{ label: "Contact Advancement", href: "/about/administration" }}
       />
     </main>

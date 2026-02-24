@@ -102,7 +102,7 @@ export default function CampusSafetyPage() {
       <p>
         Office of Campus Safety<br />
         Arkansas Baptist College<br />
-        1621 Dr. Martin Luther King Jr. Drive<br />
+        1600 Dr. Martin Luther King Jr. Drive<br />
         Little Rock, AR 72202<br />
         Phone: <a href="tel:5014201200">501-420-1200</a>
       </p>
