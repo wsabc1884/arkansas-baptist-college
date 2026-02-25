@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -10,7 +12,9 @@ export const metadata: Metadata = {
 
 export default function EventCalendarPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Event Calendar"
         subtitle="Enrollment"
@@ -61,17 +65,14 @@ export default function EventCalendarPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/event-calendar/ */}
-      {/* Confidence: Medium - source had specific 2023 dates, we kept structure but generalized dates */}
-      {/* Missing: Current semester specific dates (source was 2023) */}
-
       <CTABand
         heading="Plan Your Visit"
         description="Schedule a campus tour to experience ABC in person."
         primaryAction={{ label: "Campus Tour", href: "/enrollment/campus-tour" }}
         secondaryAction={{ label: "Apply to ABC", href: "/enrollment/apply" }}
       />
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }

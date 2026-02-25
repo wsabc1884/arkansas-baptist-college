@@ -12,7 +12,7 @@ export default function TitleIXPage() {
     <ComplianceLayout
       title="Title IX"
       subtitle="Civil Rights Compliance"
-      lastUpdated="Migrated from arkansasbaptist.edu/title-ix/"
+      lastUpdated="April 2021"
     >
       <h2>What is Title IX?</h2>
       <p>
@@ -387,9 +387,36 @@ export default function TitleIXPage() {
         </em>
       </p>
 
-      {/* Non-public migration note (HTML comment) */}
-      {/* Source URL: https://www.arkansasbaptist.edu/title-ix/ */}
-      {/* Migration confidence: HIGH - all content preserved verbatim from source */}
+      <hr />
+
+      <h2>Title IX Training Videos</h2>
+      <p>
+        All students, faculty, and staff are required to view the following Title IX training videos:
+      </p>
+      <div className="not-prose mt-6 space-y-6">
+        <div className="overflow-hidden rounded-lg">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/MSg10NVQPnI"
+            title="Title IX Training Video 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="aspect-video w-full"
+          />
+        </div>
+        <div className="overflow-hidden rounded-lg">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/Sgq2QsQtzbg"
+            title="Title IX Training Video 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="aspect-video w-full"
+          />
+        </div>
+      </div>
     </ComplianceLayout>
   )
 }

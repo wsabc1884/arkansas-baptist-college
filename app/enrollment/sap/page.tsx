@@ -78,8 +78,9 @@ export default function SAPPage() {
             <h2>Contact</h2>
             <p>
               Office of Student Financial Aid<br />
-              Phone: <a href="tel:5014201200">501-420-1200</a><br />
-              Email: <a href="mailto:financialaid@arkansasbaptist.edu">financialaid@arkansasbaptist.edu</a>
+              Phone: <a href="tel:5014201226">(501) 420-1226</a><br />
+              Email: <a href="mailto:financialaid@arkansasbaptist.edu">financialaid@arkansasbaptist.edu</a><br />
+              SAP Appeals: <a href="mailto:sapappeals@arkansasbaptist.edu">sapappeals@arkansasbaptist.edu</a>
             </p>
           </div>
         </SectionWrapper>

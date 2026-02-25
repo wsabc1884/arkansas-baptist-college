@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
 
 export default function StrategicPlanPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Strategic Plan"
         subtitle="About Us"
@@ -96,17 +100,14 @@ export default function StrategicPlanPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/about/strategic-plan/ + PDF link from /wp-content/uploads/2020/06/ABC_Strategic_Plan_2023_062020.pdf */}
-      {/* Confidence: Medium - PDF verified, page content was minimal on source */}
-      {/* Missing: Full strategic plan content inline (source links to PDF) */}
-
       <CTABand
         heading="Shape the Future of ABC"
         description="Your support helps Arkansas Baptist College achieve its strategic goals."
         primaryAction={{ label: "Give to ABC", href: "/give" }}
         secondaryAction={{ label: "Contact Us", href: "/about/administration" }}
       />
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }

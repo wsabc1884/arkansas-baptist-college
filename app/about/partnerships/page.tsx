@@ -116,11 +116,6 @@ export default function PartnershipsPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/hbcu-c2-apple-program + footer partnerships + academic affairs partnerships */}
-      {/* Confidence: High - content verified from multiple source pages */}
-      {/* Missing: Possibly more minor partnerships not listed on the live site */}
-
       <CTABand
         heading="Partner with Arkansas Baptist College"
         description="Explore opportunities to collaborate with ABC in education, research, and community engagement."

@@ -16,34 +16,34 @@ export const metadata = {
 
 const coreValues = [
   {
-    icon: BookOpen,
-    title: "Academic Excellence",
-    description: "We are committed to providing rigorous academic programs that prepare students for success in their careers and personal lives.",
+    icon: Heart,
+    title: "Mission Driven",
+    description: "Everything we do is guided by our founding mission of Truth and Light, preparing students for a life of service.",
   },
   {
-    icon: Heart,
-    title: "Christian Principles",
-    description: "We integrate faith-based values into every aspect of education, nurturing spiritual growth alongside intellectual development.",
+    icon: BookOpen,
+    title: "Historically Grounded",
+    description: "We honor our heritage as the only Baptist HBCU west of the Mississippi, drawing strength from over 140 years of history.",
   },
   {
     icon: Users,
-    title: "Community Service",
+    title: "Service Motivated",
     description: "We encourage students to give back to their communities and become agents of positive change in society.",
   },
   {
-    icon: Lightbulb,
-    title: "Leadership Development",
-    description: "Through the African American Leadership Institute, we cultivate the next generation of leaders equipped to transform communities.",
+    icon: Globe,
+    title: "Community Empowered",
+    description: "We partner with the Little Rock community and beyond to create opportunities and address societal challenges.",
   },
   {
     icon: GraduationCap,
-    title: "Accessible Education",
-    description: "We provide quality education without charging out-of-state tuition, ensuring higher education is accessible to all.",
+    title: "Academically & Professionally Integrated",
+    description: "Our programs combine rigorous academics with professional preparation for employment in a global community.",
   },
   {
-    icon: Globe,
-    title: "Social Responsibility",
-    description: "We address issues having a detrimental effect on society through scholarship and Christian principles.",
+    icon: Lightbulb,
+    title: "Entrepreneurially Minded",
+    description: "We cultivate innovation and entrepreneurial thinking to prepare students for leadership in a changing economy.",
   },
 ]
 
@@ -73,20 +73,17 @@ export default function MissionVisionPage() {
                 Truth and <span className="text-[#3d1a5c]">Light</span>
               </h2>
               <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-                <p className="text-lg">
-                  Arkansas Baptist College is dedicated to providing quality education that
-                  transforms lives and empowers students to become leaders in their
-                  communities and beyond.
+                <p className="text-lg font-medium text-foreground">
+                  Arkansas Baptist College prepares students for a life of service grounded
+                  in academic scholarship, the liberal arts tradition, social responsibility,
+                  Christian Development and preparation for employment in a global community.
                 </p>
                 <p>
                   Founded in 1884 as the Minister&apos;s Institute, our primary objective was to raise
                   the educational level of the African American ministry while valuing the
-                  teaching principles of Jesus Christ.
-                </p>
-                <p>
-                  Today, our mission extends beyond ministerial training to serve as a
-                  comprehensive liberal arts institution that prepares students from all
-                  backgrounds for success in their careers and personal lives.
+                  teaching principles of Jesus Christ. Today, our mission extends to serve as a
+                  comprehensive liberal arts institution preparing students from all backgrounds
+                  for success.
                 </p>
               </div>
             </div>
@@ -105,7 +102,7 @@ export default function MissionVisionPage() {
           <SectionHeader
             title="Positively Influencing Our Community, State, and Nation"
             subtitle="Our Vision"
-            description="To see our community, state, and nation positively influenced through the integration of academic scholarship and Christian principles to address issues having a detrimental effect on society."
+            description="Arkansas Baptist College seeks to become a leader in Christian based higher education where students are lifelong learners, seeking and building the Kingdom of God, engaged within their communities, and gain employment in industries that are changing the world."
             align="center"
           />
           <div className="grid gap-6 sm:grid-cols-3">

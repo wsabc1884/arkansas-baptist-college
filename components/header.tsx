@@ -259,9 +259,10 @@ export function Header() {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <a href="https://myabc.arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
-                <a href="https://mail.google.com/a/arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Email</a>
-                <a href="https://arkansasbaptist.blackboard.com" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Blackboard</a>
+                <a href="https://my.arkansasbaptist.edu/ICS/" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
+                <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Email</a>
+                <a href="https://arkansasbc.blackboard.com/ultra/admin" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Blackboard</a>
+                <a href="https://arbaptistcollege.on.spiceworks.com/portal/registrations" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Submit a Ticket</a>
                 <span className="hidden h-3 w-px bg-secondary-foreground/20 sm:inline" aria-hidden="true" />
                 <Link href="/give" className="hidden hover:underline sm:inline">Give to ABC</Link>
                 <Link href="/enrollment/campus-tour" className="flex items-center gap-1 hover:underline">
@@ -354,9 +355,10 @@ export function Header() {
             <div className="mx-auto max-w-7xl space-y-1 px-4 pb-4 pt-2 sm:px-6">
               {/* Mobile utility links */}
               <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-secondary-foreground/10 pb-3 mb-2 text-sm opacity-80">
-                <a href="https://myabc.arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>myABC Portal</a>
-                <a href="https://mail.google.com/a/arkansasbaptist.edu" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Email</a>
-                <a href="https://arkansasbaptist.blackboard.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Blackboard</a>
+                <a href="https://my.arkansasbaptist.edu/ICS/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>myABC Portal</a>
+                <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Email</a>
+                <a href="https://arkansasbc.blackboard.com/ultra/admin" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Blackboard</a>
+                <a href="https://arbaptistcollege.on.spiceworks.com/portal/registrations" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Submit a Ticket</a>
                 <Link href="/give" onClick={() => setMobileMenuOpen(false)}>Give to ABC</Link>
               </div>
 

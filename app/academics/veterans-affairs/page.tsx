@@ -27,6 +27,9 @@ export default function VeteransAffairsPage() {
               <li>Vocational Rehabilitation (Chapter 31)</li>
               <li>Dependents Educational Assistance (Chapter 35)</li>
             </ul>
+            <h2>VA Benefits Addendum</h2>
+            <p>View the <a href="/resources/consumer-information">VA Benefits Addendum</a> for detailed information about veteran educational benefits and policies at Arkansas Baptist College.</p>
+
             <h2>Contact</h2>
             <p>Registrar&apos;s Office<br />Phone: <a href="tel:5014201237">(501) 420-1237</a><br />Main: <a href="tel:5014201200">501-420-1200</a></p>
           </div>

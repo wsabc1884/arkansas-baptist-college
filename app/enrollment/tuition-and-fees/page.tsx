@@ -34,9 +34,9 @@ export default function TuitionAndFeesPage() {
                 </thead>
                 <tbody className="text-sm text-muted-foreground">
                   <tr className="border-b border-border">
-                    <td className="py-3 pr-4 font-medium text-foreground">Tuition (Full-time, 12-18 credit hours)</td>
-                    <td className="py-3 px-4 text-right">$4,440</td>
-                    <td className="py-3 pl-4 text-right">$8,880</td>
+                    <td className="py-3 pr-4 font-medium text-foreground">Tuition (Full-time, 12 credit hours)</td>
+                    <td className="py-3 px-4 text-right">$4,380</td>
+                    <td className="py-3 pl-4 text-right">$8,760</td>
                   </tr>
                   <tr className="border-b border-border">
                     <td className="py-3 pr-4 font-medium text-foreground">General Fees</td>
@@ -48,21 +48,6 @@ export default function TuitionAndFeesPage() {
                     <td className="py-3 px-4 text-right">$250</td>
                     <td className="py-3 pl-4 text-right">$500</td>
                   </tr>
-                  <tr className="border-b border-border">
-                    <td className="py-3 pr-4 font-medium text-foreground">Room &amp; Board (Double Occupancy)</td>
-                    <td className="py-3 px-4 text-right">$3,500</td>
-                    <td className="py-3 pl-4 text-right">$7,000</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="py-3 pr-4 font-medium text-foreground">Meal Plan</td>
-                    <td className="py-3 px-4 text-right">$1,500</td>
-                    <td className="py-3 pl-4 text-right">$3,000</td>
-                  </tr>
-                  <tr className="border-t-2 border-foreground/20">
-                    <td className="py-3 pr-4 font-bold text-foreground">Estimated Total (Residential Student)</td>
-                    <td className="py-3 px-4 text-right font-bold text-foreground">$10,940</td>
-                    <td className="py-3 pl-4 text-right font-bold text-foreground">$21,880</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -70,14 +55,52 @@ export default function TuitionAndFeesPage() {
             <div className="prose-abc mt-10">
               <h2>Additional Fees</h2>
               <ul>
-                <li><strong>Part-Time Tuition:</strong> $370 per credit hour (fewer than 12 credit hours)</li>
-                <li><strong>Overload Fee:</strong> $370 per credit hour beyond 18 credit hours</li>
-                <li><strong>Late Registration Fee:</strong> $100</li>
+                <li><strong>Per Credit Hour:</strong> $365 (part-time or overload)</li>
+                <li><strong>Late Registration Fee:</strong> $150</li>
                 <li><strong>Application Fee:</strong> $25 (non-refundable)</li>
                 <li><strong>Graduation Fee:</strong> $150</li>
                 <li><strong>Transcript Fee:</strong> $10 per official transcript</li>
+                <li><strong>Science Lab Fee:</strong> $75</li>
+                <li><strong>Student ID Fee:</strong> $30</li>
+                <li><strong>Parking Fee:</strong> $100</li>
               </ul>
 
+              <h2>Room Rates (Per Semester)</h2>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-lg border bg-card p-5 text-center">
+                <p className="text-sm text-muted-foreground">Ripley Hall</p>
+                <p className="mt-1 text-2xl font-bold text-foreground">$2,369</p>
+              </div>
+              <div className="rounded-lg border bg-card p-5 text-center">
+                <p className="text-sm text-muted-foreground">Hill Hall</p>
+                <p className="mt-1 text-2xl font-bold text-foreground">$2,369</p>
+              </div>
+              <div className="rounded-lg border bg-card p-5 text-center">
+                <p className="text-sm text-muted-foreground">1600 Residence</p>
+                <p className="mt-1 text-2xl font-bold text-foreground">$2,051</p>
+              </div>
+            </div>
+
+            <div className="prose-abc mt-10">
+              <h2>Meal Plans (Per Semester)</h2>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-lg border bg-card p-5 text-center">
+                <p className="text-sm text-muted-foreground">19 Meals/Week</p>
+                <p className="mt-1 text-2xl font-bold text-foreground">$2,044</p>
+              </div>
+              <div className="rounded-lg border bg-card p-5 text-center">
+                <p className="text-sm text-muted-foreground">10 Meals/Week</p>
+                <p className="mt-1 text-2xl font-bold text-foreground">$1,056</p>
+              </div>
+              <div className="rounded-lg border bg-card p-5 text-center">
+                <p className="text-sm text-muted-foreground">5 Meals/Week</p>
+                <p className="mt-1 text-2xl font-bold text-foreground">$542</p>
+              </div>
+            </div>
+
+            <div className="prose-abc mt-10">
               <h2>Payment Options</h2>
               <p>
                 Arkansas Baptist College offers multiple payment options including online payment, payment

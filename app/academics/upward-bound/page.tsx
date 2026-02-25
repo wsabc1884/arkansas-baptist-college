@@ -29,7 +29,12 @@ export default function UpwardBoundPage() {
               <li><strong>Family Support:</strong> We work with students and their parents as a family to get them to the school of their choice</li>
             </ul>
             <h2>Is Upward Bound for You?</h2>
-            <p>Interested students, parents, guardians, or guidance counselors can call us at <a href="tel:5014201276">(501) 420-1276</a> for more information and an application.</p>
+            <p>Interested students, parents, guardians, or guidance counselors can call us at <a href="tel:5014201276">(501) 420-1276</a> for more information and an Upward Bound application.</p>
+            <div className="not-prose mt-4 flex flex-wrap gap-3">
+              <a href="/documents/upward-bound/student-application.pdf" download className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">Download Student Application</a>
+              <a href="/documents/upward-bound/tutor-mentor-application.pdf" download className="inline-flex items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">Download Tutor &amp; Mentor Application</a>
+            </div>
+            <p>Like their students, many Upward Bound professionals had to overcome class, social, academic and cultural barriers to succeed in higher education. As a result, Upward Bound Staff members can effectively relate to their students and know how to motivate young people and adults in spite of the obstacles that often serve to discourage.</p>
             <h2>Contact</h2>
             <p><strong>Reverend Michael Isaac</strong><br />Director of Upward Bound<br />Email: <a href="mailto:Michael.Isaac@arkansasbaptist.edu">Michael.Isaac@arkansasbaptist.edu</a><br />Phone: <a href="tel:5014201276">501-420-1276</a></p>
           </div>

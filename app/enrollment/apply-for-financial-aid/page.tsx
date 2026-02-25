@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { ExternalLink } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
@@ -14,7 +16,9 @@ export const metadata: Metadata = {
 
 export default function ApplyForFinancialAidPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Apply for Financial Aid"
         description="The Office of Student Financial Aid administers federal, state, and institutional aid to help students meet their college expenses."
@@ -65,41 +69,6 @@ export default function ApplyForFinancialAidPage() {
           <p className="mt-4 text-muted-foreground leading-relaxed font-medium">
             We look forward to working with you!
           </p>
-        </div>
-      </SectionWrapper>
-
-      {/* Application Deadlines */}
-      <SectionWrapper>
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-2xl font-bold text-foreground mb-6">When to Apply</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b-2 border-foreground/20">
-                  <th className="py-3 pr-4 text-left font-semibold text-foreground">Decision Type</th>
-                  <th className="py-3 px-4 text-left font-semibold text-foreground">Application Deadline</th>
-                  <th className="py-3 pl-4 text-left font-semibold text-foreground">Decision</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-border">
-                  <td className="py-3 pr-4 text-muted-foreground">Early Decision 1</td>
-                  <td className="py-3 px-4 text-muted-foreground">November 1</td>
-                  <td className="py-3 pl-4 text-muted-foreground">December 15</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-3 pr-4 text-muted-foreground">Early Decision 2</td>
-                  <td className="py-3 px-4 text-muted-foreground">January 1</td>
-                  <td className="py-3 pl-4 text-muted-foreground">February 15</td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="py-3 pr-4 text-muted-foreground">Regular Decision</td>
-                  <td className="py-3 px-4 text-muted-foreground">January 1</td>
-                  <td className="py-3 pl-4 text-muted-foreground">April 1</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </SectionWrapper>
 
@@ -201,7 +170,7 @@ export default function ApplyForFinancialAidPage() {
                 research and apply for state financial aid opportunities per the Arkansas Department
                 of Higher Education (ADHE) at{" "}
                 <a
-                  href="https://scholarships.adhe.edu/scholarships-and-programs/a-z/"
+                  href="https://adhe.edu/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-primary hover:underline"
@@ -383,9 +352,8 @@ export default function ApplyForFinancialAidPage() {
         }}
       />
 
-      {/* Non-public migration note (HTML comment) */}
-      {/* Source URL: https://www.arkansasbaptist.edu/financial-aid/apply-for-financial-aid/ */}
-      {/* Migration confidence: HIGH - all content preserved verbatim from source, school code 001087 confirmed */}
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }

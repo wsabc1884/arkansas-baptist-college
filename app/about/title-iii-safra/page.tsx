@@ -54,11 +54,6 @@ export default function TitleIIISafraPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/title-iii-and-safra-grants/ */}
-      {/* Confidence: High - full content extracted from source */}
-      {/* Missing: None */}
-
       <CTABand
         heading="Learn More About ABC"
         description="Explore our academic programs, institutional history, and leadership."

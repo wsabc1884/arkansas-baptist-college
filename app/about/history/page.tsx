@@ -65,12 +65,22 @@ const timelineItems = [
 
 const presidents = [
   { name: "Joseph P. Lawson", years: "1884-1887", role: "Principal" },
-  { name: "Joseph Albert Booker", years: "1887-1926", role: "First President" },
+  { name: "Joseph Albert Booker", years: "1887-1926", role: "President" },
+  { name: "Bishop J.H. Reynolds*", years: "1926-1928", role: "Interim President" },
+  { name: "Allen Richard Griggs*", years: "1928-1929", role: "Interim President" },
+  { name: "Osborne Perry*", years: "1929-1937", role: "Interim President" },
   { name: "Tandy Washington Coggs", years: "1937-1955", role: "President" },
+  { name: "Dr. Jurdine P. Rogers*", years: "1955-1962", role: "Interim President" },
   { name: "James C. Oliver", years: "1962-1982", role: "President" },
+  { name: "Dr. Charles O. Ross*", years: "1982-1985", role: "Interim President" },
   { name: "William Thomas Keaton", years: "1985-2001", role: "President" },
+  { name: "Dr. Mary E. Benjamin*", years: "2001-2003", role: "Interim President" },
+  { name: "Dr. Bobby L. Berry*", years: "2003-2004", role: "Interim President" },
+  { name: "Dr. Joseph H. Johnson*", years: "2004-2006", role: "Interim President" },
   { name: "Omon Fitzgerald Hill", years: "2006-2016", role: "President" },
-  { name: "Calvin McFadden Sr.", years: "2023-2024", role: "President" },
+  { name: "Dr. Fitz Hill*", years: "2016-2018", role: "Interim President" },
+  { name: "Dr. Calvin McFadden Sr.", years: "2018-2024", role: "President" },
+  { name: "Dr. Leslie Rodriguez-McClellon", years: "2024", role: "17th President" },
   { name: "Dr. George Hertz", years: "2025-Present", role: "Interim President" },
 ]
 
@@ -105,10 +115,12 @@ export default function HistoryPage() {
                 </p>
                 <p>
                   The college was initially funded by the Colored Baptists of the State of
-                  Arkansas, who recognized the critical need for educational opportunities
-                  for African Americans in the post-Civil War era. What began as a small
-                  institution for training ministers has grown into a comprehensive liberal
-                  arts college serving students from across the nation.
+                  Arkansas at Mount Zion Baptist Church in Little Rock, who recognized the critical need for
+                  educational opportunities for African Americans in the post-Civil War era.
+                  E.C. Morris, president of the National Baptist Convention, USA, Inc., is
+                  recognized as the founder. What began as a small institution for training
+                  ministers has grown into a comprehensive liberal arts college serving
+                  students from across the nation.
                 </p>
                 <p>
                   The Main Building on its campus, built in 1893, is one of the oldest
@@ -168,15 +180,16 @@ export default function HistoryPage() {
             align="center"
             className="[&_h2]:text-white [&_p]:text-white/70"
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="mt-2 text-center text-sm text-white/60">* Denotes interim appointment</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {presidents.map((president) => (
               <div
                 key={president.name}
-                className="rounded-lg bg-white/10 p-6 text-center backdrop-blur-sm"
+                className="rounded-lg bg-white/10 p-4 text-center backdrop-blur-sm"
               >
-                <h3 className="text-lg font-bold text-white">{president.name}</h3>
-                <p className="mt-1 text-sm text-white/70">{president.role}</p>
-                <p className="mt-2 text-sm text-white/60">{president.years}</p>
+                <h3 className="font-bold text-white">{president.name}</h3>
+                <p className="mt-1 text-xs text-white/70">{president.role}</p>
+                <p className="mt-1 text-xs text-white/60">{president.years}</p>
               </div>
             ))}
           </div>

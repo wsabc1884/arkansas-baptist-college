@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -11,7 +13,9 @@ export const metadata: Metadata = {
 
 export default function StudentAffairsPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Student Affairs"
         subtitle="About Us"
@@ -24,45 +28,58 @@ export default function StudentAffairsPage() {
 
       <SectionWrapper>
         <div className="mx-auto max-w-3xl prose-abc">
-          <p>
-            The Division of Student Affairs at Arkansas Baptist College is dedicated to creating a campus environment that supports the intellectual, personal, spiritual, and professional development of every student. Student Affairs manages housing, counseling, student activities, compliance services, and a variety of programs designed to enrich the student experience beyond the classroom.
-          </p>
+          <h2>Vision</h2>
+          <p>The Division of Student Affairs will be nationally renowned for developing, implementing, and supporting programs, services, and activities that contribute to students becoming competitive citizens who engage and serve in a global community.</p>
 
-          <h2>Services & Programs</h2>
-          <ul>
-            <li><Link href="/student-life/organizations">Student Organizations</Link></li>
-            <li><Link href="/student-life/campus-life">Campus Life</Link></li>
-            <li><Link href="/student-life/complaint-process">Student Complaint Process</Link></li>
-            <li><Link href="/compliance/title-ix">Title IX Services</Link></li>
-            <li><Link href="/compliance/campus-safety">Campus Safety</Link></li>
-          </ul>
+          <h2>Mission</h2>
+          <p>The Division of Student Affairs at Arkansas Baptist College is dedicated to creating a campus environment that supports the intellectual, personal, spiritual, and professional development of every student. Student Affairs manages housing, counseling, student activities, compliance services, and a variety of programs designed to enrich the student experience beyond the classroom.</p>
 
-          <h2>Residential Life</h2>
-          <p>
-            Arkansas Baptist College offers on-campus housing to provide a supportive living-learning community. Residence life staff work to build community, promote student engagement, and ensure safe and comfortable living conditions.
-          </p>
-
-          <h2>Counseling & Wellness</h2>
-          <p>
-            Student Affairs coordinates counseling and wellness services to support students{"'"} mental health, academic stress management, and personal well-being throughout their time at ABC.
-          </p>
-
-          <h2>Contact</h2>
-          <p>
-            <strong>Division of Student Affairs</strong><br />
-            Arkansas Baptist College<br />
-            1600 Dr. Martin Luther King Jr. Drive<br />
-            Little Rock, AR 72202<br />
-            Phone: <a href="tel:5014201200">501-420-1200</a><br />
-            Email: <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a>
-          </p>
+          <h2>Focus</h2>
+          <p>The Division of Student Affairs supports the Mission of Arkansas Baptist College to provide community service. The focus of the department is centered on the &quot;STUDENT&quot; &mdash; Success, Transformation, Understanding, Determination, Enrichment, Nurturing, and Time Management.</p>
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/student-affairs/ (no direct content), catalog.arkansasbaptist.edu mentioned in search results */}
-      {/* Confidence: Medium - synthesized from known site structure and search results */}
-      {/* Missing: Specific staff names, detailed housing info, counseling hours */}
+      {/* Staff Directory */}
+      <SectionWrapper className="bg-muted/30">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Student Affairs Staff</h2>
+          <div className="mt-6 grid gap-4">
+            {[
+              { name: "Olivia C. Henderson, M.Ed.", title: "Vice President for Student Affairs", email: "olivia.henderson@arkansasbaptist.edu" },
+              { name: "Cleodis J. Colbert, M.Ed.", title: "Dean of Students & Title IX Coordinator", email: "cleodis.colbert@arkansasbaptist.edu" },
+              { name: "Cody R. Charles, MBA", title: "Dean of Residential Life", email: "cody.charles@arkansasbaptist.edu" },
+              { name: "Lamarius Q. McGraw", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
+            ].map((person) => (
+              <div key={person.name} className="rounded-lg border bg-card p-5">
+                <h3 className="font-semibold text-foreground">{person.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{person.title}</p>
+                <a href={`mailto:${person.email}`} className="mt-1 text-sm text-primary hover:underline">{person.email}</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Quick Links */}
+      <SectionWrapper>
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Student Quick Links</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              { label: "Student Organizations", href: "/student-life/organizations" },
+              { label: "Campus Life", href: "/student-life/campus-life" },
+              { label: "Student Complaint Process", href: "/student-life/complaint-process" },
+              { label: "Title IX Services", href: "/compliance/title-ix" },
+              { label: "Campus Safety", href: "/resources/campus-safety" },
+              { label: "Housing & Residential Life", href: "/student-life/campus-life" },
+            ].map((link) => (
+              <Link key={link.label} href={link.href} className="rounded-lg border bg-card p-4 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
 
       <CTABand
         heading="Experience Life at ABC"
@@ -70,6 +87,8 @@ export default function StudentAffairsPage() {
         primaryAction={{ label: "Student Organizations", href: "/student-life/organizations" }}
         secondaryAction={{ label: "Campus Life", href: "/student-life/campus-life" }}
       />
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }

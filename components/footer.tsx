@@ -25,8 +25,8 @@ const footerLinks = {
     { name: "Adult Education", href: "/academics/adult-education" },
   ],
   resources: [
-    { name: "myABC Portal", href: "https://myabc.arkansasbaptist.edu", external: true },
-    { name: "Blackboard", href: "https://arkansasbaptist.blackboard.com", external: true },
+    { name: "myABC Portal", href: "https://my.arkansasbaptist.edu/ICS/", external: true },
+    { name: "Blackboard", href: "https://arkansasbc.blackboard.com/ultra/admin", external: true },
     { name: "Campus Safety", href: "/compliance/campus-safety" },
     { name: "Directory", href: "/resources/directory" },
     { name: "Give to ABC", href: "/give" },
@@ -116,9 +116,9 @@ export function Footer() {
               <Image
                 src="https://www.arkansasbaptist.edu/wp-content/uploads/2021/01/ABC-LOGO-150x200-1.png"
                 alt="Arkansas Baptist College Logo"
-                width={40}
-                height={53}
-                className="h-12 w-auto brightness-0 invert"
+                width={45}
+                height={60}
+                className="h-14 w-auto"
               />
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight">Arkansas Baptist</span>

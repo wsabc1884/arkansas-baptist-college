@@ -76,7 +76,7 @@ export default function FinancialAidPage() {
               <Phone className="h-5 w-5 shrink-0 text-primary mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-foreground">Phone</p>
-                <a href="tel:5014201200" className="text-sm text-muted-foreground hover:underline">501-420-1200</a>
+                <a href="tel:5014201226" className="text-sm text-muted-foreground hover:underline">(501) 420-1226</a>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border bg-card p-4">
@@ -84,6 +84,7 @@ export default function FinancialAidPage() {
               <div>
                 <p className="text-sm font-medium text-foreground">Email</p>
                 <a href="mailto:financialaid@arkansasbaptist.edu" className="text-sm text-muted-foreground hover:underline">financialaid@arkansasbaptist.edu</a>
+                <p className="mt-1 text-xs text-muted-foreground">Documents: <a href="mailto:finaiddocs@arkansasbaptist.edu" className="text-primary hover:underline">finaiddocs@arkansasbaptist.edu</a></p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border bg-card p-4">

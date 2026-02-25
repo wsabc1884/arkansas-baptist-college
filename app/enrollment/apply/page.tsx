@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -11,7 +13,9 @@ export const metadata: Metadata = {
 
 export default function ApplyPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Apply to ABC"
         subtitle="Enrollment"
@@ -22,17 +26,38 @@ export default function ApplyPage() {
         ]}
       />
 
+      {/* Primary Apply CTA */}
       <SectionWrapper>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl text-balance">Start Your Application</h2>
+          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+            Ready to become a Buffalo? Complete your application online through our admissions portal.
+          </p>
+          <a
+            href="https://arkansasbaptistcolleg.my.site.com/application"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
+          >
+            Apply Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <p className="mt-4 text-sm text-muted-foreground">Application fee: $25 (non-refundable)</p>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper background="muted">
         <div className="mx-auto max-w-3xl prose-abc">
           <h2>How to Apply</h2>
           <p>
             Applying to Arkansas Baptist College is straightforward. Follow the steps below to complete your application:
           </p>
           <ol>
-            <li><strong>Complete the Application:</strong> Fill out the online application for admission.</li>
-            <li><strong>Submit Required Documents:</strong> Provide official high school transcripts or GED certificate, and official transcripts from all previously attended colleges (transfer students).</li>
+            <li><strong>Complete the Online Application:</strong> Fill out the <a href="https://arkansasbaptistcolleg.my.site.com/application" target="_blank" rel="noopener noreferrer">online application for admission</a>.</li>
+            <li><strong>Submit Required Documents:</strong> Provide official high school transcripts or GED certificate, and official transcripts from all previously attended colleges (transfer students). Official transcripts must be sent via Parchment or the National Student Clearinghouse.</li>
+            <li><strong>Submit Official ACT/SAT Scores:</strong> First-time freshmen are required to submit official test scores.</li>
             <li><strong>Pay the Application Fee:</strong> The application fee is $25.</li>
-            <li><strong>Apply for Financial Aid:</strong> Complete the <Link href="/enrollment/apply-for-financial-aid">FAFSA</Link> to determine your eligibility for grants, scholarships, and loans.</li>
+            <li><strong>Apply for Financial Aid:</strong> Complete the <Link href="/enrollment/apply-for-financial-aid">FAFSA</Link> to determine your eligibility for grants, scholarships, and loans. School code: <strong>001087</strong>.</li>
           </ol>
 
           <h2>Application Checklist</h2>
@@ -57,16 +82,11 @@ export default function ApplyPage() {
           <h2>Questions?</h2>
           <p>
             Contact the <Link href="/enrollment/office-of-admissions">Office of Admissions</Link> at{" "}
-            <a href="tel:5014201200">501-420-1200</a> or email{" "}
-            <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a>.
+            <a href="tel:5014201234">(501) 420-1234</a> or email{" "}
+            <a href="mailto:admissions@arkansasbaptist.edu">admissions@arkansasbaptist.edu</a>.
           </p>
         </div>
       </SectionWrapper>
-
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/apply-to-abc/ (no direct content returned) */}
-      {/* Confidence: Medium - standard admissions content, FAFSA code verified */}
-      {/* Missing: Direct link to online application form */}
 
       <CTABand
         heading="Need Help with Financial Aid?"
@@ -74,6 +94,8 @@ export default function ApplyPage() {
         primaryAction={{ label: "Financial Aid", href: "/enrollment/financial-aid" }}
         secondaryAction={{ label: "Scholarships", href: "/enrollment/scholarships" }}
       />
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }

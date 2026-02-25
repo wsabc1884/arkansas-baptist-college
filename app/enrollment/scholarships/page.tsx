@@ -50,7 +50,7 @@ export default function ScholarshipsPage() {
               <li><a href="https://www.tmcf.org" target="_blank" rel="noopener noreferrer">Thurgood Marshall College Fund</a> - Scholarships for HBCU students</li>
               <li><a href="https://uncf.org" target="_blank" rel="noopener noreferrer">UNCF</a> - United Negro College Fund scholarships</li>
               <li>State of Arkansas scholarship programs through{" "}
-                <a href="https://scholarships.adhe.edu" target="_blank" rel="noopener noreferrer">ADHE</a>
+                <a href="https://adhe.edu/" target="_blank" rel="noopener noreferrer">ADHE</a>
               </li>
             </ul>
 

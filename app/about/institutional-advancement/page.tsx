@@ -67,11 +67,6 @@ export default function InstitutionalAdvancementPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/institutional-advancement-2 */}
-      {/* Confidence: High - full content extracted from source */}
-      {/* Missing: Give to ABC external link URL */}
-
       <CTABand
         heading="Invest in the Future of ABC"
         description="Your gift supports student scholarships, campus improvements, and academic excellence."

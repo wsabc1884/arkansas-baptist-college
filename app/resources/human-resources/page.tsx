@@ -1,30 +1,133 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
+import { CTABand } from "@/components/cta-band"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Mail, Briefcase, Download } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Human Resources | Arkansas Baptist College",
-  description: "Employment opportunities, benefits information, and HR policies at Arkansas Baptist College.",
+  description:
+    "Employment opportunities, staff openings, and HR policies at Arkansas Baptist College.",
 }
+
+const openPositions = [
+  "Director of Campus Safety",
+  "Full Time & Adjunct Instructors",
+  "Upward Bound Administrative Assistant (Part-Time)",
+  "Facilities Operations Director",
+  "Retention Specialist",
+]
 
 export default function HumanResourcesPage() {
   return (
     <div className="min-h-screen">
       <Header />
       <main id="main-content">
-        <PageHero title="Human Resources" subtitle="Employment opportunities and human resources information at Arkansas Baptist College." label="Resources" />
+        <PageHero
+          title="Human Resources"
+          subtitle="Resources"
+          description="Employment opportunities and human resources information at Arkansas Baptist College."
+          breadcrumbs={[
+            { label: "Resources", href: "/resources/human-resources" },
+            { label: "Human Resources" },
+          ]}
+        />
+
+        {/* Mission */}
         <SectionWrapper>
-          <div className="prose-abc max-w-4xl mx-auto">
-            <h2>About</h2>
-            <p>The Office of Human Resources supports the mission of Arkansas Baptist College by recruiting, retaining, and developing a talented and diverse workforce. We are committed to providing a positive work environment that values integrity, respect, and excellence.</p>
-            <h2>Employment Opportunities</h2>
-            <p>Arkansas Baptist College is an equal opportunity employer. Current openings are posted periodically. Interested candidates should submit a cover letter and resume to the Office of Human Resources.</p>
-            <h2>Contact</h2>
-            <p>Office of Human Resources<br />Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a></p>
+          <div className="prose-abc mx-auto max-w-4xl">
+            <h2>Our Mission</h2>
+            <p>
+              The mission of the Human Resources Office is to utilize a social justice philosophy, strategic vision, diverse environment and leadership in providing quality, customer-driven human resources services to support Arkansas Baptist College.
+            </p>
           </div>
         </SectionWrapper>
+
+        {/* Staff Openings */}
+        <SectionWrapper className="bg-muted/30">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Staff Openings</h2>
+            <p className="mt-2 text-muted-foreground">
+              Arkansas Baptist College is seeking talented individuals with vision, leadership, and unwavering commitment to the future of our scholars. Click on a position title for more details where available.
+            </p>
+            <div className="mt-6 space-y-3">
+              {openPositions.map((position) => (
+                <div key={position} className="flex items-center gap-3 rounded-lg border bg-card p-4">
+                  <Briefcase className="h-5 w-5 shrink-0 text-primary" />
+                  <span className="font-medium text-foreground">{position}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              <strong>Arkansas Baptist College is committed to compliance with federal and state laws with regards to equal opportunity employment and affirmative action</strong> without regard to race, color, religion, gender, age, national origin, disability, veteran status or any other protected class applicable to federal and state laws.
+            </p>
+          </div>
+        </SectionWrapper>
+
+        {/* Application Process */}
+        <SectionWrapper>
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">The Application Process</h2>
+            <p className="mt-2 text-muted-foreground">Two methods of submission are available:</p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-lg border bg-card p-6">
+                <Mail className="h-6 w-6 text-primary" />
+                <h3 className="mt-3 font-semibold text-foreground">Email Us</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Send a cover letter, resume/CV, and three (3) professional letters of reference to:
+                </p>
+                <a href="mailto:HR@arkansasbaptist.edu" className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
+                  HR@arkansasbaptist.edu
+                </a>
+              </div>
+              <div className="rounded-lg border bg-card p-6">
+                <Briefcase className="h-6 w-6 text-primary" />
+                <h3 className="mt-3 font-semibold text-foreground">Submit by Mail</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Send a cover letter, resume/CV, and three (3) professional letters of reference to:
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Arkansas Baptist College<br />
+                  1600 Dr. Martin Luther King Jr. Drive<br />
+                  Little Rock, AR 72202
+                </p>
+              </div>
+            </div>
+          </div>
+        </SectionWrapper>
+
+        {/* Faculty Handbook & Policies */}
+        <SectionWrapper className="bg-muted/30">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Documents & Policies</h2>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                { title: "Faculty Handbook (2019-2021)", desc: "Comprehensive guide for faculty members covering policies, procedures, and expectations.", file: "/documents/hr/faculty-handbook-2019-2021.pdf" },
+                { title: "ABC COVID-19 Policy", desc: "Current campus health and safety policies related to COVID-19.", file: "/documents/hr/abc-covid-19-policy.pdf" },
+                { title: "Medical Accommodation Form", desc: "Request medical accommodations through Human Resources.", file: "/documents/hr/medical-accommodation-form.pdf" },
+                { title: "Religious Accommodation Form", desc: "Request religious accommodations through Human Resources.", file: "/documents/hr/religious-accommodation-form.pdf" },
+              ].map((doc) => (
+                <a key={doc.title} href={doc.file} download className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
+                  <Download className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <h3 className="font-semibold text-foreground group-hover:text-primary">{doc.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{doc.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </SectionWrapper>
+
+        <CTABand
+          heading="Join the ABC Team"
+          description="Explore career opportunities and become part of the Arkansas Baptist College community."
+          primaryAction={{ label: "Email HR", href: "mailto:HR@arkansasbaptist.edu" }}
+          secondaryAction={{ label: "Contact Administration", href: "/about/administration" }}
+        />
       </main>
       <Footer />
     </div>

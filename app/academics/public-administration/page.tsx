@@ -19,10 +19,11 @@ export default function PublicAdminPage() {
         <SectionWrapper>
           <div className="prose-abc max-w-4xl mx-auto">
             <h2>Department Mission</h2>
-            <p>The Department of Public Administration prepares students for leadership roles in government agencies, nonprofit organizations, and community-based service organizations. The program integrates public policy, management theory, ethics, and practical application.</p>
+            <p>The Department of Public Administration is devoted to affecting social changes and promoting the public good. The department prepares students for leadership roles in government agencies, nonprofit organizations, and community-based service organizations. The program integrates public policy, management theory, ethics, and practical application.</p>
             <h2>Degree Programs</h2>
             <ul>
-              <li><strong>Bachelor of Science in Public Administration</strong></li>
+              <li><strong>Bachelor of Arts in Public Administration (BA)</strong></li>
+              <li><strong>Associate of Arts in Public Administration (AA)</strong></li>
             </ul>
             <h2>Career Opportunities</h2>
             <ul>

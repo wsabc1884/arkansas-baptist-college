@@ -11,9 +11,9 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.08 300);
   --primary: oklch(0.32 0.16 300);
-  --primary-foreground: oklch(0.99 0 0);
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.38 0.18 300);
-  --secondary-foreground: oklch(0.99 0 0);
+  --secondary-foreground: #ffffff;
   --muted: oklch(0.96 0.008 300);
   --muted-foreground: oklch(0.45 0.04 300);
   --accent: oklch(0.96 0.01 300);
@@ -164,4 +164,11 @@
 }
 .prose-abc hr {
   @apply my-8 border-border;
+}
+/* Reset prose styles for elements marked as not-prose */
+.prose-abc .not-prose,
+.prose-abc .not-prose * {
+  color: inherit;
+  text-decoration: inherit;
+  font-style: inherit;
 }

@@ -35,7 +35,53 @@ export default function ParentInformationPage() {
           />
         </SectionWrapper>
 
+        {/* Financial Aid for Parents -- from live site */}
         <SectionWrapper background="muted">
+          <div className="prose-abc max-w-4xl mx-auto">
+            <h2>Understanding Financial Aid</h2>
+
+            <h3>Expected Family Contribution (EFC)</h3>
+            <p>
+              After completing the FAFSA, your family will receive an Expected Family Contribution (EFC) number.
+              The EFC is not the amount you will pay -- it is an index number used by the financial aid office to
+              determine how much aid your student is eligible to receive. The lower the EFC, the more need-based
+              aid your student may qualify for.
+            </p>
+
+            <h3>Cost of Attendance</h3>
+            <p>
+              The Cost of Attendance (COA) is an estimate of what it costs to attend ABC for one academic year,
+              including tuition, fees, room and board, books, transportation, and personal expenses. Financial aid
+              cannot exceed the COA. Visit our <a href="/enrollment/tuition-and-fees">Tuition and Fees</a> page for current rates.
+            </p>
+
+            <h3>FERPA &amp; Privacy</h3>
+            <p>
+              Under FERPA (Family Educational Rights and Privacy Act), students over 18 control access to their
+              educational records -- including financial aid information. The Office of Financial Aid cannot discuss
+              a student&apos;s records with parents unless the student has submitted a signed FERPA release form.
+              See our <a href="/compliance/ferpa">FERPA page</a> for details.
+            </p>
+
+            <h3>Parent PLUS Loans</h3>
+            <p>
+              Parents of dependent undergraduate students may borrow a Federal Direct PLUS Loan to help cover
+              educational costs not met by other financial aid. The current interest rate is <strong>7.21%</strong> (fixed).
+              A credit check is required. Apply at{" "}
+              <a href="https://studentaid.gov" target="_blank" rel="noopener noreferrer">studentaid.gov</a>.
+            </p>
+
+            <h3>Verification</h3>
+            <p>
+              Some FAFSA applications are selected for verification by the U.S. Department of Education.
+              If selected, you may be asked to provide additional documents such as tax transcripts, W-2 forms,
+              or verification worksheets. Our verification partner <strong>Inceptia</strong> will guide you
+              through the process.
+            </p>
+          </div>
+        </SectionWrapper>
+
+        <SectionWrapper>
           <div className="prose-abc max-w-4xl mx-auto">
             <h2>Frequently Asked Questions for Parents</h2>
 
@@ -53,14 +99,6 @@ export default function ParentInformationPage() {
               Tuition payments can be made online through the student portal or at the Business Office on campus.
               Visit our <a href="/enrollment/tuition-and-fees">Tuition and Fees</a> page for current rates and the{" "}
               <a href="/enrollment/pay-tuition">Pay My Tuition</a> page for payment options.
-            </p>
-
-            <h3>Can I access my student&apos;s academic records?</h3>
-            <p>
-              Under FERPA (Family Educational Rights and Privacy Act), students over 18 have the right to control
-              access to their educational records. Students may authorize parents to access their records by
-              completing a FERPA release form through the Registrar&apos;s Office. See our{" "}
-              <a href="/compliance/ferpa">FERPA page</a> for details.
             </p>
 
             <h3>Is campus housing available?</h3>

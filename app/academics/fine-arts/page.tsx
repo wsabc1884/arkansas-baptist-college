@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Fine Arts | Arkansas Baptist College",
-  description: "The Department of Fine Arts offers programs in music, visual arts, and performing arts, nurturing creative talent in a faith-based environment.",
+  description: "The Department of Fine Arts offers programs in music performance and music business, preparing students for careers in the music industry.",
 }
 
 export default function FineArtsPage() {
@@ -15,22 +15,15 @@ export default function FineArtsPage() {
     <div className="min-h-screen">
       <Header />
       <main id="main-content">
-        <PageHero title="Fine Arts" subtitle="Nurturing creative talent through programs in music, visual arts, and performing arts." label="Academic Departments" />
+        <PageHero title="Fine Arts" subtitle="Preparing students for careers in music performance and the music industry." label="Academic Departments" />
         <SectionWrapper>
           <div className="prose-abc max-w-4xl mx-auto">
             <h2>Department Mission</h2>
-            <p>The Department of Fine Arts is committed to providing students with a comprehensive education in the arts that fosters creativity, critical thinking, and cultural awareness. Our programs integrate theory and practice, preparing students for careers in music, visual arts, education, and ministry.</p>
+            <p>The Department of Fine Arts provides instruction in music business management for entry into the music industry. The Fine Arts entrepreneurship center is an innovative program that provides students with a unique opportunity to learn about the music industry. Students will gain knowledge in the areas of music production, music publishing, music marketing, and music business management.</p>
             <h2>Degree Programs</h2>
             <ul>
-              <li><strong>Bachelor of Arts in Fine Arts</strong></li>
-              <li><strong>Associate of Arts in Fine Arts</strong></li>
-            </ul>
-            <h2>Areas of Study</h2>
-            <ul>
-              <li>Music (Vocal and Instrumental)</li>
-              <li>Visual Arts</li>
-              <li>Performing Arts</li>
-              <li>Music Ministry</li>
+              <li><strong>Bachelor of Arts in Music Performance (BA)</strong></li>
+              <li><strong>Associate of Arts in Music Business (AA)</strong></li>
             </ul>
             <h2>Ensembles &amp; Performance Opportunities</h2>
             <p>Students participate in the College Choir, Band, and various ensemble groups. Performance opportunities include campus events, community engagements, and annual concerts.</p>

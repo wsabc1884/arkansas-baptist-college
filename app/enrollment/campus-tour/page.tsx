@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -12,7 +14,9 @@ export const metadata: Metadata = {
 
 export default function CampusTourPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Campus Tour"
         subtitle="Enrollment"
@@ -50,14 +54,14 @@ export default function CampusTourPage() {
               <Phone className="h-6 w-6 text-primary" />
               <h3 className="mt-3 font-semibold text-foreground">Phone</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                <a href="tel:5014201200" className="text-primary hover:underline">501-420-1200</a>
+                <a href="tel:5014201234" className="text-primary hover:underline">(501) 420-1234</a>
               </p>
             </div>
             <div className="rounded-lg border p-5">
               <Mail className="h-6 w-6 text-primary" />
               <h3 className="mt-3 font-semibold text-foreground">Email</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                <a href="mailto:info@arkansasbaptist.edu" className="text-primary hover:underline">info@arkansasbaptist.edu</a>
+                <a href="mailto:admissions@arkansasbaptist.edu" className="text-primary hover:underline">admissions@arkansasbaptist.edu</a>
               </p>
             </div>
           </div>
@@ -80,17 +84,14 @@ export default function CampusTourPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/campus-tour/ (no direct content) */}
-      {/* Confidence: Medium - synthesized from site structure and campus info */}
-      {/* Missing: Online tour scheduling form, virtual tour option */}
-
       <CTABand
         heading="Ready to Apply?"
         description="After your visit, start your application to join the Buffalo family."
         primaryAction={{ label: "Apply to ABC", href: "/enrollment/apply" }}
         secondaryAction={{ label: "Financial Aid", href: "/enrollment/financial-aid" }}
       />
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }

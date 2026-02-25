@@ -66,11 +66,6 @@ export default function BusinessAffairsPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/business-affairs/ */}
-      {/* Confidence: High - full content extracted from source */}
-      {/* Missing: None */}
-
       <CTABand
         heading="Need Help with Your Student Account?"
         description="The Business Office is here to assist with tuition, payments, and financial records."

@@ -89,11 +89,6 @@ export default function TechnologyServicesPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/it-help-desk/ + search results */}
-      {/* Confidence: Medium - technology services page was not directly available, content synthesized from IT help desk page and site navigation */}
-      {/* Missing: Specific IT staff contacts, help desk hours */}
-
       <CTABand
         heading="Having Technical Issues?"
         description="The IT Help Desk is ready to assist you with any technology-related questions."

@@ -44,6 +44,20 @@ export default function DefaultPreventionPage() {
               <li><strong>Public Service Loan Forgiveness:</strong> Forgiveness of remaining loan balance after 120 qualifying payments while working in public service.</li>
             </ul>
 
+            <h2>Borrower Responsibilities</h2>
+            <ul>
+              <li>Complete entrance counseling before receiving your first loan disbursement</li>
+              <li>Sign a Master Promissory Note (MPN) for each loan type</li>
+              <li>Borrow only what you need to cover educational expenses</li>
+              <li>Keep copies of all loan documents and correspondence</li>
+              <li>Notify your loan servicer when you change your name, address, phone number, or Social Security number</li>
+              <li>Notify your loan servicer if you transfer, withdraw, drop below half-time, or graduate</li>
+              <li>Make payments on time, even if you do not receive a billing statement</li>
+              <li>Continue making payments while waiting for deferment or forbearance to be processed</li>
+              <li>Complete exit counseling when you graduate, leave school, or drop below half-time enrollment</li>
+              <li>Understand the terms and conditions of all your loans</li>
+            </ul>
+
             <h2>Know Your Loan Servicer</h2>
             <p>
               Your loan servicer is the company that manages billing and repayment for your federal student loans.
@@ -60,11 +74,35 @@ export default function DefaultPreventionPage() {
               <a href="https://studentaid.gov/exit-counseling" target="_blank" rel="noopener noreferrer">studentaid.gov/exit-counseling</a>.
             </p>
 
+            <h2>Helpful Resources</h2>
+            <ul>
+              <li><a href="https://nslds.ed.gov" target="_blank" rel="noopener noreferrer">National Student Loan Data System (NSLDS)</a> -- View your federal loan history and find your servicer</li>
+              <li><strong>FSA Collections:</strong> <a href="tel:8006213115">(800) 621-3115</a></li>
+              <li><strong>FSA Ombudsman:</strong> <a href="tel:8775572575">(877) 557-2575</a></li>
+              <li><a href="https://studentaid.gov/exit-counseling" target="_blank" rel="noopener noreferrer">Complete Exit Counseling</a></li>
+            </ul>
+
+            <h2>Forms</h2>
+            <p>The following forms are available for download:</p>
+            </div>
+            <div className="mt-4 max-w-4xl mx-auto grid gap-3 sm:grid-cols-3">
+              {[
+                { title: "Statement of Educational Purpose", file: "statement-of-ed-purpose.pdf" },
+                { title: "Unusual Enrollment History", file: "unusual-enrollment-history.pdf" },
+                { title: "Default Resolution Form", file: "default-resolution-form.pdf" },
+              ].map((doc) => (
+                <a key={doc.title} href={`/documents/financial-aid/${doc.file}`} download className="group rounded-lg border bg-card p-4 text-center transition-colors hover:border-primary">
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary">{doc.title}</p>
+                </a>
+              ))}
+            </div>
+            <div className="prose-abc max-w-4xl mx-auto mt-8">
+
             <h2>Contact Us</h2>
             <p>
               If you are struggling with student loan repayment or have questions about default prevention,
               contact the Office of Student Financial Aid at{" "}
-              <a href="tel:5014201200">501-420-1200</a> or{" "}
+              <a href="tel:5014201226">(501) 420-1226</a> or{" "}
               <a href="mailto:financialaid@arkansasbaptist.edu">financialaid@arkansasbaptist.edu</a>.
             </p>
           </div>

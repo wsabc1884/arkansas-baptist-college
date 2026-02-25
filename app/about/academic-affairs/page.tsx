@@ -3,15 +3,19 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Office of Academic Affairs - Arkansas Baptist College",
+  title: "Office of Academic Affairs | Arkansas Baptist College",
   description: "Arkansas Baptist College Academic Affairs oversees curriculum, degree programs, faculty, and student learning outcomes.",
 }
 
 export default function AcademicAffairsPage() {
   return (
-    <main id="main-content">
+    <div className="min-h-screen">
+      <Header />
+      <main id="main-content">
       <PageHero
         title="Office of Academic Affairs"
         subtitle="About Us"
@@ -130,10 +134,33 @@ export default function AcademicAffairsPage() {
         </div>
       </SectionWrapper>
 
-      {/* Migration Note */}
-      {/* Source: arkansasbaptist.edu/academic-affairs/ */}
-      {/* Confidence: High - full content extracted from source */}
-      {/* Missing: Graduation & Retention image/data graphic */}
+      <SectionWrapper className="bg-muted/30">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">ABC Quick Links</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: "Academic Calendar", href: "/academics/academic-calendar" },
+              { label: "Academic Catalog", href: "/academics/academic-catalog" },
+              { label: "Admissions", href: "/enrollment/office-of-admissions" },
+              { label: "Campus Life", href: "/student-life/campus-life" },
+              { label: "Consumer Information", href: "/resources/consumer-information" },
+              { label: "Library", href: "/academics/library" },
+              { label: "Financial Aid", href: "/enrollment/financial-aid" },
+              { label: "myABC Portal", href: "https://my.arkansasbaptist.edu/" },
+              { label: "Course Search", href: "/academics/course-search" },
+              { label: "Staff Directory", href: "/resources/directory" },
+            ].map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="rounded-lg border bg-card p-4 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
 
       <CTABand
         heading="Ready to Start Your Academic Journey?"
@@ -141,6 +168,8 @@ export default function AcademicAffairsPage() {
         primaryAction={{ label: "Apply to ABC", href: "/enrollment/apply" }}
         secondaryAction={{ label: "Academic Catalog", href: "/academics/academic-catalog" }}
       />
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }
