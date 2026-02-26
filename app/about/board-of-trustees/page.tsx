@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
@@ -15,7 +13,6 @@ export const metadata = {
 export default function BoardOfTrusteesPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Board of Trustees"
@@ -110,7 +107,6 @@ export default function BoardOfTrusteesPage() {
           secondaryAction={{ label: "Administration", href: "/about/administration" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

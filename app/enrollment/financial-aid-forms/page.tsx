@@ -3,8 +3,6 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import {
   FileText,
   Download,
@@ -17,7 +15,9 @@ import {
   Users,
   TrendingUp,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { sanityFetch } from "@/sanity/lib/live"
+import { DOCUMENTS_BY_CATEGORY_QUERY } from "@/lib/queries"
+import type { DocumentForm } from "@/lib/types"
 
 export const metadata: Metadata = {
   title: "Financial Aid Forms | Arkansas Baptist College",
@@ -194,10 +194,20 @@ function FormCard({
 /* ------------------------------------------------------------------ */
 /* PAGE                                                               */
 /* ------------------------------------------------------------------ */
-export default function FinancialAidFormsPage() {
+export default async function FinancialAidFormsPage() {
+  let sanityDocs: DocumentForm[] = []
+  try {
+    const result = await sanityFetch({
+      query: DOCUMENTS_BY_CATEGORY_QUERY,
+      params: { category: "financial-aid" },
+    })
+    sanityDocs = result.data ?? []
+  } catch {
+    // Sanity unreachable -- rely on hardcoded forms
+  }
+
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Financial Aid Forms"
@@ -261,6 +271,58 @@ export default function FinancialAidFormsPage() {
             </ul>
           </div>
         </SectionWrapper>
+
+        {/* CMS-MANAGED DOCUMENTS — from Sanity */}
+        {sanityDocs.length > 0 && (
+          <SectionWrapper className="bg-muted/30">
+            <div className="mx-auto max-w-4xl">
+              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">
+                Financial Aid Documents
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                The following documents are available for download. Updated by the Office of Financial Aid.
+              </p>
+              <div className="mt-8 grid gap-4">
+                {sanityDocs.map((doc) => (
+                  <div key={doc._id} className="flex items-start gap-4 rounded-lg border bg-card p-5 transition-colors hover:border-primary/40 hover:shadow-sm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                      <FileText className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-foreground">{doc.title}</p>
+                      {doc.description && (
+                        <p className="mt-1 text-sm text-muted-foreground">{doc.description}</p>
+                      )}
+                      {doc.fileUrl && (
+                        <div className="mt-3 flex items-center gap-3">
+                          <a
+                            href={doc.fileUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download
+                            className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                          >
+                            <Download className="h-3.5 w-3.5" />
+                            Download
+                          </a>
+                          <a
+                            href={doc.fileUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                          >
+                            View
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </SectionWrapper>
+        )}
 
         {/* SECTION 2 — 2023-2024 Financial Aid Forms */}
         <SectionWrapper className="bg-muted/30">
@@ -389,7 +451,6 @@ export default function FinancialAidFormsPage() {
           }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

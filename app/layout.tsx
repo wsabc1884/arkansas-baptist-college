@@ -4,7 +4,7 @@ import { Playfair_Display, Source_Sans_3 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-import {sanity} from '@/lib/sanity'
+import {sanityFetch, SanityLive} from '@/sanity/lib/live'
 import {SITE_SETTINGS_QUERY} from '@/lib/queries'
 import {Header} from '@/components/header'
 import {Footer} from '@/components/footer'
@@ -40,7 +40,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const siteSettings = await sanity.fetch(SITE_SETTINGS_QUERY)
+  let siteSettings = null
+  try {
+    const result = await sanityFetch({query: SITE_SETTINGS_QUERY})
+    siteSettings = result.data
+  } catch {
+    // Sanity is unreachable -- render with hardcoded defaults
+  }
 
   return (
     <html lang="en">
@@ -48,6 +54,7 @@ export default async function RootLayout({
         <Header siteSettings={siteSettings} />
         {children}
         <Footer siteSettings={siteSettings} />
+        <SanityLive />
         <Analytics />
       </body>
     </html>

@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Download } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function CampusSafetyPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Campus Safety" subtitle="The safety and security of our campus community is our highest priority." label="Resources" />
         <SectionWrapper>
@@ -87,7 +84,6 @@ export default function CampusSafetyPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

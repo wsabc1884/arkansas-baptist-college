@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { CreditCard, Building, Globe, CalendarDays } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -21,7 +19,6 @@ const paymentMethods = [
 export default function PayTuitionPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Pay My Tuition"
@@ -78,7 +75,6 @@ export default function PayTuitionPage() {
           secondaryHref="/enrollment/financial-aid"
         />
       </main>
-      <Footer />
     </div>
   )
 }

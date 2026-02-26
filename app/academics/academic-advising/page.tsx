@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Academic Success and Career Center | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function AcademicAdvisingPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Academic Success and Career Center" subtitle="Student Services" description="Advising is a collaborative partnership that maximizes the individual potential of students." />
         <SectionWrapper>
@@ -57,7 +54,6 @@ export default function AcademicAdvisingPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

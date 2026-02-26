@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { Timeline } from "@/components/timeline"
 import { CTABand } from "@/components/cta-band"
@@ -87,7 +85,6 @@ const presidents = [
 export default function HistoryPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main id="main-content">
         <PageHero
           title="History of the College"
@@ -242,7 +239,6 @@ export default function HistoryPage() {
           secondaryAction={{ label: "Schedule a Visit", href: "/enrollment/campus-tour" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

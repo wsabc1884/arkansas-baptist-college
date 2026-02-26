@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Default Prevention | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function DefaultPreventionPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Default Prevention"
@@ -117,7 +114,6 @@ export default function DefaultPreventionPage() {
           secondaryHref="/enrollment/apply-for-financial-aid"
         />
       </main>
-      <Footer />
     </div>
   )
 }

@@ -3,8 +3,6 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -41,7 +39,6 @@ const catalogSections = [
 export default function AcademicCatalogPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Academic Catalog"
@@ -125,7 +122,6 @@ export default function AcademicCatalogPage() {
           secondaryAction={{ label: "Academic Advising", href: "/academics/academic-advising" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

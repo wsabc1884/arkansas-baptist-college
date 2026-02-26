@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { Calendar } from "lucide-react"
+import type { NewsArticle } from "@/lib/types"
 
-const newsItems = [
+const fallbackItems = [
   {
     title: "Welcome to ABC!",
     excerpt: "Take a tour of Arkansas Baptist College — your future home! Become a Buffalo today!",
@@ -22,7 +23,25 @@ const newsItems = [
   },
 ]
 
-export function NewsSection() {
+function formatDate(dateString?: string) {
+  if (!dateString) return "Coming Soon"
+  return new Date(dateString).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  })
+}
+
+export function NewsSection({ articles }: { articles?: NewsArticle[] }) {
+  const hasLiveData = articles && articles.length > 0
+  const newsItems = hasLiveData
+    ? articles.slice(0, 3).map((a) => ({
+        title: a.title ?? "Untitled",
+        excerpt: a.excerpt ?? "",
+        date: formatDate(a.publishDate),
+        slug: a.slug,
+      }))
+    : fallbackItems.map((f) => ({ ...f, slug: undefined }))
   return (
     <section className="py-20 bg-muted">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -52,15 +71,13 @@ export function NewsSection() {
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" />
                 <span>{item.date}</span>
-                <span>•</span>
-                <span className="text-primary">{item.category}</span>
               </div>
               <h3 className="mt-4 text-xl font-bold text-card-foreground group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
               <p className="mt-2 text-muted-foreground">{item.excerpt}</p>
               <Link
-                href="/enrollment/event-calendar"
+                href={item.slug ? `/news/${item.slug}` : "/enrollment/event-calendar"}
                 className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
               >
                 Read More →

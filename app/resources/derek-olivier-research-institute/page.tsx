@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -28,7 +26,6 @@ const newsArticles = [
 export default function DORIPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Derek Olivier Research Institute"
@@ -126,7 +123,6 @@ export default function DORIPage() {
           secondaryAction={{ label: "Contact Dr. Williams", href: "mailto:Leonard.Williams@arkansasbaptist.edu" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

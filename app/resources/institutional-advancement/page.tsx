@@ -2,8 +2,7 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 
 export const metadata: Metadata = {
   title: "Institutional Advancement | Arkansas Baptist College",
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
 export default function InstitutionalAdvancementPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Institutional Advancement" subtitle="Supporting the mission of Arkansas Baptist College through philanthropy, alumni engagement, and strategic partnerships." label="Resources" />
         <SectionWrapper>
@@ -35,7 +33,6 @@ export default function InstitutionalAdvancementPage() {
         </SectionWrapper>
         <CTABand title="Support ABC Today" description="Your gift makes a difference in the lives of our students." primaryLabel="Give to ABC" primaryHref="/give" secondaryLabel="Contact Us" secondaryHref="/resources/directory" />
       </main>
-      <Footer />
     </div>
   )
 }

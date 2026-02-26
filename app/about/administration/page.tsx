@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
@@ -7,6 +5,9 @@ import { TeamDirectory } from "@/components/team-directory"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Users, GraduationCap, Building, Heart, Phone, Mail } from "lucide-react"
+import { sanityFetch } from "@/sanity/lib/live"
+import { ADMIN_PAGE_STAFF_QUERY } from "@/lib/queries"
+import type { StaffMember } from "@/lib/types"
 
 export const metadata = {
   title: "Administration | Arkansas Baptist College",
@@ -36,10 +37,24 @@ const departments = [
   },
 ]
 
-export default function AdministrationPage() {
+export default async function AdministrationPage() {
+  let staff: StaffMember[] = []
+  try {
+    const result = await sanityFetch({ query: ADMIN_PAGE_STAFF_QUERY })
+    staff = result.data ?? []
+  } catch {
+    // Sanity unreachable -- TeamDirectory will show coming soon state
+  }
+
+  const teamMembers = staff.map((s) => ({
+    name: s.name,
+    title: s.title ?? "",
+    department: s.department ?? undefined,
+    email: s.email ?? undefined,
+    phone: s.phone ?? undefined,
+  }))
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Administration"
@@ -100,7 +115,8 @@ export default function AdministrationPage() {
             align="center"
           />
           <TeamDirectory
-            comingSoon
+            members={teamMembers.length > 0 ? teamMembers : undefined}
+            comingSoon={teamMembers.length === 0}
             comingSoonMessage="In the tradition of service that defines Arkansas Baptist College, we are preparing a comprehensive directory of our administrative team. Our staff members embody the values of faith, excellence, and dedication that have guided this institution since 1884."
           />
         </SectionWrapper>
@@ -171,7 +187,6 @@ export default function AdministrationPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

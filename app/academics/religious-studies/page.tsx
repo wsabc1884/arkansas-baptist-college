@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Religious Studies | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function ReligiousStudiesPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Religious Studies" subtitle="Grounded in the Baptist tradition, preparing students for lives of ministry, service, and spiritual leadership." label="Academic Departments" />
         <SectionWrapper>
@@ -48,7 +45,6 @@ export default function ReligiousStudiesPage() {
         </SectionWrapper>
         <CTABand title="Answer the Call" description="Begin your preparation for ministry and spiritual leadership at ABC." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />
       </main>
-      <Footer />
     </div>
   )
 }

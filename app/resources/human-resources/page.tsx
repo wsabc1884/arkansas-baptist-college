@@ -3,8 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import { Mail, Briefcase, Download } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -24,7 +23,6 @@ const openPositions = [
 export default function HumanResourcesPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Human Resources"
@@ -129,7 +127,6 @@ export default function HumanResourcesPage() {
           secondaryAction={{ label: "Contact Administration", href: "/about/administration" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

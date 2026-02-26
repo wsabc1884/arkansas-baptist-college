@@ -1,6 +1,4 @@
 import type { ReactNode } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 
 interface ComplianceLayoutProps {
@@ -13,7 +11,6 @@ interface ComplianceLayoutProps {
 export function ComplianceLayout({ title, subtitle, lastUpdated, children }: ComplianceLayoutProps) {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title={title}
@@ -34,7 +31,6 @@ export function ComplianceLayout({ title, subtitle, lastUpdated, children }: Com
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

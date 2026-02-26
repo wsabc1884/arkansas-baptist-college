@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Social & Behavioral Sciences | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function SocialBehavioralPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Social & Behavioral Sciences" subtitle="Criminal Justice and Human Services -- preparing students with life-long competencies for careers that make a difference." label="Academic Departments" />
         <SectionWrapper>
@@ -44,7 +41,6 @@ export default function SocialBehavioralPage() {
         </SectionWrapper>
         <CTABand title="Make a Difference" description="Study the science of human behavior and prepare for a career of impact." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />
       </main>
-      <Footer />
     </div>
   )
 }

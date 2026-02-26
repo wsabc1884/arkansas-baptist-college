@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -14,7 +12,6 @@ export const metadata: Metadata = {
 export default function StudentAffairsPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
       <PageHero
         title="Student Affairs"
@@ -88,7 +85,6 @@ export default function StudentAffairsPage() {
         secondaryAction={{ label: "Campus Life", href: "/student-life/campus-life" }}
       />
       </main>
-      <Footer />
     </div>
   )
 }

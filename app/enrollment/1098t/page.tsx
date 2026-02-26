@@ -3,8 +3,6 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, FileText, Lock, HelpCircle } from "lucide-react"
 
@@ -17,7 +15,6 @@ export const metadata: Metadata = {
 export default function TuitionStatementPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="1098-T Tuition Statement"
@@ -275,7 +272,6 @@ export default function TuitionStatementPage() {
           secondaryAction={{ label: "Apply for Financial Aid", href: "/enrollment/apply-for-financial-aid" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

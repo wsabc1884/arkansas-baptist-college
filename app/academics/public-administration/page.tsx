@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Public Administration | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function PublicAdminPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Public Administration" subtitle="Preparing servant leaders for careers in government, nonprofit organizations, and public service." label="Academic Departments" />
         <SectionWrapper>
@@ -40,7 +37,6 @@ export default function PublicAdminPage() {
         </SectionWrapper>
         <CTABand title="Lead With Purpose" description="A degree in Public Administration opens doors to meaningful careers in public service." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />
       </main>
-      <Footer />
     </div>
   )
 }

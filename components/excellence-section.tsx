@@ -1,30 +1,21 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import type { SiteSettings } from "@/lib/types"
 
-const stats = [
-  {
-    value: "140+",
-    label: "Years of Excellence",
-    color: "purple" as const,
-  },
-  {
-    value: "15:1",
-    label: "Student-Faculty Ratio",
-    color: "light" as const,
-  },
-  {
-    value: "20+",
-    label: "Degree Programs",
-    color: "purple" as const,
-  },
-  {
-    value: "100%",
-    label: "Commitment to Students",
-    color: "light" as const,
-  },
+const defaultStats = [
+  { value: "140+", label: "Years of Excellence", color: "purple" as const },
+  { value: "15:1", label: "Student-Faculty Ratio", color: "light" as const },
+  { value: "20+", label: "Degree Programs", color: "purple" as const },
+  { value: "100%", label: "Commitment to Students", color: "light" as const },
 ]
 
-export function ExcellenceSection() {
+export function ExcellenceSection({ siteSettings }: { siteSettings?: SiteSettings | null }) {
+  const stats = [
+    { value: siteSettings?.stat1Value ?? defaultStats[0].value, label: siteSettings?.stat1Label ?? defaultStats[0].label, color: "purple" as const },
+    { value: siteSettings?.stat2Value ?? defaultStats[1].value, label: siteSettings?.stat2Label ?? defaultStats[1].label, color: "light" as const },
+    { value: siteSettings?.stat3Value ?? defaultStats[2].value, label: siteSettings?.stat3Label ?? defaultStats[2].label, color: "purple" as const },
+    { value: siteSettings?.stat4Value ?? defaultStats[3].value, label: siteSettings?.stat4Label ?? defaultStats[3].label, color: "light" as const },
+  ]
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

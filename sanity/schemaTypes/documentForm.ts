@@ -5,24 +5,36 @@ export const documentForm = defineType({
   title: 'Document / Form',
   type: 'document',
   fields: [
-    defineField({name: 'title', type: 'string'}),
-    defineField({name: 'description', type: 'text'}),
+    defineField({name: 'title', title: 'Title', type: 'string', validation: (Rule) => Rule.required()}),
+    defineField({name: 'description', title: 'Description', type: 'text', rows: 3}),
     defineField({
       name: 'file',
-      type: 'file'
+      title: 'File',
+      type: 'file',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'category',
+      title: 'Category',
       type: 'string',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           {title: 'Financial Aid', value: 'financial-aid'},
           {title: 'Compliance', value: 'compliance'},
           {title: 'HR', value: 'hr'},
-          {title: 'Facilities', value: 'facilities'}
+          {title: 'Facilities', value: 'facilities'},
+          {title: 'Enrollment', value: 'enrollment'},
+          {title: 'Academics', value: 'academics'},
         ]
       }
     }),
-    defineField({name: 'lastUpdated', type: 'datetime'})
-  ]
+    defineField({name: 'lastUpdated', title: 'Last Updated', type: 'datetime'})
+  ],
+  orderings: [
+    {title: 'Title (A-Z)', name: 'titleAsc', by: [{field: 'title', direction: 'asc'}]},
+  ],
+  preview: {
+    select: {title: 'title', subtitle: 'category'},
+  },
 })

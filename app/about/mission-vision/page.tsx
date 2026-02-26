@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
@@ -50,7 +48,6 @@ const coreValues = [
 export default function MissionVisionPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Mission & Vision"
@@ -208,7 +205,6 @@ export default function MissionVisionPage() {
           secondaryAction={{ label: "Explore Our History", href: "/about/history" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

@@ -237,6 +237,13 @@ export function Header({siteSettings}: Props) {
   const [searchOpen, setSearchOpen] = useState(false)
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null)
 
+  const portalUrl = siteSettings?.myPortal ?? "https://my.arkansasbaptist.edu/ICS/"
+  const emailUrl = siteSettings?.email ?? "https://outlook.office.com/"
+  const blackboardUrl = siteSettings?.blackboard ?? "https://arkansasbc.blackboard.com/ultra/admin"
+  const ticketUrl = siteSettings?.ticketSubmission ?? "https://arbaptistcollege.on.spiceworks.com/portal/registrations"
+  const phone = siteSettings?.mainPhone ?? "501-420-1200"
+  const address = siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR"
+
   return (
     <>
       <a
@@ -254,18 +261,18 @@ export function Header({siteSettings}: Props) {
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1.5">
                   <Phone className="h-3 w-3" aria-hidden="true" />
-                  <a href="tel:5014201200" className="hover:underline">501-420-1200</a>
+                  <a href={`tel:${phone.replace(/\D/g, '')}`} className="hover:underline">{phone}</a>
                 </span>
                 <span className="hidden items-center gap-1.5 sm:flex">
                   <MapPin className="h-3 w-3" aria-hidden="true" />
-                  <span>1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR</span>
+                  <span>{address}</span>
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <a href="https://my.arkansasbaptist.edu/ICS/" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
-                <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Email</a>
-                <a href="https://arkansasbc.blackboard.com/ultra/admin" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Blackboard</a>
-                <a href="https://arbaptistcollege.on.spiceworks.com/portal/registrations" target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Submit a Ticket</a>
+                <a href={portalUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
+                <a href={emailUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Email</a>
+                <a href={blackboardUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Blackboard</a>
+                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Submit a Ticket</a>
                 <span className="hidden h-3 w-px bg-secondary-foreground/20 sm:inline" aria-hidden="true" />
                 <Link href="/give" className="hidden hover:underline sm:inline">Give to ABC</Link>
                 <Link href="/enrollment/campus-tour" className="flex items-center gap-1 hover:underline">
@@ -358,10 +365,10 @@ export function Header({siteSettings}: Props) {
             <div className="mx-auto max-w-7xl space-y-1 px-4 pb-4 pt-2 sm:px-6">
               {/* Mobile utility links */}
               <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-secondary-foreground/10 pb-3 mb-2 text-sm opacity-80">
-                <a href="https://my.arkansasbaptist.edu/ICS/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>myABC Portal</a>
-                <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Email</a>
-                <a href="https://arkansasbc.blackboard.com/ultra/admin" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Blackboard</a>
-                <a href="https://arbaptistcollege.on.spiceworks.com/portal/registrations" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Submit a Ticket</a>
+                <a href={portalUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>myABC Portal</a>
+                <a href={emailUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Email</a>
+                <a href={blackboardUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Blackboard</a>
+                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Submit a Ticket</a>
                 <Link href="/give" onClick={() => setMobileMenuOpen(false)}>Give to ABC</Link>
               </div>
 

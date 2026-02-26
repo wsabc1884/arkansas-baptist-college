@@ -3,8 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import { Users, Home, Shield, BookOpen, Scale, Calendar, Dumbbell, Mail } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -76,7 +75,6 @@ const staffDirectory = [
 export default function CampusLifePage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Campus Life"
@@ -188,7 +186,6 @@ export default function CampusLifePage() {
           secondaryAction={{ label: "Apply Now", href: "/enrollment/apply" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

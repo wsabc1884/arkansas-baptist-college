@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Business Administration | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function BusinessAdminPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Business Administration" subtitle="Preparing future business leaders with a strong foundation in management, accounting, and entrepreneurship." label="Academic Departments" />
         <SectionWrapper>
@@ -44,7 +41,6 @@ export default function BusinessAdminPage() {
         </SectionWrapper>
         <CTABand title="Ready to Start Your Business Career?" description="Apply to Arkansas Baptist College and declare your major in Business Administration." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />
       </main>
-      <Footer />
     </div>
   )
 }

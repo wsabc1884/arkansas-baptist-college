@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Career Services | Arkansas Baptist College",
@@ -12,7 +10,6 @@ export const metadata: Metadata = {
 export default function CareerServicesPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Career Services" subtitle="Student Services" description="Connecting students and alumni with career opportunities and employer partnerships." />
         <SectionWrapper>
@@ -46,7 +43,6 @@ export default function CareerServicesPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

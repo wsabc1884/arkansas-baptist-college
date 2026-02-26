@@ -3,8 +3,6 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { FeatureGrid } from "@/components/feature-grid"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { GraduationCap, Shield, Heart, DollarSign } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -15,7 +13,6 @@ export const metadata: Metadata = {
 export default function ParentInformationPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Parent Information"
@@ -125,7 +122,6 @@ export default function ParentInformationPage() {
           secondaryHref="/enrollment/apply"
         />
       </main>
-      <Footer />
     </div>
   )
 }

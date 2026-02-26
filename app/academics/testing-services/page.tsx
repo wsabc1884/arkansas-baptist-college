@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -14,7 +12,6 @@ export const metadata: Metadata = {
 export default function TestingServicesPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Testing Services" subtitle="Student Services" description="Standardized assessment administration for admissions, academics, and degree candidacy." />
 
@@ -86,7 +83,6 @@ export default function TestingServicesPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

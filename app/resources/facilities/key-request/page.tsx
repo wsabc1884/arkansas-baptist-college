@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,7 +14,6 @@ export default function KeyRequestPage() {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <SectionWrapper>
           <div className="mx-auto max-w-2xl">
@@ -136,7 +134,6 @@ export default function KeyRequestPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

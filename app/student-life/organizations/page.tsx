@@ -3,8 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 
 export const metadata: Metadata = {
   title: "Student Organizations | Arkansas Baptist College",
@@ -23,7 +22,6 @@ const greekOrgs = [
 export default function StudentOrganizationsPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Student Organizations"
@@ -145,7 +143,6 @@ export default function StudentOrganizationsPage() {
           secondaryAction={{ label: "Apply to ABC", href: "/enrollment/apply" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

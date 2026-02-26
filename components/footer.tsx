@@ -44,7 +44,7 @@ const complianceLinks = [
   { name: "Privacy Policy", href: "/compliance/privacy-policy" },
 ]
 
-const socialLinks = [
+const defaultSocialLinks = [
   { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/abcbuffaloes/" },
   { name: "X (Twitter)", icon: Twitter, href: "https://x.com/ArkBaptist" },
   { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/arbaptistcollege/" },
@@ -52,6 +52,12 @@ const socialLinks = [
 ]
 
 export function Footer({siteSettings}: Props) {
+  const socialLinks = [
+    { name: "Facebook", icon: Facebook, href: siteSettings?.facebook ?? defaultSocialLinks[0].href },
+    { name: "X (Twitter)", icon: Twitter, href: siteSettings?.twitter ?? defaultSocialLinks[1].href },
+    { name: "Instagram", icon: Instagram, href: siteSettings?.instagram ?? defaultSocialLinks[2].href },
+    { name: "YouTube", icon: Youtube, href: siteSettings?.youtube ?? defaultSocialLinks[3].href },
+  ]
   return (
     <footer className="bg-secondary text-secondary-foreground" role="contentinfo">
       {/* Accreditation & Membership Banner */}

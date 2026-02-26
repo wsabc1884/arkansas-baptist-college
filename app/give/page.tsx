@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -39,7 +37,6 @@ const scholarships = [
 export default function GivePage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
       <PageHero
         title="Ways to Give"
@@ -282,7 +279,6 @@ export default function GivePage() {
         }}
       />
       </main>
-      <Footer />
     </div>
   )
 }

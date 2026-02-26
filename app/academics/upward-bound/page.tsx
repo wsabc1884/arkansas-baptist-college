@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Upward Bound TRIO Program | Arkansas Baptist College",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function UpwardBoundPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Upward Bound TRIO Program" subtitle="College Prep Central - preparing high school students for success beyond graduation." label="Student Services" />
         <SectionWrapper>
@@ -41,7 +38,6 @@ export default function UpwardBoundPage() {
         </SectionWrapper>
         <CTABand title="Get Started" description="Contact us today to learn if the Upward Bound TRIO Program is right for you." primaryLabel="Contact Upward Bound" primaryHref="tel:5014201276" secondaryLabel="Apply to ABC" secondaryHref="/enrollment/apply" />
       </main>
-      <Footer />
     </div>
   )
 }

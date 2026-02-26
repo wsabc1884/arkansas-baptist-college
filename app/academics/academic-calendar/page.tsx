@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Academic Calendar (Main Campus) | Arkansas Baptist College",
@@ -12,7 +10,6 @@ export const metadata: Metadata = {
 export default function AcademicCalendarPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero title="Academic Calendar" subtitle="Main Campus - Important dates and deadlines for the current academic year." label="Academic Resources" />
         <SectionWrapper>
@@ -46,7 +43,6 @@ export default function AcademicCalendarPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

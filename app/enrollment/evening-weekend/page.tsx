@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -52,7 +50,6 @@ const degreeOptions = [
 export default function EveningWeekendPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Evening & Weekend College Adult Degree"
@@ -344,7 +341,6 @@ export default function EveningWeekendPage() {
           }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

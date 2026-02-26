@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -145,7 +143,6 @@ const disclosureSections: DisclosureSection[] = [
 export default function ConsumerInformationPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Consumer Information"
@@ -216,7 +213,6 @@ export default function ConsumerInformationPage() {
           </div>
         </SectionWrapper>
       </main>
-      <Footer />
     </div>
   )
 }

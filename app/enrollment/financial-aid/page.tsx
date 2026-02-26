@@ -3,8 +3,6 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { FeatureGrid } from "@/components/feature-grid"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { DollarSign, FileText, GraduationCap, HelpCircle, Phone, Mail, MapPin } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -15,7 +13,6 @@ export const metadata: Metadata = {
 export default function FinancialAidPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Office of Student Financial Aid"
@@ -106,7 +103,6 @@ export default function FinancialAidPage() {
           secondaryHref="/enrollment/scholarships"
         />
       </main>
-      <Footer />
     </div>
   )
 }

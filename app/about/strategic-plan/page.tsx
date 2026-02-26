@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -16,7 +14,6 @@ export const metadata: Metadata = {
 export default function StrategicPlanPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
       <PageHero
         title="Strategic Plan"
@@ -107,7 +104,6 @@ export default function StrategicPlanPage() {
         secondaryAction={{ label: "Contact Us", href: "/about/administration" }}
       />
       </main>
-      <Footer />
     </div>
   )
 }

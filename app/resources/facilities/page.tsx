@@ -3,8 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import { FileText, Key, Wrench } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -16,7 +15,6 @@ export const metadata: Metadata = {
 export default function FacilitiesPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <PageHero
           title="Facilities"
@@ -96,7 +94,6 @@ export default function FacilitiesPage() {
           secondaryAction={{ label: "Campus Safety", href: "/resources/campus-safety" }}
         />
       </main>
-      <Footer />
     </div>
   )
 }

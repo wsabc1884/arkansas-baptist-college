@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ExternalLink } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
@@ -17,7 +15,6 @@ export const metadata: Metadata = {
 export default function ApplyForFinancialAidPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
       <PageHero
         title="Apply for Financial Aid"
@@ -353,7 +350,6 @@ export default function ApplyForFinancialAidPage() {
       />
 
       </main>
-      <Footer />
     </div>
   )
 }

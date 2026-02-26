@@ -1,19 +1,46 @@
 import type { Metadata } from "next"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { sanityFetch } from "@/sanity/lib/live"
+import { UPCOMING_EVENTS_QUERY } from "@/lib/queries"
+import type { Event } from "@/lib/types"
+import { CalendarDays, MapPin, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Event Calendar - Arkansas Baptist College",
   description: "Upcoming events, important dates, and registration deadlines at Arkansas Baptist College.",
 }
 
-export default function EventCalendarPage() {
+function formatEventDate(dateString?: string) {
+  if (!dateString) return ""
+  return new Date(dateString).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  })
+}
+
+function formatEventTime(dateString?: string) {
+  if (!dateString) return ""
+  return new Date(dateString).toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  })
+}
+
+export default async function EventCalendarPage() {
+  let events: Event[] = []
+  try {
+    const result = await sanityFetch({ query: UPCOMING_EVENTS_QUERY })
+    events = result.data ?? []
+  } catch {
+    // Sanity unreachable -- show fallback content
+  }
+
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
       <PageHero
         title="Event Calendar"
@@ -26,42 +53,58 @@ export default function EventCalendarPage() {
       />
 
       <SectionWrapper>
-        <div className="mx-auto max-w-3xl prose-abc">
-          <p className="text-lg">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-lg text-muted-foreground">
             Below are key dates and events for students, parents, and prospective Buffaloes. Dates and times are subject to change.
           </p>
 
-          <div className="mt-8 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4 not-prose">
+          {events.length > 0 ? (
+            <div className="mt-8 grid gap-4">
+              {events.map((event) => (
+                <div
+                  key={event._id}
+                  className="flex items-start gap-4 rounded-lg border bg-card p-5 transition-colors hover:border-primary/30 hover:shadow-sm"
+                >
+                  <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <CalendarDays className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-foreground">{event.title}</h3>
+                    <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3.5 w-3.5" />
+                        {formatEventDate(event.date)}
+                        {event.date && ` at ${formatEventTime(event.date)}`}
+                        {event.endDate && ` - ${formatEventTime(event.endDate)}`}
+                      </span>
+                      {event.location && (
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-3.5 w-3.5" />
+                          {event.location}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-8 rounded-lg border bg-card p-8 text-center">
+              <CalendarDays className="mx-auto h-10 w-10 text-muted-foreground" />
+              <p className="mt-3 font-semibold text-foreground">No upcoming events</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Check back soon for new events, or contact the Office of Admissions at{" "}
+                <a href="tel:5014201200" className="text-primary hover:underline">501-420-1200</a>.
+              </p>
+            </div>
+          )}
+
+          <div className="mt-8 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4">
             <p className="text-sm text-amber-800">
               <strong>Note:</strong> For the most current event information, please contact the Office of Admissions at{" "}
-              <a href="tel:5014201200" className="underline">501-420-1200</a> or check the{" "}
-              <a href="https://www.arkansasbaptist.edu/event-calendar/" target="_blank" rel="noopener noreferrer" className="underline">
-                official ABC event calendar
-              </a>.
+              <a href="tel:5014201200" className="underline">501-420-1200</a>.
             </p>
           </div>
-
-          <h2>Important Dates</h2>
-          <p>
-            Arkansas Baptist College operates on a semester system with fall, spring, and summer terms. Key dates typically include:
-          </p>
-          <ul>
-            <li><strong>Residence Hall Check-in</strong> - Occurs at the start of each semester</li>
-            <li><strong>Classes Begin</strong> - First day of instruction for each term</li>
-            <li><strong>Late Registration</strong> - Limited window after classes begin</li>
-            <li><strong>Final Exams</strong> - End of each semester examination period</li>
-            <li><strong>Residence Hall Checkout</strong> - End of semester move-out</li>
-            <li><strong>Buffalo Stampede</strong> - Mini-term registration and classes</li>
-            <li><strong>Summer Bridge</strong> - Pre-fall semester program for incoming students</li>
-          </ul>
-
-          <h2>Admissions Events</h2>
-          <ul>
-            <li>Open House Days</li>
-            <li>Campus Tours (available year-round)</li>
-            <li>Preview Days for prospective students</li>
-            <li>New Student Orientation</li>
-          </ul>
         </div>
       </SectionWrapper>
 
@@ -72,7 +115,6 @@ export default function EventCalendarPage() {
         secondaryAction={{ label: "Apply to ABC", href: "/enrollment/apply" }}
       />
       </main>
-      <Footer />
     </div>
   )
 }
