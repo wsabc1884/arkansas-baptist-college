@@ -237,14 +237,32 @@ export function Header({siteSettings}: Props) {
   const [searchOpen, setSearchOpen] = useState(false)
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null)
 
-  const portalUrl = siteSettings?.myPortal ?? "https://my.arkansasbaptist.edu/ICS/"
-  console.log("siteSettings", siteSettings)
-  console.log("portalUrl", portalUrl)
-  const emailUrl = siteSettings?.email ?? "https://outlook.office.com/"
-  const blackboardUrl = siteSettings?.blackboard ?? "https://arkansasbc.blackboard.com/ultra/admin"
-  const ticketUrl = siteSettings?.ticketSubmission ?? "https://arbaptistcollege.on.spiceworks.com/portal/registrations"
-  const phone = siteSettings?.mainPhone ?? "501-420-1200"
-  const address = siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR"
+  const normalizeExternalUrl = (input: string) => {
+    const v = (input || "").trim()
+    if (!v) return ""
+
+    // allow explicit schemes
+    if (
+      v.startsWith("http://") ||
+      v.startsWith("https://") ||
+      v.startsWith("mailto:") ||
+      v.startsWith("tel:")
+    ) {
+      return v
+    }
+
+    // If someone entered "my.domain.com" or "/my.domain.com", force absolute https
+    return `https://${v.replace(/^\/+/, "")}`
+  }
+
+  // Use `||` so empty strings fall back, then normalize so missing schemes don't become relative routes.
+  const portalUrl = normalizeExternalUrl(siteSettings?.myPortal || "https://my.arkansasbaptist.edu/ICS/")
+  const emailUrl = normalizeExternalUrl(siteSettings?.email || "https://outlook.office.com/")
+  const blackboardUrl = normalizeExternalUrl(siteSettings?.blackboard || "https://arkansasbc.blackboard.com/ultra/admin")
+  const ticketUrl = normalizeExternalUrl(siteSettings?.ticketSubmission || "https://arbaptistcollege.on.spiceworks.com/portal/registrations")
+
+  const phone = (siteSettings?.mainPhone || "501-420-1200").trim()
+  const address = (siteSettings?.collegeAddress || "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR").trim()
 
   return (
     <>
