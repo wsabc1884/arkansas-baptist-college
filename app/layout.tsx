@@ -14,23 +14,11 @@ const _sourceSans = Source_Sans_3({ subsets: ["latin"], variable: "--font-sans" 
 
 export const metadata: Metadata = {
   title: 'Arkansas Baptist College | Faith. Growth. Service.',
-  description: 'Arkansas Baptist College is a private, historically black liberal arts college in Little Rock, Arkansas. Your Education, Your Life, Your School.',
-  generator: 'v0.app',
+  description:
+    'Arkansas Baptist College is a private, historically black liberal arts college in Little Rock, Arkansas.',
+
   icons: {
-    icon: [
-      {
-        url: '/favicon.ico',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/favicon.ico',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/favicon.ico',
     apple: '/apple-icon.png',
   },
 }
