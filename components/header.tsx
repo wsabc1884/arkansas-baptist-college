@@ -241,7 +241,6 @@ export function Header({siteSettings}: Props) {
     const v = (input || "").trim()
     if (!v) return ""
 
-    // allow explicit schemes
     if (
       v.startsWith("http://") ||
       v.startsWith("https://") ||
@@ -251,7 +250,6 @@ export function Header({siteSettings}: Props) {
       return v
     }
 
-    // If someone entered "my.domain.com" or "/my.domain.com", force absolute https
     return `https://${v.replace(/^\/+/, "")}`
   }
 
