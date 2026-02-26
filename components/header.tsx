@@ -238,6 +238,8 @@ export function Header({siteSettings}: Props) {
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null)
 
   const portalUrl = siteSettings?.myPortal ?? "https://my.arkansasbaptist.edu/ICS/"
+  console.log("siteSettings", siteSettings)
+  console.log("portalUrl", portalUrl)
   const emailUrl = siteSettings?.email ?? "https://outlook.office.com/"
   const blackboardUrl = siteSettings?.blackboard ?? "https://arkansasbc.blackboard.com/ultra/admin"
   const ticketUrl = siteSettings?.ticketSubmission ?? "https://arbaptistcollege.on.spiceworks.com/portal/registrations"
