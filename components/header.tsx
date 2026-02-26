@@ -11,6 +11,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
+import type {SiteSettings} from '@/lib/types'
+type Props = { siteSettings: SiteSettings }
+
 const navigation = [
   { name: "Home", href: "/" },
   {
@@ -229,7 +232,7 @@ function NavDropdown({ item }: { item: (typeof navigation)[number] }) {
   )
 }
 
-export function Header() {
+export function Header({siteSettings}: Props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null)

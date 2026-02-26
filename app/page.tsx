@@ -1,4 +1,3 @@
-import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { QuickLinks } from "@/components/quick-links"
 import { ExcellenceSection } from "@/components/excellence-section"
@@ -7,12 +6,10 @@ import { CampusLifeSection } from "@/components/campus-life-section"
 import { GiveSection } from "@/components/give-section"
 import { BuffaloRadioSection } from "@/components/buffalo-radio-section"
 import { NewsSection } from "@/components/news-section"
-import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main id="main-content">
         <HeroSection />
         <QuickLinks />
@@ -23,7 +20,6 @@ export default function HomePage() {
         <BuffaloRadioSection />
         <NewsSection />
       </main>
-      <Footer />
     </div>
   )
 }

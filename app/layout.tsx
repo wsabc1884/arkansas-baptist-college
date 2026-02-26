@@ -4,6 +4,11 @@ import { Playfair_Display, Source_Sans_3 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
+import {sanity} from '@/lib/sanity'
+import {SITE_SETTINGS_QUERY} from '@/lib/queries'
+import {Header} from '@/components/header'
+import {Footer} from '@/components/footer'
+
 const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const _sourceSans = Source_Sans_3({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -30,15 +35,19 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
+  const siteSettings = await sanity.fetch(SITE_SETTINGS_QUERY)
+
   return (
     <html lang="en">
       <body className={`${_sourceSans.variable} ${_playfair.variable} font-sans antialiased`}>
+        <Header siteSettings={siteSettings} />
         {children}
+        <Footer siteSettings={siteSettings} />
         <Analytics />
       </body>
     </html>

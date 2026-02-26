@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react"
+import type {SiteSettings} from '@/lib/types'
+type Props = { siteSettings: SiteSettings }
 
 const footerLinks = {
   about: [
@@ -49,7 +51,7 @@ const socialLinks = [
   { name: "YouTube", icon: Youtube, href: "https://www.youtube.com/@arkansasbaptistcollege6306" },
 ]
 
-export function Footer() {
+export function Footer({siteSettings}: Props) {
   return (
     <footer className="bg-secondary text-secondary-foreground" role="contentinfo">
       {/* Accreditation & Membership Banner */}
@@ -132,15 +134,15 @@ export function Footer() {
             <address className="mt-6 space-y-3 text-sm not-italic">
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <span>1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202</span>
+                <span>{siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202"}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <a href="tel:5014201200" className="hover:underline">501-420-1200</a>
+                <a href="tel:5014201200" className="hover:underline">{siteSettings?.mainPhone ?? "501-420-1200"}</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <a href="mailto:info@arkansasbaptist.edu" className="hover:underline">info@arkansasbaptist.edu</a>
+                <a href="mailto:info@arkansasbaptist.edu" className="hover:underline">{siteSettings?.mainEmail ?? "info@arkansasbaptist.edu"}</a>
               </div>
             </address>
             {/* Social Links */}
