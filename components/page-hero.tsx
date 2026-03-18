@@ -20,7 +20,7 @@ export function PageHero({ title, subtitle, description, breadcrumbs }: PageHero
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/60">
-              <li>
+              <li key="home">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
               </li>
               {breadcrumbs.map((crumb, index) => (
