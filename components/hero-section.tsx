@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react"
 
 const slides = [
   {
-    src: "/images/hero-old-main.jpg",
+    src: "/images/hero-old-main.png",
     alt: "Old Main Building at Arkansas Baptist College, built in 1893",
   },
   {
