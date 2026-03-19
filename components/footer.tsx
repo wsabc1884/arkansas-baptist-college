@@ -108,7 +108,13 @@ export function Footer({siteSettings}: Props) {
               aria-label="National Association of Intercollegiate Athletics"
             >
               <div className="flex h-16 items-center justify-center">
-                <span className="text-2xl font-extrabold tracking-widest text-white">NAIA</span>
+                <Image
+                  src="/images/naia-logo.png"
+                  alt="NAIA - National Association of Intercollegiate Athletics"
+                  width={120}
+                  height={71}
+                  className="h-16 w-auto object-contain"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">NAIA Member</span>
             </a>
