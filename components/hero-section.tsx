@@ -80,9 +80,7 @@ export function HeroSection() {
           Since 1884
         </h1>
         <p className="mt-6 max-w-xl text-lg text-white/90 leading-relaxed sm:text-xl">
-          Arkansas Baptist College is a private, historically black liberal arts
-          college &mdash; the only historically black Baptist school west of the
-          Mississippi River. Our Time Is Now.
+          Arkansas Baptist College is a private, historically Black, liberal arts college founded in 1884&mdash;the only historically Black Baptist institution of higher education west of the Mississippi River. Our Time Is Now.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <Button

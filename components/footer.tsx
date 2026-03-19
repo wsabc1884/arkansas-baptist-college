@@ -71,8 +71,14 @@ export function Footer({siteSettings}: Props) {
               className="flex flex-col items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
               aria-label="ACE Internationalization Lab - Current Participant"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2a5f8f]">
-                <span className="text-xs font-bold text-white text-center leading-tight">ACE</span>
+              <div className="flex h-16 items-center justify-center">
+                <Image
+                  src="/images/ace-logo.png"
+                  alt="ACE Internationalization Lab - Current Participant"
+                  width={64}
+                  height={64}
+                  className="h-16 w-16 object-contain rounded-full"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">ACE Internationalization Lab</span>
             </a>
@@ -83,8 +89,14 @@ export function Footer({siteSettings}: Props) {
               className="flex flex-col items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
               aria-label="Catalog of U.S. Government Publications"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-md bg-[#4a9fd5]">
-                <span className="text-[10px] font-bold text-white text-center leading-tight">U.S. Gov Publications</span>
+              <div className="flex h-16 items-center justify-center">
+                <Image
+                  src="/images/gov-publications-logo.png"
+                  alt="Catalog of U.S. Government Publications"
+                  width={64}
+                  height={64}
+                  className="h-16 w-16 object-contain"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">U.S. Gov Publications</span>
             </a>
@@ -96,7 +108,13 @@ export function Footer({siteSettings}: Props) {
               aria-label="HBCU C2 Member"
             >
               <div className="flex h-16 items-center justify-center">
-                <span className="text-2xl font-extrabold tracking-tight text-white">HBCU C<sup className="text-sm">2</sup></span>
+                <Image
+                  src="/images/hbcu-c2-logo.png"
+                  alt="HBCU C² Member"
+                  width={120}
+                  height={54}
+                  className="h-12 w-auto object-contain"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">HBCU C2 Member</span>
             </a>
@@ -108,7 +126,13 @@ export function Footer({siteSettings}: Props) {
               aria-label="National Association of Intercollegiate Athletics"
             >
               <div className="flex h-16 items-center justify-center">
-                <span className="text-2xl font-extrabold tracking-widest text-white">NAIA</span>
+                <Image
+                  src="/images/naia-logo.png"
+                  alt="NAIA - National Association of Intercollegiate Athletics"
+                  width={120}
+                  height={71}
+                  className="h-16 w-auto object-contain"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">NAIA Member</span>
             </a>
@@ -122,11 +146,11 @@ export function Footer({siteSettings}: Props) {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="https://www.arkansasbaptist.edu/wp-content/uploads/2021/01/ABC-LOGO-150x200-1.png"
-                alt="Arkansas Baptist College Logo"
-                width={45}
+                src="/images/abc-seal.png"
+                alt="Arkansas Baptist College Seal - Truth and Light, Founded 1884"
+                width={60}
                 height={60}
-                className="h-14 w-auto"
+                className="h-14 w-14 object-contain"
               />
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight">Arkansas Baptist</span>
@@ -246,7 +270,7 @@ export function Footer({siteSettings}: Props) {
         <div className="mt-6 border-t border-secondary-foreground/10 pt-6">
           <div className="flex flex-col items-center gap-6">
             <a
-              href="https://www.hlcommission.org/component/directory/?Itemid=&Action=ShowBasic&instid=1076"
+              href="https://www.hlcommission.org/institution/1917/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-2 transition-opacity hover:opacity-80"
