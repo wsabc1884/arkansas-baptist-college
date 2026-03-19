@@ -108,7 +108,13 @@ export function Footer({siteSettings}: Props) {
               aria-label="HBCU C2 Member"
             >
               <div className="flex h-16 items-center justify-center">
-                <span className="text-2xl font-extrabold tracking-tight text-white">HBCU C<sup className="text-sm">2</sup></span>
+                <Image
+                  src="/images/hbcu-c2-logo.png"
+                  alt="HBCU C² Member"
+                  width={120}
+                  height={54}
+                  className="h-12 w-auto object-contain"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">HBCU C2 Member</span>
             </a>
