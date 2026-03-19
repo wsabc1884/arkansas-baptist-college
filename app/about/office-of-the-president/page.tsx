@@ -81,14 +81,17 @@ export default async function OfficeOfThePresidentPage() {
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-2">
               <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-br from-[#3d1a5c] to-[#5a2d82]">
-                <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white/10">
-                    <span className="font-serif text-5xl font-bold text-white/70">{initials}</span>
+                <div className="flex h-full items-center justify-center p-8">
+                  <div className="h-56 w-56 overflow-hidden rounded-full bg-white/10 ring-4 ring-white/20">
+                    <Image
+                      src="/images/president.png"
+                      alt={`${name}, ${title} of Arkansas Baptist College`}
+                      width={300}
+                      height={300}
+                      className="h-full w-full object-cover object-top"
+                      priority
+                    />
                   </div>
-                  <p className="mt-6 font-serif text-2xl font-bold text-white">
-                    {name}
-                  </p>
-                  <p className="mt-2 text-white/70">{title}</p>
                 </div>
               </div>
             </div>
