@@ -317,11 +317,11 @@ export function Header({siteSettings}: Props) {
           <div className="flex h-20 items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="https://www.arkansasbaptist.edu/wp-content/uploads/2021/01/ABC-LOGO-150x200-1.png"
-                alt="Arkansas Baptist College Logo"
-                width={45}
+                src="/images/abc-seal.png"
+                alt="Arkansas Baptist College Seal - Truth and Light, Founded 1884"
+                width={60}
                 height={60}
-                className="h-14 w-auto"
+                className="h-14 w-14 object-contain"
               />
               <div className="hidden flex-col sm:flex">
                 <span className="text-lg font-bold leading-tight">Arkansas Baptist</span>
