@@ -17,13 +17,14 @@ export const metadata = {
 
 // ── Hardcoded fallbacks ────────────────────────────────────────
 const defaults = {
-  presidentName: "Dr. George Hertz",
-  presidentTitle: "Interim President",
-  presidentInitials: "GH",
+  presidentName: 'Mr. William L. "Bill" Walker, Jr.',
+  presidentTitle: "President",
+  presidentInitials: "BW",
   bioParagraphs: [
-    "Dr. George Hertz assumed the role of Interim President of Arkansas Baptist College in April 2025. As interim president, Dr. Hertz is committed to continuing the college\u2019s mission of providing quality education rooted in Christian principles.",
-    "Under his leadership, Arkansas Baptist College continues its tradition of serving as the only Baptist Historically Black College or University west of the Mississippi River, providing accessible education to students from all backgrounds.",
-    "Dr. Hertz is focused on strengthening academic programs, supporting student success, and furthering the college\u2019s vision of positively influencing the community, state, and nation.",
+    'William "Bill" L. Walker, Jr. is a proven leader in both business and public service with decades of experience shaping education, workforce development, and economic growth in Arkansas.',
+    "Mr. Walker served as a State Representative, a State Senator, and the Director of the Arkansas Department of Career Education, managing a $120 million budget and leading statewide programs in career and technical education. Under his leadership, Arkansas became a national leader in GED success rates and launched innovative programs like the Microsoft Academy.",
+    "In addition to his public service, Bill was the former Chair of the Little Rock Airport Commission for five years, helping to guide a key economic engine in the city with a budget of over $100 million. He's also a successful entrepreneur, serving as President of Power Group Enterprises, which manages several restaurants in Little Rock area — and operating Premier Funeral Home, a family business that has served the community for over 25 years.",
+    "In Higher Education Bill has served on the Board of Trustees for over 8 years, in which he held such positions as Finance Chair and Chairman of the Board. Now serving as President of Arkansas Baptist College, Bill continues his lifelong mission to help young people build skills and access opportunities for a brighter future and success.",
   ],
   quote:
     "Arkansas Baptist College remains committed to its founding mission of Truth and Light, preparing students to lead and serve with excellence.",
