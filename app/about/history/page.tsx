@@ -79,7 +79,7 @@ const presidents = [
   { name: "Dr. Fitz Hill*", years: "2016-2018", role: "Interim President" },
   { name: "Dr. Calvin McFadden Sr.", years: "2018-2024", role: "President" },
   { name: "Dr. Leslie Rodriguez-McClellon", years: "2024", role: "17th President" },
-  { name: "Dr. George Hertz", years: "2025-Present", role: "Interim President" },
+  { name: 'Mr. William L. "Bill" Walker, Jr.', years: "2025-Present", role: "President" },
 ]
 
 export default function HistoryPage() {
