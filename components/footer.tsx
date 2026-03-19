@@ -146,11 +146,11 @@ export function Footer({siteSettings}: Props) {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="https://www.arkansasbaptist.edu/wp-content/uploads/2021/01/ABC-LOGO-150x200-1.png"
-                alt="Arkansas Baptist College Logo"
-                width={45}
+                src="/images/abc-seal.png"
+                alt="Arkansas Baptist College Seal - Truth and Light, Founded 1884"
+                width={60}
                 height={60}
-                className="h-14 w-auto"
+                className="h-14 w-14 object-contain"
               />
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight">Arkansas Baptist</span>
@@ -270,7 +270,7 @@ export function Footer({siteSettings}: Props) {
         <div className="mt-6 border-t border-secondary-foreground/10 pt-6">
           <div className="flex flex-col items-center gap-6">
             <a
-              href="https://www.hlcommission.org/component/directory/?Itemid=&Action=ShowBasic&instid=1076"
+              href="https://www.hlcommission.org/institution/1917/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-2 transition-opacity hover:opacity-80"
