@@ -3,6 +3,7 @@ import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { StatsRow } from "@/components/stats-row"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, MapPin, Quote } from "lucide-react"
 import { sanityFetch } from "@/sanity/lib/live"
@@ -78,16 +79,15 @@ export default async function OfficeOfThePresidentPage() {
         <SectionWrapper>
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-2">
-              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-br from-[#3d1a5c] to-[#5a2d82]">
-                <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white/10">
-                    <span className="font-serif text-5xl font-bold text-white/70">{initials}</span>
-                  </div>
-                  <p className="mt-6 font-serif text-2xl font-bold text-white">
-                    {name}
-                  </p>
-                  <p className="mt-2 text-white/70">{title}</p>
-                </div>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg">
+                <Image
+                  src="/images/president.png"
+                  alt={`${name}, ${title} of Arkansas Baptist College`}
+                  width={600}
+                  height={800}
+                  className="h-full w-full object-cover object-top"
+                  priority
+                />
               </div>
             </div>
 
