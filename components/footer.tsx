@@ -71,8 +71,14 @@ export function Footer({siteSettings}: Props) {
               className="flex flex-col items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
               aria-label="ACE Internationalization Lab - Current Participant"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2a5f8f]">
-                <span className="text-xs font-bold text-white text-center leading-tight">ACE</span>
+              <div className="flex h-16 items-center justify-center">
+                <Image
+                  src="/images/ace-logo.png"
+                  alt="ACE Internationalization Lab - Current Participant"
+                  width={64}
+                  height={64}
+                  className="h-16 w-16 object-contain rounded-full"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">ACE Internationalization Lab</span>
             </a>
