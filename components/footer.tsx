@@ -89,8 +89,14 @@ export function Footer({siteSettings}: Props) {
               className="flex flex-col items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
               aria-label="Catalog of U.S. Government Publications"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-md bg-[#4a9fd5]">
-                <span className="text-[10px] font-bold text-white text-center leading-tight">U.S. Gov Publications</span>
+              <div className="flex h-16 items-center justify-center">
+                <Image
+                  src="/images/gov-publications-logo.png"
+                  alt="Catalog of U.S. Government Publications"
+                  width={64}
+                  height={64}
+                  className="h-16 w-16 object-contain"
+                />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">U.S. Gov Publications</span>
             </a>
