@@ -322,6 +322,8 @@ export function Header({siteSettings}: Props) {
                 width={60}
                 height={60}
                 className="h-14 w-14 object-contain"
+                loading="eager"
+                priority
               />
               <div className="hidden flex-col sm:flex">
                 <span className="text-lg font-bold leading-tight">Arkansas Baptist</span>

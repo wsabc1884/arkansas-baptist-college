@@ -79,16 +79,18 @@ export default async function OfficeOfThePresidentPage() {
         {/* President Section */}
         <SectionWrapper>
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
-            <div className="lg:col-span-2">
-              <div className="aspect-[3/4] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/president.png"
-                  alt={`${name}, ${title} of Arkansas Baptist College`}
-                  width={600}
-                  height={800}
-                  className="h-full w-full object-cover object-top"
-                  priority
-                />
+            <div className="lg:col-span-2 flex items-start justify-center">
+              <div className="relative flex h-80 w-80 items-center justify-center rounded-full bg-gradient-to-br from-[#3d1a5c] to-[#5a2d82] p-6 shadow-xl">
+                <div className="h-full w-full overflow-hidden rounded-full">
+                  <Image
+                    src="/images/president.png"
+                    alt={`${name}, ${title} of Arkansas Baptist College`}
+                    width={400}
+                    height={400}
+                    className="h-full w-full object-cover object-center"
+                    priority
+                  />
+                </div>
               </div>
             </div>
 
