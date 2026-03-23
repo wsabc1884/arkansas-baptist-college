@@ -112,6 +112,7 @@ const navigation = [
     ],
   },
   { name: "Athletics", href: "https://abcbuffaloes.com", external: true },
+  { name: "Band and Fine Arts", href: "/academics/fine-arts" },
 ]
 
 const allPages = navigation.flatMap((item) =>
