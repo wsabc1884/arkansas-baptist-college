@@ -41,17 +41,18 @@ export function CampusLifeSection() {
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          {highlights.map((item) => (
+          {highlights.map((item, index) => (
             <div
               key={item.title}
-              className="group overflow-hidden rounded-lg bg-card shadow-lg transition-all hover:shadow-xl"
+              className="group overflow-hidden rounded-lg bg-card shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -65,9 +66,10 @@ export function CampusLifeSection() {
                 <p className="text-muted-foreground">{item.description}</p>
                 <Link
                   href="/student-life/campus-life"
-                  className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-all hover:gap-2"
                 >
-                  Learn More →
+                  Learn More
+                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
               </div>
             </div>
