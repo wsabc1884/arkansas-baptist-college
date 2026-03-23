@@ -164,7 +164,7 @@ export function Footer({siteSettings}: Props) {
             <address className="mt-6 space-y-3 text-sm not-italic">
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <span>{siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202"}</span>
+                <span>{siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Old Main Building, Room B107, Little Rock, Arkansas 72202"}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
