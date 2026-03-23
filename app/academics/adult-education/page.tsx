@@ -23,8 +23,8 @@ export default function AdultEducationPage() {
             <h2>Interest Application</h2>
             <p>Submit your interest application to get started with the ABC Adult Education Program.</p>
             <div className="not-prose mt-4 flex flex-wrap gap-3">
-              <a href="https://studentportal.literacypro.com/AR" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-[#3d1a5c] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#3d1a5c]/90">Arkansas State Portal</a>
-              <a href="https://studentportal.literacypro.com/ar/providers/420/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-[#3d1a5c] bg-white px-5 py-2.5 text-sm font-semibold text-[#3d1a5c] transition-colors hover:bg-[#3d1a5c] hover:text-white">Program Portal</a>
+              <a href="https://studentportal.literacypro.com/AR" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-[#3d1a5c] px-5 py-2.5 text-sm font-semibold !text-white transition-colors hover:bg-[#3d1a5c]/90">Arkansas State Portal</a>
+              <a href="https://studentportal.literacypro.com/ar/providers/420/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-[#3d1a5c] bg-white px-5 py-2.5 text-sm font-semibold !text-[#3d1a5c] transition-colors hover:bg-[#3d1a5c] hover:!text-white">Program Portal</a>
             </div>
 
             <h2>Our Adult Education Services</h2>
