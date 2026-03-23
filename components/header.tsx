@@ -260,7 +260,7 @@ export function Header({siteSettings}: Props) {
   const ticketUrl = normalizeExternalUrl(siteSettings?.ticketSubmission || "https://arbaptistcollege.on.spiceworks.com/portal/registrations")
 
   const phone = (siteSettings?.mainPhone || "501-420-1200").trim()
-  const address = (siteSettings?.collegeAddress || "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR").trim()
+  const address = (siteSettings?.collegeAddress || "1600 Dr. Martin Luther King Jr. Drive, Old Main Building, Room B107, Little Rock, Arkansas 72202").trim()
 
   return (
     <>
