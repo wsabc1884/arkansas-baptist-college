@@ -92,7 +92,7 @@ export default function TechnologyServicesPage() {
       <CTABand
         heading="Having Technical Issues?"
         description="The IT Help Desk is ready to assist you with any technology-related questions."
-        primaryAction={{ label: "Submit a Ticket", href: "/about/technology-services" }}
+        primaryAction={{ label: "myABC IT Support Portal", href: "https://arbaptistcollege.on.spiceworks.com/portal/" }}
         secondaryAction={{ label: "Contact IT", href: "/resources/directory" }}
       />
     </main>

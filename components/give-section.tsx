@@ -24,7 +24,7 @@ export function GiveSection({ siteSettings }: { siteSettings?: SiteSettings | nu
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center justify-center rounded-full bg-primary/20 p-3">
+          <div className="inline-flex items-center justify-center rounded-full bg-primary/20 p-3 animate-pulse-subtle">
             <Heart className="h-8 w-8 text-primary" />
           </div>
           <h2 className="mt-6 font-serif text-3xl font-bold text-secondary-foreground sm:text-4xl">

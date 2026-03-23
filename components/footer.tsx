@@ -63,7 +63,7 @@ export function Footer({siteSettings}: Props) {
       {/* Accreditation & Membership Banner */}
       <div className="bg-[#3d1a5c]/80 border-b border-secondary-foreground/10">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 items-center gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-3 items-center gap-8">
             <a
               href="https://www.acenet.edu/Programs-Services/Pages/Professional-Learning/ACE-Internationalization-Laboratory.aspx"
               target="_blank"
@@ -99,24 +99,6 @@ export function Footer({siteSettings}: Props) {
                 />
               </div>
               <span className="text-xs text-center text-secondary-foreground/80">U.S. Gov Publications</span>
-            </a>
-            <a
-              href="https://hbcuc2.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
-              aria-label="HBCU C2 Member"
-            >
-              <div className="flex h-16 items-center justify-center">
-                <Image
-                  src="/images/hbcu-c2-logo.png"
-                  alt="HBCU C² Member"
-                  width={120}
-                  height={54}
-                  className="h-12 w-auto object-contain"
-                />
-              </div>
-              <span className="text-xs text-center text-secondary-foreground/80">HBCU C2 Member</span>
             </a>
             <a
               href="https://www.naia.org/"
@@ -164,7 +146,7 @@ export function Footer({siteSettings}: Props) {
             <address className="mt-6 space-y-3 text-sm not-italic">
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                <span>{siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202"}</span>
+                <span>{siteSettings?.collegeAddress ?? "1600 Dr. Martin Luther King Jr. Drive, Old Main Building, Room B107, Little Rock, Arkansas 72202"}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
