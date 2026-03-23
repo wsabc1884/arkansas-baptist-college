@@ -172,3 +172,17 @@
   text-decoration: inherit;
   font-style: inherit;
 }
+
+/* Hero slideshow subtle zoom animation */
+@keyframes subtle-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 6s ease-out forwards;
+}
