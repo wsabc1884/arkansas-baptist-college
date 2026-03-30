@@ -118,6 +118,16 @@ const disclosureSections: DisclosureSection[] = [
     ],
   },
   {
+    title: "Institutional Policies",
+    links: [
+      { label: "Assignment of Credit Hours Policy", href: "/documents/assignment-of-credit-hours-policy.pdf", external: true },
+      { label: "Student Complaint Process", href: "/documents/student-complaint-process.pdf", external: true },
+      { label: "Data Retention Policy", href: "/documents/data-retention-policy.pdf", external: true },
+      { label: "Student Identification Policy", href: "/documents/student-identification-policy.pdf", external: true },
+      { label: "Academic Expression Policy", href: "/documents/academic-expression-policy.pdf", external: true },
+    ],
+  },
+  {
     title: "Policy and Agreements",
     links: [
       { label: "Baptist Health MOU", href: "/about/partnerships" },
