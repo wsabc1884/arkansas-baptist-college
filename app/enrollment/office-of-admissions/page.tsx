@@ -315,7 +315,7 @@ export default function OfficeOfAdmissionsPage() {
             </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
-                { dept: "Business, Entrepreneurship & Technology", name: "Roberta Clark, MBA" },
+                { dept: "Business, Entrepreneurship & Technology", name: "Dr. Tracey Moore (Interim)" },
                 { dept: "Interdisciplinary Studies", name: "Philis Taylor" },
                 { dept: "Religious Studies", name: "Rev. Clifton Conley, DMIN." },
                 { dept: "Social & Behavioral Sciences", name: "Tracey D. Moore, PhD (Interim)" },
