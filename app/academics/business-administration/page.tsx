@@ -19,7 +19,7 @@ export default function BusinessAdminPage() {
             <p>The Department of Business, Entrepreneurship and Technology provides educational programs to students who desire to function effectively, efficiently, and ethically in the local and global business world. The Department strives to provide each student with a quality education to become a successful business professional who will uphold moral standards and make significant contributions to their communities and their professional careers. Students will be provided educational skills including but not limited to technological, analytical, comprehension, written and communication skills through effective teaching, research and community service.</p>
 
             <h2>Department Chair</h2>
-            <p><strong>Roberta Clark, MBA</strong><br />Chair, Business, Entrepreneurship and Technology<br />Email: <a href="mailto:roberta.clark@arkansasbaptist.edu">roberta.clark@arkansasbaptist.edu</a></p>
+            <p><strong>Dr. Tracey Moore</strong><br />Interim Chair, Business, Entrepreneurship and Technology<br />Email: <a href="mailto:tracey.moore@arkansasbaptist.edu">tracey.moore@arkansasbaptist.edu</a></p>
 
             <h2>Degree Programs</h2>
             <ul>
@@ -36,7 +36,7 @@ export default function BusinessAdminPage() {
             <h2>Career Opportunities</h2>
             <p>Graduates are prepared for careers in corporate management, accounting, banking, marketing, small business ownership, sports management, and graduate-level study in MBA programs.</p>
             <h2>Contact</h2>
-            <p>Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:roberta.clark@arkansasbaptist.edu">roberta.clark@arkansasbaptist.edu</a></p>
+            <p>Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:tracey.moore@arkansasbaptist.edu">tracey.moore@arkansasbaptist.edu</a></p>
           </div>
         </SectionWrapper>
         <CTABand title="Ready to Start Your Business Career?" description="Apply to Arkansas Baptist College and declare your major in Business Administration." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />
