@@ -22,7 +22,34 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title('Pages')
         .schemaType('page')
-        .child(S.documentTypeList('page').title('Pages')),
+        .child(
+          S.list()
+            .title('Pages')
+            .items([
+              S.listItem()
+                .title('All Pages')
+                .child(S.documentTypeList('page').title('All Pages')),
+              S.divider(),
+              S.listItem()
+                .title('Create New Page')
+                .child(
+                  S.document()
+                    .schemaType('page')
+                    .title('New Page')
+                ),
+            ])
+        ),
+
+      // ── President Page (singleton) ────────────────────────────
+      S.listItem()
+        .title('President Page')
+        .id('presidentPage')
+        .child(
+          S.document()
+            .schemaType('presidentPage')
+            .documentId('presidentPage')
+            .title('President Page')
+        ),
 
       S.listItem()
         .title('News Articles')
