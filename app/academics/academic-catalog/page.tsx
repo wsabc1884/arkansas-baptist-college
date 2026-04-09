@@ -8,7 +8,7 @@ import { ExternalLink } from "lucide-react"
 export const metadata: Metadata = {
   title: "Academic Catalog | Arkansas Baptist College",
   description:
-    "Access the 2023-2025 Arkansas Baptist College Undergraduate Catalog for program requirements, course descriptions, and academic policies.",
+    "Access the 2026-2028 Arkansas Baptist College Undergraduate Catalog for program requirements, course descriptions, and academic policies.",
 }
 
 const catalogSections = [
@@ -54,7 +54,7 @@ export default function AcademicCatalogPage() {
         <SectionWrapper>
           <div className="mx-auto max-w-4xl">
             <div className="rounded-lg border bg-card p-6 sm:p-8 text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground">2023-2025 Undergraduate Catalog</h2>
+              <h2 className="font-serif text-2xl font-bold text-foreground">2026-2028 Undergraduate Catalog</h2>
               <p className="mt-2 text-muted-foreground">
                 The full academic catalog is hosted on Modern Campus Catalog. Click below to access the complete catalog with search functionality.
               </p>
