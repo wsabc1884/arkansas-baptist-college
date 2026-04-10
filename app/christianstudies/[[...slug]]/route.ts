@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
+import fs from 'fs'
+import path from 'path'
 
-// Static files mapping
 const contentTypes: Record<string, string> = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'application/javascript',
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -16,12 +17,10 @@ const contentTypes: Record<string, string> = {
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
   '.ico': 'image/x-icon',
-}
-
-function getExtension(filePath: string): string {
-  const lastDot = filePath.lastIndexOf('.')
-  if (lastDot === -1) return ''
-  return filePath.substring(lastDot).toLowerCase()
+  '.webp': 'image/webp',
+  '.json': 'application/json',
+  '.txt': 'text/plain',
+  '.md': 'text/markdown',
 }
 
 export async function GET(
@@ -33,43 +32,39 @@ export async function GET(
   // Determine the file path
   let filePath: string
   if (!slug || slug.length === 0) {
-    // /christianstudies -> index.html
     filePath = 'index.html'
   } else {
-    // /christianstudies/about, /christianstudies/css/style.css, etc.
     filePath = slug.join('/')
   }
 
-  // If no extension, assume it's an HTML page
-  const ext = getExtension(filePath)
+  // If no extension, assume HTML page
+  const ext = path.extname(filePath).toLowerCase()
   if (!ext) {
     filePath = filePath + '.html'
   }
 
-  // Fetch the static file from the public folder using the origin
-  const origin = request.nextUrl.origin
-  const staticUrl = `${origin}/christianstudies-static/${filePath}`
+  // Build the full path
+  const fullPath = path.join(process.cwd(), 'public', 'christianstudies', filePath)
 
   try {
-    const response = await fetch(staticUrl)
-    
-    if (!response.ok) {
+    // Check if file exists
+    if (!fs.existsSync(fullPath)) {
       return new NextResponse('Not Found', { status: 404 })
     }
 
-    const fileBuffer = await response.arrayBuffer()
-    const finalExt = getExtension(filePath)
+    const fileBuffer = fs.readFileSync(fullPath)
+    const finalExt = path.extname(filePath).toLowerCase()
     const contentType = contentTypes[finalExt] || 'application/octet-stream'
 
     return new NextResponse(fileBuffer, {
       status: 200,
       headers: {
         'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=3600',
+        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
       },
     })
-  } catch {
-    // File not found or fetch error
-    return new NextResponse('Not Found', { status: 404 })
+  } catch (error) {
+    console.error('[v0] Error serving christianstudies file:', error)
+    return new NextResponse('Internal Server Error', { status: 500 })
   }
 }
