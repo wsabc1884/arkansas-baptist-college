@@ -8,16 +8,19 @@ const nextConfig = {
   },
 
   async rewrites() {
-    return [
-      {
-        source: '/christianstudies',
-        destination: 'https://mckissic-christian-studies.pages.dev',
-      },
-      {
-        source: '/christianstudies/:path*',
-        destination: 'https://mckissic-christian-studies.pages.dev/:path*',
-      },
-    ]
+    return {
+      beforeFiles: [
+        // Christian Studies microsite proxy
+        {
+          source: '/christianstudies',
+          destination: 'https://mckissic-christian-studies.pages.dev',
+        },
+        {
+          source: '/christianstudies/:path*',
+          destination: 'https://mckissic-christian-studies.pages.dev/:path*',
+        },
+      ],
+    }
   },
 }
 
