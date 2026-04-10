@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore 140+ years of faith, formation, and leadership in the James &amp; Rosa McKissic School of Christian Studies legacy timeline — from Arkansas Baptist College's 1884 founding to 2026." />
+<meta name="keywords" content="Arkansas Baptist College history, McKissic School timeline, HBCU legacy, Christian Studies, Little Rock Arkansas" />
+<meta property="og:title" content="Legacy Timeline | McKissic School of Christian Studies | Arkansas Baptist College" />
+<meta property="og:description" content="140+ years of faith, formation, and leadership. Explore the institutional milestones of Arkansas Baptist College and the McKissic School." />
+<meta property="og:type" content="website" />
+<title>Legacy Timeline | McKissic School of Christian Studies | Arkansas Baptist College</title>
+<link rel="icon" type="image/png" href="images/mckissic-seal-new.png" />
+<link rel="shortcut icon" type="image/png" href="images/mckissic-seal-new.png" />
+<link rel="apple-touch-icon" href="images/mckissic-seal-new.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* ── No-Wobble: prevent horizontal scroll on all devices ── */
+  html, body { overflow-x: hidden !important; max-width: 100vw; }
+
+  /* Navigation Styles */
+  .top-contact-bar {
+    background: #4A235A;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 13px;
+  }
+  .top-contact-bar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .contact-info-top {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .contact-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .contact-item-top i { color: #B8860B; }
+  .contact-item-top a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .contact-item-top a:hover { color: #B8860B; }
+
+  .navbar {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border: 2px solid #D4AF37;
+  }
+  .navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .nav-logo__icon {
+    width: 60px;
+    height: auto;
+  }
+  .nav-logo__text {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-logo__text-link {
+    text-decoration: none;
+  }
+  .nav-logo__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A235A;
+    line-height: 1.2;
+  }
+  .nav-logo__sub {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.3;
+  }
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-family: 'Inter', sans-serif;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: #B8860B;
+  }
+  .nav-ctas {
+    display: flex;
+    gap: 12px;
+  }
+  .btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn--outline-navy {
+    border: 2px solid #1B2A4A;
+    color: #1B2A4A;
+    background: transparent;
+  }
+  .btn--outline-navy:hover {
+    background: #1B2A4A;
+    color: #fff;
+  }
+  .btn--gold {
+    background: #B8860B;
+    color: #fff;
+    border: 2px solid #B8860B;
+  }
+  .btn--gold:hover {
+    background: #9a7209;
+    border-color: #9a7209;
+  }
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #4A235A;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 100%);
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    z-index: 999;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .mobile-nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .mobile-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .mobile-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 968px) {
+    .nav-menu, .nav-ctas { display: none; }
+    .mobile-menu-toggle { display: flex; }
+    .mobile-nav { display: flex; }
+  }
+
+  /* Footer Styles */
+  /* Footer - Purple Theme */
+  .footer {
+    background: #2d1238;
+    color: #ffffff;
+    padding: 4rem 0 0;
+    font-family: 'Inter', sans-serif;
+  }
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .footer-section h3 span {
+    color: #B8860B !important;
+  }
+  .footer-section h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #B8860B;
+    opacity: 1;
+    margin-bottom: 16px;
+  }
+  .footer-section p {
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 0.88rem;
+    max-width: 280px;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .footer-section ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-section ul li a {
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 0.875rem;
+    transition: color 0.25s ease;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .footer-section ul li a:hover {
+    color: #D4AF37;
+  }
+  .social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .social-links a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+  .social-links a:hover {
+    background: #B8860B;
+    color: #ffffff;
+    border-color: #B8860B;
+    transform: translateY(-2px);
+  }
+  .footer-bottom {
+    background: #2d1238;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 0;
+  }
+  .footer-bottom p {
+    color: #D4AF37;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #fcfaf5;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .timeline-wrapper {
+    max-width: 780px;
+    margin: 2.5rem auto 4rem;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.1);
+    border-radius: 2px;
+  }
+
+  /* Header */
+  .tl-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 1px solid #d4af37;
+  }
+  .tl-header .school-label {
+    font-family: 'Georgia', serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #B8860B;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+  .tl-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+  .tl-header .subtitle {
+    font-size: 15px;
+    color: #5a5a5a;
+    font-style: italic;
+  }
+
+  /* Filters */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+  }
+  .fb {
+    border: 1px solid #d0d0d0;
+    border-radius: 20px;
+    padding: 7px 18px;
+    font-size: 12px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    background: #ffffff;
+    color: #4a4a4a;
+    transition: all 0.18s;
+    font-weight: 500;
+  }
+  .fb:hover { border-color: #d4af37; color: #d4af37; }
+  .fb.active { 
+    background: linear-gradient(135deg, #f5ead0 0%, #efe3c5 100%);
+    color: #8b7323;
+    border-color: #d4af37;
+    box-shadow: inset 0 2px 4px rgba(212,175,55,0.2);
+    font-weight: 600;
+  }
+  .fb[data-cat="founding"].active  { 
+    background: linear-gradient(135deg, #e8e0f5 0%, #ddd4eb 100%);
+    color: #5a3d8a;
+    border-color: #7a60cc;
+    box-shadow: inset 0 2px 4px rgba(122,96,204,0.2);
+  }
+  .fb[data-cat="cogic"].active     { 
+    background: linear-gradient(135deg, #d5f0e8 0%, #caeadf 100%);
+    color: #167757;
+    border-color: #1d9e75;
+    box-shadow: inset 0 2px 4px rgba(29,158,117,0.2);
+  }
+  .fb[data-cat="alumni"].active    { 
+    background: linear-gradient(135deg, #f5ead0 0%, #efe3c5 100%);
+    color: #8b7323;
+    border-color: #d4af37;
+    box-shadow: inset 0 2px 4px rgba(212,175,55,0.2);
+  }
+
+  .count-bar {
+    font-size: 13px;
+    color: #7a7a7a;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  /* Timeline spine */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #d4af37 6%, #d4af37 94%, transparent);
+  }
+
+  /* Entry */
+  .entry {
+    position: relative;
+    margin-bottom: 0;
+  }
+  .entry.hidden { display: none; }
+
+  .dot {
+    position: absolute;
+    left: -30px;
+    top: 18px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    z-index: 1;
+  }
+  .entry[data-cat="founding"] .dot  { background: #7a60cc; box-shadow: 0 0 8px rgba(122,96,204,0.4); }
+  .entry[data-cat="cogic"] .dot     { background: #1d9e75; box-shadow: 0 0 8px rgba(29,158,117,0.4); }
+  .entry[data-cat="alumni"] .dot    { background: #d4af37; box-shadow: 0 0 8px rgba(212,175,55,0.4); }
+  .entry.new .dot { outline: 2px solid #d4af37; outline-offset: 2px; }
+
+  .entry-inner {
+    padding: 14px 0 16px 6px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .entry:last-child .entry-inner { border-bottom: none; }
+
+  .year-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .year {
+    font-size: 13px;
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .entry[data-cat="founding"] .year  { 
+    background: linear-gradient(135deg, #e8e0f5 0%, #ddd4eb 100%);
+    color: #5a3d8a; 
+    border: 1px solid #c8b8e0;
+  }
+  .entry[data-cat="cogic"] .year     { 
+    background: linear-gradient(135deg, #d5f0e8 0%, #caeadf 100%);
+    color: #127550; 
+    border: 1px solid #a8d8c8;
+  }
+  .entry[data-cat="alumni"] .year    { 
+    background: linear-gradient(135deg, #f5ead0 0%, #efe3c5 100%);
+    color: #8b7323; 
+    border: 1px solid #d8c8a0;
+  }
+
+  .new-badge {
+    font-size: 10px;
+    font-family: sans-serif;
+    background: #fff9e8;
+    color: #b8941f;
+    border: 1px solid #e8d8a0;
+    border-radius: 8px;
+    padding: 2px 8px;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  .cat-pill {
+    font-size: 10px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 3px 10px;
+    letter-spacing: 0.06em;
+    margin-left: auto;
+    font-weight: 500;
+  }
+  .entry[data-cat="founding"] .cat-pill  { background: #f0ebf8; color: #6a4fb0; border: 1px solid #d0c5e8; }
+  .entry[data-cat="cogic"] .cat-pill     { background: #e6f5f0; color: #178963; border: 1px solid #c0e8da; }
+  .entry[data-cat="alumni"] .cat-pill    { background: #fff9e8; color: #b8941f; border: 1px solid #e8d8a0; }
+
+  .person {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .desc {
+    font-size: 14px;
+    color: #3a3a3a;
+    line-height: 1.7;
+    font-family: sans-serif;
+  }
+  .desc em { font-style: italic; color: #5a5a5a; }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 1.5rem;
+    padding: 16px 20px;
+    background: #f8f6f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #4a4a4a;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 0; }
+    .timeline-wrapper { margin: 1.5rem auto 3rem; padding: 2rem 1.5rem; }
+    .tl-header h1 { font-size: 22px; }
+    .person { font-size: 16px; }
+    .desc { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Contact Bar -->
+<div class="top-contact-bar">
+  <div class="container">
+    <div class="contact-info-top">
+      <div class="contact-item-top">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>1600 Dr. Martin Luther King Jr. Drive, Little Rock, AR 72202</span>
+      </div>
+      <div class="contact-item-top">
+        <i class="fas fa-phone"></i>
+        <a href="tel:5014201200">(501) 420-1200</a>
+      </div>
+      <div class="contact-item-top">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:christianstudies@arkansasbaptist.edu">christianstudies@arkansasbaptist.edu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar" style="position:relative;z-index:1000;">
+  <div class="container">
+    <div class="nav-wrapper" style="position:relative;">
+
+      <!-- Logo -->
+      <div class="nav-logo">
+        <a href="index.html" aria-label="McKissic School of Christian Studies — Home">
+          <img src="images/mckissic-seal-new.png" alt="McKissic School of Christian Studies seal" class="nav-logo__icon nav-logo__seal" />
+        </a>
+        <a href="index.html" class="nav-logo__text-link">
+          <div class="nav-logo__text">
+            <span class="nav-logo__name">Arkansas Baptist College</span>
+            <span class="nav-logo__sub">McKissic School of Christian Studies</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="degrees.html" class="nav-link">Degrees</a></li>
+        <li><a href="index.html#certificate-programs" class="nav-link">Certificates</a></li>
+        <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+        <li><a href="stories.html" class="nav-link">Stories</a></li>
+      </ul>
+
+      <!-- CTA Buttons -->
+      <div class="nav-ctas">
+        <a href="mailto:christianstudies@arkansasbaptist.edu" class="btn btn--outline-navy btn--sm">Request Info</a>
+        <a href="https://www.arkansasbaptist.edu/enrollment/apply" target="_blank" rel="noopener" class="btn btn--gold btn--sm">Apply Now</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Mobile Drawer — inside nav-wrapper so top:100% drops below navbar -->
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="degrees.html">Degrees</a>
+        <a href="index.html#certificate-programs">Certificates</a>
+        <a href="faculty.html">Faculty</a>
+        <a href="stories.html">Stories</a>
+        <div class="mobile-ctas">
+          <a href="mailto:christianstudies@arkansasbaptist.edu" class="btn btn--outline-navy">Request Info</a>
+          <a href="https://www.arkansasbaptist.edu/enrollment/apply" target="_blank" rel="noopener" class="btn btn--gold">Apply Now</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+<div class="timeline-wrapper">
+
+  <div class="tl-header">
+    <div class="school-label">Arkansas Baptist College · Est. 1884</div>
+    <h1>A Legacy of Faith, Formation &amp; Leadership</h1>
+    <div class="subtitle">James &amp; Rosa McKissic School of Christian Studies · Historical Record</div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#7a60cc;"></div>Founding &amp; institutional</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1d9e75;"></div>COGIC formation</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#c8960c;"></div>Distinguished alumni</div>
+  </div>
+
+  <div class="filters">
+    <button class="fb active" data-cat="all">All events</button>
+    <button class="fb" data-cat="founding">Founding &amp; institutional</button>
+    <button class="fb" data-cat="cogic">COGIC formation</button>
+    <button class="fb" data-cat="alumni">Distinguished alumni</button>
+  </div>
+  <div class="count-bar" id="count"></div>
+
+  <div class="timeline" id="tl">
+
+
+
+
+
+
+
+
+
+    <div class="entry" data-cat="founding">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1884</span><span class="cat-pill">Founding &amp; institutional</span></div>
+      <div class="person">Arkansas Baptist College — Founded</div>
+      <div class="desc">Founded November 1884 as the Ministers' Institute at Mount Zion Baptist Church, Little Rock. Funded by the Colored Baptists of Arkansas. E.C. Morris serves as Chairman of the Board of Trustees.</div>
+      </div></div>
+
+    <div class="entry" data-cat="founding">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1885</span><span class="cat-pill">Founding &amp; institutional</span></div>
+      <div class="person">Renamed Arkansas Baptist College</div>
+      <div class="desc">April 1885: institution officially renamed Arkansas Baptist College. The only Baptist-affiliated HBCU west of the Mississippi River.</div>
+      </div></div>
+
+    <div class="entry" data-cat="founding">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1887</span><span class="cat-pill">Founding &amp; institutional</span></div>
+      <div class="person">Joseph Albert Booker — First President</div>
+      <div class="desc">One year after graduating from Roger Williams University, Booker is hired as ABC's first president. He serves for 39 years until his death in 1926.</div>
+      </div></div>
+
+    <div class="entry" data-cat="cogic">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1893</span><span class="cat-pill">COGIC formation</span></div>
+      <div class="person">Bishop Mason — Matriculates At ABC</div>
+      <div class="desc">Charles Harrison Mason enrolls at Arkansas Baptist College on November 1, 1893. He transfers to the Minister's Institute program and graduates in 1895.</div>
+      </div></div>
+
+    <div class="entry" data-cat="founding">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1895</span><span class="cat-pill">Founding &amp; institutional</span></div>
+      <div class="person">E.C. Morris — First NBC President</div>
+      <div class="desc">Elected the first president of the National Baptist Convention — the largest denomination of Black Christians in America. Holds the position for 27 years. By 1900 the NBC represented over 60% of African American churchgoers.</div>
+      </div></div>
+
+
+
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1913</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">E. Alice Taylor — Graduates ABC</div>
+      <div class="desc">One of ABC's early female graduates. Relocates to Boston; founds a branch of Poro Beauty College in 1927 serving 150 students annually. Serves as an NAACP officer and board member for 50 years.</div>
+      </div></div>
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1914</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Joseph Robert Booker — Graduates ABC</div>
+      <div class="desc">Son of the first ABC president. Completes law at Northwestern University (1917). Works alongside Thurgood Marshall on NAACP cases; serves as president of the National Bar Association (1949–1950).</div>
+      </div></div>
+
+
+
+    <div class="entry new" data-cat="cogic">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1891</span><span class="cat-pill">COGIC formation</span></div>
+      <div class="person">Bishop Charles Price Jones, Founder, Church of Christ (Holiness) U.S.A. — Graduates ABC</div>
+      <div class="desc">He graduated from Arkansas Baptist College and was called to Bethlehem Baptist Church in Searcy, AR, while there he became editor of the Baptist Vanguard Newsletter.</div>
+      </div></div>
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1949</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Bishop Donnie Lee Lindsey — Graduates ABC</div>
+      <div class="desc">WWII veteran who felt called to ministry during his service. Graduates ABC; elevated to COGIC Bishop (1974). First African American on the North Little Rock City Council. Inducted into the Arkansas Black Hall of Fame (2015).</div>
+      </div></div>
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">c. 1950s</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Rev. James S. Allen — Graduates ABC</div>
+      <div class="desc">Born 1936 in Columbia County, Arkansas. Pastors for 64 years across three states. In Philadelphia: helps break a 50-day teachers' strike (1981); co-founds the Black Clergy of Philadelphia, instrumental in electing the city's first Black mayor (1983); advises President Clinton. Vice President, National Baptist Convention USA, Inc.</div>
+      </div></div>
+
+
+
+
+
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">c. 1970s</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Rev. Jerry D. Black — Graduates ABC</div>
+      <div class="desc">ABC and Ouachita Baptist University graduate. Grows Greater Paradise Baptist Church (Little Rock) from 17 to 3,000 members. Moves to Beulah Missionary Baptist Church, Decatur, Georgia (1991), growing it to megachurch scale on a 40-acre campus. Honored with a U.S. postal stamp; Doctor of Humane Letters, ABC 2022.</div>
+      </div></div>
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">c. 1970s</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Rev. John Modest Miles — Graduates ABC</div>
+      <div class="desc">Earns B.S. from Arkansas Baptist College. Serves 19 years as a Kansas City, Missouri Police Officer before entering full-time ministry (2013). Senior Pastor of Morning Star Baptist Church, Kansas City (since April 5, 1987). Previously served as an instructor at ABC.</div>
+      </div></div>
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">c. 1970s</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Rev. C. Dennis Edwards I — Graduates ABC</div>
+      <div class="desc">President, Consolidated Missionary Baptist State Convention of Arkansas; Pastor, St. John Missionary Baptist Church, Little Rock. Honored among CMBSC 50-year pastoral honorees in 2018. His ministry represents the deep institutional covenant between ABC and the Black Baptist community in Arkansas.</div>
+      </div></div>
+
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">c. 1980s</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Dr. Clifton Conley — Graduates ABC</div>
+      <div class="desc">Earns B.S. from ABC; later M.Div. from Virginia Union University. Returns to chair the Department of Religious Studies at ABC — the program elevated and renamed as the McKissic School of Christian Studies. One of the foundational architects of the school's academic infrastructure.</div>
+      </div></div>
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">1983</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Rev. Louis Edward Williams, Jr. — Graduates ABC</div>
+      <div class="desc">Graduates with a degree in Christian Theology. Elected Pastor of Saint Bethel Missionary Baptist Church, Pine Bluff (1999). Earns a Bachelor of Theology from Saint Thomas Christian University at age 79 in 2021 — embodying ABC's founding conviction of lifelong learning.</div>
+      </div></div>
+
+
+
+
+    <div class="entry" data-cat="alumni">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">2010</span><span class="cat-pill">Distinguished alumni</span></div>
+      <div class="person">Dr. Nathanael A. Palmer — Graduates ABC, Summa Cum Laude</div>
+      <div class="desc">ABC alumnus, class of 2010. Earns M.Div. from Memphis Theological Seminary (2016, Summa Cum Laude) and D.Min. from Beeson Divinity School, Samford University (2021). Now serves as Associate Dean of the McKissic School and co-author of this Legacy Record.</div>
+      </div></div>
+
+
+    <div class="entry" data-cat="founding">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">2022</span><span class="cat-pill">Founding &amp; institutional</span></div>
+      <div class="person">ABC Awards Doctors Of Humane Letters</div>
+      <div class="desc">Arkansas Baptist College awards the Doctor of Humane Letters to Rev. Jerry D. Black and to Rev. William Dwight McKissic, formally bonding the McKissic family name to the institution.</div>
+      </div></div>
+
+    <div class="entry" data-cat="founding">
+      <div class="dot"></div><div class="entry-inner">
+      <div class="year-row"><span class="year">2026</span><span class="cat-pill">Founding &amp; institutional</span></div>
+      <div class="person">Department Renamed — James &amp; Rosa McKissic School Of Christian Studies</div>
+      <div class="desc">The Department of Religious Studies is formally elevated and renamed the James &amp; Rosa McKissic School of Christian Studies at Arkansas Baptist College — the culmination of 140+ years of covenant history, ministry formation, and HBCU legacy. Legacy Record authored by Rev. Henry L. Parker, Jr. and Dr. Nathanael A. Palmer.</div>
+      </div></div>
+
+  </div><!-- end .timeline -->
+
+  <div style="text-align:center;margin-top:3rem;padding-top:1.5rem;border-top:1px solid #e0e0e0;">
+    <div style="font-size:10px;color:#7a7a7a;letter-spacing:0.15em;font-family:sans-serif;">JAMES &amp; ROSA McKISSIC SCHOOL OF CHRISTIAN STUDIES · ARKANSAS BAPTIST COLLEGE · 2026</div>
+  </div>
+
+</div><!-- end .timeline-wrapper -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 style="color:#B8860B;">Arkansas Baptist College<br><span>School of Christian Studies</span></h3>
+        <p>James &amp; Rosa McKissic School of Christian Studies — equipping the next generation of church leaders, educators, and ministry administrators.</p>
+        <p style="margin-top:8px;font-size:1.05rem;font-style:italic;font-weight:600;color:#B8860B;">"Where Purpose Is Your Major"</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Program</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="degrees.html">Degrees</a></li>
+          <li><a href="index.html#certificate-programs">Certificates</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:5014201200">(501) 420-1200</a></li>
+          <li><a href="mailto:christianstudies@arkansasbaptist.edu">Request Information</a></li>
+          <li><a href="https://www.arkansasbaptist.edu/enrollment/apply" target="_blank" rel="noopener">Apply Now</a></li>
+        </ul>
+        <p style="color:#FFFFFF;opacity:1;font-size:0.78rem;margin-top:16px;font-weight:500;">
+          1600 Dr. Martin Luther King Jr. Drive<br>Little Rock, AR 72202
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Arkansas Baptist College — School of Christian Studies. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var entries = document.querySelectorAll('.entry');
+  var buttons = document.querySelectorAll('.fb');
+  var countEl = document.getElementById('count');
+
+  function updateCount() {
+    var v = document.querySelectorAll('.entry:not(.hidden)').length;
+    countEl.textContent = v + ' event' + (v !== 1 ? 's' : '') + ' displayed';
+  }
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = this.getAttribute('data-cat');
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      entries.forEach(function(e) {
+        if (cat === 'all' || e.getAttribute('data-cat') === cat) {
+          e.classList.remove('hidden');
+        } else {
+          e.classList.add('hidden');
+        }
+      });
+      updateCount();
+    });
+  });
+
+  updateCount();
+
+  // Mobile menu toggle
+  var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  
+  if (mobileMenuToggle && mobileNav) {
+    mobileMenuToggle.addEventListener('click', function() {
+      mobileNav.classList.toggle('open');
+      var isOpen = mobileNav.classList.contains('open');
+      this.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close mobile menu when clicking a link
+    var mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
+</body>
+</html>
