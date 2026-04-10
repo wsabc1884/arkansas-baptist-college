@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/christianstudies",
+      "destination": "/christianstudies/index.html"
+    },
+    {
+      "source": "/christianstudies/",
+      "destination": "/christianstudies/index.html"
+    }
+  ]
+}
