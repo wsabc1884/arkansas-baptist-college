@@ -13,12 +13,12 @@
   const page = location.pathname.split('/').pop() || 'index.html';
 
   const links = [
-    { href: 'index.html',                  label: 'Home' },
-    { href: 'about.html',                  label: 'About' },
-    { href: 'degrees.html',                label: 'Degrees' },
-    { href: 'index.html#certificate-programs', label: 'Certificates' },
-    { href: 'faculty.html',                label: 'Faculty' },
-    { href: 'stories.html',                label: 'Stories' },
+    { href: '/christianstudies',                  label: 'Home' },
+    { href: '/christianstudies/about',            label: 'About' },
+    { href: '/christianstudies/degrees',          label: 'Degrees' },
+    { href: '/christianstudies#certificate-programs', label: 'Certificates' },
+    { href: '/christianstudies/faculty',          label: 'Faculty' },
+    { href: '/christianstudies/stories',          label: 'Stories' },
   ];
 
   const navItems = links.map(l =>
@@ -58,12 +58,12 @@
 
         <!-- Logo -->
         <div class="nav-logo">
-          <a href="index.html" aria-label="McKissic School of Christian Studies — Home">
-            <img src="images/mckissic-seal-new.png"
+          <a href="/christianstudies" aria-label="McKissic School of Christian Studies — Home">
+            <img src="/christianstudies-assets/images/mckissic-seal-new.png"
                  alt="McKissic School of Christian Studies seal"
                  class="nav-logo__icon nav-logo__seal" />
           </a>
-          <a href="index.html" class="nav-logo__text-link">
+          <a href="/christianstudies" class="nav-logo__text-link">
             <div class="nav-logo__text">
               <span class="nav-logo__name">Arkansas Baptist College</span>
               <span class="nav-logo__sub">McKissic School of Christian Studies</span>

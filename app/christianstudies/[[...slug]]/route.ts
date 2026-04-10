@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+
+// Use Edge runtime so we can fetch static files from the deployment
+export const runtime = 'edge'
 
 const contentTypes: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
@@ -23,6 +24,12 @@ const contentTypes: Record<string, string> = {
   '.md': 'text/markdown',
 }
 
+function getExtension(filePath: string): string {
+  const lastDot = filePath.lastIndexOf('.')
+  if (lastDot === -1) return ''
+  return filePath.substring(lastDot).toLowerCase()
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug?: string[] }> }
@@ -38,25 +45,33 @@ export async function GET(
   }
 
   // If no extension, assume HTML page
-  const ext = path.extname(filePath).toLowerCase()
+  const ext = getExtension(filePath)
   if (!ext) {
     filePath = filePath + '.html'
   }
 
-  // Build the full path
-  const fullPath = path.join(process.cwd(), 'public', 'christianstudies', filePath)
+  // Build URL to fetch the static file from /christianstudies-assets/
+  // We store the actual static files in a different path to avoid route conflicts
+  const url = new URL(request.url)
+  const staticFileUrl = `${url.origin}/christianstudies-assets/${filePath}`
 
   try {
-    // Check if file exists
-    if (!fs.existsSync(fullPath)) {
+    const response = await fetch(staticFileUrl, {
+      headers: {
+        // Pass through any relevant headers
+        'Accept': request.headers.get('Accept') || '*/*',
+      },
+    })
+
+    if (!response.ok) {
       return new NextResponse('Not Found', { status: 404 })
     }
 
-    const fileBuffer = fs.readFileSync(fullPath)
-    const finalExt = path.extname(filePath).toLowerCase()
-    const contentType = contentTypes[finalExt] || 'application/octet-stream'
+    const body = await response.arrayBuffer()
+    const finalExt = getExtension(filePath)
+    const contentType = contentTypes[finalExt] || response.headers.get('Content-Type') || 'application/octet-stream'
 
-    return new NextResponse(fileBuffer, {
+    return new NextResponse(body, {
       status: 200,
       headers: {
         'Content-Type': contentType,
