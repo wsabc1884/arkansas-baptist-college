@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
 
-import { Mail, Briefcase, Download } from "lucide-react"
+import { Mail, Download } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Human Resources | Arkansas Baptist College",
@@ -12,13 +12,7 @@ export const metadata: Metadata = {
     "Employment opportunities, staff openings, and HR policies at Arkansas Baptist College.",
 }
 
-const openPositions = [
-  "Director of Campus Safety",
-  "Full Time & Adjunct Instructors",
-  "Upward Bound Administrative Assistant (Part-Time)",
-  "Facilities Operations Director",
-  "Retention Specialist",
-]
+
 
 export default function HumanResourcesPage() {
   return (
@@ -48,17 +42,9 @@ export default function HumanResourcesPage() {
         <SectionWrapper className="bg-muted/30">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Staff Openings</h2>
-            <p className="mt-2 text-muted-foreground">
-              Arkansas Baptist College is seeking talented individuals with vision, leadership, and unwavering commitment to the future of our scholars. Click on a position title for more details where available.
+            <p className="mt-4 text-muted-foreground">
+              There are currently no position vacancies at this time.
             </p>
-            <div className="mt-6 space-y-3">
-              {openPositions.map((position) => (
-                <div key={position} className="flex items-center gap-3 rounded-lg border bg-card p-4">
-                  <Briefcase className="h-5 w-5 shrink-0 text-primary" />
-                  <span className="font-medium text-foreground">{position}</span>
-                </div>
-              ))}
-            </div>
             <p className="mt-6 text-sm text-muted-foreground">
               <strong>Arkansas Baptist College is committed to compliance with federal and state laws with regards to equal opportunity employment and affirmative action</strong> without regard to race, color, religion, gender, age, national origin, disability, veteran status or any other protected class applicable to federal and state laws.
             </p>
@@ -104,9 +90,6 @@ export default function HumanResourcesPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
                 { title: "Faculty Handbook (2019-2021)", desc: "Comprehensive guide for faculty members covering policies, procedures, and expectations.", file: "/documents/hr/faculty-handbook-2019-2021.pdf" },
-                { title: "ABC COVID-19 Policy", desc: "Current campus health and safety policies related to COVID-19.", file: "/documents/hr/abc-covid-19-policy.pdf" },
-                { title: "Medical Accommodation Form", desc: "Request medical accommodations through Human Resources.", file: "/documents/hr/medical-accommodation-form.pdf" },
-                { title: "Religious Accommodation Form", desc: "Request religious accommodations through Human Resources.", file: "/documents/hr/religious-accommodation-form.pdf" },
               ].map((doc) => (
                 <a key={doc.title} href={doc.file} download className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
                   <Download className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
