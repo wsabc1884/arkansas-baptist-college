@@ -43,6 +43,47 @@ const nextConfig = {
           destination: 'https://mckissic-christian-studies.pages.dev/videos/:path*',
           has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
         },
+        // Workaround: Proxy root-level HTML page requests from Christian Studies nav links
+        {
+          source: '/index.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/index.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/about.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/about.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/degrees.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/degrees.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/faculty.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/faculty.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/stories.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/stories.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/admissions.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/admissions.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/faith.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/faith.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
+        {
+          source: '/timeline.html',
+          destination: 'https://mckissic-christian-studies.pages.dev/timeline.html',
+          has: [{ type: 'header', key: 'referer', value: '(.*)/christianstudies(.*)' }],
+        },
       ],
     }
   },
