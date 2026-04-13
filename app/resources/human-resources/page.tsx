@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
 
-import { Mail, Download } from "lucide-react"
+import { Mail, Download, Briefcase } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Human Resources | Arkansas Baptist College",

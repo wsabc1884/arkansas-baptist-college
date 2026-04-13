@@ -47,7 +47,7 @@ const navigation = [
       { name: "Interdisciplinary Studies", href: "/academics/interdisciplinary-studies" },
       { name: "Fine Arts", href: "/academics/fine-arts" },
       { name: "Public Administration", href: "/academics/public-administration" },
-      { name: "Religious Studies", href: "/academics/religious-studies" },
+      { name: "Christian Studies", href: "/christianstudies" },
       { name: "Social & Behavioral Sciences", href: "/academics/social-behavioral-sciences" },
       { name: "Academic Affairs", href: "/academics/academic-affairs" },
       { name: "Academic Catalog", href: "/academics/academic-catalog" },
