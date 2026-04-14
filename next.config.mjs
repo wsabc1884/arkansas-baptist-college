@@ -14,6 +14,10 @@ const nextConfig = {
         destination: 'https://mckissic-christian-studies.pages.dev/:path*',
       },
       {
+        source: '/christianstudies/',
+        destination: 'https://mckissic-christian-studies.pages.dev/',
+      },
+      {
         source: '/christianstudies',
         destination: 'https://mckissic-christian-studies.pages.dev',
       },
