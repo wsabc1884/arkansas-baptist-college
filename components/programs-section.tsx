@@ -14,7 +14,7 @@ const programs = [
     name: "Religious Studies",
     icon: Cross,
     description: "Explore theology, ministry, and the philosophical foundations of faith traditions.",
-    href: "/academics/religious-studies",
+    href: "/christianstudies",
     degrees: ["Bachelor's"],
   },
   {
