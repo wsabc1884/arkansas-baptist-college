@@ -11,10 +11,10 @@ const programs = [
     degrees: ["Bachelor's", "Associate's"],
   },
   {
-    name: "Religious Studies",
+    name: "Christian Studies",
     icon: Cross,
     description: "Explore theology, ministry, and the philosophical foundations of faith traditions.",
-    href: "/academics/religious-studies",
+    href: "/christianstudies",
     degrees: ["Bachelor's"],
   },
   {
