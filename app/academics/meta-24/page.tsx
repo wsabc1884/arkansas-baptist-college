@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Lightbulb, Rocket, Users, GraduationCap, Building2, Cpu, FlaskConical, Utensils, TrendingUp, Briefcase } from "lucide-react"
+import { Lightbulb, Rocket, Users, GraduationCap, Building2, Cpu, FlaskConical, Utensils, TrendingUp, Briefcase, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "META24 Program | Arkansas Baptist College",
@@ -203,14 +203,25 @@ export default function Meta24Page() {
             <p className="text-muted-foreground mb-6">
               META24 is a division of Banner Learning Corp, a nonprofit 501(c)(3) organization. Visit the official META24 website for more information about this innovative program.
             </p>
-            <a
-              href="https://www.meta24.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-secondary/90"
-            >
-              Visit meta24.org
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://www.meta24.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-secondary/90"
+              >
+                Visit meta24.org
+              </a>
+              <a
+                href="/documents/META24-Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <FileText className="h-4 w-4" />
+                Download Brochure (PDF)
+              </a>
+            </div>
           </div>
         </SectionWrapper>
 
