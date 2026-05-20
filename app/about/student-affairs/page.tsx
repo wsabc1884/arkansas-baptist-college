@@ -42,10 +42,11 @@ export default function StudentAffairsPage() {
           <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Student Affairs Staff</h2>
           <div className="mt-6 grid gap-4">
             {[
-              { name: "Olivia C. Henderson, M.Ed.", title: "Vice President for Student Affairs", email: "olivia.henderson@arkansasbaptist.edu" },
-              { name: "Cleodis J. Colbert, M.Ed.", title: "Dean of Students & Title IX Coordinator", email: "cleodis.colbert@arkansasbaptist.edu" },
-              { name: "Cody R. Charles, MBA", title: "Dean of Residential Life", email: "cody.charles@arkansasbaptist.edu" },
-              { name: "Lamarius Q. McGraw", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
+              { name: "Dr. Darryl A. Peal", title: "Vice President for Enrollment Management & Student Affairs", email: "darryl.peal@arkansasbaptist.edu" },
+              { name: "Pamela Conard", title: "Director of Admissions", email: "pamela.conard@arkansasbaptist.edu" },
+              { name: "Cody Charles", title: "Director of Residential Life & Housing", email: "cody.charles@arkansasbaptist.edu" },
+              { name: "Lamarius McGraw", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
+              { name: "Dr. Vickie Williams", title: "Title IX Coordinator", email: "vickie.williams@arkansasbaptist.edu" },
             ].map((person) => (
               <div key={person.name} className="rounded-lg border bg-card p-5">
                 <h3 className="font-semibold text-foreground">{person.name}</h3>
