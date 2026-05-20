@@ -60,6 +60,7 @@ const navigation = [
       { name: "Americans with Disabilities Act", href: "/academics/ada" },
       { name: "Career Services", href: "/academics/career-services" },
       { name: "Upward Bound TRIO Program", href: "/academics/upward-bound" },
+      { name: "META24 Program", href: "/academics/meta-24" },
       { name: "Adult Education", href: "/academics/adult-education" },
       { name: "Testing Services", href: "/academics/testing-services" },
       { name: "Veterans Affairs", href: "/academics/veterans-affairs" },
