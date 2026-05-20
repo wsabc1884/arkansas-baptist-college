@@ -2,12 +2,73 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { FileText } from "lucide-react"
+import { FileText, Users, Building2, GraduationCap, Briefcase } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Organization Chart - Arkansas Baptist College",
-  description: "View the organizational structure of Arkansas Baptist College leadership and departments.",
+  description: "View the organizational structure of Arkansas Baptist College leadership and departments. Effective January 1, 2026.",
 }
+
+const executiveLeadership = [
+  { name: "William \"Bill\" Walker, Jr.", title: "Interim President" },
+  { name: "Ms. Patsy Biggs", title: "Executive Assistant to the President" },
+  { name: "Dr. O Fitzgerald Hill", title: "Chief Operating Officer" },
+  { name: "Phillip W.W.D. Rodgers, Sr.", title: "Executive Vice President" },
+  { name: "Lorna Claudio", title: "Chief Financial Officer" },
+  { name: "Dr. Jennifer Nelson", title: "Interim VP for Academic Affairs" },
+  { name: "Dr. Darryl A. Peal", title: "Vice President, EMSA" },
+  { name: "Dr. Jaqueline MaGehee", title: "Title III Coordinator" },
+]
+
+const directReports = [
+  { name: "Deborah Baker", title: "Adult Education" },
+  { name: "Marlow Rockwell", title: "Athletic Director" },
+  { name: "Dr. Latrice Small", title: "Institutional Research" },
+  { name: "Cpt. Christopher Gregory", title: "Campus Safety" },
+  { name: "Dr. Vickie Williams", title: "Title IX" },
+]
+
+const academicAffairs = [
+  { name: "Dr. Tracey Moore", title: "Department Chair" },
+  { name: "Dr. Jaqueline MaGehee", title: "Librarian" },
+  { name: "Michael Isaac", title: "Upward Bound" },
+  { name: "Dr. Vickie Williams", title: "HLC/Accreditation" },
+  { name: "Dr. T. Moore/P. Connard", title: "Registrar's Office" },
+]
+
+const studentServices = [
+  { name: "Pamela Conard", title: "Admissions" },
+  { name: "Cody Charles", title: "Residential Life/Housing" },
+  { name: "Lamarius McGraw", title: "Student Activities" },
+]
+
+const businessAffairs = [
+  { name: "Ms. Pamela Brimley", title: "Human Resources" },
+  { name: "Dr. Felicia Burns", title: "Controller" },
+  { name: "Atrisha Hollis", title: "Student Accounts" },
+  { name: "Tracye Smith", title: "Food Services" },
+]
+
+const departments = [
+  "Student Financial Aid",
+  "Information Technology",
+  "Auxiliary Services",
+  "Facilities",
+  "Band/Choir",
+  "Transportation",
+  "Recruitment",
+  "Career Services",
+  "Disability Services",
+  "Alumni Relations",
+  "Marketing & Communications",
+  "Business Affairs",
+  "Faculty",
+  "Retention",
+  "META 24",
+  "Academic Advising",
+  "Tutoring",
+  "Summer Bridge",
+]
 
 export default function OrganizationChartPage() {
   return (
@@ -15,7 +76,7 @@ export default function OrganizationChartPage() {
       <PageHero
         title="Organization Chart"
         subtitle="About Us"
-        description="The organizational structure of Arkansas Baptist College, from the Board of Trustees through executive leadership to academic and administrative departments."
+        description="The organizational structure of Arkansas Baptist College, from the Board of Trustees through executive leadership to academic and administrative departments. Effective January 1, 2026."
         breadcrumbs={[
           { label: "About Us", href: "/about/history" },
           { label: "Organization Chart", href: "/about/organization-chart" },
@@ -23,20 +84,11 @@ export default function OrganizationChartPage() {
       />
 
       <SectionWrapper>
-        <div className="mx-auto max-w-3xl">
-          <div className="space-y-8">
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-foreground">
-                Institutional Leadership Structure
-              </h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Arkansas Baptist College is governed by a Board of Trustees and led by the Office of the President. The executive leadership team oversees the following divisions:
-              </p>
-            </div>
-
+        <div className="mx-auto max-w-5xl">
+          <div className="space-y-10">
             {/* Download PDF */}
             <a
-              href="https://www.arkansasbaptist.edu/wp-content/uploads/2020/06/ABC_Organizational_Functional_Chart_05032020-1.pdf"
+              href="/documents/ABC-Organizational-Chart-2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 rounded-lg border-2 border-primary/20 bg-primary/5 p-6 transition-colors hover:border-primary/40 hover:bg-primary/10"
@@ -44,28 +96,126 @@ export default function OrganizationChartPage() {
               <FileText className="h-10 w-10 shrink-0 text-primary" />
               <div>
                 <p className="font-semibold text-foreground">Download Organization Chart (PDF)</p>
-                <p className="mt-1 text-sm text-muted-foreground">ABC Organizational & Functional Chart</p>
+                <p className="mt-1 text-sm text-muted-foreground">ABC Full Organizational Chart - Effective January 1, 2026</p>
               </div>
             </a>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { title: "Office of the President", desc: "Executive leadership and strategic direction", href: "/about/office-of-the-president" },
-                { title: "Academic Affairs", desc: "Curriculum, faculty, and academic programs", href: "/about/academic-affairs" },
-                { title: "Business Affairs", desc: "Fiscal management, accounting, and operations", href: "/about/business-affairs" },
-                { title: "Student Affairs", desc: "Student services, campus life, and housing", href: "/about/student-affairs" },
-                { title: "Institutional Advancement", desc: "Fundraising, alumni relations, and communications", href: "/about/institutional-advancement" },
-                { title: "Technology Services", desc: "IT infrastructure, help desk, and digital systems", href: "/about/technology-services" },
-              ].map((div) => (
-                <a
-                  key={div.title}
-                  href={div.href}
-                  className="rounded-lg border p-5 transition-colors hover:border-primary hover:bg-muted/50"
-                >
-                  <h3 className="font-semibold text-foreground">{div.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{div.desc}</p>
-                </a>
-              ))}
+            {/* Board of Trustees */}
+            <div className="text-center">
+              <div className="inline-block rounded-lg border-2 border-primary bg-primary/10 px-8 py-4">
+                <p className="text-sm font-medium text-primary">Governing Body</p>
+                <h2 className="font-serif text-xl font-bold text-foreground">Arkansas Baptist College Board of Trustees</h2>
+              </div>
+            </div>
+
+            {/* Executive Leadership */}
+            <div>
+              <div className="mb-4 flex items-center gap-2">
+                <Users className="h-5 w-5 text-primary" />
+                <h2 className="font-serif text-2xl font-bold text-foreground">Executive Leadership</h2>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {executiveLeadership.map((person) => (
+                  <div
+                    key={person.name}
+                    className="rounded-lg border bg-card p-4 text-center"
+                  >
+                    <p className="font-semibold text-foreground">{person.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{person.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Direct Reports */}
+            <div>
+              <div className="mb-4 flex items-center gap-2">
+                <Building2 className="h-5 w-5 text-primary" />
+                <h2 className="font-serif text-2xl font-bold text-foreground">Direct Reports</h2>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {directReports.map((person) => (
+                  <div
+                    key={person.name}
+                    className="rounded-lg border bg-card p-4 text-center"
+                  >
+                    <p className="font-semibold text-foreground">{person.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{person.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Academic Affairs */}
+            <div>
+              <div className="mb-4 flex items-center gap-2">
+                <GraduationCap className="h-5 w-5 text-primary" />
+                <h2 className="font-serif text-2xl font-bold text-foreground">Academic Affairs</h2>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {academicAffairs.map((person) => (
+                  <div
+                    key={person.name + person.title}
+                    className="rounded-lg border bg-card p-4 text-center"
+                  >
+                    <p className="font-semibold text-foreground">{person.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{person.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Student Services */}
+            <div>
+              <div className="mb-4 flex items-center gap-2">
+                <Users className="h-5 w-5 text-primary" />
+                <h2 className="font-serif text-2xl font-bold text-foreground">Student Services</h2>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {studentServices.map((person) => (
+                  <div
+                    key={person.name}
+                    className="rounded-lg border bg-card p-4 text-center"
+                  >
+                    <p className="font-semibold text-foreground">{person.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{person.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Business Affairs */}
+            <div>
+              <div className="mb-4 flex items-center gap-2">
+                <Briefcase className="h-5 w-5 text-primary" />
+                <h2 className="font-serif text-2xl font-bold text-foreground">Business Affairs</h2>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {businessAffairs.map((person) => (
+                  <div
+                    key={person.name}
+                    className="rounded-lg border bg-card p-4 text-center"
+                  >
+                    <p className="font-semibold text-foreground">{person.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{person.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Departments */}
+            <div>
+              <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">Departments & Services</h2>
+              <div className="flex flex-wrap gap-2">
+                {departments.map((dept) => (
+                  <span
+                    key={dept}
+                    className="rounded-full border bg-muted/50 px-4 py-2 text-sm text-muted-foreground"
+                  >
+                    {dept}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
