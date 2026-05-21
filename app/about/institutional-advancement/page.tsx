@@ -35,7 +35,7 @@ export default function InstitutionalAdvancementPage() {
 
           <h2>Endowment</h2>
           <p>
-            Across a span of over 142 years, our Alumni and Friends have been the bedrock of Arkansas Baptist College, pledging a solid commitment to the future existence and advancement. We appreciate your support and we encourage you to establish an Arkansas Baptist College Endowment Trust Fund. The Trust Fund will be established in the name of the donor and will produce scholarships for students. The scholarship awards will be created from the accrued interest of the Trust Fund. The funds will remain in an interest bearing account to continue to grow for many years to ensure students complete a college degree.
+            Across a span of over 140 years, our Alumni and Friends have been the bedrock of Arkansas Baptist College, pledging a solid commitment to the future existence and advancement. We appreciate your support and we encourage you to establish an Arkansas Baptist College Endowment Trust Fund. The Trust Fund will be established in the name of the donor and will produce scholarships for students. The scholarship awards will be created from the accrued interest of the Trust Fund. The funds will remain in an interest bearing account to continue to grow for many years to ensure students complete a college degree.
           </p>
 
           <h2>Chairs of Excellence</h2>

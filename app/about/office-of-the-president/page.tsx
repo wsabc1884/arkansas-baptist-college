@@ -149,7 +149,7 @@ export default async function OfficeOfThePresidentPage() {
           />
           <StatsRow
             stats={[
-              { value: "142+", label: "Years of Leadership" },
+              { value: "140+", label: "Years of Leadership" },
               { value: "26+", label: "Leaders Served" },
               { value: "1884", label: "Founded" },
               { value: "Only", label: "Baptist HBCU West of Mississippi" },

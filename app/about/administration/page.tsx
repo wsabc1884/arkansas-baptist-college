@@ -173,7 +173,7 @@ export default async function AdministrationPage() {
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 From enrollment to graduation and beyond, our team is here to support
                 you on your journey. We are dedicated to the values of Truth and Light
-                that have guided Arkansas Baptist College for over 142 years.
+                that have guided Arkansas Baptist College for over 140 years.
               </p>
               <div className="mt-8">
                 <Button className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>

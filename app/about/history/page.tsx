@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react"
 
 export const metadata = {
   title: "History of the College | Arkansas Baptist College",
-  description: "Discover the rich 142+ year history of Arkansas Baptist College, the only Baptist HBCU west of the Mississippi River, founded in 1884.",
+  description: "Discover the rich 140+ year history of Arkansas Baptist College, the only Baptist HBCU west of the Mississippi River, founded in 1884.",
 }
 
 const timelineItems = [
@@ -97,7 +97,7 @@ export default function HistoryPage() {
         <PageHero
           title="History of the College"
           subtitle="About Us"
-          description="For over 142 years, Arkansas Baptist College has been a beacon of hope, education, and spiritual growth for generations of students."
+          description="For over 140 years, Arkansas Baptist College has been a beacon of hope, education, and spiritual growth for generations of students."
           breadcrumbs={[
             { label: "About Us", href: "/about/history" },
             { label: "History", href: "/about/history" },
@@ -143,7 +143,7 @@ export default function HistoryPage() {
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute -bottom-6 -left-6 rounded-lg bg-[#3d1a5c] p-4 text-white shadow-lg">
-                <p className="text-3xl font-bold">142+</p>
+                <p className="text-3xl font-bold">140+</p>
                 <p className="text-sm">Years of Excellence</p>
               </div>
             </div>

@@ -268,7 +268,7 @@ export default function GivePage() {
       {/* CTA */}
       <CTABand
         heading="Every Gift Makes a Difference"
-        description="Your generosity helps Arkansas Baptist College continue its 142-year tradition of transforming lives through faith-based education."
+        description="Your generosity helps Arkansas Baptist College continue its 140-year tradition of transforming lives through faith-based education."
         primaryAction={{
           label: "Give Now",
           href: "https://wl.donorperfect.net/weblink/weblink.aspx?name=E146389&id=13",
