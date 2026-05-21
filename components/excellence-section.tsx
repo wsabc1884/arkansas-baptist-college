@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import type { SiteSettings } from "@/lib/types"
 
 const defaultStats = [
-  { value: "140+", label: "Years of Excellence", color: "purple" as const },
+  { value: "142+", label: "Years of Excellence", color: "purple" as const },
   { value: "15:1", label: "Student-Faculty Ratio", color: "light" as const },
   { value: "20+", label: "Degree Programs", color: "purple" as const },
   { value: "1884", label: "Founded in Little Rock", color: "light" as const },
@@ -56,7 +56,7 @@ export function ExcellenceSection({ siteSettings }: { siteSettings?: SiteSetting
               <span className="text-[#3d1a5c]/80">A Movement.</span>
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Founded in 1884, Arkansas Baptist College holds a singular distinction — it is the only historically Black Baptist institution of higher education west of the Mississippi River. For over 140 years, we have been a beacon of opportunity, justice, and transformation.
+              Founded in 1884, Arkansas Baptist College holds a singular distinction — it is the only historically Black Baptist institution of higher education west of the Mississippi River. For over 142 years, we have been a beacon of opportunity, justice, and transformation.
             </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               Our mission is grounded in faith and driven by excellence. We cultivate scholars, community leaders, and moral exemplars who carry the spirit of our founding into every corner of the world.
@@ -88,7 +88,7 @@ export function ExcellenceSection({ siteSettings }: { siteSettings?: SiteSetting
             <div className="relative">
               <div className="text-center">
                 <p className="font-serif text-8xl font-bold text-[#3d1a5c] sm:text-9xl lg:text-[10rem] leading-none">
-                  140
+                  142
                 </p>
                 <p className="mt-2 text-xl font-semibold text-[#3d1a5c]/70 uppercase tracking-widest">
                   Years Strong

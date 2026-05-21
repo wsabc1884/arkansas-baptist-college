@@ -21,7 +21,7 @@ const coreValues = [
   {
     icon: BookOpen,
     title: "Historically Grounded",
-    description: "We honor our heritage as the only Baptist HBCU west of the Mississippi, drawing strength from over 140 years of history.",
+    description: "We honor our heritage as the only Baptist HBCU west of the Mississippi, drawing strength from over 142 years of history.",
   },
   {
     icon: Users,
