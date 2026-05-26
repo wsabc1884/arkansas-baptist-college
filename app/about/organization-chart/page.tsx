@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const executiveLeadership = [
-  { name: "William \"Bill\" Walker, Jr.", title: "Interim President" },
+  { name: "William \"Bill\" Walker, Jr.", title: "President" },
   { name: "Ms. Patsy Biggs", title: "Executive Assistant to the President" },
   { name: "Dr. O Fitzgerald Hill", title: "Chief Operating Officer" },
   { name: "Phillip W.W.D. Rodgers, Sr.", title: "Executive Vice President" },
