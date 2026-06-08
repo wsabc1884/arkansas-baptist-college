@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { CourseSequenceList } from "@/components/course-sequence-list"
+import { getSequencesByDepartment } from "@/lib/course-sequences"
 
 export const metadata: Metadata = {
   title: "Social & Behavioral Sciences | Arkansas Baptist College",
@@ -38,6 +40,13 @@ export default function SocialBehavioralPage() {
             </ul>
             <h2>Contact</h2>
             <p>Phone: <a href="tel:5014201200">501-420-1200</a></p>
+          </div>
+        </SectionWrapper>
+        <SectionWrapper variant="muted">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Degree Course Sequences</h2>
+            <p className="mt-2 text-muted-foreground">Download the recommended semester-by-semester course sequence for each program.</p>
+            <CourseSequenceList sequences={getSequencesByDepartment("social-behavioral-sciences")} className="mt-6" />
           </div>
         </SectionWrapper>
         <CTABand title="Make a Difference" description="Study the science of human behavior and prepare for a career of impact." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />

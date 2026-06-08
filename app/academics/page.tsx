@@ -3,6 +3,8 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { CourseSequenceList } from "@/components/course-sequence-list"
+import { courseSequences } from "@/lib/course-sequences"
 import { 
   BookOpen, 
   Briefcase, 
@@ -217,8 +219,18 @@ export default function AcademicsPage() {
           </div>
         </SectionWrapper>
 
-        {/* Support Services */}
+        {/* Degree Course Sequences */}
         <SectionWrapper>
+          <SectionHeader
+            title="Degree Course Sequences"
+            subtitle="Plan Your Path"
+            description="Download the recommended semester-by-semester course sequence for each approved degree program."
+          />
+          <CourseSequenceList sequences={courseSequences} />
+        </SectionWrapper>
+
+        {/* Support Services */}
+        <SectionWrapper variant="muted">
           <SectionHeader 
             title="Support Services"
             subtitle="Additional Resources"
