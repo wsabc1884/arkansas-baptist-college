@@ -73,13 +73,13 @@ export default function InstitutionalResearchPage() {
                   <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <div>
                     <p className="font-medium text-foreground">General Inquiries</p>
-                    <a href="mailto:ir@arkansasbaptist.edu" className="text-sm text-primary hover:underline">ir@arkansasbaptist.edu</a>
+                    <a href="mailto:latrice.small@arkansasbaptist.edu" className="text-sm text-primary hover:underline">latrice.small@arkansasbaptist.edu</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">Ms. Latrice Small</p>
+                    <p className="font-medium text-foreground">Dr. LaTrice Small</p>
                     <p className="text-sm text-muted-foreground">Director of Institutional Research</p>
                     <a href="mailto:latrice.small@arkansasbaptist.edu" className="text-sm text-primary hover:underline">latrice.small@arkansasbaptist.edu</a>
                     <p className="mt-1 text-sm text-muted-foreground">Phone: <a href="tel:5014201205" className="text-primary hover:underline">501-420-1205</a></p>
