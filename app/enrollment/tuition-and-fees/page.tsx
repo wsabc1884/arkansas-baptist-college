@@ -54,7 +54,6 @@ export default function TuitionAndFeesPage() {
               <ul>
                 <li><strong>Per Credit Hour:</strong> $365 (part-time or overload)</li>
                 <li><strong>Late Registration Fee:</strong> $150</li>
-                <li><strong>Application Fee:</strong> $25 (non-refundable)</li>
                 <li><strong>Graduation Fee:</strong> $150</li>
                 <li><strong>Transcript Fee:</strong> $10 per official transcript</li>
                 <li><strong>Science Lab Fee:</strong> $75</li>
