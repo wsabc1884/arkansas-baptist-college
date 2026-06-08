@@ -91,6 +91,34 @@ export default function InstitutionalResearchPage() {
           </div>
         </SectionWrapper>
 
+        {/* Embedded Form */}
+        <SectionWrapper>
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Data Request Form</h2>
+            <p className="mt-2 text-muted-foreground">
+              Complete the form below to submit a request to the Office of Institutional Research. If the form does not load,
+              you can{" "}
+              <a
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=2ObreCFcykCoWj7mdYUolssQsZYdaw1EuIlkL1e-auZUNDRNUlQzU05MQzhRRjA5MUZSM1BJMVgxWi4u"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                open it in a new tab
+              </a>
+              .
+            </p>
+            <div className="mt-6 overflow-hidden rounded-lg border bg-card">
+              <iframe
+                title="Institutional Research Data Request Form"
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=2ObreCFcykCoWj7mdYUolssQsZYdaw1EuIlkL1e-auZUNDRNUlQzU05MQzhRRjA5MUZSM1BJMVgxWi4u&embed=true"
+                className="h-[700px] w-full border-0"
+                allow="fullscreen; geolocation; microphone; camera"
+              />
+            </div>
+          </div>
+        </SectionWrapper>
+
         {/* Quick Links */}
         <SectionWrapper className="bg-muted/30">
           <div className="mx-auto max-w-4xl">
