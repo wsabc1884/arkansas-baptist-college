@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Download, Mail, Phone } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -32,6 +33,56 @@ export default function InterdisciplinaryStudiesPage() {
           </div>
         </SectionWrapper>
         <SectionWrapper variant="muted">
+          <div className="mx-auto max-w-5xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">A Personal Welcome</p>
+            <h2 className="mt-2 font-serif text-2xl font-bold text-foreground sm:text-3xl">Message from the Department Chair</h2>
+            <div className="mt-8 grid gap-8 lg:grid-cols-3 lg:gap-12">
+              <div className="lg:col-span-2">
+                <blockquote className="border-l-2 border-primary pl-6">
+                  <p className="text-lg leading-relaxed text-foreground">
+                    &ldquo;We are thrilled that you are considering joining our vibrant community of learners. Whether you aspire to teach, serve in law enforcement, provide healthcare, or lead in community service, our associate and bachelor&apos;s degree programs offer rigorous coursework, hands-on learning, and mentorship from experienced faculty.&rdquo;
+                  </p>
+                </blockquote>
+                <p className="mt-6 leading-relaxed text-muted-foreground">
+                  Beyond the classroom, we encourage students to engage in enriching experiences such as research projects, internships, and student organizations &mdash; from our Pre-Nursing Club to our FBI Academy. We invite you to visit our campus, meet our faculty and students, and experience firsthand what makes our programs unique.
+                </p>
+                <div className="mt-8 border-t border-border pt-6">
+                  <p className="font-serif text-lg font-bold text-foreground">Jennifer Nelson, Ed.D</p>
+                  <p className="text-sm text-muted-foreground">Chair, Department of Interdisciplinary Studies</p>
+                  <div className="mt-4 flex flex-col gap-2 text-sm sm:flex-row sm:gap-6">
+                    <a href="mailto:Jennifer.Nelson@arkansasbaptist.edu" className="inline-flex items-center gap-2 font-medium text-primary hover:underline">
+                      <Mail className="h-4 w-4 shrink-0" />
+                      Jennifer.Nelson@arkansasbaptist.edu
+                    </a>
+                    <a href="tel:5014201312" className="inline-flex items-center gap-2 font-medium text-primary hover:underline">
+                      <Phone className="h-4 w-4 shrink-0" />
+                      501-420-1312
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <aside className="lg:col-span-1">
+                <div className="rounded-xl border border-border bg-card p-6">
+                  <h3 className="font-serif text-lg font-bold text-foreground">Read the Full Letter</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Download Dr. Nelson&apos;s complete welcome letter to learn more about our programs and opportunities.
+                  </p>
+                  <a
+                    href="/documents/welcome-letters/interdisciplinary-studies-welcome-letter.pdf"
+                    download
+                    className="group mt-4 inline-flex items-center gap-3 rounded-lg border bg-background p-4 transition-colors hover:border-primary"
+                  >
+                    <Download className="h-4 w-4 shrink-0 text-primary" />
+                    <span className="text-sm font-medium text-foreground group-hover:text-primary">
+                      Download Full Welcome Letter (PDF)
+                    </span>
+                  </a>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </SectionWrapper>
+        <SectionWrapper>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Degree Course Sequences</h2>
             <p className="mt-2 text-muted-foreground">Download the recommended semester-by-semester course sequence for each program.</p>
