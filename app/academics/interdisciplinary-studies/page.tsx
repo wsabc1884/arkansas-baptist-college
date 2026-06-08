@@ -25,8 +25,8 @@ export default function InterdisciplinaryStudiesPage() {
             <ul>
               <li><strong>Associate of Arts (AA) in General Studies</strong></li>
               <li><strong>Bachelor of Arts (BA) in General Studies</strong></li>
-              <li><strong>Associate of Science (AS) in General Studies / Pre-Nursing</strong></li>
             </ul>
+            <p className="text-sm">The Bachelor of Arts in General Studies lets you customize your education with up to three concentration areas, including Business, Health, Human Services, Education, Criminal Justice, Esports, Entrepreneurship, Religious Studies, and Public Administration.</p>
             <h2>Contact</h2>
             <p>Phone: <a href="tel:5014201312">501-420-1312</a><br />Email: <a href="mailto:Jennifer.Nelson@arkansasbaptist.edu">Jennifer.Nelson@arkansasbaptist.edu</a></p>
           </div>

@@ -45,7 +45,13 @@ const navigation = [
     children: [
       { name: "Business Administration", href: "/academics/business-administration" },
       { name: "Interdisciplinary Studies", href: "/academics/interdisciplinary-studies" },
+      { name: "Education", href: "/academics/education" },
+      { name: "Pre-Nursing", href: "/academics/pre-nursing" },
+      { name: "Health Studies", href: "/academics/health-studies" },
+      { name: "Health, PE & Recreation", href: "/academics/hper" },
       { name: "Fine Arts", href: "/academics/fine-arts" },
+      { name: "Criminal Justice", href: "/academics/criminal-justice" },
+      { name: "Human Services", href: "/academics/human-services" },
       { name: "Public Administration", href: "/academics/public-administration" },
       { name: "Christian Studies", href: "/christianstudies" },
       { name: "Social & Behavioral Sciences", href: "/academics/social-behavioral-sciences" },

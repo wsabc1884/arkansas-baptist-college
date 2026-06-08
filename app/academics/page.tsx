@@ -18,6 +18,10 @@ import {
   Users,
   Library,
   HeadphonesIcon,
+  HeartPulse,
+  Stethoscope,
+  Activity,
+  HandHeart,
   ArrowRight
 } from "lucide-react"
 
@@ -44,9 +48,37 @@ const degreePrograms = [
   {
     name: "Interdisciplinary Studies",
     icon: BookOpen,
-    description: "Shape the next generation with evidence-based teaching practices and community-centered pedagogy.",
+    description: "Design a flexible, well-rounded degree in General Studies tailored to your goals and interests.",
     href: "/academics/interdisciplinary-studies",
-    degrees: ["Bachelor's", "Certification"],
+    degrees: ["Bachelor's", "Associate's"],
+  },
+  {
+    name: "Education",
+    icon: GraduationCap,
+    description: "Shape young minds through child development, instructional strategies, and a hands-on teacher residency.",
+    href: "/academics/education",
+    degrees: ["Bachelor's", "Associate's"],
+  },
+  {
+    name: "Pre-Nursing",
+    icon: Stethoscope,
+    description: "Build a strong foundation in the sciences and health care concepts to advance into a nursing program.",
+    href: "/academics/pre-nursing",
+    degrees: ["Associate's"],
+  },
+  {
+    name: "Health Studies",
+    icon: HeartPulse,
+    description: "Explore health promotion, disease prevention, and health care systems — in person or 100% online.",
+    href: "/academics/health-studies",
+    degrees: ["Associate's"],
+  },
+  {
+    name: "Health, PE & Recreation",
+    icon: Activity,
+    description: "Inspire healthy lifestyles through fitness, sports management, and recreational programming.",
+    href: "/academics/hper",
+    degrees: ["Bachelor's"],
   },
   {
     name: "Fine Arts",
@@ -58,9 +90,16 @@ const degreePrograms = [
   {
     name: "Criminal Justice",
     icon: Scale,
-    description: "Understand the systems of law, justice, and corrections that shape communities and public safety.",
+    description: "Understand the systems of law, justice, and corrections, with an optional Probation & Parole emphasis.",
     href: "/academics/criminal-justice",
-    degrees: ["Bachelor's", "Associate's"],
+    degrees: ["Bachelor's"],
+  },
+  {
+    name: "Human Services",
+    icon: HandHeart,
+    description: "Support individuals and families in need, with an optional emphasis in Christian Education & Leadership.",
+    href: "/academics/human-services",
+    degrees: ["Bachelor's"],
   },
   {
     name: "Social & Behavioral Sciences",
