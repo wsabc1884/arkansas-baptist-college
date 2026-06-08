@@ -42,14 +42,28 @@ export default function AcademicAdvisingPage() {
               <li>If you are struggling academically</li>
             </ul>
 
+            <h2>Faculty Advisors by Area</h2>
+            <ul>
+              <li><strong>Pre-Nursing</strong> — Dr. Taiquitha Robins, <a href="mailto:Taiquitha.Robins@arkansasbaptist.edu">Taiquitha.Robins@arkansasbaptist.edu</a></li>
+              <li><strong>General Studies (Last Name A&ndash;L)</strong> — Dr. Tabatha Scott, <a href="mailto:Tabatha.Scott@arkansasbaptist.edu">Tabatha.Scott@arkansasbaptist.edu</a></li>
+              <li><strong>General Studies (Last Name M&ndash;Z)</strong> — Dr. Janet Anokye, <a href="mailto:Janet.Anokye@arkansasbaptist.edu">Janet.Anokye@arkansasbaptist.edu</a></li>
+              <li><strong>Public Administration</strong> — Mr. Michal Harris, <a href="mailto:Michal.Harris@arkansasbaptist.edu">Michal.Harris@arkansasbaptist.edu</a></li>
+              <li><strong>Human Services</strong> — Dr. Cheryl Gittens, <a href="mailto:Cheryl.Gittens@arkansasbaptist.edu">Cheryl.Gittens@arkansasbaptist.edu</a></li>
+              <li><strong>Criminal Justice</strong> — Mrs. Myra Woolfolk, <a href="mailto:Myra.Summers-Woolfolk@arkansasbaptist.edu">Myra.Summers-Woolfolk@arkansasbaptist.edu</a></li>
+              <li><strong>Sports Management</strong> — Dr. Vicki Williams, <a href="mailto:Vicki.Williams@arkansasbaptist.edu">Vicki.Williams@arkansasbaptist.edu</a></li>
+              <li><strong>Entrepreneurship</strong> — Ms. Miriam Karanja, <a href="mailto:Miriam.Karanja@arkansasbaptist.edu">Miriam.Karanja@arkansasbaptist.edu</a></li>
+              <li><strong>Education</strong> — Dr. Jennifer Nelson, <a href="mailto:Jennifer.Nelson@arkansasbaptist.edu">Jennifer.Nelson@arkansasbaptist.edu</a></li>
+              <li><strong>Christian Studies</strong> — Dr. Phillip Pointer, <a href="mailto:Phillip.Pointer@arkansasbaptist.edu">Phillip.Pointer@arkansasbaptist.edu</a></li>
+              <li><strong>Health, PE &amp; Recreation</strong> — Dr. Jennifer Nelson, <a href="mailto:Jennifer.Nelson@arkansasbaptist.edu">Jennifer.Nelson@arkansasbaptist.edu</a></li>
+            </ul>
+
             <h2>Contact Us</h2>
             <p>To meet with an Academic Advisor, log into Handshake to schedule an appointment or drop by our office:</p>
             <p>
               <strong>Academic Success and Career Center</strong><br />
               Library Annex<br />
               1600 Dr. Martin Luther King Jr., Drive<br />
-              Little Rock, AR 72202<br />
-              Walk-in Hours: M-Th: 8:30 AM - 5:00 PM
+              Little Rock, AR 72202
             </p>
           </div>
         </SectionWrapper>

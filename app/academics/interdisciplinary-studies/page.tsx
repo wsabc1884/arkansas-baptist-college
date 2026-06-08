@@ -18,14 +18,15 @@ export default function InterdisciplinaryStudiesPage() {
             <h2>Department Mission</h2>
             <p>The Mission of the Department of Interdisciplinary Studies is to provide an integrated, comprehensive program designed to strengthen the student&apos;s academic skills, build self-esteem and citizenship, move students through the core curriculum to program level courses, and enhance student ability to complete a degree program.</p>
             <h2>Department Chair</h2>
-            <p><strong>Philis Taylor, MA</strong><br />Chair, Interdisciplinary Studies and Instructor<br /><a href="mailto:philis.taylor@arkansasbaptist.edu">philis.taylor@arkansasbaptist.edu</a></p>
+            <p><strong>Jennifer Nelson, Ed.D</strong><br />Chair, Interdisciplinary Studies<br /><a href="mailto:Jennifer.Nelson@arkansasbaptist.edu">Jennifer.Nelson@arkansasbaptist.edu</a><br /><a href="tel:5014201312">501-420-1312</a></p>
             <h2>Degree Programs</h2>
             <ul>
-              <li><strong>Associate of Science in Interdisciplinary Studies</strong></li>
-              <li><strong>Bachelor of Science in Interdisciplinary Studies</strong></li>
+              <li><strong>Associate of Arts (AA) in General Studies</strong></li>
+              <li><strong>Bachelor of Arts (BA) in General Studies</strong></li>
+              <li><strong>Associate of Science (AS) in General Studies / Pre-Nursing</strong></li>
             </ul>
             <h2>Contact</h2>
-            <p>Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:philis.taylor@arkansasbaptist.edu">philis.taylor@arkansasbaptist.edu</a></p>
+            <p>Phone: <a href="tel:5014201312">501-420-1312</a><br />Email: <a href="mailto:Jennifer.Nelson@arkansasbaptist.edu">Jennifer.Nelson@arkansasbaptist.edu</a></p>
           </div>
         </SectionWrapper>
         <CTABand title="Explore Your Path" description="The Interdisciplinary Studies program gives you the flexibility to design a degree that fits your goals." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />

@@ -32,7 +32,7 @@ export default function PublicAdminPage() {
               <li>Graduate study in Public Administration (MPA)</li>
             </ul>
             <h2>Contact</h2>
-            <p>Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a></p>
+            <p><strong>Michal Harris</strong><br />Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:Michal.Harris@arkansasbaptist.edu">Michal.Harris@arkansasbaptist.edu</a></p>
           </div>
         </SectionWrapper>
         <CTABand title="Lead With Purpose" description="A degree in Public Administration opens doors to meaningful careers in public service." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />

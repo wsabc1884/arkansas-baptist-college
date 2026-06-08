@@ -52,7 +52,6 @@ const navigation = [
       { name: "Academic Affairs", href: "/academics/academic-affairs" },
       { name: "Academic Catalog", href: "/academics/academic-catalog" },
       { name: "Academic Calendar (Main Campus)", href: "/academics/academic-calendar" },
-      { name: "Academic Calendar (New Life)", href: "/academics/academic-calendar-new-life" },
       { name: "Course Search", href: "/academics/course-search" },
       { name: "Library", href: "/academics/library" },
       { name: "Registrar", href: "/academics/registrar" },

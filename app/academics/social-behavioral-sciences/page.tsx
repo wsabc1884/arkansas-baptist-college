@@ -18,8 +18,9 @@ export default function SocialBehavioralPage() {
             <h2>Department Mission</h2>
             <p>The Department of Social and Behavioral Sciences (Criminal Justice and Human Services) provides students with life-long competencies in critical thinking, oral and written communication, quantitative reasoning, and problem solving. Our programs prepare graduates for careers in social services, criminal justice, counseling, and graduate study.</p>
 
-            <h2>Department Chair</h2>
-            <p><strong>Tracey D. Moore, PhD</strong><br />Interim Chair, Social and Behavioral Sciences<br />Email: <a href="mailto:tracey.moore@arkansasbaptist.edu">tracey.moore@arkansasbaptist.edu</a></p>
+            <h2>Program Contacts</h2>
+            <p><strong>Criminal Justice</strong><br />Mrs. Myra Woolfolk<br /><a href="mailto:Myra.Summers-Woolfolk@arkansasbaptist.edu">Myra.Summers-Woolfolk@arkansasbaptist.edu</a></p>
+            <p><strong>Human Services</strong><br />Dr. Cheryl Gittens<br /><a href="mailto:Cheryl.Gittens@arkansasbaptist.edu">Cheryl.Gittens@arkansasbaptist.edu</a></p>
 
             <h2>Degree Programs</h2>
             <ul>
@@ -36,7 +37,7 @@ export default function SocialBehavioralPage() {
               <li>Graduate study in Psychology, Social Work, or Law</li>
             </ul>
             <h2>Contact</h2>
-            <p>Phone: <a href="tel:5014201200">501-420-1200</a><br />Email: <a href="mailto:tracey.moore@arkansasbaptist.edu">tracey.moore@arkansasbaptist.edu</a></p>
+            <p>Phone: <a href="tel:5014201200">501-420-1200</a></p>
           </div>
         </SectionWrapper>
         <CTABand title="Make a Difference" description="Study the science of human behavior and prepare for a career of impact." primaryLabel="Apply Now" primaryHref="/enrollment/apply" secondaryLabel="View Academic Catalog" secondaryHref="/academics/academic-catalog" />
