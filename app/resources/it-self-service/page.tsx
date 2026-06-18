@@ -5,7 +5,7 @@ import { CTABand } from "@/components/cta-band"
 import { KeyRound, ExternalLink, LifeBuoy, Info } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "IT Self Service | Arkansas Baptist College",
+  title: "myABC IT Self Service | Arkansas Baptist College",
   description:
     "Self-service IT resources for Arkansas Baptist College, including step-by-step instructions for resetting your email password.",
 }
@@ -75,12 +75,12 @@ export default function ITSelfServicePage() {
     <div className="min-h-screen">
       <main id="main-content">
         <PageHero
-          title="IT Self Service"
+          title="myABC IT Self Service"
           subtitle="Resources"
           description="Self-service tools and step-by-step guides to help you resolve common technology needs quickly."
           breadcrumbs={[
             { label: "Resources", href: "/resources/directory" },
-            { label: "IT Self Service" },
+            { label: "myABC IT Self Service" },
           ]}
         />
 
