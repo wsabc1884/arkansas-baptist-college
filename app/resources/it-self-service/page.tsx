@@ -35,7 +35,7 @@ const steps = [
     body: (
       <>
         Type your full Arkansas Baptist College email address (for example,{" "}
-        <span className="font-medium text-foreground">firstname.lastname@arkansasbaptist.edu</span>),
+        <span className="font-medium text-foreground">studentID@arkansasbaptist.edu</span>),
         then enter the characters shown in the verification image to confirm you are not a robot. Select{" "}
         <span className="font-medium text-foreground">Next</span>.
       </>
