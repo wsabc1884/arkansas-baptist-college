@@ -3,7 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, Info } from "lucide-react"
+import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, Info, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "myABC IT Self Service | Arkansas Baptist College",
@@ -103,8 +103,42 @@ export default function ITSelfServicePage() {
           </div>
         </SectionWrapper>
 
-        {/* Blackboard Access Note */}
+        {/* Resources */}
         <SectionWrapper className="bg-muted/30">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Resources</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Helpful guides and reference documents you can view in your browser.
+            </p>
+
+            <div className="mt-8 grid gap-4">
+              <a
+                href="/documents/shared-mailbox-guide.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <FileText className="h-5 w-5 text-primary" aria-hidden="true" />
+                </span>
+                <span className="flex-1">
+                  <span className="block font-semibold text-foreground">How to Add a Shared Mailbox</span>
+                  <span className="mt-1 block text-sm text-muted-foreground leading-relaxed">
+                    Step-by-step guide for adding and using a shared mailbox in Microsoft 365 (Outlook Classic and
+                    Outlook on the web).
+                  </span>
+                </span>
+                <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary">
+                  View PDF
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </SectionWrapper>
+
+        {/* Blackboard Access Note */}
+        <SectionWrapper>
           <div className="mx-auto max-w-4xl">
             <div className="flex items-start gap-4 rounded-lg border-l-4 border-primary bg-primary/5 p-6">
               <Info className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
