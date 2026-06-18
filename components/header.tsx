@@ -112,7 +112,6 @@ const navigation = [
       { name: "Human Resources", href: "/resources/human-resources" },
       { name: "Institutional Research", href: "/resources/institutional-research" },
       { name: "myABC IT Self Service", href: "/resources/it-self-service" },
-      { name: "ABC Tickets", href: "/resources/abc-tickets" },
       { name: "Derek Olivier Research Institute", href: "/resources/derek-olivier-research-institute" },
       { name: "Institutional Advancement", href: "/resources/institutional-advancement" },
     ],
