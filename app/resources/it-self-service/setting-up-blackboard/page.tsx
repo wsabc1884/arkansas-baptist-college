@@ -101,6 +101,17 @@ export default function SettingUpBlackboardPage() {
                         />
                       </div>
                     )}
+                    {step.number === 2 && (
+                      <div className="mt-4 rounded-lg border border-border overflow-hidden">
+                        <Image
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blackboard-RqKzokmdiHRQB7lN2m1ELFRIQOVwLC.png"
+                          alt="Blackboard login page showing the Forgot Password button with an arrow pointing to it"
+                          width={1200}
+                          height={800}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
