@@ -112,6 +112,17 @@ export default function SettingUpBlackboardPage() {
                         />
                       </div>
                     )}
+                    {step.number === 3 && (
+                      <div className="mt-4 rounded-lg border border-border overflow-hidden">
+                        <Image
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blackboard%20reset-yYsfgzyYtrrqV5qvznbDDNaejh9RuG.png"
+                          alt="Lost Password form showing fields for First Name, Last Name, and Email Address with arrows highlighting the required fields and a down arrow pointing to the Submit button"
+                          width={1200}
+                          height={850}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
