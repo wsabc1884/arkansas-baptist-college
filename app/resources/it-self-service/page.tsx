@@ -3,7 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, Info, FileText, BookOpen } from "lucide-react"
+import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, FileText, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "myABC IT Self Service | Arkansas Baptist College",
@@ -152,24 +152,6 @@ export default function ITSelfServicePage() {
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 </span>
               </a>
-            </div>
-          </div>
-        </SectionWrapper>
-
-        {/* Blackboard Access Note */}
-        <SectionWrapper>
-          <div className="mx-auto max-w-4xl">
-            <div className="flex items-start gap-4 rounded-lg border-l-4 border-primary bg-primary/5 p-6">
-              <Info className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
-              <div>
-                <h2 className="font-serif text-lg font-bold text-foreground">Trouble Accessing Blackboard?</h2>
-                <p className="mt-2 font-bold text-foreground leading-relaxed">
-                  If you are unable to log in to Blackboard, please reach out to the Office of Academic Affairs to
-                  have your access restored. We sincerely apologize for any confusion or inconvenience this may cause.
-                  Please note that Blackboard access is managed by Academics and is not something the IT department is
-                  able to resolve.
-                </p>
-              </div>
             </div>
           </div>
         </SectionWrapper>
