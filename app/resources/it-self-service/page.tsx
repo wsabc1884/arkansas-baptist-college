@@ -3,7 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, Info, FileText } from "lucide-react"
+import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, Info, FileText, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "myABC IT Self Service | Arkansas Baptist College",
@@ -112,6 +112,25 @@ export default function ITSelfServicePage() {
             </p>
 
             <div className="mt-8 grid gap-4">
+              <Link
+                href="/resources/it-self-service/setting-up-blackboard"
+                className="group flex items-center gap-4 rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <BookOpen className="h-5 w-5 text-primary" aria-hidden="true" />
+                </span>
+                <span className="flex-1">
+                  <span className="block font-semibold text-foreground">Setting up Blackboard</span>
+                  <span className="mt-1 block text-sm text-muted-foreground leading-relaxed">
+                    Step-by-step instructions for setting up your Blackboard account and resetting your password if needed.
+                  </span>
+                </span>
+                <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary">
+                  View Guide
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </span>
+              </Link>
+
               <a
                 href="/documents/shared-mailbox-guide.pdf"
                 target="_blank"
