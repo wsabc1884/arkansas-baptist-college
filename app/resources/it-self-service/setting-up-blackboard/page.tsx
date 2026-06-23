@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
@@ -88,6 +89,18 @@ export default function SettingUpBlackboardPage() {
                   <div className="pt-1 pb-8 sm:pt-0">
                     <h3 className="font-semibold text-foreground">{step.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                    {step.number === 1 && (
+                      <div className="mt-4 rounded-lg border border-border overflow-hidden">
+                        <Image
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/main%20site%20blackboard-sjfYJ7jFaMHWJDi2N6nDqnC3iePsfq.jpg"
+                          alt="Arkansas Baptist College website header showing the Blackboard link in the navigation bar"
+                          width={1200}
+                          height={120}
+                          className="w-full h-auto"
+                          priority
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
