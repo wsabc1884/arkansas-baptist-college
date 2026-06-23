@@ -123,6 +123,17 @@ export default function SettingUpBlackboardPage() {
                         />
                       </div>
                     )}
+                    {step.number === 6 && (
+                      <div className="mt-4 rounded-lg border border-border overflow-hidden">
+                        <Image
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blackboard%20-%20Copy-P9Docynf4zjuSfdSWcVgtGbhtuV1XX.png"
+                          alt="Blackboard login page showing the Username field highlighted with an arrow and Password field ready for entry"
+                          width={1200}
+                          height={800}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
