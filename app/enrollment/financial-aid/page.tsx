@@ -58,13 +58,6 @@ export default function FinancialAidPage() {
               to complete your FAFSA application.
             </p>
 
-            <h2>Important Deadlines</h2>
-            <ul>
-              <li><strong>FAFSA Priority Deadline:</strong> March 15 for the upcoming academic year</li>
-              <li><strong>Fall Semester:</strong> All financial aid documents must be submitted by August 1</li>
-              <li><strong>Spring Semester:</strong> All financial aid documents must be submitted by January 5</li>
-            </ul>
-
             <h2>Contact the Office of Financial Aid</h2>
           </div>
 
@@ -81,7 +74,6 @@ export default function FinancialAidPage() {
               <div>
                 <p className="text-sm font-medium text-foreground">Email</p>
                 <a href="mailto:financialaid@arkansasbaptist.edu" className="text-sm text-muted-foreground hover:underline">financialaid@arkansasbaptist.edu</a>
-                <p className="mt-1 text-xs text-muted-foreground">Documents: <a href="mailto:finaiddocs@arkansasbaptist.edu" className="text-primary hover:underline">finaiddocs@arkansasbaptist.edu</a></p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border bg-card p-4">
