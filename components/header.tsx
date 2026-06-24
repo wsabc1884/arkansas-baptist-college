@@ -84,7 +84,6 @@ const navigation = [
       { name: "Default Prevention", href: "/enrollment/default-prevention" },
       { name: "Parent Information", href: "/enrollment/parent-information" },
       { name: "Scholarships", href: "/enrollment/scholarships" },
-      { name: "Financial Aid Forms", href: "/enrollment/financial-aid-forms" },
       { name: "Tuition and Fees", href: "/enrollment/tuition-and-fees" },
       { name: "Pay My Tuition", href: "/enrollment/pay-tuition" },
       { name: "1098T - Tuition Statement", href: "/enrollment/1098t" },
