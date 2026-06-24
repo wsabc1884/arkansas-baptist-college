@@ -301,40 +301,6 @@ export default function ApplyForFinancialAidPage() {
         </div>
       </SectionWrapper>
 
-      {/* Where to submit documents */}
-      <SectionWrapper>
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-2xl font-bold text-foreground mb-4">
-            Where to Submit Necessary Documents
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Documents not submitted through the online method can be mailed or emailed to:
-          </p>
-          <div className="rounded-lg bg-muted p-6">
-            <p className="font-semibold text-foreground">
-              Office of Student Financial Aid
-            </p>
-            <p className="text-muted-foreground mt-1">
-              1600 Dr. Martin Luther King Jr. Drive
-              <br />
-              Little Rock, Arkansas 72202
-            </p>
-            <p className="text-muted-foreground mt-2">
-              Email:{" "}
-              <a href="mailto:finaid@arkansasbaptist.edu" className="font-medium text-primary hover:underline">
-                finaid@arkansasbaptist.edu
-              </a>
-            </p>
-            <p className="text-muted-foreground mt-1">
-              Phone:{" "}
-              <a href="tel:5014201226" className="font-medium text-primary hover:underline">
-                (501) 420-1226
-              </a>
-            </p>
-          </div>
-        </div>
-      </SectionWrapper>
-
       <CTABand
         heading="Ready to Start Your FAFSA?"
         description="Apply for federal student aid through the official FAFSA website. Remember to use ABC School Code: 001087."
