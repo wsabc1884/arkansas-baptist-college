@@ -42,7 +42,7 @@ export default function FinancialAidPage() {
               items={[
                 { icon: DollarSign, title: "Federal Pell Grants", description: "Need-based grants for undergraduate students that do not require repayment. Award amounts vary based on financial need and enrollment status." },
                 { icon: FileText, title: "Federal Direct Loans", description: "Low-interest loans available to eligible students. Both subsidized and unsubsidized options are available depending on demonstrated need." },
-                { icon: GraduationCap, title: "Institutional Scholarships", description: "Merit-based and need-based scholarships awarded by Arkansas Baptist College to qualifying students." },
+                { icon: GraduationCap, title: "Institutional Aid", description: "Merit-based and need-based scholarships awarded by Arkansas Baptist College to qualifying students." },
                 { icon: HelpCircle, title: "Federal Work-Study", description: "Part-time employment opportunities for students with financial need, providing income to help pay educational expenses." },
               ]}
               columns={2}
