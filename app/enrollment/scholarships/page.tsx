@@ -20,7 +20,7 @@ export default function ScholarshipsPage() {
 
         <SectionWrapper>
           <div className="prose-abc max-w-4xl mx-auto">
-            <h2>Institutional Scholarships</h2>
+            <h2>Institutional Aid</h2>
             <p>
               Arkansas Baptist College awards institutional scholarships based on academic achievement,
               leadership, community involvement, and financial need. Scholarship amounts and eligibility
@@ -28,7 +28,7 @@ export default function ScholarshipsPage() {
               automatically considered for available institutional scholarships.
             </p>
 
-            <h2>Athletic Scholarships</h2>
+            <h2>Athletic Assistance</h2>
             <p>
               As a member of the National Association of Intercollegiate Athletics (NAIA), Arkansas Baptist
               College offers athletic scholarships across our competitive sports programs. Student-athletes
@@ -62,7 +62,7 @@ export default function ScholarshipsPage() {
             <h2>Questions?</h2>
             <p>
               Contact the Office of Student Financial Aid at{" "}
-              <a href="tel:5014201200">501-420-1200</a> or{" "}
+              <a href="tel:5014201226">501-420-1226</a> or{" "}
               <a href="mailto:financialaid@arkansasbaptist.edu">financialaid@arkansasbaptist.edu</a>.
             </p>
           </div>

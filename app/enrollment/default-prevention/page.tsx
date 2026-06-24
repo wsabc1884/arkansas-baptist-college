@@ -79,21 +79,8 @@ export default function DefaultPreventionPage() {
               <li><a href="https://studentaid.gov/exit-counseling" target="_blank" rel="noopener noreferrer">Complete Exit Counseling</a></li>
             </ul>
 
-            <h2>Forms</h2>
-            <p>The following forms are available for download:</p>
             </div>
-            <div className="mt-4 max-w-4xl mx-auto grid gap-3 sm:grid-cols-3">
-              {[
-                { title: "Statement of Educational Purpose", file: "statement-of-ed-purpose.pdf" },
-                { title: "Unusual Enrollment History", file: "unusual-enrollment-history.pdf" },
-                { title: "Default Resolution Form", file: "default-resolution-form.pdf" },
-              ].map((doc) => (
-                <a key={doc.title} href={`/documents/financial-aid/${doc.file}`} download className="group rounded-lg border bg-card p-4 text-center transition-colors hover:border-primary">
-                  <p className="text-sm font-medium text-foreground group-hover:text-primary">{doc.title}</p>
-                </a>
-              ))}
-            </div>
-            <div className="prose-abc max-w-4xl mx-auto mt-8">
+            <div className="prose-abc max-w-4xl mx-auto">
 
             <h2>Contact Us</h2>
             <p>

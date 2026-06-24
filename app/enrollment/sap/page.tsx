@@ -68,7 +68,6 @@ export default function SAPPage() {
               <li>An academic plan developed with your academic advisor outlining how you will meet SAP requirements</li>
             </ul>
             <p>
-              Appeal forms are available on the <a href="/enrollment/financial-aid-forms">Financial Aid Forms</a> page.
               Completed appeals should be submitted to the Office of Financial Aid for review.
             </p>
 
@@ -76,8 +75,7 @@ export default function SAPPage() {
             <p>
               Office of Student Financial Aid<br />
               Phone: <a href="tel:5014201226">(501) 420-1226</a><br />
-              Email: <a href="mailto:financialaid@arkansasbaptist.edu">financialaid@arkansasbaptist.edu</a><br />
-              SAP Appeals: <a href="mailto:sapappeals@arkansasbaptist.edu">sapappeals@arkansasbaptist.edu</a>
+              Email: <a href="mailto:financialaid@arkansasbaptist.edu">financialaid@arkansasbaptist.edu</a>
             </p>
           </div>
         </SectionWrapper>
