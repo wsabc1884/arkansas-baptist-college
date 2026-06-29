@@ -30,8 +30,8 @@ const services: Service[] = [
   {
     title: "myABC IT Support Portal",
     description:
-      "Submit a help request and track its progress. Our Technology Services team will follow up with you to resolve your issue.",
-    href: "https://arbaptistcollege.on.spiceworks.com/portal/registrations",
+      "Submit a support ticket and track its progress. Our Technology Services team will follow up with you to resolve your issue.",
+    href: "https://arbaptistcollege.on.spiceworks.com/portal/tickets/new",
     external: true,
     icon: LifeBuoy,
   },
@@ -159,7 +159,7 @@ export default function ITSelfServicePage() {
         <CTABand
           heading="Need Further Assistance?"
           description="Our Technology Services team is ready to help you with your IT needs."
-          primaryAction={{ label: "IT Support Portal", href: "https://arbaptistcollege.on.spiceworks.com/portal/registrations" }}
+          primaryAction={{ label: "Submit a Ticket", href: "https://arbaptistcollege.on.spiceworks.com/portal/tickets/new" }}
           secondaryAction={{ label: "Technology Services", href: "/about/technology-services" }}
         />
       </main>
