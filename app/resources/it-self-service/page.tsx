@@ -77,7 +77,7 @@ export default function ITSelfServicePage() {
                       </span>
                       <h3 className="mt-4 font-semibold text-foreground">{service.title}</h3>
                       <p className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                      <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+                      <div className="mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
                         <a
                           href={service.href}
                           target="_blank"
