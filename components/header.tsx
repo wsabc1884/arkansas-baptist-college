@@ -211,7 +211,7 @@ function NavDropdown({ item }: { item: (typeof navigation)[number] }) {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-haspopup="true"
-        className="flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
+        className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
       >
         {item.name}
         <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -347,7 +347,7 @@ export function Header({siteSettings}: Props) {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
+                    className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
                   >
                     {item.name}
                     <ExternalLink className="h-3 w-3 opacity-60" aria-hidden="true" />
@@ -356,7 +356,7 @@ export function Header({siteSettings}: Props) {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
+                    className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
                   >
                     {item.name}
                   </Link>
