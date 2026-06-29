@@ -337,7 +337,7 @@ export function Header({siteSettings}: Props) {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden items-center xl:flex" aria-label="Main navigation">
+            <nav className="hidden items-center lg:flex" aria-label="Main navigation">
               {navigation.map((item) =>
                 item.children ? (
                   <NavDropdown key={item.name} item={item} />
@@ -365,7 +365,7 @@ export function Header({siteSettings}: Props) {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden items-center xl:flex">
+            <div className="hidden items-center lg:flex">
               <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
                 <Link href="/enrollment/apply">Apply Now</Link>
               </Button>
@@ -374,7 +374,7 @@ export function Header({siteSettings}: Props) {
             {/* Mobile menu button */}
             <button
               type="button"
-              className="xl:hidden rounded-md p-2 hover:bg-secondary-foreground/10"
+              className="lg:hidden rounded-md p-2 hover:bg-secondary-foreground/10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
@@ -386,7 +386,7 @@ export function Header({siteSettings}: Props) {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-              <nav className="border-t border-secondary-foreground/10 xl:hidden" aria-label="Mobile navigation">
+              <nav className="border-t border-secondary-foreground/10 lg:hidden" aria-label="Mobile navigation">
             <div className="mx-auto max-w-7xl space-y-1 px-4 pb-4 pt-2 sm:px-6">
               {/* Mobile utility links */}
               <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-secondary-foreground/10 pb-3 mb-2 text-sm opacity-80">
