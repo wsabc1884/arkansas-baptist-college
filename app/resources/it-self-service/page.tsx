@@ -3,7 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, FileText, BookOpen } from "lucide-react"
+import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, FileText, BookOpen, PlayCircle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "myABC IT Self Service | Arkansas Baptist College",
@@ -16,6 +16,7 @@ type Service = {
   description: string
   href: string
   external?: boolean
+  videoHref?: string
   icon: typeof KeyRound
 }
 
@@ -33,6 +34,7 @@ const services: Service[] = [
       "Submit a support ticket and track its progress. Our Technology Services team will follow up with you to resolve your issue.",
     href: "https://arbaptistcollege.on.spiceworks.com/portal/tickets/new",
     external: true,
+    videoHref: "https://youtu.be/Aso8EtEowco",
     icon: LifeBuoy,
   },
 ]
@@ -64,6 +66,40 @@ export default function ITSelfServicePage() {
                 const Icon = service.icon
                 const cardClasses =
                   "group flex h-full flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
+
+                // Card with multiple action links (e.g. portal + how-to video).
+                // Nested anchors aren't valid HTML, so render a non-link container with separate links.
+                if (service.videoHref) {
+                  return (
+                    <div key={service.title} className={cardClasses}>
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                        <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                      </span>
+                      <h3 className="mt-4 font-semibold text-foreground">{service.title}</h3>
+                      <p className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                      <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+                        <a
+                          href={service.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                        >
+                          Open portal
+                          <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                        <a
+                          href={service.videoHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                        >
+                          How to Submit a Ticket
+                          <PlayCircle className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      </div>
+                    </div>
+                  )
+                }
 
                 const inner = (
                   <>
