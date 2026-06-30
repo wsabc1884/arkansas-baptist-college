@@ -386,7 +386,7 @@ export function Header({siteSettings}: Props) {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <nav className="border-t border-secondary-foreground/10 lg:hidden" aria-label="Mobile navigation">
+              <nav className="border-t border-secondary-foreground/10 lg:hidden" aria-label="Mobile navigation">
             <div className="mx-auto max-w-7xl space-y-1 px-4 pb-4 pt-2 sm:px-6">
               {/* Mobile utility links */}
               <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-secondary-foreground/10 pb-3 mb-2 text-sm opacity-80">
