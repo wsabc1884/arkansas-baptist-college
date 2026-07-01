@@ -34,7 +34,7 @@ const services: Service[] = [
       "Submit a support ticket and track its progress. Our Technology Services team will follow up with you to resolve your issue.",
     href: "https://arbaptistcollege.on.spiceworks.com/portal/tickets/new",
     external: true,
-    videoHref: "https://arbaptistcollege-my.sharepoint.com/:v:/g/personal/marcus_waters_arkansasbaptist_edu/IQDFItN_8k__RZv1l8DTbkT2AYJJi6SKZtaUsngbjdns2fM?e=9HxC9n&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D",
+    videoHref: "https://archive.org/download/ABC-it-support-ticket/How%20to%20submit%20a%20IT%20support%20Ticket.mp4",
     icon: LifeBuoy,
   },
 ]
