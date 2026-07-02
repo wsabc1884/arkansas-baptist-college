@@ -2,13 +2,17 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { Download } from "lucide-react"
+import { getCampusSecurityData, OPE_SOURCE_URL } from "@/lib/campus-security"
+import { CampusSecurityData } from "@/components/campus-security-data"
 
 export const metadata: Metadata = {
   title: "Campus Safety | Arkansas Baptist College",
   description: "Campus safety and security information at Arkansas Baptist College, including emergency contacts and the Clery Act report.",
 }
 
-export default function CampusSafetyPage() {
+export default async function CampusSafetyPage() {
+  const securityData = await getCampusSecurityData()
+
   return (
     <div className="min-h-screen">
       <main id="main-content">
@@ -43,6 +47,31 @@ export default function CampusSafetyPage() {
             <div className="mt-4 rounded-md border border-destructive/30 bg-destructive/5 p-4">
               <p className="text-sm font-medium text-destructive">Emergency: Dial 911 first, then contact Campus Safety at (501) 420-1211.</p>
             </div>
+          </div>
+        </SectionWrapper>
+
+        {/* Campus Crime & Safety Statistics (U.S. Dept. of Education) */}
+        <SectionWrapper>
+          <div className="mx-auto max-w-4xl">
+            {securityData ? (
+              <CampusSecurityData data={securityData} />
+            ) : (
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="font-serif text-xl font-bold text-foreground">Campus Crime &amp; Safety Statistics</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Live crime and safety statistics are temporarily unavailable. You can view Arkansas Baptist College&apos;s
+                  official figures directly on the U.S. Department of Education website.
+                </p>
+                <a
+                  href={OPE_SOURCE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  View on ope.ed.gov
+                </a>
+              </div>
+            )}
           </div>
         </SectionWrapper>
 
