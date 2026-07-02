@@ -53,6 +53,13 @@ export default async function CampusSafetyPage() {
         {/* Campus Crime & Safety Statistics (U.S. Dept. of Education) */}
         <SectionWrapper>
           <div className="mx-auto max-w-4xl">
+            <div className="mb-6">
+              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Clery Act Compliance</h2>
+              <p className="mt-2 text-muted-foreground">
+                In compliance with the Jeanne Clery Act, Arkansas Baptist College publishes annual campus crime and fire
+                safety statistics. The figures below are reported to and published by the U.S. Department of Education.
+              </p>
+            </div>
             {securityData ? (
               <CampusSecurityData data={securityData} />
             ) : (
@@ -85,7 +92,6 @@ export default async function CampusSafetyPage() {
                 { title: "Campus Safety Report & Fire Safety", desc: "Annual security report including crime statistics and fire safety information.", file: "campus-safety-report.pdf" },
                 { title: "Emergency Plan", desc: "Campus emergency response and evacuation procedures.", file: "emergency-plan.pdf" },
                 { title: "Active Shooter Instructions", desc: "Run, Hide, Fight protocol and instructions for active threat situations.", file: "active-shooter-instructions.pdf" },
-                { title: "Clery Act Compliance", desc: "In compliance with the Jeanne Clery Act, ABC publishes annual campus crime statistics.", file: "clery-act-report.pdf" },
               ].map((doc) => (
                 <a key={doc.title} href={`/documents/campus-safety/${doc.file}`} download className="group rounded-lg border bg-card p-5 transition-colors hover:border-primary">
                   <div className="flex items-center gap-2">
