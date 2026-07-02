@@ -52,18 +52,6 @@ export default function CampusSafetyPage() {
             <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Campus Safety Plans & Reports</h2>
             <p className="mt-2 text-muted-foreground">The following documents are available from the Department of Campus Safety.</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <a
-                href="/resources/campus-safety/clery-act"
-                className="group rounded-lg border bg-card p-5 transition-colors hover:border-primary"
-              >
-                <div className="flex items-center gap-2">
-                  <BarChart3 className="h-4 w-4 shrink-0 text-primary" />
-                  <h3 className="font-semibold text-foreground group-hover:text-primary">Clery Act Compliance</h3>
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  In compliance with the Jeanne Clery Act, ABC publishes annual campus crime and fire safety statistics.
-                </p>
-              </a>
               {[
                 { title: "Campus Safety Report & Fire Safety", desc: "Annual security report including crime statistics and fire safety information.", file: "campus-safety-report.pdf" },
                 { title: "Emergency Plan", desc: "Campus emergency response and evacuation procedures.", file: "emergency-plan.pdf" },
@@ -77,6 +65,18 @@ export default function CampusSafetyPage() {
                   <p className="mt-1 text-sm text-muted-foreground">{doc.desc}</p>
                 </a>
               ))}
+              <a
+                href="/resources/campus-safety/clery-act"
+                className="group rounded-lg border bg-card p-5 transition-colors hover:border-primary"
+              >
+                <div className="flex items-center gap-2">
+                  <BarChart3 className="h-4 w-4 shrink-0 text-primary" />
+                  <h3 className="font-semibold text-foreground group-hover:text-primary">Clery Act Compliance</h3>
+                </div>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  In compliance with the Jeanne Clery Act, ABC publishes annual campus crime and fire safety statistics.
+                </p>
+              </a>
             </div>
           </div>
         </SectionWrapper>
