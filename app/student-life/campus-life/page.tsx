@@ -67,8 +67,6 @@ const sidebarSections = [
 ]
 
 const staffDirectory = [
-  { name: "Olivia C. Henderson, M.Ed.", title: "Vice President for Student Affairs", email: "olivia.henderson@arkansasbaptist.edu" },
-  { name: "Cleodis J. Colbert, M.Ed.", title: "Dean of Students and Title IX Coordinator", email: "cleodis.colbert@arkansasbaptist.edu" },
   { name: "Cody R. Charles, MBA", title: "Dean of Residential Life and Living Learning Communities", email: "cody.charles@arkansasbaptist.edu" },
   { name: "Lamarius Q. McGraw", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
 ]
