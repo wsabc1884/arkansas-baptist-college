@@ -96,6 +96,9 @@ export default function ConsumerInformationPage() {
         <li>
           <a href="/resources/consumer-information/student-identification-policy">Student Identification Policy</a>
         </li>
+        <li>
+          <a href="/resources/consumer-information/data-retention-policy">Data Retention Policy</a>
+        </li>
       </ul>
 
       <hr />
