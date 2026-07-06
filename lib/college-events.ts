@@ -75,61 +75,6 @@ export const COLLEGE_EVENTS: CollegeEvent[] = [
     description:
       "Create a vision board that reflects your goals, dreams, and aspirations while connecting with your fellow Buffaloes.",
   },
-  {
-    id: "fall-welcome-week-2026",
-    title: "Fall Welcome Week",
-    date: "2026-08-17",
-    endDate: "2026-08-21",
-    time: "All week",
-    location: "Campus-wide",
-    category: "Campus",
-    description:
-      "A week of activities, orientation sessions, and fellowship to welcome new and returning Buffaloes to campus.",
-    featured: true,
-  },
-  {
-    id: "fall-convocation-2026",
-    title: "Fall Convocation",
-    date: "2026-08-26",
-    time: "10:00 AM",
-    location: "Old Main Auditorium",
-    category: "Campus",
-    description:
-      "Join faculty, staff, and students to officially open the fall semester with our annual convocation ceremony.",
-  },
-  {
-    id: "fall-open-house-2026",
-    title: "Fall Open House",
-    date: "2026-10-10",
-    time: "9:00 AM - 1:00 PM",
-    location: "Buffalo Student Center",
-    category: "Admissions",
-    description:
-      "Prospective students and families are invited to tour campus, meet faculty, and learn about admissions and financial aid.",
-    href: "/enrollment/campus-tour",
-    featured: true,
-  },
-  {
-    id: "homecoming-2026",
-    title: "Homecoming Week",
-    date: "2026-10-19",
-    endDate: "2026-10-24",
-    time: "See schedule",
-    location: "Campus-wide",
-    category: "Athletics",
-    description: "Celebrate Buffalo pride with alumni events, the homecoming game, and campus festivities all week long.",
-    featured: true,
-  },
-  {
-    id: "fall-commencement-2026",
-    title: "Fall Commencement",
-    date: "2026-12-12",
-    time: "10:00 AM",
-    location: "Buffalo Stadium",
-    category: "Academic",
-    description: "Arkansas Baptist College celebrates the achievements of our fall 2026 graduates.",
-    featured: true,
-  },
 ]
 
 // ---------------------------------------------------------------------------
