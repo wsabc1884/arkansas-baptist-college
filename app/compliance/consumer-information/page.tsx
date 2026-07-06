@@ -99,6 +99,15 @@ export default function ConsumerInformationPage() {
         <li>
           <a href="/resources/consumer-information/data-retention-policy">Data Retention Policy</a>
         </li>
+        <li>
+          <a href="/resources/consumer-information/assignment-of-credit-hours-policy">Assignment of Credit Hours Policy</a>
+        </li>
+        <li>
+          <a href="/resources/consumer-information/academic-expression-policy">Academic Expression Policy</a>
+        </li>
+        <li>
+          <a href="/student-life/complaint-process">Student Complaint Process</a>
+        </li>
       </ul>
 
       <hr />
