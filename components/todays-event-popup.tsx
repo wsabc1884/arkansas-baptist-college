@@ -103,7 +103,7 @@ export function TodaysEventPopup() {
             Dismiss
           </Button>
           <Button asChild>
-            <Link href="/events" onClick={() => handleOpenChange(false)}>
+            <Link href="/student-life/campus-life#events-calendar" onClick={() => handleOpenChange(false)}>
               View Calendar
             </Link>
           </Button>

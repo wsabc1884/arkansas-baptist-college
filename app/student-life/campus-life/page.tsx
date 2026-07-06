@@ -3,6 +3,9 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { EventsCalendar } from "@/components/events-calendar"
+import { EventsList } from "@/components/events-list"
+import { getUpcomingEvents, toDateKey } from "@/lib/college-events"
 
 import { Users, Home, Shield, BookOpen, Scale, Calendar, Dumbbell, Mail } from "lucide-react"
 
@@ -73,6 +76,16 @@ const staffDirectory = [
 ]
 
 export default function CampusLifePage() {
+  const todayKey = toDateKey(new Date())
+  const upcoming = getUpcomingEvents(todayKey).map((e) => ({
+    title: e.title,
+    date: e.date,
+    time: e.time,
+    location: e.location,
+    category: e.category,
+    href: e.href,
+  }))
+
   return (
     <div className="min-h-screen">
       <main id="main-content">
@@ -162,20 +175,29 @@ export default function CampusLifePage() {
           </div>
         </SectionWrapper>
 
-        {/* Activities & Events (retained from existing) */}
-        <SectionWrapper className="bg-muted/30">
-          <div className="prose-abc mx-auto max-w-4xl">
-            <h2>Activities & Events</h2>
-            <p>Arkansas Baptist College is a student-first oriented college that focuses on developing and building academic achievements. In return, students are provided with personal and professional growth.</p>
-            <ul>
-              <li>Homecoming celebrations</li>
-              <li>Founder&apos;s Day</li>
-              <li>Honors Convocation</li>
-              <li>Cultural enrichment events</li>
-              <li>Community service projects</li>
-              <li>Intramural sports</li>
-              <li>Student talent showcases</li>
-            </ul>
+        {/* College Events Calendar */}
+        <SectionWrapper id="events-calendar" variant="muted">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">College Events Calendar</h2>
+            <p className="mt-2 text-muted-foreground">
+              Stay connected with everything happening on campus &mdash; convocations, ceremonies, open houses, homecoming, and more.
+            </p>
+            <div className="mt-8">
+              <EventsCalendar />
+            </div>
+          </div>
+        </SectionWrapper>
+
+        {/* Upcoming Events list */}
+        <SectionWrapper>
+          <div className="mx-auto max-w-3xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Upcoming Events</h2>
+            <p className="mt-2 text-muted-foreground">
+              A running list of what&apos;s next at Arkansas Baptist College. Dates and times are subject to change.
+            </p>
+            <div className="mt-6">
+              <EventsList events={upcoming} emptyMessage="No upcoming events are scheduled at this time. Check back soon." />
+            </div>
           </div>
         </SectionWrapper>
 
