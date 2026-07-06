@@ -77,9 +77,6 @@ export default function AdultEducationPage() {
 
             <h3>Arkansas Rehabilitation Services</h3>
             <p>3901 McCain Park Drive, Ste. 113<br />North Little Rock, Arkansas 72116</p>
-
-            <h3>Our House</h3>
-            <p>302 East Roosevelt Road<br />Little Rock, Arkansas 72206</p>
           </div>
         </SectionWrapper>
 
