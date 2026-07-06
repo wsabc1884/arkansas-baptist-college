@@ -42,7 +42,6 @@ export default function AdultEducationPage() {
             <ul>
               <li>Be 18 years of age or older (not enrolled or required to enroll in secondary education under state law and is basic skills deficient)</li>
               <li>Hold a state issued driver&apos;s license or state issued ID</li>
-              <li>Social Security Card</li>
               <li>Take the Test of Adult Basic Education (TABE) Assessment</li>
               <li>Attend orientation</li>
             </ul>
@@ -68,7 +67,7 @@ export default function AdultEducationPage() {
             <h2>Adult Education Center Locations</h2>
 
             <h3>Arkansas Baptist College (ABC) Adult Education - Main Location</h3>
-            <p>1418 W Daisy L Gatson Bates Drive<br />Little Rock, Arkansas 72202<br />Phone: <a href="tel:5014201350">(501) 420-1350</a><br />Email: <a href="mailto:abcadulteducation@arkansasbaptist.edu">abcadulteducation@arkansasbaptist.edu</a></p>
+              <p>1600 Dr. Martin Luther King Jr. Drive<br />Old Main Building, Room B107<br />Little Rock, Arkansas 72202<br />Phone: <a href="tel:5014201350">(501) 420-1350</a><br />Email: <a href="mailto:abcadulteducation@arkansasbaptist.edu">abcadulteducation@arkansasbaptist.edu</a></p>
 
             <h3>Arkansas Parole and Probation</h3>
             <p>1302 Pike Avenue<br />North Little Rock, Arkansas 71299</p>
@@ -78,9 +77,6 @@ export default function AdultEducationPage() {
 
             <h3>Arkansas Rehabilitation Services</h3>
             <p>3901 McCain Park Drive, Ste. 113<br />North Little Rock, Arkansas 72116</p>
-
-            <h3>Our House</h3>
-            <p>302 East Roosevelt Road<br />Little Rock, Arkansas 72206</p>
           </div>
         </SectionWrapper>
 
