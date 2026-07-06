@@ -121,7 +121,7 @@ const disclosureSections: DisclosureSection[] = [
     title: "Institutional Policies",
     links: [
       { label: "Assignment of Credit Hours Policy", href: "/documents/assignment-of-credit-hours-policy.pdf", external: true },
-      { label: "Student Complaint Process", href: "/documents/student-complaint-process.pdf", external: true },
+      { label: "Student Complaint Process", href: "/student-life/complaint-process" },
       { label: "Data Retention Policy", href: "/resources/consumer-information/data-retention-policy" },
       { label: "Student Identification Policy", href: "/resources/consumer-information/student-identification-policy" },
       { label: "Academic Expression Policy", href: "/documents/academic-expression-policy.pdf", external: true },
