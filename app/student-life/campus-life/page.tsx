@@ -3,6 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { EventsCalendar } from "@/components/events-calendar"
 
 import { Users, Home, Shield, BookOpen, Scale, Calendar, Dumbbell, Mail } from "lucide-react"
 
@@ -86,6 +87,19 @@ export default function CampusLifePage() {
           ]}
         />
 
+        {/* Buffalo Events */}
+        <SectionWrapper id="events-calendar" variant="muted">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Buffalo Events</h2>
+            <p className="mt-2 text-muted-foreground">
+              Stay connected with everything happening on campus &mdash; convocations, ceremonies, open houses, homecoming, and more. Select a highlighted date for details, or browse what&apos;s next on the right.
+            </p>
+            <div className="mt-8">
+              <EventsCalendar />
+            </div>
+          </div>
+        </SectionWrapper>
+
         {/* Vision, Mission, Focus */}
         <SectionWrapper>
           <div className="mx-auto max-w-4xl">
@@ -159,23 +173,6 @@ export default function CampusLifePage() {
                 </div>
               ))}
             </div>
-          </div>
-        </SectionWrapper>
-
-        {/* Activities & Events (retained from existing) */}
-        <SectionWrapper className="bg-muted/30">
-          <div className="prose-abc mx-auto max-w-4xl">
-            <h2>Activities & Events</h2>
-            <p>Arkansas Baptist College is a student-first oriented college that focuses on developing and building academic achievements. In return, students are provided with personal and professional growth.</p>
-            <ul>
-              <li>Homecoming celebrations</li>
-              <li>Founder&apos;s Day</li>
-              <li>Honors Convocation</li>
-              <li>Cultural enrichment events</li>
-              <li>Community service projects</li>
-              <li>Intramural sports</li>
-              <li>Student talent showcases</li>
-            </ul>
           </div>
         </SectionWrapper>
 
