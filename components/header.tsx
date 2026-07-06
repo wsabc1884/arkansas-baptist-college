@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Phone, ChevronDown, Search, MapPin, ExternalLink } from "lucide-react"
+  import { Menu, X, Phone, ChevronDown, Search, MapPin, ExternalLink, CalendarDays } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -292,6 +292,11 @@ export function Header({siteSettings}: Props) {
                 </span>
               </div>
               <div className="flex items-center gap-3">
+                <Link href="/events" className="flex items-center gap-1 hover:underline">
+                  <CalendarDays className="h-3 w-3" aria-hidden="true" />
+                  <span className="hidden sm:inline">College Events Calendar</span>
+                  <span className="sm:hidden">Events</span>
+                </Link>
                 <a href={portalUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
                 <a href={emailUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Email</a>
                 <a href={blackboardUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">Blackboard</a>
