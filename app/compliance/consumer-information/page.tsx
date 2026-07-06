@@ -87,6 +87,31 @@ export default function ConsumerInformationPage() {
 
       <hr />
 
+      <h2>Institutional Policies</h2>
+      <p>
+        The following institutional policies are available for review by prospective and enrolled students,
+        families, and the public:
+      </p>
+      <ul>
+        <li>
+          <a href="/resources/consumer-information/student-identification-policy">Student Identification Policy</a>
+        </li>
+        <li>
+          <a href="/resources/consumer-information/data-retention-policy">Data Retention Policy</a>
+        </li>
+        <li>
+          <a href="/resources/consumer-information/assignment-of-credit-hours-policy">Assignment of Credit Hours Policy</a>
+        </li>
+        <li>
+          <a href="/resources/consumer-information/academic-expression-policy">Academic Expression Policy</a>
+        </li>
+        <li>
+          <a href="/student-life/complaint-process">Student Complaint Process</a>
+        </li>
+      </ul>
+
+      <hr />
+
       <h2>Voter Registration</h2>
       <p>
         Arkansas Baptist College encourages all eligible students to participate in the democratic process.
