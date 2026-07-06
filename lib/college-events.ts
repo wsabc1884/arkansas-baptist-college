@@ -38,6 +38,44 @@ export interface CollegeEvent {
 // ---------------------------------------------------------------------------
 export const COLLEGE_EVENTS: CollegeEvent[] = [
   {
+    id: "yoga-2026-07-09",
+    title: "Yoga",
+    date: "2026-07-09",
+    time: "3:00 PM",
+    location: "Student Union",
+    category: "Wellness",
+    description: "Relax, recharge, and improve your mind and body through a guided yoga session.",
+  },
+  {
+    id: "line-dancing-2026-07-10",
+    title: "Line Dancing",
+    date: "2026-07-10",
+    time: "7:00 PM",
+    location: "Student Union",
+    category: "Campus",
+    description: "Bring your energy and learn the latest line dances while enjoying an evening of music and fun.",
+  },
+  {
+    id: "healthy-nutrition-chat-2026-07-11",
+    title: "Healthy Nutrition Chat",
+    date: "2026-07-11",
+    time: "3:00 PM",
+    location: "Student Union",
+    category: "Wellness",
+    description:
+      "Join us for an engaging conversation about healthy eating, wellness, and practical nutrition tips for college students.",
+  },
+  {
+    id: "vision-board-party-2026-07-11",
+    title: "Vision Board Party",
+    date: "2026-07-11",
+    time: "7:00 PM",
+    location: "Student Union",
+    category: "Campus",
+    description:
+      "Create a vision board that reflects your goals, dreams, and aspirations while connecting with your fellow Buffaloes.",
+  },
+  {
     id: "fall-welcome-week-2026",
     title: "Fall Welcome Week",
     date: "2026-08-17",
