@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, MapPin, Clock, CalendarDays } from "lucide-r
 import {
   COLLEGE_EVENTS,
   eventOccursOn,
+  getUpcomingEvents,
   toDateKey,
   parseDateKey,
   type CollegeEvent,
@@ -64,6 +65,8 @@ export function EventsCalendar() {
   const selectedEvents = selectedKey
     ? COLLEGE_EVENTS.filter((e) => eventOccursOn(e, selectedKey)).sort((a, b) => a.title.localeCompare(b.title))
     : []
+
+  const upcomingEvents = useMemo(() => getUpcomingEvents(todayKey), [todayKey])
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_20rem]">
@@ -155,31 +158,83 @@ export function EventsCalendar() {
         </div>
       </div>
 
-      {/* Detail sidebar */}
-      <aside className="rounded-lg border border-border bg-card p-5">
-        <h3 className="flex items-center gap-2 font-semibold text-foreground">
-          <CalendarDays className="h-4 w-4 text-primary" aria-hidden="true" />
-          {selectedKey
-            ? parseDateKey(selectedKey).toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-              })
-            : "Event Details"}
-        </h3>
+      {/* Detail / upcoming events sidebar */}
+      <aside className="rounded-lg border border-border bg-card p-5 lg:max-h-[32rem] lg:overflow-y-auto">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="flex items-center gap-2 font-semibold text-foreground">
+            <CalendarDays className="h-4 w-4 text-primary" aria-hidden="true" />
+            {selectedKey
+              ? parseDateKey(selectedKey).toLocaleDateString("en-US", {
+                  weekday: "long",
+                  month: "long",
+                  day: "numeric",
+                })
+              : "Upcoming Events"}
+          </h3>
+          {selectedKey && (
+            <button
+              type="button"
+              onClick={() => setSelectedKey(null)}
+              className="text-xs font-medium text-primary hover:underline"
+            >
+              Show all
+            </button>
+          )}
+        </div>
 
-        {selectedEvents.length > 0 ? (
-          <ul className="mt-4 space-y-4">
-            {selectedEvents.map((e) => (
-              <li key={e.id} className="border-l-2 border-primary pl-3">
-                <p className="font-semibold text-foreground">{e.title}</p>
-                <div className="mt-1 space-y-1 text-sm text-muted-foreground">
-                  {e.time && (
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-                      {e.time}
-                    </span>
+        {selectedKey ? (
+          selectedEvents.length > 0 ? (
+            <ul className="mt-4 space-y-4">
+              {selectedEvents.map((e) => (
+                <li key={e.id} className="border-l-2 border-primary pl-3">
+                  <p className="font-semibold text-foreground">{e.title}</p>
+                  <div className="mt-1 space-y-1 text-sm text-muted-foreground">
+                    {e.time && (
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                        {e.time}
+                      </span>
+                    )}
+                    {e.location && (
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                        {e.location}
+                      </span>
+                    )}
+                  </div>
+                  {e.description && <p className="mt-2 text-sm text-muted-foreground">{e.description}</p>}
+                  {e.href && (
+                    <Link href={e.href} className="mt-2 inline-block text-sm font-medium text-primary hover:underline">
+                      Learn more
+                    </Link>
                   )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-4 text-sm text-muted-foreground">No events scheduled for this date.</p>
+          )
+        ) : upcomingEvents.length > 0 ? (
+          <ul className="mt-4 space-y-4">
+            {upcomingEvents.map((e) => (
+              <li key={e.id} className="border-l-2 border-primary pl-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const d = parseDateKey(e.date)
+                    setView({ year: d.getFullYear(), month: d.getMonth() })
+                    setSelectedKey(e.date)
+                  }}
+                  className="text-left font-semibold text-foreground hover:text-primary"
+                >
+                  {e.title}
+                </button>
+                <div className="mt-1 space-y-1 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
+                    {parseDateKey(e.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                    {e.time ? ` \u00b7 ${e.time}` : ""}
+                  </span>
                   {e.location && (
                     <span className="flex items-center gap-1.5">
                       <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
@@ -187,18 +242,12 @@ export function EventsCalendar() {
                     </span>
                   )}
                 </div>
-                {e.description && <p className="mt-2 text-sm text-muted-foreground">{e.description}</p>}
-                {e.href && (
-                  <Link href={e.href} className="mt-2 inline-block text-sm font-medium text-primary hover:underline">
-                    Learn more
-                  </Link>
-                )}
               </li>
             ))}
           </ul>
         ) : (
           <p className="mt-4 text-sm text-muted-foreground">
-            Select a highlighted date to view event details. Dates with a dot have scheduled events.
+            No upcoming events are scheduled at this time. Check back soon.
           </p>
         )}
       </aside>
