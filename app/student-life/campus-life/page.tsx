@@ -87,10 +87,10 @@ export default function CampusLifePage() {
           ]}
         />
 
-        {/* College Events Calendar */}
+        {/* Buffalo Events */}
         <SectionWrapper id="events-calendar" variant="muted">
           <div className="mx-auto max-w-5xl">
-            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">College Events Calendar</h2>
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Buffalo Events</h2>
             <p className="mt-2 text-muted-foreground">
               Stay connected with everything happening on campus &mdash; convocations, ceremonies, open houses, homecoming, and more. Select a highlighted date for details, or browse what&apos;s next on the right.
             </p>
