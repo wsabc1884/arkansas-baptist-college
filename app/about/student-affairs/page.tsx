@@ -45,7 +45,7 @@ export default function StudentAffairsPage() {
               { name: "Dr. Darryl A. Peal", title: "Vice President for Enrollment Management & Student Affairs", email: "darryl.peal@arkansasbaptist.edu" },
               { name: "Pamela Conard", title: "Director of Admissions", email: "pamela.conard@arkansasbaptist.edu" },
               { name: "Cody Charles", title: "Director of Residential Life & Housing", email: "cody.charles@arkansasbaptist.edu" },
-              { name: "Lamarius McGraw", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
+              { name: "Lamarius Q. McGraw, M.A., HESA", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
               { name: "Dr. Vickie Williams", title: "Title IX Coordinator", email: "vickie.williams@arkansasbaptist.edu" },
             ].map((person) => (
               <div key={person.name} className="rounded-lg border bg-card p-5">

@@ -39,7 +39,7 @@ const academicAffairs = [
 const studentServices = [
   { name: "Pamela Conard", title: "Admissions" },
   { name: "Cody Charles", title: "Residential Life/Housing" },
-  { name: "Lamarius McGraw", title: "Student Activities" },
+  { name: "Lamarius Q. McGraw, M.A., HESA", title: "Student Activities" },
 ]
 
 const businessAffairs = [

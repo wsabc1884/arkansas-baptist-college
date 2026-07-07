@@ -68,7 +68,7 @@ const sidebarSections = [
 
 const staffDirectory = [
   { name: "Cody R. Charles, MBA", title: "Dean of Residential Life and Living Learning Communities", email: "cody.charles@arkansasbaptist.edu" },
-  { name: "Lamarius Q. McGraw", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
+  { name: "Lamarius Q. McGraw, M.A., HESA", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu", phone: "501-539-3180" },
 ]
 
 export default function CampusLifePage() {
@@ -139,7 +139,10 @@ export default function CampusLifePage() {
                   <div>
                     <h3 className="font-semibold text-foreground">{person.name}</h3>
                     <p className="mt-0.5 text-sm text-muted-foreground">{person.title}</p>
-                    <a href={`mailto:${person.email}`} className="mt-1 text-sm text-primary hover:underline">{person.email}</a>
+                    <a href={`mailto:${person.email}`} className="mt-1 block text-sm text-primary hover:underline">{person.email}</a>
+                    {person.phone && (
+                      <a href={`tel:${person.phone.replace(/[^0-9]/g, "")}`} className="mt-1 block text-sm text-primary hover:underline">{person.phone}</a>
+                    )}
                   </div>
                 </div>
               ))}

@@ -128,7 +128,7 @@ export default function StudentOrganizationsPage() {
               <h2>Contact</h2>
               <p>
                 <strong>Director of Student Activities</strong><br />
-                Lamarius Q. McGraw<br />
+                Lamarius Q. McGraw, M.A., HESA<br />
                 Email: <a href="mailto:lamarius.mcgraw@arkansasbaptist.edu">lamarius.mcgraw@arkansasbaptist.edu</a><br />
                 Phone: <a href="tel:5014201200">501-420-1200</a>
               </p>
