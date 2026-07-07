@@ -17,7 +17,7 @@ const fallbackDepartments = [
   { name: "Academic Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "Office of Admissions", phone: "501-420-1200", email: "Admissions@arkansasbaptist.edu" },
   { name: "Business Office", phone: "501-420-1214", email: "Businessoffice@arkansasbaptist.edu" },
-  { name: "Financial Aid", phone: "501-420-1200", email: "Financialaid@arkansasbaptist.edu" },
+  { name: "Financial Aid", phone: "501-420-1226", email: "Financialaid@arkansasbaptist.edu" },
   { name: "Registrar", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "Student Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "J.C. Oliver Library", phone: "501-420-1252", email: "Jacqueline.mcgehee@arkansasbaptist.edu" },
