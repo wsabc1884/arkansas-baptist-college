@@ -91,7 +91,7 @@ export default function ADAPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               {[
                 { title: "Disability Intake Form", desc: "Student intake document for disability support services.", file: "/documents/disability/disability-intake-form.pdf", download: true },
-                { title: "ADHD Criteria Form", desc: "ADHD assessment and criteria documentation form.", file: "/documents/disability/adhd-criteria-form.pdf", download: true },
+                { title: "ADHD Criteria Form", desc: "ADHD assessment and criteria documentation form.", file: "/academics/ada/adhd-criteria", download: false },
                 { title: "ABC Policies", desc: "Disability services policies and procedures.", file: "/academics/ada/policies", download: false },
               ].map((doc) =>
                 doc.download ? (
