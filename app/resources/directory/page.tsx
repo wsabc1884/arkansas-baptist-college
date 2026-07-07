@@ -12,19 +12,18 @@ export const metadata: Metadata = {
 }
 
 const fallbackDepartments = [
-  { name: "Main Campus", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
-  { name: "Office of the President", phone: "501-420-1202", email: "president@arkansasbaptist.edu" },
-  { name: "Academic Affairs", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
-  { name: "Office of Admissions", phone: "501-420-1200", email: "admissions@arkansasbaptist.edu" },
-  { name: "Business Office", phone: "501-420-1214", email: "businessoffice@arkansasbaptist.edu" },
-  { name: "Financial Aid", phone: "501-420-1200", email: "financialaid@arkansasbaptist.edu" },
-  { name: "Registrar", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
-  { name: "Student Affairs", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
-  { name: "J.C. Oliver Library", phone: "501-420-1252", email: "jacqueline.mcgehee@arkansasbaptist.edu" },
-  { name: "Career Services", phone: "501-420-1343", email: "edmond.davis@arkansasbaptist.edu" },
+  { name: "Main Campus", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
+  { name: "Office of the President", phone: "501-420-1202", email: "President@arkansasbaptist.edu" },
+  { name: "Academic Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
+  { name: "Office of Admissions", phone: "501-420-1200", email: "Admissions@arkansasbaptist.edu" },
+  { name: "Business Office", phone: "501-420-1214", email: "Businessoffice@arkansasbaptist.edu" },
+  { name: "Financial Aid", phone: "501-420-1200", email: "Financialaid@arkansasbaptist.edu" },
+  { name: "Registrar", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
+  { name: "Student Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
+  { name: "J.C. Oliver Library", phone: "501-420-1252", email: "Jacqueline.mcgehee@arkansasbaptist.edu" },
   { name: "Upward Bound TRIO", phone: "501-420-1276", email: "Michael.Isaac@arkansasbaptist.edu" },
-  { name: "Campus Safety", phone: "501-420-1211", email: "security@arkansasbaptist.edu" },
-  { name: "IT Help Desk", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
+  { name: "Campus Safety", phone: "501-420-1211", email: "Security@arkansasbaptist.edu" },
+  { name: "IT Help Desk", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "Human Resources", phone: "501-420-1219", email: "HR@arkansasbaptist.edu" },
 ]
 
