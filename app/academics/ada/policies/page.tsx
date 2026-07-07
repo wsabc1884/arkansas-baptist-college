@@ -36,7 +36,7 @@ export default function DisabilityPoliciesPage() {
             <h3>Procedure</h3>
             <p>
               ODS is available to meet with students to discuss the need for accommodation upon enrollment at Arkansas
-              Baptist College (ABC). Please call (501) 749-1911 to schedule an appointment.
+              Baptist College (ABC). Please call (501) 420-1200 to schedule an appointment.
             </p>
 
             <h2>Prior to Arriving at Arkansas Baptist College (ABC)</h2>
