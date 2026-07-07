@@ -33,7 +33,7 @@ export default function CampusSafetyPage() {
       </ul>
       <p>
         A copy of the Annual Security Report is available from the Office of Campus Safety or by request
-        at <a href="tel:5014201200">501-420-1200</a>.
+        at <a href="tel:5014201211">501-420-1211</a>.
       </p>
 
       <hr />
@@ -46,7 +46,7 @@ export default function CampusSafetyPage() {
       </p>
       <h3>Non-Emergency Reporting</h3>
       <ul>
-        <li><strong>Campus Safety:</strong> <a href="tel:5014201200">501-420-1200</a></li>
+        <li><strong>Campus Safety:</strong> <a href="tel:5014201211">501-420-1211</a></li>
         <li><strong>Little Rock Police Department:</strong> <a href="tel:5013714829">501-371-4829</a></li>
         <li>Reports may also be made to any campus administrator or Responsible Employee</li>
       </ul>
@@ -104,7 +104,7 @@ export default function CampusSafetyPage() {
         Arkansas Baptist College<br />
         1600 Dr. Martin Luther King Jr. Drive<br />
         Little Rock, AR 72202<br />
-        Phone: <a href="tel:5014201200">501-420-1200</a>
+        Phone: <a href="tel:5014201211">501-420-1211</a>
       </p>
     </ComplianceLayout>
   )
