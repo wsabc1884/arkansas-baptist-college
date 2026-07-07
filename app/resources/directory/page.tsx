@@ -23,7 +23,7 @@ const fallbackDepartments = [
   { name: "J.C. Oliver Library", phone: "501-420-1252", email: "jacqueline.mcgehee@arkansasbaptist.edu" },
   { name: "Career Services", phone: "501-420-1343", email: "edmond.davis@arkansasbaptist.edu" },
   { name: "Upward Bound TRIO", phone: "501-420-1276", email: "Michael.Isaac@arkansasbaptist.edu" },
-  { name: "Campus Safety", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
+  { name: "Campus Safety", phone: "501-420-1211", email: "security@arkansasbaptist.edu" },
   { name: "IT Help Desk", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
   { name: "Human Resources", phone: "501-420-1200", email: "info@arkansasbaptist.edu" },
 ]
