@@ -90,18 +90,28 @@ export default function ADAPage() {
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               {[
-                { title: "Disability Intake Form", desc: "Student intake document for disability support services.", file: "/documents/disability/disability-intake-form.pdf" },
-                { title: "ADHD Criteria Form", desc: "ADHD assessment and criteria documentation form.", file: "/documents/disability/adhd-criteria-form.pdf" },
-                { title: "ABC Policies", desc: "Disability services policies and procedures.", file: "/documents/disability/abc-disability-policies.pdf" },
-              ].map((doc) => (
-                <a key={doc.title} href={doc.file} download className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
-                  <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <div>
-                    <h3 className="font-semibold text-foreground group-hover:text-primary">{doc.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{doc.desc}</p>
-                  </div>
-                </a>
-              ))}
+                { title: "Disability Intake Form", desc: "Student intake document for disability support services.", file: "/documents/disability/disability-intake-form.pdf", download: true },
+                { title: "ADHD Criteria Form", desc: "ADHD assessment and criteria documentation form.", file: "/documents/disability/adhd-criteria-form.pdf", download: true },
+                { title: "ABC Policies", desc: "Disability services policies and procedures.", file: "/academics/ada/policies", download: false },
+              ].map((doc) =>
+                doc.download ? (
+                  <a key={doc.title} href={doc.file} download className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
+                    <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <div>
+                      <h3 className="font-semibold text-foreground group-hover:text-primary">{doc.title}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{doc.desc}</p>
+                    </div>
+                  </a>
+                ) : (
+                  <Link key={doc.title} href={doc.file} className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
+                    <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <div>
+                      <h3 className="font-semibold text-foreground group-hover:text-primary">{doc.title}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{doc.desc}</p>
+                    </div>
+                  </Link>
+                ),
+              )}
             </div>
           </div>
         </SectionWrapper>
