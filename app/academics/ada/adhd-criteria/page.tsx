@@ -114,7 +114,7 @@ export default function AdhdCriteriaPage() {
               <br />
               Little Rock, AR 72202
               <br />
-              <a href="mailto:john.mcallister@arkansasbaptist.edu">john.mcallister@arkansasbaptist.edu</a>
+              <a href="mailto:Info@arkansasbaptist.edu">Info@arkansasbaptist.edu</a>
             </p>
           </div>
         </SectionWrapper>
