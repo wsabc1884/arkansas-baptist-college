@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
 
-import { Mail, Download, Briefcase } from "lucide-react"
+import { Mail, FileText, Briefcase } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Human Resources | Arkansas Baptist College",
@@ -89,15 +89,15 @@ export default function HumanResourcesPage() {
             <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Documents & Policies</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
-                { title: "Faculty Handbook (2019-2021)", desc: "Comprehensive guide for faculty members covering policies, procedures, and expectations.", file: "/documents/hr/faculty-handbook-2019-2021.pdf" },
+                { title: "Staff Handbook (2024-2026)", desc: "Comprehensive guide covering policies, procedures, and benefits for non-instructional staff.", file: "/resources/human-resources/staff-handbook" },
               ].map((doc) => (
-                <a key={doc.title} href={doc.file} download className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
-                  <Download className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <Link key={doc.title} href={doc.file} className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
+                  <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <div>
                     <h3 className="font-semibold text-foreground group-hover:text-primary">{doc.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{doc.desc}</p>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
