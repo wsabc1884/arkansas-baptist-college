@@ -592,7 +592,7 @@ export default function AcademicCalendarPage() {
               <li><strong>All Grades Due by 5PM:</strong> July 25</li>
             </ul>
 
-            <p className="text-xs italic mt-8">Dates are subject to change. Contact the Registrar&apos;s Office at <a href="tel:5014201200">501-420-1200</a> for the most current calendar.</p>
+            <p className="text-xs italic mt-8">Dates are subject to change. Contact the Registrar&apos;s Office at <a href="tel:5014201237">501-420-1237</a> for the most current calendar.</p>
           </div>
         </SectionWrapper>
       </main>
