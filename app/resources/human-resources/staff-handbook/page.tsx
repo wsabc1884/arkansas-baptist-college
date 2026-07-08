@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { Download } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Staff Handbook 2024-2026 | Arkansas Baptist College",
@@ -25,6 +26,18 @@ export default function StaffHandbookPage() {
         />
 
         <SectionWrapper>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 flex justify-end">
+              <a
+                href="/documents/hr/staff-handbook-2024-2026.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Download PDF
+              </a>
+            </div>
+          </div>
           <div className="prose-abc mx-auto max-w-4xl">
             <p>
               The purpose of this Handbook is to inform employees of the policies, procedures, and benefits of Arkansas
@@ -1031,34 +1044,6 @@ export default function StaffHandbookPage() {
               Employees should ensure their email address and telephone number have been communicated to the Chief of
               Security in order to be input into the campus notification system. In the event of campus closing, full-time
               permanent non-essential employees are paid for the regular work day.
-            </p>
-
-            <h2>Staff / Employee Acknowledgement Form</h2>
-            <p>
-              By signing this form, I acknowledge my responsibilities under the Non-Instructional Staff Handbook, and
-              understand that:
-            </p>
-            <ul>
-              <li>I am responsible for complying with the policies and rules applicable to me.</li>
-              <li>I have the opportunity to ask questions on any items in which I do not understand.</li>
-              <li>
-                The Handbook is only intended to provide a general overview of the College&apos;s personnel policies and
-                may not represent all policies or practices in force at any particular time.
-              </li>
-              <li>Revisions may occur that supersedes, modifies, or eliminates existing policies.</li>
-              <li>
-                This Handbook is not intended to create an express or implied contract, covenant, promise, or
-                representation between Arkansas Baptist College and the employee.
-              </li>
-            </ul>
-            <p>
-              My employment is at-will, and Arkansas Baptist College may terminate the employment relationship at any time
-              with or without cause.
-            </p>
-            <p>
-              Employee Signature ____________________________ Date __________
-              <br />
-              Employee&apos;s Name (Printed) ____________________________
             </p>
 
             <hr />
