@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { FileText } from "lucide-react"
+import { AcademicCalendar } from "@/components/academic-calendar"
 
 export const metadata: Metadata = {
   title: "Academic Calendar 2026-2028 | Arkansas Baptist College",
@@ -14,24 +14,24 @@ export default function AcademicCalendarPage() {
       <main id="main-content">
         <PageHero title="Academic Calendar" subtitle="Main Campus - Important dates and deadlines for the 2026-2028 academic years." label="Academic Resources" />
         
-        {/* Download PDF */}
-        <SectionWrapper className="bg-muted/30 py-6">
-          <div className="max-w-4xl mx-auto flex justify-center">
-            <a
-              href="/documents/ABC-Academic-Calendar-2026-2028.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
-            >
-              <FileText className="h-4 w-4" />
-              Download Full Calendar (PDF)
-            </a>
+        {/* Visual Calendar */}
+        <SectionWrapper className="bg-muted/30">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Calendar View</h2>
+            <p className="mt-2 text-muted-foreground">
+              Browse important dates month by month. Dates with a dot have scheduled events &mdash; select one to see the
+              details, or review what&apos;s coming up in the panel on the right.
+            </p>
+            <div className="mt-8">
+              <AcademicCalendar />
+            </div>
           </div>
         </SectionWrapper>
 
         <SectionWrapper>
           <div className="prose-abc max-w-4xl mx-auto">
-            
+            <h2>Full Schedule</h2>
+
             {/* Spring 2026 */}
             <h2>Spring Semester 2026</h2>
             <p className="text-sm text-muted-foreground">Term SP-26 | January 12 - May 8</p>
