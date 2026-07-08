@@ -110,8 +110,8 @@ export default function FERPAPage() {
         Arkansas Baptist College<br />
         1600 Dr. Martin Luther King Jr. Drive<br />
         Little Rock, AR 72202<br />
-        Phone: <a href="tel:5014201200">501-420-1200</a><br />
-        Email: <a href="mailto:registrar@arkansasbaptist.edu">registrar@arkansasbaptist.edu</a>
+        Phone: <a href="tel:5014201237">501-420-1237</a><br />
+        Email: <a href="mailto:registrarsoffice@arkansasbaptist.edu">registrarsoffice@arkansasbaptist.edu</a>
       </p>
     </ComplianceLayout>
   )

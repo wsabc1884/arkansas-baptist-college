@@ -45,7 +45,7 @@ export default function CourseSearchPage() {
               <li>Confirm your registration</li>
             </ol>
             <h2>Need Help?</h2>
-            <p>Contact the <a href="/academics/registrar">Registrar&apos;s Office</a> at <a href="tel:5014201200">501-420-1200</a> or your <a href="/academics/academic-advising">academic advisor</a> for assistance with course selection and registration.</p>
+            <p>Contact the <a href="/academics/registrar">Registrar&apos;s Office</a> at <a href="tel:5014201237">501-420-1237</a> or your <a href="/academics/academic-advising">academic advisor</a> for assistance with course selection and registration.</p>
           </div>
         </SectionWrapper>
       </main>

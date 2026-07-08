@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 const fallbackDepartments = [
   { name: "Main Campus", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "Office of the President", phone: "501-420-1202", email: "President@arkansasbaptist.edu" },
-  { name: "Academic Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
+  { name: "Academic Affairs", phone: "501-420-1312", email: "Howard.gibson@arkansasbaptist.edu" },
   { name: "Office of Admissions", phone: "501-420-1200", email: "Admissions@arkansasbaptist.edu" },
   { name: "Business Office", phone: "501-420-1214", email: "Businessoffice@arkansasbaptist.edu" },
   { name: "Financial Aid", phone: "501-420-1226", email: "Financialaid@arkansasbaptist.edu" },
-  { name: "Registrar", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
+  { name: "Registrar", phone: "501-420-1237", email: "Registrarsoffice@arkansasbaptist.edu" },
   { name: "Student Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "J.C. Oliver Library", phone: "501-420-1252", email: "Jacqueline.mcgehee@arkansasbaptist.edu" },
   { name: "Upward Bound TRIO", phone: "501-420-1276", email: "Michael.Isaac@arkansasbaptist.edu" },

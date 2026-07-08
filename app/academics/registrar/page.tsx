@@ -121,7 +121,8 @@ export default function RegistrarPage() {
               <div className="mt-4 space-y-2">
                 <p className="font-semibold text-foreground">Delores Voliber, BBA</p>
                 <p className="text-sm text-muted-foreground">Office Hours: Mon-Fri, 9:00 AM - 5:00 PM</p>
-                <p className="text-sm text-muted-foreground">Phone: <a href="tel:5014201200" className="text-primary hover:underline">501-420-1200</a></p>
+                <p className="text-sm text-muted-foreground">Phone: <a href="tel:5014201237" className="text-primary hover:underline">501-420-1237</a></p>
+                <p className="text-sm text-muted-foreground">Email: <a href="mailto:registrarsoffice@arkansasbaptist.edu" className="text-primary hover:underline">registrarsoffice@arkansasbaptist.edu</a></p>
               </div>
             </div>
           </div>

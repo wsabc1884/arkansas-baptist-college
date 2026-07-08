@@ -111,7 +111,7 @@ export default function AcademicCatalogPage() {
               <li>Faculty and administration directory</li>
             </ul>
             <h2>Questions?</h2>
-            <p>Contact the Office of the Registrar at <a href="tel:5014201200">501-420-1200</a> or visit the <Link href="/academics/registrar">Registrar&apos;s Office</Link> page.</p>
+            <p>Contact the Office of the Registrar at <a href="tel:5014201237">501-420-1237</a> or visit the <Link href="/academics/registrar">Registrar&apos;s Office</Link> page.</p>
           </div>
         </SectionWrapper>
 
