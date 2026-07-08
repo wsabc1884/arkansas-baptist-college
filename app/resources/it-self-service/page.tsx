@@ -3,6 +3,7 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
+import { ITSupportGuidelinesPopup } from "@/components/it-support-guidelines-popup"
 import { KeyRound, LifeBuoy, ExternalLink, ArrowRight, FileText, BookOpen, PlayCircle } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ const services: Service[] = [
 export default function ITSelfServicePage() {
   return (
     <div className="min-h-screen">
+      <ITSupportGuidelinesPopup />
       <main id="main-content">
         <PageHero
           title="myABC IT Self Service"
