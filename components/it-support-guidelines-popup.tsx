@@ -71,6 +71,11 @@ export function ITSupportGuidelinesPopup() {
           })}
         </ul>
 
+        <p className="rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm font-medium leading-relaxed text-foreground">
+          Please note: tickets submitted without the required information above cannot be processed and will not receive
+          a response. Be sure to include all requested details to ensure your request is addressed.
+        </p>
+
         <DialogFooter>
           <Button onClick={() => setOpen(false)}>I Understand</Button>
         </DialogFooter>

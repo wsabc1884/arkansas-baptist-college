@@ -86,7 +86,7 @@ export default function ITSelfServicePage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                         >
-                          Open portal
+                          Submit Ticket
                           <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         </a>
                         <a
@@ -111,7 +111,7 @@ export default function ITSelfServicePage() {
                     <h3 className="mt-4 font-semibold text-foreground">{service.title}</h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
                     <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                      {service.external ? "Open portal" : "View guide"}
+                      {service.external ? "Submit Ticket" : "View guide"}
                       {service.external ? (
                         <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       ) : (
