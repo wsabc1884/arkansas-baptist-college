@@ -60,7 +60,7 @@ const TRUSTEES = [
     title: "Board Member",
   },
   {
-    name: "Joe \"Broadway\" Booker",
+    name: "\"Broadway\" Joe Booker",
     title: "Board Member",
   },
 ]
