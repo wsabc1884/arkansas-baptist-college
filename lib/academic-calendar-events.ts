@@ -531,3 +531,14 @@ export function getSortedAcademicEvents(): AcademicEvent[] {
 export function getUpcomingAcademicEvents(fromDateKey: string): AcademicEvent[] {
   return getSortedAcademicEvents().filter((e) => (e.endDate ?? e.date) >= fromDateKey)
 }
+
+/** Academic events occurring on a specific date (as YYYY-MM-DD). */
+export function getAcademicEventsOnDate(dateKey: string): AcademicEvent[] {
+  return ACADEMIC_EVENTS.filter((e) => academicEventOccursOn(e, dateKey))
+}
+
+/** Check if an event title matches between academic and college events (case-insensitive). */
+export function isSameEvent(academicTitle: string, collegeTitle: string): boolean {
+  const normalize = (str: string) => str.toLowerCase().trim()
+  return normalize(academicTitle) === normalize(collegeTitle)
+}
