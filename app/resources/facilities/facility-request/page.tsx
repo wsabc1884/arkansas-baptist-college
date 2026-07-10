@@ -8,13 +8,17 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
+import { NumberPad } from "@/components/number-pad"
 
 export default function FacilityRequestPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [ticketNumber, setTicketNumber] = useState<number | null>(null)
+  const [attendeesValue, setAttendeesValue] = useState("")
+  const [showNumberPad, setShowNumberPad] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
+  const attendeesInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     // Set default time inputs to 8:00 AM - 5:00 PM
@@ -28,6 +32,21 @@ export default function FacilityRequestPage() {
       endTimeInput.value = "17:00"
     }
   }, [])
+
+  const handleAttendeesChange = (newValue: string) => {
+    // Only allow digits
+    const numericValue = newValue.replace(/\D/g, "")
+    setAttendeesValue(numericValue)
+    if (attendeesInputRef.current) {
+      attendeesInputRef.current.value = numericValue
+    }
+  }
+
+  const handleAttendeesInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    const numericValue = value.replace(/\D/g, "")
+    setAttendeesValue(numericValue)
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -163,7 +182,23 @@ export default function FacilityRequestPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="attendees">Expected Number of Attendees</Label>
-                        <Input id="attendees" name="attendees" type="number" min="1" className="mt-1" />
+                        <Input
+                          ref={attendeesInputRef}
+                          id="attendees"
+                          name="attendees"
+                          type="text"
+                          inputMode="numeric"
+                          placeholder="0"
+                          value={attendeesValue}
+                          onChange={handleAttendeesInputChange}
+                          onFocus={() => setShowNumberPad(true)}
+                          className="mt-1"
+                        />
+                        <NumberPad
+                          isOpen={showNumberPad}
+                          currentValue={attendeesValue}
+                          onInput={handleAttendeesChange}
+                        />
                       </div>
                     </div>
                     <div>
