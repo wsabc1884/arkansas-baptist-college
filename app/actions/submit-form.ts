@@ -99,6 +99,9 @@ export async function submitForm(data: FormData) {
         user: process.env.OFFICE365_EMAIL,
         pass: process.env.OFFICE365_PASSWORD,
       },
+      connectionTimeout: 30000,
+      socketTimeout: 30000,
+      greetingTimeout: 30000,
     })
 
     console.log("[v0] Sending email to:", recipientEmail)
