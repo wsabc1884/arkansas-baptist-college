@@ -1,16 +1,55 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 
 import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Send, AlertTriangle } from "lucide-react"
+import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-react"
+import { submitForm } from "@/app/actions/submit-form"
 
 export default function KeyRequestPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [ticketNumber, setTicketNumber] = useState<number | null>(null)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const fields: Record<string, string> = {}
+
+      for (const [key, value] of formData.entries()) {
+        if (value instanceof File) continue
+        fields[key] = String(value)
+      }
+
+      const result = await submitForm({
+        formType: "key-request",
+        fields,
+      })
+
+      if (result.success) {
+        setSubmitted(true)
+        setTicketNumber(result.ticketNumber || null)
+        formRef.current?.reset()
+      } else {
+        setError(result.error || "Failed to submit form")
+      }
+    } catch (err) {
+      setError("An unexpected error occurred. Please try again.")
+      console.error("[v0] Form submission error:", err)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="min-h-screen">
@@ -32,27 +71,24 @@ export default function KeyRequestPage() {
               Request a key or access card for a campus building or office.
             </p>
 
-            <div className="mt-6 flex items-start gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-950/30">
-              <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
-              <div>
-                <p className="text-sm font-medium text-amber-800 dark:text-amber-300">
-                  Form Submission Limitation
-                </p>
-                <p className="mt-1 text-sm text-amber-700 dark:text-amber-400">
-                  This form currently displays fields for reference. A backend
-                  integration (email service or database) is required to process
-                  submissions. Contact Facilities at{" "}
-                  <a href="tel:5014201200" className="underline">501-420-1200</a>{" "}
-                  to submit requests directly in the meantime.
-                </p>
+            {error && (
+              <div className="mt-6 flex items-start gap-3 rounded-lg border border-red-300 bg-red-50 p-4 dark:border-red-700 dark:bg-red-950/30">
+                <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+                <div>
+                  <p className="text-sm font-medium text-red-800 dark:text-red-300">
+                    Submission Error
+                  </p>
+                  <p className="mt-1 text-sm text-red-700 dark:text-red-400">{error}</p>
+                </div>
               </div>
-            </div>
+            )}
 
             {submitted ? (
-              <div className="mt-8 rounded-lg border bg-card p-8 text-center">
-                <h2 className="text-xl font-semibold text-foreground">Request Submitted</h2>
+              <div className="mt-8 rounded-lg border border-green-200 bg-green-50 p-8 text-center dark:border-green-800 dark:bg-green-950/20">
+                <CheckCircle className="mx-auto h-12 w-12 text-green-600" />
+                <h2 className="mt-4 text-xl font-semibold text-foreground">Key Request Submitted Successfully</h2>
                 <p className="mt-2 text-muted-foreground">
-                  Thank you. The Facilities department will review your key request and contact you.
+                  Your key request has been received{ticketNumber && ` (Ticket #${ticketNumber})`}. The Facilities department will review and contact you.
                 </p>
                 <Button asChild className="mt-6">
                   <Link href="/resources/facilities">Return to Facilities</Link>
@@ -60,11 +96,9 @@ export default function KeyRequestPage() {
               </div>
             ) : (
               <form
+                ref={formRef}
                 className="mt-8 space-y-6"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  setSubmitted(true)
-                }}
+                onSubmit={handleSubmit}
               >
                 <fieldset className="rounded-lg border bg-card p-6">
                   <legend className="px-2 text-lg font-semibold text-foreground">
@@ -125,9 +159,18 @@ export default function KeyRequestPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full">
-                  <Send className="mr-2 h-4 w-4" />
-                  Submit Key Request
+                <Button type="submit" size="lg" className="w-full" disabled={loading}>
+                  {loading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Submit Key Request
+                    </>
+                  )}
                 </Button>
               </form>
             )}
