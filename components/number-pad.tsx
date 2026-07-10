@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Backspace } from "lucide-react"
+import { Delete } from "lucide-react"
 
 interface NumberPadProps {
   onInput: (value: string) => void
@@ -82,7 +82,7 @@ export function NumberPad({ onInput, currentValue, isOpen }: NumberPadProps) {
           variant="outline"
           className="flex-1"
         >
-          <Backspace className="h-4 w-4" />
+          <Delete className="h-4 w-4" />
         </Button>
       </div>
     </div>
