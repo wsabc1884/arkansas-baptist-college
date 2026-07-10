@@ -233,7 +233,7 @@ export default function BoardOfTrusteesPage() {
           />
           <FeatureGrid
             items={[
-              { title: "Strategic Planning", description: "Setting the long-term vision and strategic direction for the college" },
+              { title: "Strategic Planning", description: "Setting the long-term vision and strategic direction for the college", href: "/about/strategic-plan" },
               { title: "Financial Oversight", description: "Ensuring responsible stewardship of the college's financial resources" },
               { title: "Presidential Support", description: "Selecting, evaluating, and supporting the college president" },
               { title: "Policy Development", description: "Establishing policies that guide institutional operations" },

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Strategic Plan - Arkansas Baptist College",
-  description: "Arkansas Baptist College Strategic Plan (2021-2023) outlining goals for academic excellence, enrollment growth, and institutional sustainability.",
+  description: "Arkansas Baptist College Strategic Plan (2025-2028) outlining goals for academic excellence, enrollment growth, and institutional sustainability.",
 }
 
 export default function StrategicPlanPage() {
@@ -28,7 +28,7 @@ export default function StrategicPlanPage() {
       <SectionWrapper>
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">
-            Strategic Planning (2021-2023)
+            Strategic Planning (2025-2028)
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             The Arkansas Baptist College Strategic Plan serves as a roadmap for the institution, establishing priorities and measurable goals across academics, enrollment, student success, financial sustainability, and community engagement.
@@ -41,14 +41,14 @@ export default function StrategicPlanPage() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground">
-                  ABC Strategic Plan 2023 (PDF)
+                  ABC Strategic Plan 2028 (PDF)
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   View or download the full strategic planning document.
                 </p>
                 <Button className="mt-4" variant="outline" asChild>
                   <a
-                    href="https://www.arkansasbaptist.edu/wp-content/uploads/2020/06/ABC_Strategic_Plan_2023_062020.pdf"
+                    href="/documents/ABC_Strategic_Plan_2025-2028.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
