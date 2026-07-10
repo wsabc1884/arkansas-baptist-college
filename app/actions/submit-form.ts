@@ -42,11 +42,15 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 
 export async function submitForm(data: FormData) {
   try {
+    console.log("[v0] Form submission started for:", data.formType)
+    console.log("[v0] API Key present:", !!process.env.RESEND_API_KEY)
+    
     // Initialize Resend here (at runtime) instead of module level
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     // Validate required fields
     if (!data.formType || !data.fields) {
+      console.log("[v0] Validation failed - missing formType or fields")
       return {
         success: false,
         error: "Invalid form data",
@@ -57,7 +61,9 @@ export async function submitForm(data: FormData) {
     // In production, you may want to validate specific fields
 
     // Get next ticket number
+    console.log("[v0] Getting ticket number for:", data.formType)
     const ticketNumber = await getNextTicketNumber(data.formType)
+    console.log("[v0] Ticket number:", ticketNumber)
 
     // Format form type for display
     const formTypeDisplay = data.formType
@@ -71,6 +77,8 @@ export async function submitForm(data: FormData) {
     const emailBody = `New Form Submission: ${formTypeDisplay} (Ticket #${ticketNumber})\n\n${formatFormData(data.fields)}`
 
     // Send email with Resend
+    console.log("[v0] Sending email to:", recipientEmail)
+    console.log("[v0] Email subject:", emailSubject)
     const response = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: recipientEmail,
@@ -79,6 +87,8 @@ export async function submitForm(data: FormData) {
       html: `<pre>${emailBody}</pre>`,
     })
 
+    console.log("[v0] Resend response:", response)
+    
     if (response.error) {
       console.error("[v0] Resend error:", response.error)
       return {
@@ -86,6 +96,8 @@ export async function submitForm(data: FormData) {
         error: "Failed to submit form. Please try again.",
       }
     }
+    
+    console.log("[v0] Email sent successfully with ID:", response.id)
 
     return {
       success: true,
