@@ -42,6 +42,15 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 
 export async function submitForm(data: FormData) {
   try {
+    // Validate environment variables
+    if (!process.env.OFFICE365_EMAIL || !process.env.OFFICE365_PASSWORD) {
+      console.error("[v0] Missing Office 365 credentials")
+      return {
+        success: false,
+        error: "Email service is not properly configured. Please contact support.",
+      }
+    }
+
     // Validate required fields
     if (!data.formType || !data.fields) {
       return {
@@ -101,7 +110,23 @@ export async function submitForm(data: FormData) {
       message: `Your ${formTypeDisplay} has been submitted successfully (Ticket #${ticketNumber})`,
     }
   } catch (error) {
-    console.error("[v0] Form submission error:", error)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    console.error("[v0] Form submission error:", errorMessage)
+    
+    // Provide more specific error messages
+    if (errorMessage.includes("EAUTH")) {
+      return {
+        success: false,
+        error: "Email authentication failed. Please verify the Office 365 credentials.",
+      }
+    }
+    if (errorMessage.includes("ENOTFOUND")) {
+      return {
+        success: false,
+        error: "Email service is unreachable. Please try again later.",
+      }
+    }
+    
     return {
       success: false,
       error: "An unexpected error occurred. Please try again.",
