@@ -106,8 +106,12 @@ export default function FacilityRequestPage() {
                   </legend>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
                     <div>
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" name="name" className="mt-1" />
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input id="firstName" name="firstName" className="mt-1" />
+                    </div>
+                    <div>
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input id="lastName" name="lastName" className="mt-1" />
                     </div>
                     <div>
                       <Label htmlFor="department">Department / Organization</Label>
@@ -156,11 +160,11 @@ export default function FacilityRequestPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="startTime">Start Time</Label>
-                        <Input id="startTime" name="startTime" type="time" className="mt-1" />
+                        <Input id="startTime" name="startTime" type="time" step="900" className="mt-1" />
                       </div>
                       <div>
                         <Label htmlFor="endTime">End Time</Label>
-                        <Input id="endTime" name="endTime" type="time" className="mt-1" />
+                        <Input id="endTime" name="endTime" type="time" step="900" className="mt-1" />
                       </div>
                     </div>
                     <div>
