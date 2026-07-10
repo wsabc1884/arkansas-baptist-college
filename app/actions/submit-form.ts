@@ -8,7 +8,6 @@ interface FormData {
   fields: Record<string, string>
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "helpdesk@arkansasbaptist.edu"
 
 // Helper to get next ticket number
@@ -43,6 +42,9 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 
 export async function submitForm(data: FormData) {
   try {
+    // Initialize Resend here (at runtime) instead of module level
+    const resend = new Resend(process.env.RESEND_API_KEY)
+
     // Validate required fields
     if (!data.formType || !data.fields) {
       return {
