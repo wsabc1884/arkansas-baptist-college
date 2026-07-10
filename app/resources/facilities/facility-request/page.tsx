@@ -135,9 +135,15 @@ export default function FacilityRequestPage() {
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label htmlFor="facilityName">Facility / Room Requested</Label>
-                        <Input id="facilityName" name="facilityName" required className="mt-1" />
+                        <Label htmlFor="facility">Facility</Label>
+                        <Input id="facility" name="facility" required className="mt-1" />
                       </div>
+                      <div>
+                        <Label htmlFor="room">Room Requested</Label>
+                        <Input id="room" name="room" required className="mt-1" />
+                      </div>
+                    </div>
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="attendees">Expected Number of Attendees</Label>
                         <Input id="attendees" name="attendees" type="number" min="1" required className="mt-1" />
