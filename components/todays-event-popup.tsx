@@ -27,6 +27,33 @@ interface UnifiedEvent {
   id: string
 }
 
+// Helper to parse time string (e.g., "6:00 PM") and return minutes since midnight
+function timeToMinutes(timeStr: string): number {
+  const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i)
+  if (!match) return 0
+
+  let hours = parseInt(match[1], 10)
+  const minutes = parseInt(match[2], 10)
+  const period = match[3]?.toUpperCase()
+
+  if (period === "PM" && hours !== 12) hours += 12
+  if (period === "AM" && hours === 12) hours = 0
+
+  return hours * 60 + minutes
+}
+
+// Helper to calculate if we're past an event + 2 hours
+function isEventExpired(eventTime: string | undefined): boolean {
+  if (!eventTime) return false
+
+  const now = new Date()
+  const currentMinutes = now.getHours() * 60 + now.getMinutes()
+  const eventMinutes = timeToMinutes(eventTime)
+  const expiryTime = eventMinutes + 120 // 2 hours after event starts
+
+  return currentMinutes >= expiryTime
+}
+
 export function TodaysEventPopup() {
   const [open, setOpen] = useState(false)
   const [events, setEvents] = useState<UnifiedEvent[]>([])
@@ -96,6 +123,43 @@ export function TodaysEventPopup() {
     setEvents(unified)
     setDateKey(todayKey)
     setOpen(true)
+
+    // Check if all events have expired (2 hours after start time)
+    const allExpired = unified.length > 0 && unified.every((e) => isEventExpired(e.collegeEvent?.time))
+    if (allExpired) {
+      setOpen(false)
+      return
+    }
+
+    // Auto-dismiss the popup 2 hours after the earliest event starts
+    if (unified.length > 0) {
+      const earliestEvent = unified.reduce((prev, curr) => {
+        const prevTime = prev.collegeEvent?.time ? timeToMinutes(prev.collegeEvent.time) : Infinity
+        const currTime = curr.collegeEvent?.time ? timeToMinutes(curr.collegeEvent.time) : Infinity
+        return currTime < prevTime ? curr : prev
+      })
+
+      if (earliestEvent.collegeEvent?.time) {
+        const now = new Date()
+        const currentMinutes = now.getHours() * 60 + now.getMinutes()
+        const eventMinutes = timeToMinutes(earliestEvent.collegeEvent.time)
+        const expiryTime = eventMinutes + 120 // 2 hours
+
+        if (expiryTime > currentMinutes) {
+          const millisecondsUntilExpiry = (expiryTime - currentMinutes) * 60 * 1000
+          const timer = setTimeout(() => {
+            setOpen(false)
+            try {
+              window.localStorage.setItem(`abc-event-popup-dismissed:${todayKey}`, "1")
+            } catch {
+              // ignore
+            }
+          }, millisecondsUntilExpiry)
+
+          return () => clearTimeout(timer)
+        }
+      }
+    }
   }, [])
 
   function handleOpenChange(next: boolean) {

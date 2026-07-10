@@ -1,50 +1,49 @@
 "use server"
 
-import nodemailer from "nodemailer"
-import { kv } from "@vercel/kv"
+import { generateFormPDF } from "@/lib/generate-form-pdf"
 
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
   fields: Record<string, string>
 }
 
-const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "helpdesk@arkansasbaptist.edu"
+const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
+
+// In-memory ticket counter for each form type
+const ticketCounters: Record<string, number> = {
+  "facility-request": 1000,
+  "work-order": 2000,
+  "key-request": 3000,
+  "entrepreneurship-fund": 4000,
+}
 
 // Helper to get next ticket number
-async function getNextTicketNumber(formType: string): Promise<number> {
-  const key = `form_tickets_${formType}`
-  const current = await kv.get<number>(key)
-  const next = (current || 0) + 1
-  await kv.set(key, next)
-  return next
+function getNextTicketNumber(formType: string): number {
+  if (!ticketCounters[formType]) {
+    ticketCounters[formType] = 1000
+  }
+  ticketCounters[formType]++
+  return ticketCounters[formType]
 }
 
-// Helper to format form data as readable text
+// Helper to format form data
 function formatFormData(fields: Record<string, string>): string {
-  let text = ""
-  Object.entries(fields).forEach(([key, value]) => {
-    const label = key
-      .replace(/([A-Z])/g, " $1")
-      .replace(/^./, (str) => str.toUpperCase())
-      .trim()
-    text += `${label}: ${value}\n`
-  })
-  return text
-}
-
-// Helper to generate PDF content as base64
-function generatePDFContent(formType: string, ticketNumber: number, fields: Record<string, string>): string {
-  // Simple PDF generation - in production, you might use a library like pdfkit
-  // For now, we'll format the data and let email handle it
-  const formattedData = formatFormData(fields)
-  return formattedData
+  return Object.entries(fields)
+    .map(([key, value]) => {
+      const label = key
+        .replace(/([A-Z])/g, " $1")
+        .replace(/^./, (str) => str.toUpperCase())
+        .trim()
+      return `<strong>${label}:</strong> ${value}`
+    })
+    .join("<br/>")
 }
 
 export async function submitForm(data: FormData) {
   try {
-    // Validate environment variables
-    if (!process.env.OFFICE365_EMAIL || !process.env.OFFICE365_PASSWORD) {
-      console.error("[v0] Missing Office 365 credentials")
+    // Validate environment variable
+    if (!process.env.BREVO_API_KEY) {
+      console.error("[v0] Missing Brevo API key")
       return {
         success: false,
         error: "Email service is not properly configured. Please contact support.",
@@ -69,7 +68,7 @@ export async function submitForm(data: FormData) {
     }
 
     // Get next ticket number
-    const ticketNumber = await getNextTicketNumber(data.formType)
+    const ticketNumber = getNextTicketNumber(data.formType)
 
     // Format form type for display
     const formTypeDisplay = data.formType
@@ -77,32 +76,57 @@ export async function submitForm(data: FormData) {
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
 
-    const emailSubject = `${formTypeDisplay} Form #${ticketNumber}`
+    // Generate PDF
+    let pdfBuffer: Buffer | null = null
+    try {
+      pdfBuffer = await generateFormPDF(data.formType, ticketNumber, data.fields)
+      console.log("[v0] PDF generated successfully for ticket #", ticketNumber)
+    } catch (pdfError) {
+      console.error("[v0] PDF generation failed:", pdfError)
+      // Continue anyway - send email even if PDF fails
+    }
 
-    // Format email body with form data
-    const emailBody = `New Form Submission: ${formTypeDisplay} (Ticket #${ticketNumber})\n\n${formatFormData(data.fields)}`
+    // Send email via Brevo REST API with PDF attachment
+    try {
+      const emailBody: Record<string, unknown> = {
+        subject: `${formTypeDisplay} Form #${ticketNumber}`,
+        htmlContent: `
+          <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
+          <p>Please see the attached PDF for full form details.</p>
+        `,
+        sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
+        to: [{ email: recipientEmail }],
+      }
 
-    // Create Nodemailer transporter with Office 365 SMTP
-    const transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
-      port: 587,
-      secure: false, // TLS
-      auth: {
-        user: process.env.OFFICE365_EMAIL,
-        pass: process.env.OFFICE365_PASSWORD,
-      },
-    })
+      // Add PDF attachment if generated successfully
+      if (pdfBuffer) {
+        emailBody.attachment = [
+          {
+            content: pdfBuffer.toString("base64"),
+            name: `${data.formType}-${ticketNumber}.pdf`,
+          },
+        ]
+      }
 
-    // Send email
-    const info = await transporter.sendMail({
-      from: process.env.OFFICE365_EMAIL,
-      to: recipientEmail,
-      subject: emailSubject,
-      text: emailBody,
-      html: `<pre>${emailBody}</pre>`,
-    })
+      const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": process.env.BREVO_API_KEY!,
+        },
+        body: JSON.stringify(emailBody),
+      })
 
-    console.log("[v0] Email sent:", info.messageId)
+      if (!response.ok) {
+        const error = await response.text()
+        console.error("[v0] Brevo API error:", response.status, error)
+      } else {
+        console.log("[v0] Email sent successfully for ticket #", ticketNumber)
+      }
+    } catch (emailError) {
+      console.error("[v0] Email sending failed:", emailError)
+      // Continue anyway - don't fail the form submission if email fails
+    }
 
     return {
       success: true,
@@ -110,23 +134,7 @@ export async function submitForm(data: FormData) {
       message: `Your ${formTypeDisplay} has been submitted successfully (Ticket #${ticketNumber})`,
     }
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error)
-    console.error("[v0] Form submission error:", errorMessage)
-    
-    // Provide more specific error messages
-    if (errorMessage.includes("EAUTH")) {
-      return {
-        success: false,
-        error: "Email authentication failed. Please verify the Office 365 credentials.",
-      }
-    }
-    if (errorMessage.includes("ENOTFOUND")) {
-      return {
-        success: false,
-        error: "Email service is unreachable. Please try again later.",
-      }
-    }
-    
+    console.error("[v0] Form submission error:", error)
     return {
       success: false,
       error: "An unexpected error occurred. Please try again.",
