@@ -1,6 +1,6 @@
 "use server"
 
-import nodemailer from "nodemailer"
+import sgMail from "@sendgrid/mail"
 
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
@@ -50,13 +50,15 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 export async function submitForm(data: FormData) {
   try {
     // Validate environment variables
-    if (!process.env.OFFICE365_EMAIL || !process.env.OFFICE365_PASSWORD) {
-      console.error("[v0] Missing Office 365 credentials")
+    if (!process.env.SENDGRID_API_KEY) {
+      console.error("[v0] Missing SendGrid API key")
       return {
         success: false,
         error: "Email service is not properly configured. Please contact support.",
       }
     }
+    
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
     // Validate required fields
     if (!data.formType || !data.fields) {
@@ -89,32 +91,19 @@ export async function submitForm(data: FormData) {
     // Format email body with form data
     const emailBody = `New Form Submission: ${formTypeDisplay} (Ticket #${ticketNumber})\n\n${formatFormData(data.fields)}`
 
-    // Create Nodemailer transporter with Office 365 SMTP
-    console.log("[v0] Creating transporter with email:", process.env.OFFICE365_EMAIL)
-    const transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
-      port: 587,
-      secure: false, // TLS
-      auth: {
-        user: process.env.OFFICE365_EMAIL,
-        pass: process.env.OFFICE365_PASSWORD,
-      },
-      connectionTimeout: 30000,
-      socketTimeout: 30000,
-      greetingTimeout: 30000,
-    })
-
     console.log("[v0] Sending email to:", recipientEmail)
-    // Send email
-    const info = await transporter.sendMail({
-      from: process.env.OFFICE365_EMAIL,
+    
+    // Send email via SendGrid
+    const msg = {
       to: recipientEmail,
+      from: process.env.SENDGRID_FROM_EMAIL || "noreply@arkansasbaptist.edu",
       subject: emailSubject,
       text: emailBody,
       html: `<pre>${emailBody}</pre>`,
-    })
+    }
 
-    console.log("[v0] Email sent successfully:", info.messageId)
+    const response = await sgMail.send(msg)
+    console.log("[v0] Email sent successfully:", response[0].statusCode)
 
     return {
       success: true,
@@ -128,14 +117,14 @@ export async function submitForm(data: FormData) {
     console.error("[v0] Full error details:", fullError)
     
     // Provide more specific error messages
-    if (errorMessage.includes("EAUTH") || errorMessage.includes("Invalid login") || errorMessage.includes("authentication")) {
+    if (errorMessage.includes("401") || errorMessage.includes("Unauthorized") || errorMessage.includes("Invalid API key")) {
       console.error("[v0] Authentication error detected")
       return {
         success: false,
-        error: "Email authentication failed. Please verify the Office 365 credentials.",
+        error: "Email service authentication failed. Please verify the SendGrid API key.",
       }
     }
-    if (errorMessage.includes("ENOTFOUND") || errorMessage.includes("getaddrinfo")) {
+    if (errorMessage.includes("ENOTFOUND") || errorMessage.includes("getaddrinfo") || errorMessage.includes("Network")) {
       console.error("[v0] Network error detected")
       return {
         success: false,
