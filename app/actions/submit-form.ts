@@ -43,10 +43,20 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 export async function submitForm(data: FormData) {
   try {
     console.log("[v0] Form submission started for:", data.formType)
-    console.log("[v0] API Key present:", !!process.env.RESEND_API_KEY)
+    
+    const apiKey = process.env.RESEND_API_KEY
+    console.log("[v0] API Key present:", !!apiKey)
+    
+    if (!apiKey) {
+      console.error("[v0] RESEND_API_KEY environment variable is not set")
+      return {
+        success: false,
+        error: "Form submission service is not configured. Please contact support.",
+      }
+    }
     
     // Initialize Resend here (at runtime) instead of module level
-    const resend = new Resend(process.env.RESEND_API_KEY)
+    const resend = new Resend(apiKey)
 
     // Validate required fields
     if (!data.formType || !data.fields) {
