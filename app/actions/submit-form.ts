@@ -1,6 +1,7 @@
 "use server"
 
-import sgMail from "@sendgrid/mail"
+import FormData from "form-data"
+import Mailgun from "mailgun.js"
 
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
@@ -50,15 +51,17 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 export async function submitForm(data: FormData) {
   try {
     // Validate environment variables
-    if (!process.env.SENDGRID_API_KEY) {
-      console.error("[v0] Missing SendGrid API key")
+    if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
+      console.error("[v0] Missing Mailgun credentials")
       return {
         success: false,
         error: "Email service is not properly configured. Please contact support.",
       }
     }
     
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+    // Initialize Mailgun
+    const mailgun = new Mailgun(FormData)
+    const client = mailgun.client({ username: "api", key: process.env.MAILGUN_API_KEY })
 
     // Validate required fields
     if (!data.formType || !data.fields) {
@@ -93,17 +96,17 @@ export async function submitForm(data: FormData) {
 
     console.log("[v0] Sending email to:", recipientEmail)
     
-    // Send email via SendGrid
-    const msg = {
+    // Send email via Mailgun
+    const domain = client.domains.domain(process.env.MAILGUN_DOMAIN!)
+    const response = await domain.messages.create({
       to: recipientEmail,
-      from: process.env.SENDGRID_FROM_EMAIL || "noreply@arkansasbaptist.edu",
+      from: `noreply@${process.env.MAILGUN_DOMAIN}`,
       subject: emailSubject,
       text: emailBody,
       html: `<pre>${emailBody}</pre>`,
-    }
+    })
 
-    const response = await sgMail.send(msg)
-    console.log("[v0] Email sent successfully:", response[0].statusCode)
+    console.log("[v0] Email sent successfully:", response.id)
 
     return {
       success: true,
@@ -117,11 +120,11 @@ export async function submitForm(data: FormData) {
     console.error("[v0] Full error details:", fullError)
     
     // Provide more specific error messages
-    if (errorMessage.includes("401") || errorMessage.includes("Unauthorized") || errorMessage.includes("Invalid API key")) {
+    if (errorMessage.includes("401") || errorMessage.includes("Unauthorized") || errorMessage.includes("Unauthorized")) {
       console.error("[v0] Authentication error detected")
       return {
         success: false,
-        error: "Email service authentication failed. Please verify the SendGrid API key.",
+        error: "Email service authentication failed. Please verify the Mailgun API key.",
       }
     }
     if (errorMessage.includes("ENOTFOUND") || errorMessage.includes("getaddrinfo") || errorMessage.includes("Network")) {
