@@ -107,19 +107,19 @@ export default function FacilityRequestPage() {
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
                     <div>
                       <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" name="name" required className="mt-1" />
+                      <Input id="name" name="name" className="mt-1" />
                     </div>
                     <div>
                       <Label htmlFor="department">Department / Organization</Label>
-                      <Input id="department" name="department" required className="mt-1" />
+                      <Input id="department" name="department" className="mt-1" />
                     </div>
                     <div>
                       <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" name="email" type="email" required className="mt-1" />
+                      <Input id="email" name="email" type="email" className="mt-1" />
                     </div>
                     <div>
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" name="phone" type="tel" required className="mt-1" />
+                      <Input id="phone" name="phone" type="tel" className="mt-1" />
                     </div>
                   </div>
                 </fieldset>
@@ -131,26 +131,36 @@ export default function FacilityRequestPage() {
                   <div className="mt-4 grid gap-4">
                     <div>
                       <Label htmlFor="eventName">Event / Activity Name</Label>
-                      <Input id="eventName" name="eventName" required className="mt-1" />
+                      <Input id="eventName" name="eventName" className="mt-1" />
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label htmlFor="facilityName">Facility / Room Requested</Label>
-                        <Input id="facilityName" name="facilityName" required className="mt-1" />
+                        <Label htmlFor="facility">Facility</Label>
+                        <Input id="facility" name="facility" className="mt-1" />
                       </div>
+                      <div>
+                        <Label htmlFor="room">Room Requested</Label>
+                        <Input id="room" name="room" className="mt-1" />
+                      </div>
+                    </div>
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="attendees">Expected Number of Attendees</Label>
-                        <Input id="attendees" name="attendees" type="number" min="1" required className="mt-1" />
+                        <Input id="attendees" name="attendees" type="number" min="1" className="mt-1" />
                       </div>
+                    </div>
+                    <div>
+                      <Label htmlFor="date">Date of Event</Label>
+                      <Input id="date" name="date" type="date" className="mt-1" />
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label htmlFor="date">Date of Event</Label>
-                        <Input id="date" name="date" type="date" required className="mt-1" />
+                        <Label htmlFor="startTime">Start Time</Label>
+                        <Input id="startTime" name="startTime" type="time" className="mt-1" />
                       </div>
                       <div>
-                        <Label htmlFor="time">Time (Start - End)</Label>
-                        <Input id="time" name="time" placeholder="e.g. 9:00 AM - 5:00 PM" required className="mt-1" />
+                        <Label htmlFor="endTime">End Time</Label>
+                        <Input id="endTime" name="endTime" type="time" className="mt-1" />
                       </div>
                     </div>
                     <div>
