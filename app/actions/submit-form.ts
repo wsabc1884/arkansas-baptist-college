@@ -1,7 +1,5 @@
 "use server"
 
-import * as SibApiV3Sdk from "sib-api-v3-sdk"
-
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
   fields: Record<string, string>
@@ -76,22 +74,31 @@ export async function submitForm(data: FormData) {
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
 
-    // Send email via Brevo
+    // Send email via Brevo REST API
     try {
-      const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi()
-      apiInstance.setApiKey(SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY)
+      const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": process.env.BREVO_API_KEY!,
+        },
+        body: JSON.stringify({
+          subject: `${formTypeDisplay} Form #${ticketNumber}`,
+          htmlContent: `
+            <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
+            <p>${formatFormData(data.fields)}</p>
+          `,
+          sender: { name: "Arkansas Baptist College", email: "noreply@arkansasbaptist.edu" },
+          to: [{ email: recipientEmail }],
+        }),
+      })
 
-      const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail()
-      sendSmtpEmail.subject = `${formTypeDisplay} Form #${ticketNumber}`
-      sendSmtpEmail.htmlContent = `
-        <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
-        <p>${formatFormData(data.fields)}</p>
-      `
-      sendSmtpEmail.sender = { name: "Arkansas Baptist College", email: "noreply@arkansasbaptist.edu" }
-      sendSmtpEmail.to = [{ email: recipientEmail }]
-
-      await apiInstance.sendTransacEmail(sendSmtpEmail)
-      console.log("[v0] Email sent successfully for ticket #", ticketNumber)
+      if (!response.ok) {
+        const error = await response.text()
+        console.error("[v0] Brevo API error:", response.status, error)
+      } else {
+        console.log("[v0] Email sent successfully for ticket #", ticketNumber)
+      }
     } catch (emailError) {
       console.error("[v0] Email sending failed:", emailError)
       // Continue anyway - don't fail the form submission if email fails
