@@ -5,6 +5,9 @@ import { generateFormPDF } from "@/lib/generate-form-pdf"
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
   fields: Record<string, string>
+  // Optional list of field keys that must be non-empty. When provided, only these
+  // are validated (allowing optional fields like checkboxes to be blank).
+  requiredFields?: string[]
 }
 
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
@@ -58,12 +61,20 @@ export async function submitForm(data: FormData) {
       }
     }
 
-    // Check all fields are non-empty
-    const emptyFields = Object.entries(data.fields).filter(([, value]) => !value || value.trim() === "")
+    // Validate required fields. If a requiredFields list is provided, only those
+    // must be non-empty (optional fields like checkboxes may be blank). Otherwise
+    // fall back to requiring every submitted field.
+    const keysToValidate =
+      data.requiredFields && data.requiredFields.length > 0
+        ? data.requiredFields
+        : Object.keys(data.fields)
+    const emptyFields = keysToValidate.filter(
+      (key) => !data.fields[key] || data.fields[key].trim() === "",
+    )
     if (emptyFields.length > 0) {
       return {
         success: false,
-        error: `Please fill in all required fields: ${emptyFields.map(([key]) => key).join(", ")}`,
+        error: `Please fill in all required fields: ${emptyFields.join(", ")}`,
       }
     }
 
