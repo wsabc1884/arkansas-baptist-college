@@ -17,21 +17,15 @@ export default function FacilityRequestPage() {
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
-    // Set default time inputs to current hour with :00 minutes
-    const now = new Date()
-    const hours = String(now.getHours()).padStart(2, "0")
-    const defaultTime = `${hours}:00`
-
+    // Set default time inputs to 8:00 AM - 5:00 PM
     const startTimeInput = document.getElementById("startTime") as HTMLInputElement
     const endTimeInput = document.getElementById("endTime") as HTMLInputElement
 
     if (startTimeInput && !startTimeInput.value) {
-      startTimeInput.value = defaultTime
+      startTimeInput.value = "08:00"
     }
     if (endTimeInput && !endTimeInput.value) {
-      // Set end time to 1 hour after start time
-      const endHours = String((now.getHours() + 1) % 24).padStart(2, "0")
-      endTimeInput.value = `${endHours}:00`
+      endTimeInput.value = "17:00"
     }
   }, [])
 
