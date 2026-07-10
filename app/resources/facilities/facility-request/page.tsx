@@ -182,12 +182,25 @@ export default function FacilityRequestPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="attendees">Expected Number of Attendees</Label>
-                        <Input id="attendees" name="attendees" type="number" min="1" className="mt-1" />
+                        <Input 
+                          id="attendees" 
+                          name="attendees" 
+                          type="number" 
+                          min="1" 
+                          className="mt-1" 
+                          inputMode="numeric"
+                          placeholder="Enter number"
+                        />
                       </div>
                     </div>
                     <div>
                       <Label htmlFor="date">Date of Event</Label>
-                      <Input id="date" name="date" type="date" className="mt-1" />
+                      <Input 
+                        id="date" 
+                        name="date" 
+                        type="date" 
+                        className="mt-1"
+                      />
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
