@@ -8,9 +8,10 @@ interface NumberPadProps {
   onInput: (value: string) => void
   currentValue: string
   isOpen: boolean
+  onClose: () => void
 }
 
-export function NumberPad({ onInput, currentValue, isOpen }: NumberPadProps) {
+export function NumberPad({ onInput, currentValue, isOpen, onClose }: NumberPadProps) {
   const padRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -18,13 +19,13 @@ export function NumberPad({ onInput, currentValue, isOpen }: NumberPadProps) {
 
     const handleClickOutside = (event: MouseEvent) => {
       if (padRef.current && !padRef.current.contains(event.target as Node)) {
-        // Allow closing when clicking outside, but don't prevent other interactions
+        onClose()
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [isOpen])
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
