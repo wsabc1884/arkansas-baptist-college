@@ -29,6 +29,25 @@ export default function FacilityRequestPage() {
     }
   }, [])
 
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digit characters
+    const digits = value.replace(/\D/g, "")
+    
+    // Format as XXX-XXX-XXXX
+    if (digits.length <= 3) {
+      return digits
+    } else if (digits.length <= 6) {
+      return `${digits.slice(0, 3)}-${digits.slice(3)}`
+    } else {
+      return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6, 10)}`
+    }
+  }
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value)
+    e.target.value = formatted
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
@@ -136,7 +155,7 @@ export default function FacilityRequestPage() {
                     </div>
                     <div>
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" name="phone" type="tel" className="mt-1" />
+                      <Input id="phone" name="phone" type="tel" onChange={handlePhoneChange} className="mt-1" placeholder="XXX-XXX-XXXX" />
                     </div>
                   </div>
                 </fieldset>
