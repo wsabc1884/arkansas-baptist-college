@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
@@ -15,6 +15,25 @@ export default function FacilityRequestPage() {
   const [error, setError] = useState<string | null>(null)
   const [ticketNumber, setTicketNumber] = useState<number | null>(null)
   const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    // Set default time inputs to current hour with :00 minutes
+    const now = new Date()
+    const hours = String(now.getHours()).padStart(2, "0")
+    const defaultTime = `${hours}:00`
+
+    const startTimeInput = document.getElementById("startTime") as HTMLInputElement
+    const endTimeInput = document.getElementById("endTime") as HTMLInputElement
+
+    if (startTimeInput && !startTimeInput.value) {
+      startTimeInput.value = defaultTime
+    }
+    if (endTimeInput && !endTimeInput.value) {
+      // Set end time to 1 hour after start time
+      const endHours = String((now.getHours() + 1) % 24).padStart(2, "0")
+      endTimeInput.value = `${endHours}:00`
+    }
+  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
