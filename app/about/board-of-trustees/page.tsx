@@ -3,7 +3,38 @@ import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { FeatureGrid } from "@/components/feature-grid"
 import { TeamDirectory } from "@/components/team-directory"
-import { Shield, Users, BookOpen, Heart } from "lucide-react"
+import { Shield, Users, BookOpen, Heart, User } from "lucide-react"
+
+interface ExecutiveCardProps {
+  member: { name: string; title: string; department?: string }
+  highlight?: boolean
+  reportsTo?: string
+}
+
+function ExecutiveCard({ member, highlight = false, reportsTo }: ExecutiveCardProps) {
+  return (
+    <div
+      className={`flex w-full max-w-sm flex-col items-center rounded-lg border p-6 text-center ${
+        highlight ? "border-[#3d1a5c] bg-[#3d1a5c] text-white" : "border-border bg-card"
+      }`}
+    >
+      <div
+        className={`flex h-20 w-20 items-center justify-center rounded-full ${
+          highlight ? "bg-white/15" : "bg-[#3d1a5c]/10"
+        }`}
+      >
+        <User className={`h-10 w-10 ${highlight ? "text-white/80" : "text-[#3d1a5c]/60"}`} aria-hidden="true" />
+      </div>
+      <h3 className={`mt-4 text-base font-semibold ${highlight ? "text-white" : "text-foreground"}`}>
+        {member.name}
+      </h3>
+      <p className={`mt-1 text-sm font-medium ${highlight ? "text-white/90" : "text-[#3d1a5c]"}`}>{member.title}</p>
+      {reportsTo && (
+        <p className="mt-0.5 text-xs text-muted-foreground/70">Reports to {reportsTo}</p>
+      )}
+    </div>
+  )
+}
 
 const TRUSTEES = [
   // Executive Officers
@@ -148,10 +179,31 @@ export default function BoardOfTrusteesPage() {
                   Executive Officers
                 </h3>
               </div>
-              <TeamDirectory
-                members={TRUSTEES.filter((t) => t.department === "Executive Officer")}
-                columns={3}
-              />
+              <div className="mx-auto max-w-4xl">
+                {/* Chairman (top of hierarchy) */}
+                <div className="flex justify-center">
+                  <ExecutiveCard member={TRUSTEES.find((t) => t.title === "Chairman")!} highlight />
+                </div>
+
+                {/* Connector */}
+                <div className="flex flex-col items-center" aria-hidden="true">
+                  <div className="h-8 w-px bg-[#3d1a5c]/30" />
+                  <div className="h-px w-2/3 max-w-md bg-[#3d1a5c]/30" />
+                  <div className="flex w-2/3 max-w-md justify-between">
+                    <div className="h-8 w-px bg-[#3d1a5c]/30" />
+                    <div className="h-8 w-px bg-[#3d1a5c]/30" />
+                  </div>
+                </div>
+
+                {/* Direct reports */}
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {TRUSTEES.filter(
+                    (t) => t.department === "Executive Officer" && t.title !== "Chairman",
+                  ).map((member) => (
+                    <ExecutiveCard key={member.name} member={member} reportsTo="Chairman" />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Board Members Section */}
@@ -181,7 +233,7 @@ export default function BoardOfTrusteesPage() {
           />
           <FeatureGrid
             items={[
-              { title: "Strategic Planning", description: "Setting the long-term vision and strategic direction for the college" },
+              { title: "Strategic Planning", description: "Setting the long-term vision and strategic direction for the college", href: "/about/strategic-plan" },
               { title: "Financial Oversight", description: "Ensuring responsible stewardship of the college's financial resources" },
               { title: "Presidential Support", description: "Selecting, evaluating, and supporting the college president" },
               { title: "Policy Development", description: "Establishing policies that guide institutional operations" },

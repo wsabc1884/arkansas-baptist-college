@@ -1,10 +1,12 @@
 import type { LucideIcon } from "lucide-react"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 
 interface FeatureItem {
   title: string
   description: string
   icon?: LucideIcon
+  href?: string
 }
 
 interface FeatureGridProps {
@@ -22,14 +24,20 @@ export function FeatureGrid({ items, columns = 3, variant = "card" }: FeatureGri
 
   return (
     <div className={cn("grid gap-6", colClasses[columns])}>
-      {items.map((item) => (
-        <div
+      {items.map((item) => {
+        const Wrapper = item.href ? Link : "div"
+        const wrapperProps = item.href ? { href: item.href } : {}
+        return (
+        <Wrapper
           key={item.title}
+          {...(wrapperProps as { href: string })}
           className={cn(
             "rounded-lg transition-shadow",
             variant === "card" && "border border-border bg-card p-6 hover:shadow-md",
             variant === "icon-left" && "flex gap-4 p-4",
-            variant === "icon-top" && "text-center p-6"
+            variant === "icon-top" && "text-center p-6",
+            item.href &&
+              "block cursor-pointer hover:border-[#3d1a5c]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a5c]"
           )}
         >
           {item.icon && variant === "icon-left" && (
@@ -51,8 +59,9 @@ export function FeatureGrid({ items, columns = 3, variant = "card" }: FeatureGri
             <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
           </div>
-        </div>
-      ))}
+        </Wrapper>
+        )
+      })}
     </div>
   )
 }
