@@ -83,6 +83,7 @@ export async function submitForm(data: FormData) {
     const emailBody = `New Form Submission: ${formTypeDisplay} (Ticket #${ticketNumber})\n\n${formatFormData(data.fields)}`
 
     // Create Nodemailer transporter with Office 365 SMTP
+    console.log("[v0] Creating transporter with email:", process.env.OFFICE365_EMAIL)
     const transporter = nodemailer.createTransport({
       host: "smtp.office365.com",
       port: 587,
@@ -93,6 +94,7 @@ export async function submitForm(data: FormData) {
       },
     })
 
+    console.log("[v0] Sending email to:", recipientEmail)
     // Send email
     const info = await transporter.sendMail({
       from: process.env.OFFICE365_EMAIL,
@@ -102,7 +104,7 @@ export async function submitForm(data: FormData) {
       html: `<pre>${emailBody}</pre>`,
     })
 
-    console.log("[v0] Email sent:", info.messageId)
+    console.log("[v0] Email sent successfully:", info.messageId)
 
     return {
       success: true,
@@ -111,16 +113,20 @@ export async function submitForm(data: FormData) {
     }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error)
+    const fullError = error instanceof Error ? error.stack : errorMessage
     console.error("[v0] Form submission error:", errorMessage)
+    console.error("[v0] Full error details:", fullError)
     
     // Provide more specific error messages
-    if (errorMessage.includes("EAUTH")) {
+    if (errorMessage.includes("EAUTH") || errorMessage.includes("Invalid login") || errorMessage.includes("authentication")) {
+      console.error("[v0] Authentication error detected")
       return {
         success: false,
         error: "Email authentication failed. Please verify the Office 365 credentials.",
       }
     }
-    if (errorMessage.includes("ENOTFOUND")) {
+    if (errorMessage.includes("ENOTFOUND") || errorMessage.includes("getaddrinfo")) {
+      console.error("[v0] Network error detected")
       return {
         success: false,
         error: "Email service is unreachable. Please try again later.",
