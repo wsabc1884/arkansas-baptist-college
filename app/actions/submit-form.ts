@@ -1,6 +1,6 @@
 "use server"
 
-import { Resend } from "resend"
+import nodemailer from "nodemailer"
 import { kv } from "@vercel/kv"
 
 interface FormData {
@@ -42,9 +42,6 @@ function generatePDFContent(formType: string, ticketNumber: number, fields: Reco
 
 export async function submitForm(data: FormData) {
   try {
-    // Initialize Resend here (at runtime) instead of module level
-    const resend = new Resend(process.env.RESEND_API_KEY)
-
     // Validate required fields
     if (!data.formType || !data.fields) {
       return {
@@ -76,22 +73,27 @@ export async function submitForm(data: FormData) {
     // Format email body with form data
     const emailBody = `New Form Submission: ${formTypeDisplay} (Ticket #${ticketNumber})\n\n${formatFormData(data.fields)}`
 
-    // Send email with Resend
-    const response = await resend.emails.send({
-      from: "noreply@arkansasbaptist.edu",
+    // Create Nodemailer transporter with Office 365 SMTP
+    const transporter = nodemailer.createTransport({
+      host: "smtp.office365.com",
+      port: 587,
+      secure: false, // TLS
+      auth: {
+        user: process.env.OFFICE365_EMAIL,
+        pass: process.env.OFFICE365_PASSWORD,
+      },
+    })
+
+    // Send email
+    const info = await transporter.sendMail({
+      from: process.env.OFFICE365_EMAIL,
       to: recipientEmail,
       subject: emailSubject,
       text: emailBody,
       html: `<pre>${emailBody}</pre>`,
     })
 
-    if (response.error) {
-      console.error("[v0] Resend error:", response.error)
-      return {
-        success: false,
-        error: "Failed to submit form. Please try again.",
-      }
-    }
+    console.log("[v0] Email sent:", info.messageId)
 
     return {
       success: true,
