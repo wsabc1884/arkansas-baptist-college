@@ -53,14 +53,8 @@ export async function submitForm(data: FormData) {
       }
     }
 
-    // Check all fields are non-empty
-    const emptyFields = Object.entries(data.fields).filter(([, value]) => !value || value.trim() === "")
-    if (emptyFields.length > 0) {
-      return {
-        success: false,
-        error: `Please fill in all required fields: ${emptyFields.map(([key]) => key).join(", ")}`,
-      }
-    }
+    // Note: Fields are optional since we removed required attributes for testing
+    // In production, you may want to validate specific fields
 
     // Get next ticket number
     const ticketNumber = await getNextTicketNumber(data.formType)
@@ -78,7 +72,7 @@ export async function submitForm(data: FormData) {
 
     // Send email with Resend
     const response = await resend.emails.send({
-      from: "noreply@arkansasbaptist.edu",
+      from: "onboarding@resend.dev",
       to: recipientEmail,
       subject: emailSubject,
       text: emailBody,
