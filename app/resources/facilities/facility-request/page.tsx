@@ -143,14 +143,18 @@ export default function FacilityRequestPage() {
                         <Input id="attendees" name="attendees" type="number" min="1" required className="mt-1" />
                       </div>
                     </div>
+                    <div>
+                      <Label htmlFor="date">Date of Event</Label>
+                      <Input id="date" name="date" type="date" required className="mt-1" />
+                    </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label htmlFor="date">Date of Event</Label>
-                        <Input id="date" name="date" type="date" required className="mt-1" />
+                        <Label htmlFor="startTime">Start Time</Label>
+                        <Input id="startTime" name="startTime" type="time" required className="mt-1" />
                       </div>
                       <div>
-                        <Label htmlFor="time">Time (Start - End)</Label>
-                        <Input id="time" name="time" placeholder="e.g. 9:00 AM - 5:00 PM" required className="mt-1" />
+                        <Label htmlFor="endTime">End Time</Label>
+                        <Input id="endTime" name="endTime" type="time" required className="mt-1" />
                       </div>
                     </div>
                     <div>
