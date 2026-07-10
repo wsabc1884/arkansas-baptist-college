@@ -88,7 +88,7 @@ export async function submitForm(data: FormData) {
             <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
             <p>${formatFormData(data.fields)}</p>
           `,
-          sender: { name: "Arkansas Baptist College", email: "noreply@arkansasbaptist.edu" },
+          sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
           to: [{ email: recipientEmail }],
         }),
       })
