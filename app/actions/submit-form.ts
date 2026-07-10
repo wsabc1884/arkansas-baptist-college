@@ -1,7 +1,6 @@
 "use server"
 
 import nodemailer from "nodemailer"
-import { kv } from "@vercel/kv"
 
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
@@ -10,13 +9,21 @@ interface FormData {
 
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "helpdesk@arkansasbaptist.edu"
 
+// In-memory ticket counter for each form type
+const ticketCounters: Record<string, number> = {
+  "facility-request": 1000,
+  "work-order": 2000,
+  "key-request": 3000,
+  "entrepreneurship-fund": 4000,
+}
+
 // Helper to get next ticket number
-async function getNextTicketNumber(formType: string): Promise<number> {
-  const key = `form_tickets_${formType}`
-  const current = await kv.get<number>(key)
-  const next = (current || 0) + 1
-  await kv.set(key, next)
-  return next
+function getNextTicketNumber(formType: string): number {
+  if (!ticketCounters[formType]) {
+    ticketCounters[formType] = 1000
+  }
+  ticketCounters[formType]++
+  return ticketCounters[formType]
 }
 
 // Helper to format form data as readable text
@@ -69,7 +76,7 @@ export async function submitForm(data: FormData) {
     }
 
     // Get next ticket number
-    const ticketNumber = await getNextTicketNumber(data.formType)
+    const ticketNumber = getNextTicketNumber(data.formType)
 
     // Format form type for display
     const formTypeDisplay = data.formType
