@@ -1,5 +1,7 @@
 "use server"
 
+import { generateFormPDF } from "@/lib/generate-form-pdf"
+
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
   fields: Record<string, string>
@@ -74,23 +76,45 @@ export async function submitForm(data: FormData) {
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
 
-    // Send email via Brevo REST API
+    // Generate PDF
+    let pdfBuffer: Buffer | null = null
     try {
+      pdfBuffer = await generateFormPDF(data.formType, ticketNumber, data.fields)
+      console.log("[v0] PDF generated successfully for ticket #", ticketNumber)
+    } catch (pdfError) {
+      console.error("[v0] PDF generation failed:", pdfError)
+      // Continue anyway - send email even if PDF fails
+    }
+
+    // Send email via Brevo REST API with PDF attachment
+    try {
+      const emailBody: Record<string, unknown> = {
+        subject: `${formTypeDisplay} Form #${ticketNumber}`,
+        htmlContent: `
+          <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
+          <p>Please see the attached PDF for full form details.</p>
+        `,
+        sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
+        to: [{ email: recipientEmail }],
+      }
+
+      // Add PDF attachment if generated successfully
+      if (pdfBuffer) {
+        emailBody.attachment = [
+          {
+            content: pdfBuffer.toString("base64"),
+            name: `${data.formType}-${ticketNumber}.pdf`,
+          },
+        ]
+      }
+
       const response = await fetch("https://api.brevo.com/v3/smtp/email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "api-key": process.env.BREVO_API_KEY!,
         },
-        body: JSON.stringify({
-          subject: `${formTypeDisplay} Form #${ticketNumber}`,
-          htmlContent: `
-            <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
-            <p>${formatFormData(data.fields)}</p>
-          `,
-          sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
-          to: [{ email: recipientEmail }],
-        }),
+        body: JSON.stringify(emailBody),
       })
 
       if (!response.ok) {
