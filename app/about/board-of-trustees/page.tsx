@@ -5,6 +5,66 @@ import { FeatureGrid } from "@/components/feature-grid"
 import { TeamDirectory } from "@/components/team-directory"
 import { Shield, Users, BookOpen, Heart } from "lucide-react"
 
+const TRUSTEES = [
+  // Executive Officers
+  {
+    name: "Roland L. Gosey",
+    title: "Chairman",
+    department: "Executive Officer",
+  },
+  {
+    name: "Mitch Bettis",
+    title: "Treasurer",
+    department: "Executive Officer",
+  },
+  {
+    name: "Alicia Ferguson Smith",
+    title: "Secretary",
+    department: "Executive Officer",
+  },
+  // Board Members
+  {
+    name: "Daryl E. Bassett",
+    title: "Board Member",
+  },
+  {
+    name: "Rev. Sharron Lewis",
+    title: "Board Member",
+  },
+  {
+    name: "Rev. Milton Graham",
+    title: "Board Member",
+  },
+  {
+    name: "Dr. Rob Tillman",
+    title: "Board Member",
+  },
+  {
+    name: "Mike Richardson",
+    title: "Board Member",
+  },
+  {
+    name: "Gene McKissic, Esq.",
+    title: "Board Member",
+  },
+  {
+    name: "Seven B. Jones",
+    title: "Board Member",
+  },
+  {
+    name: "Janet Miles-Bartee",
+    title: "Board Member",
+  },
+  {
+    name: "Dr. George E. Herts",
+    title: "Board Member",
+  },
+  {
+    name: "\"Broadway\" Joe Booker",
+    title: "Board Member",
+  },
+]
+
 export const metadata = {
   title: "Board of Trustees | Arkansas Baptist College",
   description: "Learn about the Board of Trustees who govern Arkansas Baptist College.",
@@ -74,9 +134,42 @@ export default function BoardOfTrusteesPage() {
           <SectionHeader
             title="Meet Our Trustees"
             subtitle="Board Members"
+            description="Our Board of Trustees comprises dedicated leaders serving in executive roles and as board members, guiding the college with wisdom and commitment."
             align="center"
           />
-          <TeamDirectory comingSoon />
+          <div className="space-y-12">
+            {/* Executive Officers Section */}
+            <div>
+              <div className="mb-8 text-center">
+                <p className="text-sm font-semibold uppercase tracking-widest text-[#3d1a5c]/70 mb-2">
+                  Leadership
+                </p>
+                <h3 className="font-serif text-2xl font-bold text-foreground">
+                  Executive Officers
+                </h3>
+              </div>
+              <TeamDirectory
+                members={TRUSTEES.filter((t) => t.department === "Executive Officer")}
+                columns={3}
+              />
+            </div>
+
+            {/* Board Members Section */}
+            <div>
+              <div className="mb-8 text-center">
+                <p className="text-sm font-semibold uppercase tracking-widest text-[#3d1a5c]/70 mb-2">
+                  Governance
+                </p>
+                <h3 className="font-serif text-2xl font-bold text-foreground">
+                  Board Members
+                </h3>
+              </div>
+              <TeamDirectory
+                members={TRUSTEES.filter((t) => t.department !== "Executive Officer")}
+                columns={3}
+              />
+            </div>
+          </div>
         </SectionWrapper>
 
         {/* Board Responsibilities */}
