@@ -1,9 +1,13 @@
 "use server"
 
+import * as SibApiV3Sdk from "sib-api-v3-sdk"
+
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
   fields: Record<string, string>
 }
+
+const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
 
 // In-memory ticket counter for each form type
 const ticketCounters: Record<string, number> = {
@@ -22,8 +26,30 @@ function getNextTicketNumber(formType: string): number {
   return ticketCounters[formType]
 }
 
+// Helper to format form data
+function formatFormData(fields: Record<string, string>): string {
+  return Object.entries(fields)
+    .map(([key, value]) => {
+      const label = key
+        .replace(/([A-Z])/g, " $1")
+        .replace(/^./, (str) => str.toUpperCase())
+        .trim()
+      return `<strong>${label}:</strong> ${value}`
+    })
+    .join("<br/>")
+}
+
 export async function submitForm(data: FormData) {
   try {
+    // Validate environment variable
+    if (!process.env.BREVO_API_KEY) {
+      console.error("[v0] Missing Brevo API key")
+      return {
+        success: false,
+        error: "Email service is not properly configured. Please contact support.",
+      }
+    }
+
     // Validate required fields
     if (!data.formType || !data.fields) {
       return {
@@ -49,6 +75,27 @@ export async function submitForm(data: FormData) {
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
+
+    // Send email via Brevo
+    try {
+      const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi()
+      apiInstance.setApiKey(SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY)
+
+      const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail()
+      sendSmtpEmail.subject = `${formTypeDisplay} Form #${ticketNumber}`
+      sendSmtpEmail.htmlContent = `
+        <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
+        <p>${formatFormData(data.fields)}</p>
+      `
+      sendSmtpEmail.sender = { name: "Arkansas Baptist College", email: "noreply@arkansasbaptist.edu" }
+      sendSmtpEmail.to = [{ email: recipientEmail }]
+
+      await apiInstance.sendTransacEmail(sendSmtpEmail)
+      console.log("[v0] Email sent successfully for ticket #", ticketNumber)
+    } catch (emailError) {
+      console.error("[v0] Email sending failed:", emailError)
+      // Continue anyway - don't fail the form submission if email fails
+    }
 
     return {
       success: true,
