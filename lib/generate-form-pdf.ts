@@ -187,7 +187,6 @@ function row(doc: PDFKit.PDFDocument, cells: [string, string | undefined][], lef
     const x = left + i * (colWidth + gap)
     doc.font("Helvetica-Bold").fontSize(8).fillColor(GRAY)
     doc.text(cell[0].toUpperCase(), x, startY, { width: colWidth })
-    doc.moveDown(0.2)
     doc.font("Helvetica").fontSize(10).fillColor("#000000")
     doc.text(cell[1] && cell[1].trim() !== "" ? cell[1] : "—", x, doc.y, { width: colWidth })
     if (doc.y > maxBottom) maxBottom = doc.y
@@ -195,7 +194,7 @@ function row(doc: PDFKit.PDFDocument, cells: [string, string | undefined][], lef
   })
 
   doc.y = maxBottom
-  doc.moveDown(0.7)
+  doc.moveDown(0.5)
 }
 
 function checkboxRow(
@@ -204,32 +203,22 @@ function checkboxRow(
   left: number,
   width: number
 ) {
+  ensureSpace(doc, 20 * Math.ceil(items.length / 2))
+  const gap = 12
   const cols = 2
-  const gap = 24
   const colWidth = (width - gap) / cols
-  const rowSpacing = 8
   doc.font("Helvetica").fontSize(10).fillColor("#000000")
 
-  // Render two checkboxes per row, tracking the tallest column so the next
-  // row starts below both (prevents overlapping / stacked text).
-  for (let i = 0; i < items.length; i += cols) {
-    ensureSpace(doc, 28)
-    const startY = doc.y
-    let maxBottom = startY
-
-    for (let c = 0; c < cols; c++) {
-      const item = items[i + c]
-      if (!item) continue
-      const x = left + c * (colWidth + gap)
-      const box = item[1] ? "[X]" : "[  ]"
-      doc.text(`${box}  ${item[0]}`, x, startY, { width: colWidth })
-      if (doc.y > maxBottom) maxBottom = doc.y
-      doc.y = startY
-    }
-
-    doc.y = maxBottom + rowSpacing
-  }
-  doc.moveDown(0.2)
+  let y = doc.y
+  items.forEach((item, i) => {
+    const col = i % cols
+    const x = left + col * (colWidth + gap)
+    if (col === 0 && i > 0) y = doc.y
+    const box = item[1] ? "[X]" : "[  ]"
+    doc.text(`${box}  ${item[0]}`, x, y, { width: colWidth })
+    if (col === 0) doc.y = y
+  })
+  doc.moveDown(0.4)
 }
 
 function formatTime(value?: string) {
