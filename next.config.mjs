@@ -6,6 +6,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // pdfkit ships built-in .afm font metric files that it reads from disk at
+  // runtime. Bundling it (Turbopack/webpack) rewrites __dirname and breaks that
+  // lookup, so keep it external and let it resolve from node_modules directly.
+  serverExternalPackages: ["pdfkit"],
 
   async rewrites() {
     return [
