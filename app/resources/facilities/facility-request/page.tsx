@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
@@ -67,15 +67,11 @@ export default function FacilityRequestPage() {
   const [ticketNumber, setTicketNumber] = useState<number | null>(null)
   const [attendeesValue, setAttendeesValue] = useState("")
   const [showNumberPad, setShowNumberPad] = useState(false)
+  const [campusPhoneValue, setCampusPhoneValue] = useState("")
+  const [showCampusPad, setShowCampusPad] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
   const attendeesInputRef = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    const startTimeInput = document.getElementById("startTime") as HTMLInputElement
-    const endTimeInput = document.getElementById("endTime") as HTMLInputElement
-    if (startTimeInput && !startTimeInput.value) startTimeInput.value = "08:00"
-    if (endTimeInput && !endTimeInput.value) endTimeInput.value = "17:00"
-  }, [])
+  const campusPhoneInputRef = useRef<HTMLInputElement>(null)
 
   const handleAttendeesChange = (newValue: string) => {
     const numericValue = newValue.replace(/\D/g, "")
@@ -85,6 +81,16 @@ export default function FacilityRequestPage() {
 
   const handleAttendeesInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAttendeesValue(e.target.value.replace(/\D/g, ""))
+  }
+
+  const handleCampusPhoneChange = (newValue: string) => {
+    const formatted = formatPhoneNumber(newValue)
+    setCampusPhoneValue(formatted)
+    if (campusPhoneInputRef.current) campusPhoneInputRef.current.value = formatted
+  }
+
+  const handleCampusPhoneInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCampusPhoneValue(formatPhoneNumber(e.target.value))
   }
 
   const formatPhoneNumber = (value: string): string => {
@@ -115,6 +121,11 @@ export default function FacilityRequestPage() {
       for (const key of ["podium", "projector", "microphone", "stage", "floorTarp"]) {
         fields[key] = fields[key] ? "Yes" : "No"
       }
+
+      // Combine the split campus contact name + phone into a single value for the PDF
+      const campusName = (fields.campusContactName || "").trim()
+      const campusPhone = (fields.campusContactPhone || "").trim()
+      fields.campusContact = [campusName, campusPhone].filter(Boolean).join(" — ") || "—"
 
       // Client-side required validation
       const missing = REQUIRED_FIELDS.filter((k) => !fields[k] || fields[k].trim() === "")
@@ -258,11 +269,25 @@ export default function FacilityRequestPage() {
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div>
                         <Label htmlFor="startTime">Start Time *</Label>
-                        <Input id="startTime" name="startTime" type="time" step="900" className="mt-1" />
+                        <Input
+                          id="startTime"
+                          name="startTime"
+                          type="time"
+                          step="900"
+                          defaultValue="08:00"
+                          className="mt-1"
+                        />
                       </div>
                       <div>
                         <Label htmlFor="endTime">End Time *</Label>
-                        <Input id="endTime" name="endTime" type="time" step="900" className="mt-1" />
+                        <Input
+                          id="endTime"
+                          name="endTime"
+                          type="time"
+                          step="900"
+                          defaultValue="17:00"
+                          className="mt-1"
+                        />
                       </div>
                       <div>
                         <Label htmlFor="expectedAttendance">Expected Attendance *</Label>
@@ -308,9 +333,32 @@ export default function FacilityRequestPage() {
                         </select>
                       </div>
                     </div>
-                    <div>
-                      <Label htmlFor="campusContact">Campus Contact Person Name &amp; Telephone Number</Label>
-                      <Input id="campusContact" name="campusContact" className="mt-1" />
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div>
+                        <Label htmlFor="campusContactName">Campus Contact Person Name</Label>
+                        <Input id="campusContactName" name="campusContactName" className="mt-1" />
+                      </div>
+                      <div>
+                        <Label htmlFor="campusContactPhone">Campus Contact Telephone Number</Label>
+                        <Input
+                          ref={campusPhoneInputRef}
+                          id="campusContactPhone"
+                          name="campusContactPhone"
+                          type="text"
+                          inputMode="numeric"
+                          placeholder="XXX-XXX-XXXX"
+                          value={campusPhoneValue}
+                          onChange={handleCampusPhoneInputChange}
+                          onFocus={() => setShowCampusPad(true)}
+                          className="mt-1"
+                        />
+                        <NumberPad
+                          isOpen={showCampusPad}
+                          currentValue={campusPhoneValue.replace(/\D/g, "")}
+                          onInput={handleCampusPhoneChange}
+                          onClose={() => setShowCampusPad(false)}
+                        />
+                      </div>
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>

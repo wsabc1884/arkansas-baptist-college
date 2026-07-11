@@ -187,6 +187,7 @@ function row(doc: PDFKit.PDFDocument, cells: [string, string | undefined][], lef
     const x = left + i * (colWidth + gap)
     doc.font("Helvetica-Bold").fontSize(8).fillColor(GRAY)
     doc.text(cell[0].toUpperCase(), x, startY, { width: colWidth })
+    doc.moveDown(0.15)
     doc.font("Helvetica").fontSize(10).fillColor("#000000")
     doc.text(cell[1] && cell[1].trim() !== "" ? cell[1] : "—", x, doc.y, { width: colWidth })
     if (doc.y > maxBottom) maxBottom = doc.y
@@ -194,7 +195,7 @@ function row(doc: PDFKit.PDFDocument, cells: [string, string | undefined][], lef
   })
 
   doc.y = maxBottom
-  doc.moveDown(0.5)
+  doc.moveDown(0.75)
 }
 
 function checkboxRow(
@@ -203,21 +204,27 @@ function checkboxRow(
   left: number,
   width: number
 ) {
-  ensureSpace(doc, 20 * Math.ceil(items.length / 2))
-  const gap = 12
   const cols = 2
+  const gap = 24
   const colWidth = (width - gap) / cols
+  const lineHeight = 20
+  const rows = Math.ceil(items.length / cols)
+
+  ensureSpace(doc, lineHeight * rows + 8)
   doc.font("Helvetica").fontSize(10).fillColor("#000000")
 
-  let y = doc.y
+  const startY = doc.y
   items.forEach((item, i) => {
+    const rowIndex = Math.floor(i / cols)
     const col = i % cols
     const x = left + col * (colWidth + gap)
-    if (col === 0 && i > 0) y = doc.y
+    const y = startY + rowIndex * lineHeight
     const box = item[1] ? "[X]" : "[  ]"
-    doc.text(`${box}  ${item[0]}`, x, y, { width: colWidth })
-    if (col === 0) doc.y = y
+    // lineBreak:false keeps each checkbox on a single line so columns never overlap
+    doc.text(`${box}  ${item[0]}`, x, y, { width: colWidth, lineBreak: false })
   })
+
+  doc.y = startY + rows * lineHeight
   doc.moveDown(0.4)
 }
 
