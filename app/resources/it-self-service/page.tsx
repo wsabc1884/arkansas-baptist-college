@@ -169,10 +169,8 @@ export default function ITSelfServicePage() {
                 </span>
               </Link>
 
-              <a
-                href="/documents/shared-mailbox-guide.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/resources/it-self-service/adding-a-shared-mailbox"
                 className="group flex items-center gap-4 rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10">
@@ -181,15 +179,15 @@ export default function ITSelfServicePage() {
                 <span className="flex-1">
                   <span className="block font-semibold text-foreground">How to Add a Shared Mailbox</span>
                   <span className="mt-1 block text-sm text-muted-foreground leading-relaxed">
-                    Step-by-step guide for adding and using a shared mailbox in Microsoft 365 (Outlook Classic and
-                    Outlook on the web).
+                    Step-by-step guide for adding and using a shared mailbox in Microsoft 365 (Outlook on the web and
+                    Outlook mobile).
                   </span>
                 </span>
                 <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-primary">
-                  View PDF
-                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  View Guide
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </SectionWrapper>
