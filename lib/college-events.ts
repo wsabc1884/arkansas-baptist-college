@@ -75,6 +75,26 @@ export const COLLEGE_EVENTS: CollegeEvent[] = [
     description:
       "Create a vision board that reflects your goals, dreams, and aspirations while connecting with your fellow Buffaloes.",
   },
+  {
+    id: "magic-springs-reservation-deadline-2026-07-15",
+    title: "Magic Springs Reservation Deadline",
+    date: "2026-07-15",
+    time: "4:00 PM",
+    location: "Office of Student Life",
+    category: "Campus",
+    description:
+      "Deadline to reserve your spot for the Friday, July 17 Magic Springs Theme & Water Park trip. Reservations must be made by 4:00 p.m. today. Space is limited, and reservations are accepted on a first-come, first-served basis.",
+  },
+  {
+    id: "magic-springs-2026-07-17",
+    title: "Magic Springs Theme & Water Park",
+    date: "2026-07-17",
+    location: "Magic Springs Theme & Water Park",
+    category: "Campus",
+    description:
+      "Join us for a day of fun at Magic Springs Theme & Water Park! All students must reserve their spot by Wednesday, July 15, at 4:00 p.m. Space is limited, and reservations will be accepted on a first-come, first-served basis. All participants must present a valid Arkansas Baptist College Student ID.",
+    featured: true,
+  },
 ]
 
 // ---------------------------------------------------------------------------
