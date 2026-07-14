@@ -76,6 +76,16 @@ export const COLLEGE_EVENTS: CollegeEvent[] = [
       "Create a vision board that reflects your goals, dreams, and aspirations while connecting with your fellow Buffaloes.",
   },
   {
+    id: "magic-springs-reservation-deadline-2026-07-15",
+    title: "Magic Springs Reservation Deadline",
+    date: "2026-07-15",
+    time: "4:00 PM",
+    location: "Office of Student Life",
+    category: "Campus",
+    description:
+      "Deadline to reserve your spot for the Friday, July 17 Magic Springs Theme & Water Park trip. Reservations must be made by 4:00 p.m. today. Space is limited, and reservations are accepted on a first-come, first-served basis.",
+  },
+  {
     id: "magic-springs-2026-07-17",
     title: "Magic Springs Theme & Water Park",
     date: "2026-07-17",
