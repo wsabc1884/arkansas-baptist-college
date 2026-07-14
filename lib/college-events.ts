@@ -75,6 +75,16 @@ export const COLLEGE_EVENTS: CollegeEvent[] = [
     description:
       "Create a vision board that reflects your goals, dreams, and aspirations while connecting with your fellow Buffaloes.",
   },
+  {
+    id: "magic-springs-2026-07-17",
+    title: "Magic Springs Theme & Water Park",
+    date: "2026-07-17",
+    location: "Magic Springs Theme & Water Park",
+    category: "Campus",
+    description:
+      "Join us for a day of fun at Magic Springs Theme & Water Park! All students must reserve their spot by Wednesday, July 15, at 4:00 p.m. Space is limited, and reservations will be accepted on a first-come, first-served basis. All participants must present a valid Arkansas Baptist College Student ID.",
+    featured: true,
+  },
 ]
 
 // ---------------------------------------------------------------------------
