@@ -254,15 +254,27 @@ export function Footer({siteSettings}: Props) {
             {/* HLC Mark of Accreditation Status - Required per HLC Obligations of Membership */}
             <div 
               className="flex items-center justify-center"
+              style={{ width: 150, height: 166 }}
               aria-label="Accredited by the Higher Learning Commission - Click to verify status"
             >
               <iframe 
                 frameBorder="0" 
                 scrolling="no" 
+                allowTransparency={true}
                 width="150" 
                 height="166" 
                 src="https://cdn.yoshki.com/iframe/54732.html" 
-                style={{ border: 0, margin: 0, padding: 0, backgroundColor: 'transparent' }}
+                style={{
+                  border: 0,
+                  margin: 0,
+                  padding: 0,
+                  backgroundColor: 'transparent',
+                  display: 'block',
+                  width: '150px',
+                  height: '166px',
+                  minWidth: '150px',
+                  minHeight: '166px',
+                }}
                 title="Higher Learning Commission Accreditation Status"
               />
             </div>
