@@ -44,6 +44,7 @@ const disclosureSections: DisclosureSection[] = [
   {
     title: "General Institutional Information",
     links: [
+      { label: "SUMMER II (U2) and SUMMER BRIDGE (U4) 2025-26 Enrollment", href: "/resources/consumer-information/summer-enrollment-2025-26" },
       { label: "Admissions and Registration", href: "/enrollment/office-of-admissions" },
       { label: "Academic Programs", href: "/academics/departments" },
       { label: "Arkansas Baptist College Academic Catalog", href: "/academics/academic-catalog" },
