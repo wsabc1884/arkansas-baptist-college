@@ -63,11 +63,7 @@ export default function SummerEnrollment2025Page() {
 
         <SectionWrapper>
           <div className="prose-abc mx-auto max-w-4xl">
-            <h2>Enrollment Snapshot</h2>
-            <p>
-              The following snapshot summarizes enrollment for the SUMMER II (U2) and SUMMER BRIDGE (U4) 2025-26 terms
-              at Arkansas Baptist College.
-            </p>
+            <h2>SUMMER II (U2) and SUMMER BRIDGE (U4) 2025-26 Enrollment Snapshot</h2>
           </div>
 
           <div className="mx-auto mt-8 max-w-4xl space-y-12">
@@ -103,6 +99,10 @@ export default function SummerEnrollment2025Page() {
                       { label: "Senior", value: "21" },
                     ]}
                   />
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    The SUMMER II (U2) population reflects a balanced mix of continuing students across all
+                    undergraduate classifications.
+                  </p>
                 </div>
                 <div>
                   <h4 className="mb-3 font-semibold text-foreground">SUMMER BRIDGE (U4)</h4>
@@ -110,19 +110,16 @@ export default function SummerEnrollment2025Page() {
                     caption="Summer Bridge classification"
                     columns={["Classification", "Students"]}
                     rows={[
-                      { label: "First-Time in College (FTIC)", value: "266" },
+                      { label: "FIRST-TIME IN COLLEGE (FTIC)", value: "266" },
                       { label: "Freshman", value: "71" },
                       { label: "Junior", value: "1" },
                     ]}
                   />
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    The SUMMER BRIDGE (U4) cohort is overwhelmingly composed of newly entering students, suggesting a
+                    strong incoming class.
+                  </p>
                 </div>
-              </div>
-              <div className="prose-abc mt-4 max-w-none">
-                <p>
-                  The SUMMER II (U2) population reflects a balanced mix of continuing students across all undergraduate
-                  classifications. The SUMMER BRIDGE (U4) cohort is overwhelmingly composed of newly entering students,
-                  suggesting a strong incoming class.
-                </p>
               </div>
             </section>
 
