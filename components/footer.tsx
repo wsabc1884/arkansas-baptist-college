@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react"
+import { HlcAccreditationMark } from "@/components/hlc-accreditation-mark"
 import type {SiteSettings} from '@/lib/types'
 type Props = { siteSettings: SiteSettings }
 
@@ -252,33 +253,7 @@ export function Footer({siteSettings}: Props) {
         <div className="mt-6 border-t border-secondary-foreground/10 pt-6">
           <div className="flex flex-col items-center gap-6">
             {/* HLC Mark of Accreditation Status - Required per HLC Obligations of Membership */}
-            <div 
-              className="flex items-center justify-center"
-              style={{ width: 150, height: 166 }}
-              aria-label="Accredited by the Higher Learning Commission - Click to verify status"
-            >
-              <iframe 
-                frameBorder="0" 
-                scrolling="no" 
-                allowTransparency={true}
-                referrerPolicy="origin"
-                width="150" 
-                height="166" 
-                src="https://cdn.yoshki.com/iframe/54732.html" 
-                style={{
-                  border: 0,
-                  margin: 0,
-                  padding: 0,
-                  backgroundColor: 'transparent',
-                  display: 'block',
-                  width: '150px',
-                  height: '166px',
-                  minWidth: '150px',
-                  minHeight: '166px',
-                }}
-                title="Higher Learning Commission Accreditation Status"
-              />
-            </div>
+            <HlcAccreditationMark />
             <div className="flex flex-col items-center gap-1 text-xs text-secondary-foreground/50">
               <p>
                 &copy; {new Date().getFullYear()} Arkansas Baptist College. All rights reserved.
