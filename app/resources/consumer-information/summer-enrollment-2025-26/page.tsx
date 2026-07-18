@@ -105,6 +105,13 @@ const ENROLLMENT_CHARTS: { src: string; alt: string; caption: string; width: num
     height: 653,
   },
   {
+    src: "/documents/summer-enrollment-2025-26/img9.png",
+    alt: "6-Year Graduation Rate by Gender for students pursuing bachelor's degrees: 4% male, 16% female.",
+    caption: "6-Year Graduation Rate by Gender",
+    width: 979,
+    height: 653,
+  },
+  {
     src: "/documents/summer-enrollment-2025-26/img10.png",
     alt: "Student outcomes for full-time, first-time degree/certificate-seeking undergraduates who entered in 2016-2017, by all students, Pell, and non-Pell.",
     caption: "Student Outcomes — Full-Time, First-Time Undergraduates (Entered 2016–2017)",
