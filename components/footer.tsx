@@ -261,6 +261,7 @@ export function Footer({siteSettings}: Props) {
                 frameBorder="0" 
                 scrolling="no" 
                 allowTransparency={true}
+                referrerPolicy="origin"
                 width="150" 
                 height="166" 
                 src="https://cdn.yoshki.com/iframe/54732.html" 
