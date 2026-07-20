@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
+import { SummerEnrollmentPopup } from "@/components/summer-enrollment-popup"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -160,6 +161,7 @@ const disclosureSections: DisclosureSection[] = [
 export default function ConsumerInformationPage() {
   return (
     <div className="min-h-screen">
+      <SummerEnrollmentPopup />
       <main id="main-content">
         <PageHero
           title="Consumer Information"
