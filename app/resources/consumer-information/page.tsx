@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { SummerEnrollmentPopup } from "@/components/summer-enrollment-popup"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -23,6 +22,13 @@ type DisclosureSection = {
 }
 
 const disclosureSections: DisclosureSection[] = [
+  {
+    title: "Enrollment Information",
+    links: [
+      { label: "Fall IPEDS Enrollment", href: "/resources/consumer-information/fall-ipeds-enrollment" },
+      { label: "Current Term Enrollment", href: "/resources/consumer-information/current-term-enrollment" },
+    ],
+  },
   {
     title: "Student Outcomes",
     links: [
@@ -154,7 +160,6 @@ const disclosureSections: DisclosureSection[] = [
 export default function ConsumerInformationPage() {
   return (
     <div className="min-h-screen">
-      <SummerEnrollmentPopup />
       <main id="main-content">
         <PageHero
           title="Consumer Information"
