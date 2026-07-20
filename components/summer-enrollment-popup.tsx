@@ -136,15 +136,15 @@ export function SummerEnrollmentPopup() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="font-serif text-xl text-foreground text-balance">
+          <DialogTitle className="font-serif text-2xl">
             SUMMER II (U2) and SUMMER BRIDGE (U4) 2025-26 Enrollment
           </DialogTitle>
           <DialogDescription>
-            Enrollment snapshot for the SUMMER II (U2) and SUMMER BRIDGE (U4) 2025-26 terms.
+            Current term enrollment snapshot and Fall IPEDS enrollment charts for Arkansas Baptist College.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="mt-2 space-y-12">
+        <div className="space-y-12 py-2">
           {/* Overall Enrollment */}
           <section>
             <h3 className="font-serif text-lg font-bold text-foreground">Overall Enrollment</h3>
@@ -369,14 +369,14 @@ export function SummerEnrollmentPopup() {
             </p>
           </section>
 
-          {/* Enrollment & Outcomes Charts */}
+          {/* Fall IPEDS Enrollment Charts */}
           <section>
-            <h3 className="font-serif text-lg font-bold text-foreground">Enrollment &amp; Student Outcomes Charts</h3>
+            <h3 className="font-serif text-lg font-bold text-foreground">Fall IPEDS Enrollment Charts</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              The following charts provide additional institutional data on enrollment, student demographics, retention,
+              The following charts provide institutional data on enrollment, student demographics, retention,
               graduation, and student outcomes.
             </p>
-            <div className="mt-6 space-y-8">
+            <div className="mt-4 space-y-8">
               {ENROLLMENT_CHARTS.map((chart) => (
                 <figure key={chart.src} className="overflow-hidden rounded-lg border border-border bg-card">
                   <Image

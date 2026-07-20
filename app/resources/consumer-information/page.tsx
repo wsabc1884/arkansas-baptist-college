@@ -24,6 +24,13 @@ type DisclosureSection = {
 
 const disclosureSections: DisclosureSection[] = [
   {
+    title: "Enrollment Information",
+    links: [
+      { label: "Fall IPEDS Enrollment", href: "/resources/consumer-information/fall-ipeds-enrollment" },
+      { label: "Current Term Enrollment", href: "/resources/consumer-information/current-term-enrollment" },
+    ],
+  },
+  {
     title: "Student Outcomes",
     links: [
       { label: "Graduation and Retention Rate", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#retgrad", external: true },
