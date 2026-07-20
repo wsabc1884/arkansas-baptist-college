@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
+import { SummerEnrollmentPopup } from "@/components/summer-enrollment-popup"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -44,7 +45,6 @@ const disclosureSections: DisclosureSection[] = [
   {
     title: "General Institutional Information",
     links: [
-      { label: "SUMMER II (U2) and SUMMER BRIDGE (U4) 2025-26 Enrollment", href: "/resources/consumer-information/summer-enrollment-2025-26" },
       { label: "Admissions and Registration", href: "/enrollment/office-of-admissions" },
       { label: "Academic Programs", href: "/academics/departments" },
       { label: "Arkansas Baptist College Academic Catalog", href: "/academics/academic-catalog" },
@@ -154,6 +154,7 @@ const disclosureSections: DisclosureSection[] = [
 export default function ConsumerInformationPage() {
   return (
     <div className="min-h-screen">
+      <SummerEnrollmentPopup />
       <main id="main-content">
         <PageHero
           title="Consumer Information"
