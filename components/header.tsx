@@ -126,25 +126,105 @@ const allPages = navigation.flatMap((item) =>
     : [{ name: item.name, href: item.href, section: "" }]
 )
 
+// Map every known nav href to its top-level section so full-text results can
+// display the section they belong to.
+const sectionByHref: Record<string, string> = {}
+for (const p of allPages) sectionByHref[p.href] = p.section
+
+type SearchDoc = { title: string; href: string; text: string }
+type SearchResult = { title: string; href: string; section: string; snippet: string }
+
+function escapeRegExp(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+// Renders text with the matched query tokens visually highlighted.
+function Highlight({ text, tokens }: { text: string; tokens: string[] }) {
+  if (tokens.length === 0) return <>{text}</>
+  const re = new RegExp(`(${tokens.map(escapeRegExp).join("|")})`, "gi")
+  const parts = text.split(re)
+  return (
+    <>
+      {parts.map((part, i) =>
+        part && tokens.some((t) => t === part.toLowerCase()) ? (
+          <mark key={i} className="rounded bg-primary/15 px-0.5 text-foreground">
+            {part}
+          </mark>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  )
+}
+
+// Builds a short context window around the first matched token.
+function buildSnippet(text: string, tokens: string[]) {
+  const lower = text.toLowerCase()
+  let pos = -1
+  for (const t of tokens) {
+    const i = lower.indexOf(t)
+    if (i !== -1 && (pos === -1 || i < pos)) pos = i
+  }
+  if (pos === -1) return text.slice(0, 120).trim()
+  const start = Math.max(0, pos - 40)
+  const end = Math.min(text.length, pos + 100)
+  return `${start > 0 ? "… " : ""}${text.slice(start, end).trim()}${end < text.length ? " …" : ""}`
+}
+
 function SearchDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   const [query, setQuery] = useState("")
+  const [docs, setDocs] = useState<SearchDoc[] | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 0)
+      // Lazily load the content index the first time search opens so it stays
+      // out of the initial page bundle.
+      if (!docs) {
+        import("@/lib/search-index.json")
+          .then((m) => setDocs(((m as { default?: SearchDoc[] }).default ?? m) as SearchDoc[]))
+          .catch(() => setDocs([]))
+      }
     } else {
       setQuery("")
     }
-  }, [open])
+  }, [open, docs])
 
-  const filtered = query.length > 0
-    ? allPages.filter(
-        (p) =>
-          p.name.toLowerCase().includes(query.toLowerCase()) ||
-          p.section.toLowerCase().includes(query.toLowerCase())
-      )
-    : allPages
+  const trimmed = query.trim().toLowerCase()
+  const tokens = trimmed.length > 0 ? trimmed.split(/\s+/).filter(Boolean) : []
+
+  const results: SearchResult[] =
+    tokens.length === 0
+      ? // No query -> browse the full navigation list.
+        allPages.map((p) => ({ title: p.name, href: p.href, section: p.section, snippet: "" }))
+      : (() => {
+          // Prefer the full content index; fall back to nav titles while it loads.
+          const source: SearchDoc[] =
+            docs && docs.length > 0
+              ? docs
+              : allPages.map((p) => ({ title: p.name, href: p.href, text: p.section }))
+
+          const scored = source
+            .map((doc) => {
+              const title = doc.title.toLowerCase()
+              const hay = `${title} ${doc.text.toLowerCase()}`
+              if (!tokens.every((t) => hay.includes(t))) return null
+              const inTitle = tokens.every((t) => title.includes(t))
+              return {
+                title: doc.title,
+                href: doc.href,
+                section: sectionByHref[doc.href] ?? "",
+                snippet: inTitle ? "" : buildSnippet(doc.text, tokens),
+                score: inTitle ? 0 : 1,
+              }
+            })
+            .filter((r): r is SearchResult & { score: number } => r !== null)
+
+          scored.sort((a, b) => a.score - b.score)
+          return scored.slice(0, 30)
+        })()
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -156,25 +236,34 @@ function SearchDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (op
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search pages..."
+            placeholder="Search pages, people, and content..."
             className="flex-1 bg-transparent text-base outline-none placeholder:text-muted-foreground"
           />
         </div>
-        <div className="max-h-72 overflow-y-auto p-2">
-          {filtered.length === 0 ? (
+        <div className="max-h-80 overflow-y-auto p-2">
+          {results.length === 0 ? (
             <p className="py-6 text-center text-sm text-muted-foreground">No results found.</p>
           ) : (
             <ul role="listbox">
-              {filtered.map((page) => (
-                <li key={page.name + page.href}>
+              {results.map((page, i) => (
+                <li key={`${page.href}-${i}`}>
                   <Link
                     href={page.href}
                     onClick={() => onOpenChange(false)}
-                    className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm hover:bg-muted transition-colors"
+                    className="block rounded-md px-3 py-2.5 hover:bg-muted transition-colors"
                   >
-                    <span className="font-medium">{page.name}</span>
-                    {page.section && (
-                      <span className="text-xs text-muted-foreground">{page.section}</span>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-sm font-medium">
+                        <Highlight text={page.title} tokens={tokens} />
+                      </span>
+                      {page.section && (
+                        <span className="shrink-0 text-xs text-muted-foreground">{page.section}</span>
+                      )}
+                    </div>
+                    {page.snippet && (
+                      <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+                        <Highlight text={page.snippet} tokens={tokens} />
+                      </p>
                     )}
                   </Link>
                 </li>

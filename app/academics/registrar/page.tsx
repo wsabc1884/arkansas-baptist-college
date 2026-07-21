@@ -51,13 +51,13 @@ export default function RegistrarPage() {
             <p>Due to social distancing policies, official transcripts are processed through the National Student Clearinghouse.</p>
             <div className="not-prose my-4">
               <a
-                href="https://www.mystudentcenter.org"
+                href="https://www.studentclearinghouse.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold !text-white visited:!text-white hover:!text-white active:!text-white focus:!text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-colors hover:bg-primary/90"
               >
                 Order a Transcript
-                <ExternalLink className="h-4 w-4" />
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
             <p><em>Note: The National Student Clearinghouse does charge a fee.</em></p>
@@ -104,7 +104,7 @@ export default function RegistrarPage() {
                 { title: "Hold Directory Information Form", file: "hold-directory-info.pdf" },
                 { title: "Student Request for Withdrawal", file: "student-withdrawal.pdf" },
               ].map((form) => (
-                <a key={form.title} href={`/documents/registrar/${form.file}`} download className="group flex items-center gap-3 rounded-lg border bg-card p-4 transition-colors hover:border-primary">
+                <a key={form.title} href={`/documents/registrar/${form.file}`} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 rounded-lg border bg-card p-4 transition-colors hover:border-primary">
                   <Download className="h-4 w-4 shrink-0 text-primary" />
                   <span className="text-sm font-medium text-foreground group-hover:text-primary">{form.title}</span>
                 </a>
@@ -119,7 +119,7 @@ export default function RegistrarPage() {
             <div className="rounded-lg border bg-card p-6 sm:p-8">
               <h2 className="font-serif text-xl font-bold text-foreground sm:text-2xl">Registrar Office</h2>
               <div className="mt-4 space-y-2">
-                <p className="font-semibold text-foreground">Delores Voliber, BBA</p>
+                <p className="font-semibold text-foreground">Tracey D. Moore, PhD</p>
                 <p className="text-sm text-muted-foreground">Office Hours: Mon-Fri, 9:00 AM - 5:00 PM</p>
                 <p className="text-sm text-muted-foreground">Phone: <a href="tel:5014201237" className="text-primary hover:underline">501-420-1237</a></p>
                 <p className="text-sm text-muted-foreground">Email: <a href="mailto:registrarsoffice@arkansasbaptist.edu" className="text-primary hover:underline">registrarsoffice@arkansasbaptist.edu</a></p>
@@ -131,7 +131,7 @@ export default function RegistrarPage() {
         <CTABand
           heading="Need Academic Records?"
           description="Order your official transcript online or contact the Registrar's Office for assistance."
-          primaryAction={{ label: "Order Transcript", href: "https://www.mystudentcenter.org" }}
+          primaryAction={{ label: "Order Transcript", href: "https://www.studentclearinghouse.org/" }}
           secondaryAction={{ label: "Academic Catalog", href: "/academics/academic-catalog" }}
         />
       </main>

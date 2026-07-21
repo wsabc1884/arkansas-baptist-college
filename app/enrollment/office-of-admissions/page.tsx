@@ -166,7 +166,7 @@ export default function OfficeOfAdmissionsPage() {
                 graduation.
               </p>
               <div className="mt-6 not-prose">
-                <Button size="lg" className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>
+                <Button size="lg" className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 !text-white [&_*]:!text-white" asChild>
                   <a
                     href="https://my.arkansasbaptist.edu/ICS/Admissions/"
                     target="_blank"
