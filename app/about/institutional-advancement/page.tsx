@@ -59,7 +59,7 @@ export default function InstitutionalAdvancementPage() {
             </p>
             <a
               href="/give"
-              className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition-colors"
+              className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold !text-white hover:bg-primary/90 transition-colors"
             >
               Give to ABC
             </a>
