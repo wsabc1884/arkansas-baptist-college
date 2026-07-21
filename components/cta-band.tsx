@@ -68,7 +68,12 @@ export function CTABand({
                 )}
                 asChild
               >
-                <Link href={resolvedPrimary.href}>
+                <Link
+                  href={resolvedPrimary.href}
+                  {...(resolvedPrimary.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
                   {resolvedPrimary.label}
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
@@ -85,7 +90,12 @@ export function CTABand({
                 )}
                 asChild
               >
-                <Link href={resolvedSecondary.href}>
+                <Link
+                  href={resolvedSecondary.href}
+                  {...(resolvedSecondary.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
                   {resolvedSecondary.label}
                 </Link>
               </Button>
