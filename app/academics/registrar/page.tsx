@@ -104,7 +104,7 @@ export default function RegistrarPage() {
                 { title: "Hold Directory Information Form", file: "hold-directory-info.pdf" },
                 { title: "Student Request for Withdrawal", file: "student-withdrawal.pdf" },
               ].map((form) => (
-                <a key={form.title} href={`/documents/registrar/${form.file}`} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 rounded-lg border bg-card p-4 transition-colors hover:border-primary">
+                <a key={form.title} href={`/documents/registrar/${form.file}`} download target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 rounded-lg border bg-card p-4 transition-colors hover:border-primary">
                   <Download className="h-4 w-4 shrink-0 text-primary" />
                   <span className="text-sm font-medium text-foreground group-hover:text-primary">{form.title}</span>
                 </a>

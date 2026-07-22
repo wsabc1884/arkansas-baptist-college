@@ -29,7 +29,7 @@ export default function InterdisciplinaryStudiesPage() {
             </ul>
             <p className="text-sm">The Bachelor of Arts in General Studies lets you customize your education with up to three concentration areas, including Business, Health, Human Services, Education, Criminal Justice, Esports, Entrepreneurship, Religious Studies, and Public Administration.</p>
             <h2>Contact</h2>
-            <p>Phone: <a href="tel:5014201312">501-420-1312</a><br />Email: Vacant</p>
+            <p>Phone: Pending<br />Email: Vacant</p>
           </div>
         </SectionWrapper>
         <SectionWrapper>
