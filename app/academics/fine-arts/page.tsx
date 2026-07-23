@@ -87,20 +87,6 @@ export default function FineArtsPage() {
               unique opportunity to learn about the music industry. Students will gain knowledge in the areas of music
               production, music publishing, music marketing, and music business management.
             </p>
-            <h2>Degree Programs</h2>
-            <ul>
-              <li>
-                <strong>Bachelor of Arts in Music Performance (BA)</strong>
-              </li>
-              <li>
-                <strong>Associate of Arts in Music Business (AA)</strong>
-              </li>
-            </ul>
-            <h2>Ensembles &amp; Performance Opportunities</h2>
-            <p>
-              Students participate in the College Choir, the Stampede of Sound marching band, and various ensemble
-              groups. Performance opportunities include campus events, community engagements, and annual concerts.
-            </p>
           </div>
         </SectionWrapper>
 
@@ -165,9 +151,28 @@ export default function FineArtsPage() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-[#3d1a5c]/70">Director of Bands</p>
               <h2 className="mt-2 font-serif text-3xl font-bold text-foreground sm:text-4xl">Cedric Todd</h2>
+              <div
+                className="mt-6 flex aspect-[3/4] items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-center"
+                role="img"
+                aria-label="Photo of Cedric Todd coming soon"
+              >
+                <span className="text-sm font-medium text-muted-foreground">Photo coming soon</span>
+              </div>
             </div>
-            <div className="flex min-h-40 items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 p-10 text-center">
-              <p className="font-serif text-2xl font-semibold text-muted-foreground">Coming Soon</p>
+            <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                Cedric Todd serves as the Director of Bands for the Stampede of Sound, where he leads with vision,
+                discipline, and a passion for developing excellence in every student he encounters.
+              </p>
+              <p>
+                A dynamic educator, arranger, and program builder, Todd is known for transforming band programs into
+                high-performing, high-energy ensembles that command attention both on and off the field. His approach
+                blends musical precision, innovative drill design, and a culture rooted in accountability and growth.
+              </p>
+              <p>
+                Under his leadership, the Stampede of Sound is not just focused on performance—but on purpose. Todd
+                emphasizes the development of the complete student: musician, leader, and professional.
+              </p>
             </div>
           </div>
         </SectionWrapper>
@@ -255,6 +260,29 @@ export default function FineArtsPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="mt-16 grid gap-10 border-t border-border pt-12 lg:grid-cols-2">
+            <div>
+              <h3 className="font-serif text-2xl font-bold text-foreground">Degree Programs</h3>
+              <ul className="mt-4 space-y-2 text-muted-foreground">
+                <li className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
+                  <span className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
+                  <span className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-serif text-2xl font-bold text-foreground">Ensembles &amp; Performance Opportunities</h3>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                Students participate in the College Choir, the Stampede of Sound marching band, and various ensemble
+                groups. Performance opportunities include campus events, community engagements, and annual concerts.
+              </p>
             </div>
           </div>
         </SectionWrapper>
