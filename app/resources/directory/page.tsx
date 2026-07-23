@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const fallbackDepartments = [
   { name: "Office of the President", phone: "501-420-1202", email: "President@arkansasbaptist.edu" },
-  { name: "Academic Affairs", phone: "501-420-1312", email: "Howard.gibson@arkansasbaptist.edu" },
+  { name: "Academic Affairs", phone: "501-420-1312", email: "AcademicAffairs@arkansasbaptist.edu" },
   { name: "Office of Admissions", phone: "501-420-1234", email: "Admissions@arkansasbaptist.edu" },
   { name: "Business Office", phone: "501-420-1214", email: "Businessoffice@arkansasbaptist.edu" },
   { name: "Financial Aid", phone: "501-420-1226", email: "Financialaid@arkansasbaptist.edu" },
