@@ -166,20 +166,8 @@ export default function FineArtsPage() {
               <p className="text-sm font-semibold uppercase tracking-widest text-[#3d1a5c]/70">Director of Bands</p>
               <h2 className="mt-2 font-serif text-3xl font-bold text-foreground sm:text-4xl">Cedric Todd</h2>
             </div>
-            <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
-              <p>
-                Cedric Todd serves as the Director of Bands for the Stampede of Sound, where he leads with vision,
-                discipline, and a passion for developing excellence in every student he encounters.
-              </p>
-              <p>
-                A dynamic educator, arranger, and program builder, Todd is known for transforming band programs into
-                high-performing, high-energy ensembles that command attention both on and off the field. His approach
-                blends musical precision, innovative drill design, and a culture rooted in accountability and growth.
-              </p>
-              <p>
-                Under his leadership, the Stampede of Sound is not just focused on performance—but on purpose. Todd
-                emphasizes the development of the complete student: musician, leader, and professional.
-              </p>
+            <div className="flex min-h-40 items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 p-10 text-center">
+              <p className="font-serif text-2xl font-semibold text-muted-foreground">Coming Soon</p>
             </div>
           </div>
         </SectionWrapper>
