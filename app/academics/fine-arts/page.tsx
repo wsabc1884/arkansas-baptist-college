@@ -263,27 +263,26 @@ export default function FineArtsPage() {
             </div>
           </div>
 
-          <div className="mt-16 grid gap-10 border-t border-border pt-12 lg:grid-cols-2">
-            <div>
-              <h3 className="font-serif text-2xl font-bold text-foreground">Degree Programs</h3>
-              <ul className="mt-4 space-y-2 text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
-                  <span className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
-                  <span className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-serif text-2xl font-bold text-foreground">Ensembles &amp; Performance Opportunities</h3>
-              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                Students participate in the College Choir, the Stampede of Sound marching band, and various ensemble
-                groups. Performance opportunities include campus events, community engagements, and annual concerts.
-              </p>
-            </div>
+          <div className="mt-16 border-t border-border pt-12">
+            <h3 className="font-serif text-2xl font-bold text-foreground">Degree Programs</h3>
+            <ul className="mt-4 space-y-2 text-muted-foreground">
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
+                <span className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
+                <span className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</span>
+              </li>
+            </ul>
+
+            <h3 className="mt-10 font-serif text-2xl font-bold text-foreground">
+              Ensembles &amp; Performance Opportunities
+            </h3>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Students participate in the College Choir, the Stampede of Sound marching band, and various ensemble
+              groups. Performance opportunities include campus events, community engagements, and annual concerts.
+            </p>
           </div>
         </SectionWrapper>
 
