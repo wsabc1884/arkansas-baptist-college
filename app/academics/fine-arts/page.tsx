@@ -263,9 +263,9 @@ export default function FineArtsPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-16 max-w-2xl border-t border-border pt-12 text-center">
+          <div className="mx-auto mt-16 max-w-2xl border-t border-border pt-12 text-left">
             <h3 className="font-serif text-2xl font-bold text-foreground">Degree Programs</h3>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
+            <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground">
               <li className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</li>
               <li className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</li>
             </ul>
