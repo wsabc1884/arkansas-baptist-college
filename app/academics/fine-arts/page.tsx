@@ -263,17 +263,11 @@ export default function FineArtsPage() {
             </div>
           </div>
 
-          <div className="mt-16 border-t border-border pt-12">
+          <div className="mx-auto mt-16 max-w-2xl border-t border-border pt-12 text-center">
             <h3 className="font-serif text-2xl font-bold text-foreground">Degree Programs</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
-                <span className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#3d1a5c]" aria-hidden="true" />
-                <span className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</span>
-              </li>
+              <li className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</li>
+              <li className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</li>
             </ul>
 
             <h3 className="mt-10 font-serif text-2xl font-bold text-foreground">
