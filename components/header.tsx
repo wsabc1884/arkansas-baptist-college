@@ -354,7 +354,6 @@ export function Header({siteSettings}: Props) {
   const blackboardUrl = normalizeExternalUrl(siteSettings?.blackboard || "https://arkansasbc.blackboard.com/ultra/admin")
 
   const phone = (siteSettings?.mainPhone || "501-420-1200").trim()
-  const address = (siteSettings?.collegeAddress || "1600 Dr. Martin Luther King Jr. Drive, Old Main Building, Room B107, Little Rock, Arkansas 72202").trim()
 
   return (
     <>
@@ -374,10 +373,6 @@ export function Header({siteSettings}: Props) {
                 <span className="flex items-center gap-1.5">
                   <Phone className="h-3 w-3" aria-hidden="true" />
                   <a href={`tel:${phone.replace(/\D/g, '')}`} className="hover:underline">{phone}</a>
-                </span>
-                <span className="hidden items-center gap-1.5 sm:flex">
-                  <MapPin className="h-3 w-3" aria-hidden="true" />
-                  <span>{address}</span>
                 </span>
               </div>
               <div className="flex items-center gap-3">

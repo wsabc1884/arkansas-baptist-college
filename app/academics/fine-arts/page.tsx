@@ -87,20 +87,6 @@ export default function FineArtsPage() {
               unique opportunity to learn about the music industry. Students will gain knowledge in the areas of music
               production, music publishing, music marketing, and music business management.
             </p>
-            <h2>Degree Programs</h2>
-            <ul>
-              <li>
-                <strong>Bachelor of Arts in Music Performance (BA)</strong>
-              </li>
-              <li>
-                <strong>Associate of Arts in Music Business (AA)</strong>
-              </li>
-            </ul>
-            <h2>Ensembles &amp; Performance Opportunities</h2>
-            <p>
-              Students participate in the College Choir, the Stampede of Sound marching band, and various ensemble
-              groups. Performance opportunities include campus events, community engagements, and annual concerts.
-            </p>
           </div>
         </SectionWrapper>
 
@@ -165,6 +151,13 @@ export default function FineArtsPage() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-[#3d1a5c]/70">Director of Bands</p>
               <h2 className="mt-2 font-serif text-3xl font-bold text-foreground sm:text-4xl">Cedric Todd</h2>
+              <div
+                className="mt-6 flex aspect-[3/4] items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-center"
+                role="img"
+                aria-label="Photo of Cedric Todd coming soon"
+              >
+                <span className="text-sm font-medium text-muted-foreground">Photo coming soon</span>
+              </div>
             </div>
             <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
               <p>
@@ -268,6 +261,22 @@ export default function FineArtsPage() {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-2xl border-t border-border pt-12 text-left">
+            <h3 className="font-serif text-2xl font-bold text-foreground">Degree Programs</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground">
+              <li className="font-semibold text-foreground">Bachelor of Arts in Music Performance (BA)</li>
+              <li className="font-semibold text-foreground">Associate of Arts in Music Business (AA)</li>
+            </ul>
+
+            <h3 className="mt-10 font-serif text-2xl font-bold text-foreground">
+              Ensembles &amp; Performance Opportunities
+            </h3>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Students participate in the College Choir, the Stampede of Sound marching band, and various ensemble
+              groups. Performance opportunities include campus events, community engagements, and annual concerts.
+            </p>
           </div>
         </SectionWrapper>
 
