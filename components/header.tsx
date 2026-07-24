@@ -49,7 +49,7 @@ const navigation = [
       { name: "Pre-Nursing", href: "/academics/pre-nursing" },
       { name: "Health Studies", href: "/academics/health-studies" },
       { name: "Health, PE & Recreation", href: "/academics/hper" },
-      { name: "Fine Arts", href: "/academics/fine-arts" },
+      { name: "Band & Fine Arts", href: "/academics/fine-arts" },
       { name: "Criminal Justice", href: "/academics/criminal-justice" },
       { name: "Human Services", href: "/academics/human-services" },
       { name: "Public Administration", href: "/academics/public-administration" },
@@ -117,7 +117,7 @@ const navigation = [
   },
   { name: "Athletics", href: "https://abcbuffaloes.com", external: true },
   { name: "META24 Program", href: "/academics/meta-24" },
-  { name: "Band and Fine Arts", href: "/academics/fine-arts" },
+    { name: "Band & Fine Arts", href: "/academics/fine-arts" },
 ]
 
 const allPages = navigation.flatMap((item) =>
