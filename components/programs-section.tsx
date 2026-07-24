@@ -25,7 +25,7 @@ const programs = [
     degrees: ["Bachelor's", "Certification"],
   },
   {
-    name: "Fine Arts",
+    name: "Band & Fine Arts",
     icon: Music,
     description: "Express, create, and innovate through visual arts, performance, and digital media disciplines.",
     href: "/academics/fine-arts",
