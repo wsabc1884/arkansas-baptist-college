@@ -12,21 +12,30 @@ interface FormData {
 
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
 
-// In-memory ticket counter for each form type
-const ticketCounters: Record<string, number> = {
-  "facility-request": 1000,
-  "work-order": 2000,
-  "key-request": 3000,
-  "entrepreneurship-fund": 4000,
-}
+// Ticket numbers are derived from the submission date and time in Central Time
+// (the college's timezone). This is reliable on serverless because it does not
+// depend on any persisted counter, which would reset on every cold start.
+// Format: MMDDYYYY-HHMM (e.g. 07282026-0906).
+function generateTicketNumber(): string {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chicago",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(new Date())
 
-// Helper to get next ticket number
-function getNextTicketNumber(formType: string): number {
-  if (!ticketCounters[formType]) {
-    ticketCounters[formType] = 1000
-  }
-  ticketCounters[formType]++
-  return ticketCounters[formType]
+  const get = (type: string) => parts.find((p) => p.type === type)?.value || ""
+  const month = get("month")
+  const day = get("day")
+  const year = get("year")
+  // Intl can return "24" for midnight in hour12:false mode; normalize to "00".
+  const hour = get("hour") === "24" ? "00" : get("hour")
+  const minute = get("minute")
+
+  return `${month}${day}${year}-${hour}${minute}`
 }
 
 // Helper to format form data
@@ -78,8 +87,8 @@ export async function submitForm(data: FormData) {
       }
     }
 
-    // Get next ticket number
-    const ticketNumber = getNextTicketNumber(data.formType)
+    // Generate a date/time-based ticket number
+    const ticketNumber = generateTicketNumber()
 
     // Format form type for display
     const formTypeDisplay = data.formType

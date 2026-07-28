@@ -13,7 +13,7 @@ export default function LoanApplicationPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [ticketNumber, setTicketNumber] = useState<number | null>(null)
+  const [ticketNumber, setTicketNumber] = useState<string | null>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

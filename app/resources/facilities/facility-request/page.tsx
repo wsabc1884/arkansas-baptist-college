@@ -64,7 +64,7 @@ export default function FacilityRequestPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [ticketNumber, setTicketNumber] = useState<number | null>(null)
+  const [ticketNumber, setTicketNumber] = useState<string | null>(null)
   const [attendeesValue, setAttendeesValue] = useState("")
   const [showNumberPad, setShowNumberPad] = useState(false)
   const [campusPhoneValue, setCampusPhoneValue] = useState("")
