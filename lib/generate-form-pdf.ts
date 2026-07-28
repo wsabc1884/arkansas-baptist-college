@@ -12,7 +12,7 @@ function isYes(value?: string) {
 
 export async function generateFormPDF(
   formType: string,
-  ticketNumber: string,
+  ticketNumber: number,
   fields: Fields
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -38,7 +38,7 @@ export async function generateFormPDF(
 
 /* ---------- Facility Request (official layout) ---------- */
 
-function renderFacilityRequest(doc: PDFKit.PDFDocument, ticketNumber: string, f: Fields) {
+function renderFacilityRequest(doc: PDFKit.PDFDocument, ticketNumber: number, f: Fields) {
   const left = doc.page.margins.left
   const right = doc.page.width - doc.page.margins.right
   const width = right - left
@@ -247,7 +247,7 @@ function ensureSpace(doc: PDFKit.PDFDocument, needed: number) {
 
 /* ---------- Generic layout (other form types) ---------- */
 
-function renderGeneric(doc: PDFKit.PDFDocument, formType: string, ticketNumber: string, fields: Fields) {
+function renderGeneric(doc: PDFKit.PDFDocument, formType: string, ticketNumber: number, fields: Fields) {
   try {
     doc.image(LOGO_BUFFER, 50, 20, { width: 100, height: 100 })
   } catch (err) {
@@ -261,10 +261,9 @@ function renderGeneric(doc: PDFKit.PDFDocument, formType: string, ticketNumber: 
 
   doc.fontSize(24).font("Helvetica-Bold")
   doc.text("Arkansas Baptist College", { align: "center" }).moveDown(0.2)
-  doc.fontSize(18).text(`${formTypeDisplay} Request Form`, { align: "center" }).moveDown(1)
-  doc.fontSize(12).font("Helvetica")
-  doc.text(`Ticket #${ticketNumber}`, { align: "center" }).moveDown(0.5)
-  doc.fontSize(10).text(`Submitted: ${new Date().toLocaleString()}`, { align: "center" }).moveDown(2)
+  doc.fontSize(18).text(`${formTypeDisplay} #${ticketNumber}`, { align: "center" }).moveDown(1)
+  doc.fontSize(10).font("Helvetica")
+  doc.text(`Submitted: ${new Date().toLocaleString()}`, { align: "center" }).moveDown(2)
 
   doc.fontSize(11).font("Helvetica-Bold")
   doc.text("Form Details:", { underline: true }).moveDown(0.5)

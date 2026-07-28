@@ -14,7 +14,7 @@ export default function KeyRequestPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [ticketNumber, setTicketNumber] = useState<string | null>(null)
+  const [ticketNumber, setTicketNumber] = useState<number | null>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -70,16 +70,6 @@ export default function KeyRequestPage() {
             <p className="mt-2 text-muted-foreground">
               Request a key or access card for a campus building or office.
             </p>
-
-            <div className="mt-6 flex items-start gap-3 rounded-lg border border-yellow-300 bg-yellow-50 p-4 dark:border-yellow-700 dark:bg-yellow-950/30">
-              <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-yellow-600" />
-              <div>
-                <p className="text-sm font-medium text-yellow-800 dark:text-yellow-300">
-                  Form Currently Unavailable
-                </p>
-                <p className="mt-1 text-sm text-yellow-700 dark:text-yellow-400">This form is temporarily disabled while we configure the email system. Please check back soon.</p>
-              </div>
-            </div>
 
             {error && (
               <div className="mt-6 flex items-start gap-3 rounded-lg border border-red-300 bg-red-50 p-4 dark:border-red-700 dark:bg-red-950/30">
@@ -169,9 +159,18 @@ export default function KeyRequestPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full" disabled={true}>
-                  <Send className="mr-2 h-4 w-4" />
-                  Form Temporarily Unavailable
+                <Button type="submit" size="lg" className="w-full" disabled={loading}>
+                  {loading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Submit Key Request
+                    </>
+                  )}
                 </Button>
               </form>
             )}

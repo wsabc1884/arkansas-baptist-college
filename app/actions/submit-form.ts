@@ -1,6 +1,7 @@
 "use server"
 
 import { generateFormPDF } from "@/lib/generate-form-pdf"
+import { getNextTicketNumber } from "@/lib/ticket-counter"
 
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
@@ -11,32 +12,6 @@ interface FormData {
 }
 
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
-
-// Ticket numbers are derived from the submission date and time in Central Time
-// (the college's timezone). This is reliable on serverless because it does not
-// depend on any persisted counter, which would reset on every cold start.
-// Format: MMDDYYYY-HHMM (e.g. 07282026-0906).
-function generateTicketNumber(): string {
-  const parts = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Chicago",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).formatToParts(new Date())
-
-  const get = (type: string) => parts.find((p) => p.type === type)?.value || ""
-  const month = get("month")
-  const day = get("day")
-  const year = get("year")
-  // Intl can return "24" for midnight in hour12:false mode; normalize to "00".
-  const hour = get("hour") === "24" ? "00" : get("hour")
-  const minute = get("minute")
-
-  return `${month}${day}${year}-${hour}${minute}`
-}
 
 // Helper to format form data
 function formatFormData(fields: Record<string, string>): string {
@@ -87,14 +62,15 @@ export async function submitForm(data: FormData) {
       }
     }
 
-    // Generate a date/time-based ticket number
-    const ticketNumber = generateTicketNumber()
-
-    // Format form type for display
+    // Format form type for display (e.g. "key-request" -> "Key Request")
     const formTypeDisplay = data.formType
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
+
+    // Get the next rising ticket number. Each form type has its own independent
+    // counter persisted in the database, so numbers never reset or collide.
+    const ticketNumber = await getNextTicketNumber(data.formType)
 
     // Generate PDF
     let pdfBuffer: Buffer | null = null
@@ -109,9 +85,9 @@ export async function submitForm(data: FormData) {
     // Send email via Brevo REST API with PDF attachment
     try {
       const emailBody: Record<string, unknown> = {
-        subject: `${formTypeDisplay} Form #${ticketNumber}`,
+        subject: `${formTypeDisplay} #${ticketNumber}`,
         htmlContent: `
-          <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
+          <h2>${formTypeDisplay} #${ticketNumber}</h2>
           <p>Please see the attached PDF for full form details.</p>
         `,
         sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
@@ -123,7 +99,7 @@ export async function submitForm(data: FormData) {
         emailBody.attachment = [
           {
             content: pdfBuffer.toString("base64"),
-            name: `${data.formType}-${ticketNumber}.pdf`,
+            name: `${formTypeDisplay} #${ticketNumber}.pdf`,
           },
         ]
       }
