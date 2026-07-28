@@ -7,6 +7,7 @@ import { GiveSection } from "@/components/give-section"
 import { BuffaloRadioSection } from "@/components/buffalo-radio-section"
 import { NewsSection } from "@/components/news-section"
 import { TodaysEventPopup } from "@/components/todays-event-popup"
+import { WelcomeHomePopup } from "@/components/welcome-home-popup"
 import { sanityFetch } from "@/sanity/lib/live"
 import { ALL_NEWS_QUERY, SITE_SETTINGS_QUERY } from "@/lib/queries"
 
@@ -37,6 +38,7 @@ export default async function HomePage() {
         <NewsSection articles={articles} />
       </main>
       <TodaysEventPopup />
+      <WelcomeHomePopup />
     </div>
   )
 }
