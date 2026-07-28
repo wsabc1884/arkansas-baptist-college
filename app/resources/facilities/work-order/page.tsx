@@ -10,6 +10,21 @@ import { Label } from "@/components/ui/label"
 import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
 
+const FACILITY_SPACES = [
+  "Administration Building",
+  "J.C. Oliver Library",
+  "Academic Building",
+  "Student Center",
+  "Chapel",
+  "Gymnasium",
+  "Athletic Field",
+  "Residence Hall Common Area",
+  "Other",
+]
+
+const selectClasses =
+  "mt-1 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+
 export default function WorkOrderPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -132,7 +147,16 @@ export default function WorkOrderPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="building">Building Name</Label>
-                        <Input id="building" name="building" required className="mt-1" />
+                        <select id="building" name="building" required className={selectClasses} defaultValue="">
+                          <option value="" disabled>
+                            Choose an item
+                          </option>
+                          {FACILITY_SPACES.map((s) => (
+                            <option key={s} value={s}>
+                              {s}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                       <div>
                         <Label htmlFor="room">Room Number</Label>

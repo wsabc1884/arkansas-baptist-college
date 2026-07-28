@@ -7,8 +7,23 @@ import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Send, CheckCircle } from "lucide-react"
+import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
+
+const FACILITY_SPACES = [
+  "Administration Building",
+  "J.C. Oliver Library",
+  "Academic Building",
+  "Student Center",
+  "Chapel",
+  "Gymnasium",
+  "Athletic Field",
+  "Residence Hall Common Area",
+  "Other",
+]
+
+const selectClasses =
+  "mt-1 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 
 export default function KeyRequestPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -139,7 +154,16 @@ export default function KeyRequestPage() {
                   <div className="mt-4 grid gap-4">
                     <div>
                       <Label htmlFor="building">Building Name</Label>
-                      <Input id="building" name="building" required className="mt-1" />
+                      <select id="building" name="building" required className={selectClasses} defaultValue="">
+                        <option value="" disabled>
+                          Choose an item
+                        </option>
+                        {FACILITY_SPACES.map((s) => (
+                          <option key={s} value={s}>
+                            {s}
+                          </option>
+                        ))}
+                      </select>
                     </div>
                     <div>
                       <Label htmlFor="room">Room Number(s)</Label>
