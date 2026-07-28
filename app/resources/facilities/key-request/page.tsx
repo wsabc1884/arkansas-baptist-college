@@ -9,21 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
-
-const FACILITY_SPACES = [
-  "Administration Building",
-  "J.C. Oliver Library",
-  "Academic Building",
-  "Student Center",
-  "Chapel",
-  "Gymnasium",
-  "Athletic Field",
-  "Residence Hall Common Area",
-  "Other",
-]
-
-const selectClasses =
-  "mt-1 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+import { BuildingSelector } from "@/components/building-selector"
 
 export default function KeyRequestPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -152,19 +138,7 @@ export default function KeyRequestPage() {
                     Key Details
                   </legend>
                   <div className="mt-4 grid gap-4">
-                    <div>
-                      <Label htmlFor="building">Building Name</Label>
-                      <select id="building" name="building" required className={selectClasses} defaultValue="">
-                        <option value="" disabled>
-                          Choose an item
-                        </option>
-                        {FACILITY_SPACES.map((s) => (
-                          <option key={s} value={s}>
-                            {s}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                    <BuildingSelector name="building" label="Building Name" />
                     <div>
                       <Label htmlFor="room">Room Number(s)</Label>
                       <Input id="room" name="room" required className="mt-1" />
