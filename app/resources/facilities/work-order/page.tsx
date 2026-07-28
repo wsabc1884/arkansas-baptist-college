@@ -7,8 +7,9 @@ import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-react"
+import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
+import { BuildingSelector } from "@/components/building-selector"
 
 export default function WorkOrderPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -71,16 +72,6 @@ export default function WorkOrderPage() {
               Report a maintenance issue or request a repair on campus.
             </p>
 
-            <div className="mt-6 flex items-start gap-3 rounded-lg border border-yellow-300 bg-yellow-50 p-4 dark:border-yellow-700 dark:bg-yellow-950/30">
-              <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-yellow-600" />
-              <div>
-                <p className="text-sm font-medium text-yellow-800 dark:text-yellow-300">
-                  Form Currently Unavailable
-                </p>
-                <p className="mt-1 text-sm text-yellow-700 dark:text-yellow-400">This form is temporarily disabled while we configure the email system. Please check back soon.</p>
-              </div>
-            </div>
-
             {error && (
               <div className="mt-6 flex items-start gap-3 rounded-lg border border-red-300 bg-red-50 p-4 dark:border-red-700 dark:bg-red-950/30">
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
@@ -139,15 +130,10 @@ export default function WorkOrderPage() {
                     Work Order Details
                   </legend>
                   <div className="mt-4 grid gap-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <Label htmlFor="building">Building Name</Label>
-                        <Input id="building" name="building" required className="mt-1" />
-                      </div>
-                      <div>
-                        <Label htmlFor="room">Room Number</Label>
-                        <Input id="room" name="room" required className="mt-1" />
-                      </div>
+                    <BuildingSelector name="building" label="Building Name" />
+                    <div>
+                      <Label htmlFor="room">Room Number</Label>
+                      <Input id="room" name="room" required className="mt-1" />
                     </div>
                     <div>
                       <Label htmlFor="priority">Priority Level</Label>
@@ -178,9 +164,9 @@ export default function WorkOrderPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full" disabled={true}>
+                <Button type="submit" size="lg" className="w-full" disabled>
                   <Send className="mr-2 h-4 w-4" />
-                  Form Temporarily Unavailable
+                  Form Coming Soon
                 </Button>
               </form>
             )}

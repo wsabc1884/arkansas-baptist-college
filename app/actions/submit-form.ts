@@ -1,6 +1,7 @@
 "use server"
 
 import { generateFormPDF } from "@/lib/generate-form-pdf"
+import { getNextTicketNumber } from "@/lib/ticket-counter"
 
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
@@ -11,23 +12,6 @@ interface FormData {
 }
 
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
-
-// In-memory ticket counter for each form type
-const ticketCounters: Record<string, number> = {
-  "facility-request": 1000,
-  "work-order": 2000,
-  "key-request": 3000,
-  "entrepreneurship-fund": 4000,
-}
-
-// Helper to get next ticket number
-function getNextTicketNumber(formType: string): number {
-  if (!ticketCounters[formType]) {
-    ticketCounters[formType] = 1000
-  }
-  ticketCounters[formType]++
-  return ticketCounters[formType]
-}
 
 // Helper to format form data
 function formatFormData(fields: Record<string, string>): string {
@@ -78,14 +62,15 @@ export async function submitForm(data: FormData) {
       }
     }
 
-    // Get next ticket number
-    const ticketNumber = getNextTicketNumber(data.formType)
-
-    // Format form type for display
+    // Format form type for display (e.g. "key-request" -> "Key Request")
     const formTypeDisplay = data.formType
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
+
+    // Get the next rising ticket number. Each form type has its own independent
+    // counter persisted in the database, so numbers never reset or collide.
+    const ticketNumber = await getNextTicketNumber(data.formType)
 
     // Generate PDF
     let pdfBuffer: Buffer | null = null
@@ -100,9 +85,9 @@ export async function submitForm(data: FormData) {
     // Send email via Brevo REST API with PDF attachment
     try {
       const emailBody: Record<string, unknown> = {
-        subject: `${formTypeDisplay} Form #${ticketNumber}`,
+        subject: `${formTypeDisplay} #${ticketNumber}`,
         htmlContent: `
-          <h2>${formTypeDisplay} Submission #${ticketNumber}</h2>
+          <h2>${formTypeDisplay} #${ticketNumber}</h2>
           <p>Please see the attached PDF for full form details.</p>
         `,
         sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
@@ -114,7 +99,7 @@ export async function submitForm(data: FormData) {
         emailBody.attachment = [
           {
             content: pdfBuffer.toString("base64"),
-            name: `${data.formType}-${ticketNumber}.pdf`,
+            name: `${formTypeDisplay} #${ticketNumber}.pdf`,
           },
         ]
       }

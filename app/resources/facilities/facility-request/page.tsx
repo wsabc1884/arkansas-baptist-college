@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
 import { NumberPad } from "@/components/number-pad"
+import { BuildingSelector } from "@/components/building-selector"
 
 const EVENT_TYPES = [
   "Meeting",
@@ -20,18 +21,6 @@ const EVENT_TYPES = [
   "Class / Workshop",
   "Community Event",
   "Fundraiser",
-  "Other",
-]
-
-const FACILITY_SPACES = [
-  "Administration Building",
-  "J.C. Oliver Library",
-  "Academic Building",
-  "Student Center",
-  "Chapel",
-  "Gymnasium",
-  "Athletic Field",
-  "Residence Hall Common Area",
   "Other",
 ]
 
@@ -360,25 +349,7 @@ export default function FacilityRequestPage() {
                         />
                       </div>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <Label htmlFor="facilitySpace">Facility / Space Requested *</Label>
-                        <select id="facilitySpace" name="facilitySpace" className={selectClasses} defaultValue="">
-                          <option value="" disabled>
-                            Choose an item
-                          </option>
-                          {FACILITY_SPACES.map((s) => (
-                            <option key={s} value={s}>
-                              {s}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <Label htmlFor="facilitySpecify">Please Specify</Label>
-                        <Input id="facilitySpecify" name="facilitySpecify" className="mt-1" />
-                      </div>
-                    </div>
+                    <BuildingSelector name="facilitySpace" label="Facility / Space Requested *" />
                   </div>
                 </fieldset>
 

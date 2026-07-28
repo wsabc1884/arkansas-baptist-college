@@ -1,6 +1,5 @@
 import PDFDocument from "pdfkit"
-import fs from "fs"
-import path from "path"
+import { LOGO_BUFFER } from "@/lib/logo-base64"
 
 type Fields = Record<string, string>
 
@@ -44,10 +43,11 @@ function renderFacilityRequest(doc: PDFKit.PDFDocument, ticketNumber: number, f:
   const right = doc.page.width - doc.page.margins.right
   const width = right - left
 
-  // Logo
-  const logoPath = path.join(process.cwd(), "public", "logo.jpg")
-  if (fs.existsSync(logoPath)) {
-    doc.image(logoPath, left, 30, { width: 60, height: 60 })
+  // Logo (embedded base64 buffer so it's always bundled with the function)
+  try {
+    doc.image(LOGO_BUFFER, left, 30, { width: 60, height: 60 })
+  } catch (err) {
+    console.error("[v0] Failed to render logo in PDF:", err)
   }
 
   // Header
@@ -248,9 +248,10 @@ function ensureSpace(doc: PDFKit.PDFDocument, needed: number) {
 /* ---------- Generic layout (other form types) ---------- */
 
 function renderGeneric(doc: PDFKit.PDFDocument, formType: string, ticketNumber: number, fields: Fields) {
-  const logoPath = path.join(process.cwd(), "public", "logo.jpg")
-  if (fs.existsSync(logoPath)) {
-    doc.image(logoPath, 50, 20, { width: 100, height: 100 })
+  try {
+    doc.image(LOGO_BUFFER, 50, 20, { width: 100, height: 100 })
+  } catch (err) {
+    console.error("[v0] Failed to render logo in PDF:", err)
   }
 
   const formTypeDisplay = formType
@@ -260,10 +261,9 @@ function renderGeneric(doc: PDFKit.PDFDocument, formType: string, ticketNumber: 
 
   doc.fontSize(24).font("Helvetica-Bold")
   doc.text("Arkansas Baptist College", { align: "center" }).moveDown(0.2)
-  doc.fontSize(18).text(`${formTypeDisplay} Request Form`, { align: "center" }).moveDown(1)
-  doc.fontSize(12).font("Helvetica")
-  doc.text(`Ticket #${ticketNumber}`, { align: "center" }).moveDown(0.5)
-  doc.fontSize(10).text(`Submitted: ${new Date().toLocaleString()}`, { align: "center" }).moveDown(2)
+  doc.fontSize(18).text(`${formTypeDisplay} #${ticketNumber}`, { align: "center" }).moveDown(1)
+  doc.fontSize(10).font("Helvetica")
+  doc.text(`Submitted: ${new Date().toLocaleString()}`, { align: "center" }).moveDown(2)
 
   doc.fontSize(11).font("Helvetica-Bold")
   doc.text("Form Details:", { underline: true }).moveDown(0.5)
