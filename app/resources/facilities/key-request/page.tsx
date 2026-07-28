@@ -7,7 +7,7 @@ import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-react"
+import { ArrowLeft, Send, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
 
 export default function KeyRequestPage() {
@@ -159,18 +159,9 @@ export default function KeyRequestPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full" disabled={loading}>
-                  {loading ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Submit Key Request
-                    </>
-                  )}
+                <Button type="submit" size="lg" className="w-full" disabled>
+                  <Send className="mr-2 h-4 w-4" />
+                  Form Coming Soon
                 </Button>
               </form>
             )}
