@@ -10,31 +10,68 @@ import { Label } from "@/components/ui/label"
 import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
 import { BuildingSelector } from "@/components/building-selector"
+import { PhoneDialPad } from "@/components/phone-dial-pad"
+import { RequestorNameFields } from "@/components/requestor-name-fields"
+
+// Fields that must be present before the work order can be submitted.
+const REQUIRED_FIELDS: Record<string, string> = {
+  firstName: "First Name",
+  lastName: "Last Name",
+  department: "Department",
+  email: "Email Address",
+  phone: "Phone Number",
+  building: "Building Name",
+  room: "Room Number",
+  priority: "Priority Level",
+  description: "Description of Issue",
+}
 
 export default function WorkOrderPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [ticketNumber, setTicketNumber] = useState<number | null>(null)
+  const [showPriorityPrompt, setShowPriorityPrompt] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setLoading(true)
     setError(null)
 
+    const formData = new FormData(e.currentTarget)
+    const fields: Record<string, string> = {}
+
+    for (const [key, value] of formData.entries()) {
+      if (value instanceof File) continue
+      fields[key] = String(value)
+    }
+
+    // If no priority was selected, show the on-screen popup and stop here.
+    if (!fields.priority || fields.priority.trim() === "") {
+      setShowPriorityPrompt(true)
+      return
+    }
+
+    // Block submission if any required information is missing.
+    const missing = Object.keys(REQUIRED_FIELDS).filter(
+      (key) => !fields[key] || fields[key].trim() === "",
+    )
+    if (missing.length > 0) {
+      setError(
+        `Please fill in all required fields: ${missing
+          .map((key) => REQUIRED_FIELDS[key])
+          .join(", ")}.`,
+      )
+      return
+    }
+
+    setLoading(true)
+
     try {
-      const formData = new FormData(e.currentTarget)
-      const fields: Record<string, string> = {}
-
-      for (const [key, value] of formData.entries()) {
-        if (value instanceof File) continue
-        fields[key] = String(value)
-      }
-
       const result = await submitForm({
         formType: "work-order",
         fields,
+        requiredFields: Object.keys(REQUIRED_FIELDS),
       })
 
       if (result.success) {
@@ -98,6 +135,7 @@ export default function WorkOrderPage() {
             ) : (
               <form
                 ref={formRef}
+                noValidate
                 className="mt-8 space-y-6"
                 onSubmit={handleSubmit}
               >
@@ -106,10 +144,7 @@ export default function WorkOrderPage() {
                     Requestor Information
                   </legend>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" name="name" required className="mt-1" />
-                    </div>
+                    <RequestorNameFields />
                     <div>
                       <Label htmlFor="department">Department</Label>
                       <Input id="department" name="department" required className="mt-1" />
@@ -118,10 +153,7 @@ export default function WorkOrderPage() {
                       <Label htmlFor="email">Email Address</Label>
                       <Input id="email" name="email" type="email" required className="mt-1" />
                     </div>
-                    <div>
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" name="phone" type="tel" required className="mt-1" />
-                    </div>
+                    <PhoneDialPad name="phone" />
                   </div>
                 </fieldset>
 
@@ -140,7 +172,6 @@ export default function WorkOrderPage() {
                       <select
                         id="priority"
                         name="priority"
-                        required
                         className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <option value="">Select priority</option>
@@ -164,11 +195,37 @@ export default function WorkOrderPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full" disabled>
+                <Button type="submit" size="lg" className="w-full" disabled={loading}>
                   <Send className="mr-2 h-4 w-4" />
-                  Form Coming Soon
+                  {loading ? "Submitting..." : "Submit Work Order"}
                 </Button>
               </form>
+            )}
+
+            {showPriorityPrompt && (
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="priority-prompt-title"
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+                onClick={() => setShowPriorityPrompt(false)}
+              >
+                <div
+                  className="w-full max-w-sm rounded-lg border bg-card p-6 text-center shadow-xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AlertTriangle className="mx-auto h-10 w-10 text-amber-500" />
+                  <h2 id="priority-prompt-title" className="mt-4 text-lg font-semibold text-foreground">
+                    Priority Level Required
+                  </h2>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Please select a priority level for this work order before submitting.
+                  </p>
+                  <Button className="mt-6 w-full" onClick={() => setShowPriorityPrompt(false)}>
+                    Select Priority
+                  </Button>
+                </div>
+              </div>
             )}
           </div>
         </SectionWrapper>

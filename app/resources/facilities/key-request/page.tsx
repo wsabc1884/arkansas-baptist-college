@@ -10,6 +10,22 @@ import { Label } from "@/components/ui/label"
 import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
 import { BuildingSelector } from "@/components/building-selector"
+import { PhoneDialPad } from "@/components/phone-dial-pad"
+import { RequestorNameFields } from "@/components/requestor-name-fields"
+
+// Fields that must be present before the key request can be submitted.
+const REQUIRED_FIELDS: Record<string, string> = {
+  firstName: "First Name",
+  lastName: "Last Name",
+  title: "Title / Position",
+  department: "Department",
+  email: "Email Address",
+  phone: "Phone Number",
+  supervisor: "Supervisor Name",
+  building: "Building Name",
+  room: "Room Number(s)",
+  reason: "Reason for Key Request",
+}
 
 export default function KeyRequestPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -20,21 +36,36 @@ export default function KeyRequestPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setLoading(true)
     setError(null)
 
+    const formData = new FormData(e.currentTarget)
+    const fields: Record<string, string> = {}
+
+    for (const [key, value] of formData.entries()) {
+      if (value instanceof File) continue
+      fields[key] = String(value)
+    }
+
+    // Block submission if any required information is missing.
+    const missing = Object.keys(REQUIRED_FIELDS).filter(
+      (key) => !fields[key] || fields[key].trim() === "",
+    )
+    if (missing.length > 0) {
+      setError(
+        `Please fill in all required fields: ${missing
+          .map((key) => REQUIRED_FIELDS[key])
+          .join(", ")}.`,
+      )
+      return
+    }
+
+    setLoading(true)
+
     try {
-      const formData = new FormData(e.currentTarget)
-      const fields: Record<string, string> = {}
-
-      for (const [key, value] of formData.entries()) {
-        if (value instanceof File) continue
-        fields[key] = String(value)
-      }
-
       const result = await submitForm({
         formType: "key-request",
         fields,
+        requiredFields: Object.keys(REQUIRED_FIELDS),
       })
 
       if (result.success) {
@@ -98,6 +129,7 @@ export default function KeyRequestPage() {
             ) : (
               <form
                 ref={formRef}
+                noValidate
                 className="mt-8 space-y-6"
                 onSubmit={handleSubmit}
               >
@@ -106,10 +138,7 @@ export default function KeyRequestPage() {
                     Requestor Information
                   </legend>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" name="name" required className="mt-1" />
-                    </div>
+                    <RequestorNameFields />
                     <div>
                       <Label htmlFor="title">Title / Position</Label>
                       <Input id="title" name="title" required className="mt-1" />
@@ -122,10 +151,7 @@ export default function KeyRequestPage() {
                       <Label htmlFor="email">Email Address</Label>
                       <Input id="email" name="email" type="email" required className="mt-1" />
                     </div>
-                    <div>
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" name="phone" type="tel" required className="mt-1" />
-                    </div>
+                    <PhoneDialPad name="phone" />
                     <div>
                       <Label htmlFor="supervisor">Supervisor Name</Label>
                       <Input id="supervisor" name="supervisor" required className="mt-1" />
@@ -157,9 +183,9 @@ export default function KeyRequestPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full" disabled>
+                <Button type="submit" size="lg" className="w-full" disabled={loading}>
                   <Send className="mr-2 h-4 w-4" />
-                  Form Coming Soon
+                  {loading ? "Submitting..." : "Submit Key Request"}
                 </Button>
               </form>
             )}
