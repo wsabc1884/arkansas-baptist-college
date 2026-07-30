@@ -7,14 +7,14 @@ import { Label } from "@/components/ui/label"
 // Shared list of campus buildings/spaces used across the facility, key, and
 // work order request forms. "Other" reveals a manual text input.
 export const FACILITY_SPACES = [
-  "Administration Building",
-  "J.C. Oliver Library",
-  "Academic Building",
-  "Student Center",
-  "Chapel",
+  "Auditorium",
+  "Old Main Building",
   "Gymnasium",
-  "Athletic Field",
-  "Residence Hall Common Area",
+  "Bistro",
+  "President's Dining Hall",
+  "Classroom",
+  "Conference Room",
+  "Outdoor Space",
 ]
 
 const OTHER = "Other"

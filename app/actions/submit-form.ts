@@ -3,12 +3,21 @@
 import { generateFormPDF } from "@/lib/generate-form-pdf"
 import { getNextTicketNumber } from "@/lib/ticket-counter"
 
+interface Attachment {
+  // Base64-encoded file content (without the data: URI prefix)
+  content: string
+  // File name shown in the email
+  name: string
+}
+
 interface FormData {
   formType: "facility-request" | "work-order" | "key-request" | "entrepreneurship-fund"
   fields: Record<string, string>
   // Optional list of field keys that must be non-empty. When provided, only these
   // are validated (allowing optional fields like checkboxes to be blank).
   requiredFields?: string[]
+  // Optional user-uploaded documents to include in the email.
+  attachments?: Attachment[]
 }
 
 const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
@@ -94,14 +103,23 @@ export async function submitForm(data: FormData) {
         to: [{ email: recipientEmail }],
       }
 
-      // Add PDF attachment if generated successfully
+      // Collect all attachments: the generated PDF plus any user-uploaded documents.
+      const attachments: Attachment[] = []
       if (pdfBuffer) {
-        emailBody.attachment = [
-          {
-            content: pdfBuffer.toString("base64"),
-            name: `${formTypeDisplay} #${ticketNumber}.pdf`,
-          },
-        ]
+        attachments.push({
+          content: pdfBuffer.toString("base64"),
+          name: `${formTypeDisplay} #${ticketNumber}.pdf`,
+        })
+      }
+      if (data.attachments && data.attachments.length > 0) {
+        for (const file of data.attachments) {
+          if (file.content && file.name) {
+            attachments.push({ content: file.content, name: file.name })
+          }
+        }
+      }
+      if (attachments.length > 0) {
+        emailBody.attachment = attachments
       }
 
       const response = await fetch("https://api.brevo.com/v3/smtp/email", {

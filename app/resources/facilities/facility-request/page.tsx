@@ -10,6 +10,23 @@ import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-rea
 import { submitForm } from "@/app/actions/submit-form"
 import { NumberPad } from "@/components/number-pad"
 import { BuildingSelector } from "@/components/building-selector"
+import { FileAttachments } from "@/components/file-attachments"
+
+// Total combined size cap for all attachments (must match FileAttachments).
+const MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024
+
+// Reads a File and returns its base64-encoded content (without the data: prefix).
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      const result = reader.result as string
+      resolve(result.split(",")[1] ?? "")
+    }
+    reader.onerror = () => reject(reader.error)
+    reader.readAsDataURL(file)
+  })
+}
 
 const EVENT_TYPES = [
   "Meeting",
@@ -58,6 +75,7 @@ export default function FacilityRequestPage() {
   const [showNumberPad, setShowNumberPad] = useState(false)
   const [campusPhoneValue, setCampusPhoneValue] = useState("")
   const [showCampusPad, setShowCampusPad] = useState(false)
+  const [attachments, setAttachments] = useState<File[]>([])
   const formRef = useRef<HTMLFormElement>(null)
   const attendeesInputRef = useRef<HTMLInputElement>(null)
   const campusPhoneInputRef = useRef<HTMLInputElement>(null)
@@ -124,15 +142,33 @@ export default function FacilityRequestPage() {
         return
       }
 
+      // Validate combined attachment size before uploading.
+      const totalBytes = attachments.reduce((sum, f) => sum + f.size, 0)
+      if (totalBytes > MAX_ATTACHMENT_BYTES) {
+        setError("Attachments exceed the 10 MB total limit. Please remove some files.")
+        setLoading(false)
+        return
+      }
+
+      // Convert attached documents to base64 for the email.
+      const encodedAttachments = await Promise.all(
+        attachments.map(async (file) => ({
+          name: file.name,
+          content: await fileToBase64(file),
+        })),
+      )
+
       const result = await submitForm({
         formType: "facility-request",
         fields,
         requiredFields: REQUIRED_FIELDS,
+        attachments: encodedAttachments,
       })
 
       if (result.success) {
         setSubmitted(true)
         setTicketNumber(result.ticketNumber || null)
+        setAttachments([])
         formRef.current?.reset()
       } else {
         setError(result.error || "Failed to submit form")
@@ -428,6 +464,9 @@ export default function FacilityRequestPage() {
                       Outside Organization &mdash; Proof / Name of Insurance Provided
                     </Label>
                     <Input id="insuranceProvider" name="insuranceProvider" className="mt-1" />
+                    <div className="mt-4">
+                      <FileAttachments files={attachments} onChange={setAttachments} />
+                    </div>
                   </div>
                 </fieldset>
 
