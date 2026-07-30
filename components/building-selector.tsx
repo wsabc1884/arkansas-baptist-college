@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label"
 // work order request forms. "Other" reveals a manual text input.
 export const FACILITY_SPACES = [
   "Auditorium",
-  "Chapel",
+  "Old Main Building",
   "Gymnasium",
   "Bistro",
   "President's Dining Hall",
