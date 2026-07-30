@@ -464,14 +464,9 @@ export default function FacilityRequestPage() {
                       Outside Organization &mdash; Proof / Name of Insurance Provided
                     </Label>
                     <Input id="insuranceProvider" name="insuranceProvider" className="mt-1" />
-                  </div>
-                </fieldset>
-
-                {/* Attachments */}
-                <fieldset className="rounded-lg border bg-card p-6">
-                  <legend className="px-2 text-lg font-semibold text-foreground">Attachments</legend>
-                  <div className="mt-4">
-                    <FileAttachments files={attachments} onChange={setAttachments} />
+                    <div className="mt-4">
+                      <FileAttachments files={attachments} onChange={setAttachments} />
+                    </div>
                   </div>
                 </fieldset>
 
