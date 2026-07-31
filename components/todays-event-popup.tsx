@@ -178,6 +178,14 @@ export function TodaysEventPopup() {
   const bothCount = events.filter((e) => e.type === "both").length
   const multiple = events.length > 1
 
+  // Route each "View Calendar" action to the calendar the event actually lives on.
+  const ACADEMIC_CALENDAR_HREF = "/academics/academic-calendar#calendar-view"
+  const EVENTS_CALENDAR_HREF = "/student-life/campus-life#events-calendar"
+  // "both" events appear on each calendar, so they enable both links.
+  const showAcademicLink = events.some((e) => e.type === "academic" || e.type === "both")
+  const showEventsLink = events.some((e) => e.type === "college" || e.type === "both")
+  const showBothLinks = showAcademicLink && showEventsLink
+
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md">
@@ -272,11 +280,22 @@ export function TodaysEventPopup() {
           <Button variant="outline" onClick={() => handleOpenChange(false)}>
             Dismiss
           </Button>
-          <Button asChild>
-            <Link href="/student-life/campus-life#events-calendar" onClick={() => handleOpenChange(false)}>
-              View Calendar
-            </Link>
-          </Button>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            {showAcademicLink && (
+              <Button asChild>
+                <Link href={ACADEMIC_CALENDAR_HREF} onClick={() => handleOpenChange(false)}>
+                  {showBothLinks ? "Academic Calendar" : "View Calendar"}
+                </Link>
+              </Button>
+            )}
+            {showEventsLink && (
+              <Button asChild variant={showBothLinks ? "outline" : "default"}>
+                <Link href={EVENTS_CALENDAR_HREF} onClick={() => handleOpenChange(false)}>
+                  {showBothLinks ? "Events Calendar" : "View Calendar"}
+                </Link>
+              </Button>
+            )}
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

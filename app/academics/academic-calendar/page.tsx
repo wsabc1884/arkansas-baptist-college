@@ -15,7 +15,7 @@ export default function AcademicCalendarPage() {
         <PageHero title="Academic Calendar" subtitle="Main Campus - Important dates and deadlines for the 2026-2028 academic years." label="Academic Resources" />
         
         {/* Visual Calendar */}
-        <SectionWrapper className="bg-muted/30">
+        <SectionWrapper id="calendar-view" className="bg-muted/30">
           <div className="mx-auto max-w-6xl">
             <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Calendar View</h2>
             <p className="mt-2 text-muted-foreground">
