@@ -37,6 +37,7 @@ const navigation = [
       { name: "Title III & SAFRA Grants", href: "/about/title-iii-safra" },
       { name: "Title IX", href: "/compliance/title-ix" },
       { name: "Partnerships", href: "/about/partnerships" },
+      { name: "Careers", href: "/about/careers" },
     ],
   },
   {
