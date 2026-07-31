@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero"
 import { CTABand } from "@/components/cta-band"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Briefcase, Mail, MapPin, CheckCircle2 } from "lucide-react"
+import { ArrowLeft, ArrowRight, Briefcase, Mail, MapPin, CheckCircle2 } from "lucide-react"
 import { jobPostings, getJobBySlug, CAREERS_EMAIL } from "@/lib/careers-data"
 
 export function generateStaticParams() {
@@ -143,6 +143,40 @@ export default async function JobPage({ params }: { params: Promise<{ slug: stri
                 </div>
               </div>
             </aside>
+          </div>
+        </SectionWrapper>
+
+        {/* How to apply */}
+        <SectionWrapper variant="muted">
+          <div className="mx-auto max-w-4xl">
+            <div className="rounded-lg border-l-4 border-[#3d1a5c] bg-card p-8 md:p-10">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#3d1a5c]/10">
+                  <Mail className="h-6 w-6 text-[#3d1a5c]" aria-hidden="true" />
+                </div>
+                <div>
+                  <h2 className="font-serif text-2xl font-bold text-foreground">How to Apply</h2>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                    To apply for any open position, please email your resume and cover letter to{" "}
+                    <a
+                      href={`mailto:${CAREERS_EMAIL}`}
+                      className="font-semibold text-[#3d1a5c] underline underline-offset-2 hover:text-[#3d1a5c]/80"
+                    >
+                      {CAREERS_EMAIL}
+                    </a>
+                    . Please include the title of the position you are applying for in the subject line.
+                  </p>
+                  <div className="mt-6">
+                    <Button className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>
+                      <a href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}>
+                        Email Your Resume
+                        <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </SectionWrapper>
 
