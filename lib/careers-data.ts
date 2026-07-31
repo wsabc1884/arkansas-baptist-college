@@ -98,6 +98,45 @@ export const jobPostings: JobPosting[] = [
       "Preference given to candidates with teaching and research experience in education, history, communications, mathematics, science, social science, or music education.",
     ],
   },
+  {
+    slug: "digital-teaching-learning-activity-director",
+    title: "Digital Teaching and Learning, Activity Director",
+    department: "Office of Title III",
+    employmentType: "Full-Time",
+    location: "Little Rock, AR",
+    summary:
+      "Director for the Strengthening the College Through Digital Teaching and Learning Activity, leading digital teaching initiatives, faculty development, and online/hybrid course quality.",
+    overview: [
+      "The Department of Business Administration seeks to hire a Director for the Strengthening the College Through Digital Teaching and Learning Activity. A master's degree is required in Business Administration or a related field.",
+      "Candidates must display excellence in research and service, and evidence of quality teaching. Preference will be given to candidates with teaching and research experience in Business Administration.",
+    ],
+    responsibilities: [
+      "Develop, implement, and continuously improve strategies that strengthen teaching and learning through digital technologies while aligning initiatives with departmental and institutional strategic goals.",
+      "Design, coordinate, and deliver faculty orientation, professional development, training, workshops, and individualized coaching on educational technology, online and hybrid instruction, instructional design, and evidence-based teaching practices.",
+      "Communicate performance expectations to faculty; monitor instructional effectiveness through classroom observations and key performance indicators; provide coaching, feedback, performance evaluations, and recommendations regarding faculty selection, retention, assignments, scheduling, and corrective actions when appropriate.",
+      "Conduct regular faculty meetings to communicate policies, procedures, curriculum updates, and instructional best practices while facilitating faculty collaboration and concern resolution.",
+      "Oversee the development, implementation, and continuous improvement of online, hybrid, and technology-enhanced courses, ensuring instructional quality, accessibility, accreditation, copyright, and institutional compliance.",
+      "Promote and support the effective use of learning management systems (LMS), educational technologies, and digital resources to enhance teaching, student engagement, retention, and academic success.",
+      "Serve as a curriculum resource by leading curriculum meetings, reviewing and providing feedback on curriculum, courseware, teaching materials, and instructional resources, and participating as a curriculum contributor or reviewer when appropriate.",
+      "Plan, implement, manage, and evaluate digital teaching and learning projects, including project timelines, budgets, resources, and coordination with academic departments, Information Technology, student support services, and external partners.",
+      "Identify, evaluate, and recommend instructional technologies, digital learning resources, guides, and training materials that support faculty and student success.",
+      "Collect, analyze, and report data related to digital learning initiatives, faculty participation, student success, and key performance indicators to evaluate effectiveness and recommend continuous improvements based on assessment results and emerging best practices.",
+      "Assist the Department Chair in developing department goals and assessment plans while coaching faculty in achieving institutional assessment objectives.",
+      "Promote student enrollment, retention, engagement, and achievement through participation in community outreach, student orientation, academic advising, and initiatives that improve equitable access to technology and online learning resources.",
+      "Monitor student grades and attendance to ensure accuracy and compliance with institutional policies, address student concerns, document advising activities in the student information system, and notify the Department Chair regarding behavioral or academic issues.",
+      "Teach a minimum of two (2) course sections each academic semester and perform all essential duties and responsibilities of an Instructor.",
+      "Collaborate with department leadership, faculty, Information Technology, student support services, academic administration, and external stakeholders to communicate project goals, progress, outcomes, and institutional initiatives.",
+      "Complete ongoing professional development to maintain subject matter expertise and remain current with instructional technologies, digital learning trends, and higher education best practices.",
+      "Serve on college committees as assigned.",
+    ],
+    qualifications: [
+      "Master's degree in Business Administration, or a related field (doctorate may be preferred).",
+      "Experience in higher education teaching, instructional design, faculty development, or academic technology.",
+      "Knowledge of learning management systems, online pedagogy, accessibility standards, and digital learning tools.",
+      "Strong leadership, project management, communication, and analytical skills.",
+      "Ability to lead cross-functional teams and manage multiple initiatives simultaneously.",
+    ],
+  },
 ]
 
 export function getJobBySlug(slug: string): JobPosting | undefined {
