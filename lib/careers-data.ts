@@ -11,6 +11,12 @@ export interface JobPosting {
   overview: string[]
   responsibilities: string[]
   qualifications: string[]
+  /** Optional list of specific open positions/subject areas within this posting. */
+  availablePositions?: string[]
+  /** Optional per-posting application email. Falls back to CAREERS_EMAIL when omitted. */
+  applicationEmail?: string
+  /** Optional custom "how to apply" instructions. Falls back to the default resume/cover-letter text. */
+  applicationInstructions?: string
 }
 
 // Duties and responsibilities are identical across all three Department Chair
@@ -136,6 +142,34 @@ export const jobPostings: JobPosting[] = [
       "Strong leadership, project management, communication, and analytical skills.",
       "Ability to lead cross-functional teams and manage multiple initiatives simultaneously.",
     ],
+  },
+  {
+    slug: "general-studies-instructor",
+    title: "General Studies Instructor",
+    department: "Department of General Studies",
+    employmentType: "Full-Time & Adjunct",
+    location: "Little Rock, AR",
+    applicationEmail: "HR@arkansasbaptist.edu",
+    summary:
+      "Full-time and adjunct instructor positions in the Department of General Studies for the 2026-27 academic year, beginning Fall 2026.",
+    overview: [
+      "Arkansas Baptist College invites applicants for full-time and adjunct instructors in the Department of General Studies. The teaching opportunities for instructors are nine-month appointments, and for adjuncts are semester to semester.",
+      "The contract is for the 2026-27 academic year, starting the Fall 2026 semester.",
+    ],
+    availablePositions: ["Mathematics", "History", "Psychology", "English", "Speech"],
+    responsibilities: [
+      "Full-time instructors teach 12 undergraduate hours per semester; adjunct instructors teach 3-11 hours.",
+      "Serve as academic advisor to General Studies students.",
+      "Hold office hours.",
+      "Other responsibilities as assigned.",
+    ],
+    qualifications: [
+      "Master's degree in the area of concentration or a related field.",
+      "A minimum of 18 graduate hours in the area of concentration.",
+      "An earned doctorate degree is preferred (ABDs will be considered).",
+    ],
+    applicationInstructions:
+      "A complete application packet must include a letter of application, curriculum vita, master and doctorate transcripts, and contact information for three references. Official transcripts, three letters of recommendation, and a completed ABC Application for Employment will be required for the successful candidate after selection. Applications will be reviewed immediately.",
   },
 ]
 

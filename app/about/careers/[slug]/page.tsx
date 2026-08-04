@@ -31,6 +31,9 @@ export default async function JobPage({ params }: { params: Promise<{ slug: stri
     notFound()
   }
 
+  const applyEmail = job.applicationEmail ?? CAREERS_EMAIL
+  const mailtoHref = `mailto:${applyEmail}?subject=${encodeURIComponent(`Application: ${job.title}`)}`
+
   return (
     <div className="min-h-screen bg-background">
       <main id="main-content">
@@ -65,6 +68,22 @@ export default async function JobPage({ params }: { params: Promise<{ slug: stri
                   ))}
                 </div>
               </div>
+
+              {job.availablePositions && job.availablePositions.length > 0 && (
+                <div className="mt-10">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">Available Positions</h2>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {job.availablePositions.map((position) => (
+                      <span
+                        key={position}
+                        className="inline-flex items-center rounded-full border border-[#3d1a5c]/20 bg-[#3d1a5c]/5 px-4 py-1.5 text-sm font-medium text-[#3d1a5c]"
+                      >
+                        {position}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="mt-10">
                 <h2 className="font-serif text-2xl font-bold text-foreground">Responsibilities</h2>
@@ -127,16 +146,16 @@ export default async function JobPage({ params }: { params: Promise<{ slug: stri
                       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                         Email your resume to{" "}
                         <a
-                          href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
+                          href={mailtoHref}
                           className="font-semibold text-[#3d1a5c] underline underline-offset-2 hover:text-[#3d1a5c]/80 break-words"
                         >
-                          {CAREERS_EMAIL}
+                          {applyEmail}
                         </a>
                       </p>
                     </div>
                   </div>
                   <Button className="mt-4 w-full bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>
-                    <a href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}>
+                    <a href={mailtoHref}>
                       Apply by Email
                     </a>
                   </Button>
@@ -157,18 +176,25 @@ export default async function JobPage({ params }: { params: Promise<{ slug: stri
                 <div>
                   <h2 className="font-serif text-2xl font-bold text-foreground">How to Apply</h2>
                   <p className="mt-3 text-muted-foreground leading-relaxed">
-                    To apply for any open position, please email your resume and cover letter to{" "}
+                    {job.applicationInstructions ? (
+                      <>{job.applicationInstructions}</>
+                    ) : (
+                      <>To apply for this position, please email your resume and cover letter, including the title of the position you are applying for in the subject line.</>
+                    )}
+                  </p>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                    Send your application to{" "}
                     <a
-                      href={`mailto:${CAREERS_EMAIL}`}
-                      className="font-semibold text-[#3d1a5c] underline underline-offset-2 hover:text-[#3d1a5c]/80"
+                      href={mailtoHref}
+                      className="font-semibold text-[#3d1a5c] underline underline-offset-2 hover:text-[#3d1a5c]/80 break-words"
                     >
-                      {CAREERS_EMAIL}
+                      {applyEmail}
                     </a>
-                    . Please include the title of the position you are applying for in the subject line.
+                    .
                   </p>
                   <div className="mt-6">
                     <Button className="bg-[#3d1a5c] hover:bg-[#3d1a5c]/90 text-white" asChild>
-                      <a href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}>
+                      <a href={mailtoHref}>
                         Email Your Resume
                         <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                       </a>
@@ -182,10 +208,10 @@ export default async function JobPage({ params }: { params: Promise<{ slug: stri
 
         <CTABand
           heading="Apply for This Position"
-          description={`Send your resume to ${CAREERS_EMAIL} with "${job.title}" in the subject line.`}
+          description={`Send your resume to ${applyEmail} with "${job.title}" in the subject line.`}
           primaryAction={{
             label: "Email Your Resume",
-            href: `mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(`Application: ${job.title}`)}`,
+            href: mailtoHref,
           }}
           secondaryAction={{ label: "View All Openings", href: "/about/careers" }}
         />
