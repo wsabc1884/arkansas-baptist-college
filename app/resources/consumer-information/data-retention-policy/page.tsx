@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, FileText, Smartphone } from "lucide-react"
+import { ArrowRight, FileText, MessageSquare, Smartphone } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 
@@ -24,6 +24,13 @@ const policies = [
       "Privacy practices and SMS terms and conditions governing text message communications through Jenzabar Mobile and Blackboard Mobile.",
     href: "/resources/consumer-information/data-retention-policy/campaign-privacy-policy",
     icon: Smartphone,
+  },
+  {
+    title: "Privacy Policy & SMS Terms and Conditions",
+    description:
+      "How the College collects, uses, and protects your information, including SMS consent, opt-out, and text messaging terms.",
+    href: "/resources/consumer-information/data-retention-policy/privacy-policy-sms-terms",
+    icon: MessageSquare,
   },
 ]
 
