@@ -20,7 +20,31 @@ interface FormData {
   attachments?: Attachment[]
 }
 
-const recipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
+// Default recipient used for any form without a specific route below.
+const defaultRecipientEmail = process.env.FORMS_RECIPIENT_EMAIL || "support@arkansasbaptist.edu"
+
+// Per-form email routing. Each form sends to its own primary recipient ("to")
+// with any additional recipients copied ("cc"). Forms not listed here fall back
+// to the default recipient above.
+const formRecipients: Record<
+  FormData["formType"],
+  { to: string[]; cc?: string[] }
+> = {
+  "facility-request": {
+    to: ["Phillip.rodgers@arkansasbaptist.edu"],
+    cc: ["christopher.gregory@arkansasbaptist.edu"],
+  },
+  "work-order": {
+    to: ["phillip.rodgers@arkansasbaptist.edu"],
+    cc: ["denise.alford@arkansasbaptist.edu"],
+  },
+  "key-request": {
+    to: ["christopher.gregory@arkansasbaptist.edu"],
+  },
+  "entrepreneurship-fund": {
+    to: [defaultRecipientEmail],
+  },
+}
 
 // Helper to format form data
 function formatFormData(fields: Record<string, string>): string {
@@ -91,6 +115,9 @@ export async function submitForm(data: FormData) {
       // Continue anyway - send email even if PDF fails
     }
 
+    // Resolve the recipients for this form type (falls back to the default).
+    const route = formRecipients[data.formType] ?? { to: [defaultRecipientEmail] }
+
     // Send email via Brevo REST API with PDF attachment
     try {
       const emailBody: Record<string, unknown> = {
@@ -100,7 +127,10 @@ export async function submitForm(data: FormData) {
           <p>Please see the attached PDF for full form details.</p>
         `,
         sender: { name: "Arkansas Baptist College", email: "helpdesk@arkansasbaptist.edu" },
-        to: [{ email: recipientEmail }],
+        to: route.to.map((email) => ({ email })),
+      }
+      if (route.cc && route.cc.length > 0) {
+        emailBody.cc = route.cc.map((email) => ({ email }))
       }
 
       // Collect all attachments: the generated PDF plus any user-uploaded documents.

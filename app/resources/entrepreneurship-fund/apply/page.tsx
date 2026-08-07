@@ -6,7 +6,7 @@ import { SectionWrapper } from "@/components/section-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Send, AlertTriangle, Loader2, CheckCircle } from "lucide-react"
+import { ArrowLeft, Send, AlertTriangle, CheckCircle } from "lucide-react"
 import { submitForm } from "@/app/actions/submit-form"
 
 export default function LoanApplicationPage() {
@@ -204,18 +204,22 @@ export default function LoanApplicationPage() {
                   </div>
                 </fieldset>
 
-                <Button type="submit" size="lg" className="w-full" disabled={loading}>
-                  {loading ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Submit Application
-                    </>
-                  )}
+                <div className="flex items-start gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-950/30">
+                  <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+                  <div>
+                    <p className="text-sm font-medium text-amber-800 dark:text-amber-300">
+                      Applications Temporarily Unavailable
+                    </p>
+                    <p className="mt-1 text-sm text-amber-700 dark:text-amber-400">
+                      This application is currently under review and is not
+                      accepting submissions at this time. Please check back later.
+                    </p>
+                  </div>
+                </div>
+
+                <Button type="submit" size="lg" className="w-full" disabled>
+                  <Send className="mr-2 h-4 w-4" />
+                  Submit Application
                 </Button>
               </form>
             )}
