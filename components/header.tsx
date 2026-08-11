@@ -375,7 +375,7 @@ export function Header({siteSettings}: Props) {
                   <Phone className="h-3 w-3" aria-hidden="true" />
                   <a href={`tel:${phone.replace(/\D/g, '')}`} className="hover:underline">{phone}</a>
                 </span>
-                <Link href="/mobile-app" className="hover:underline">Jenzabar Mobile</Link>
+                <Link href="/mobile-app" className="hover:underline">Install Jenzabar Mobile</Link>
               </div>
               <div className="flex items-center gap-3">
                 <a href={portalUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
