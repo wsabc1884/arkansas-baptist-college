@@ -50,6 +50,18 @@ export const COLLEGE_EVENTS: CollegeEvent[] = [
     featured: true,
   },
   {
+    id: "jenzabar-mobile-app-2026-08-11",
+    title: "New Jenzabar Mobile App Available",
+    date: "2026-08-11",
+    endDate: "2026-08-22",
+    location: "Available on iOS & Android",
+    category: "Announcement",
+    description:
+      "Add our new Jenzabar Mobile app to access Blackboard. Click on the \u201CInstall Jenzabar Mobile\u201D link at the top of the page.",
+    href: "/mobile-app",
+    featured: true,
+  },
+  {
     id: "yoga-2026-07-09",
     title: "Yoga",
     date: "2026-07-09",
