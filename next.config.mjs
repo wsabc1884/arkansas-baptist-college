@@ -11,6 +11,16 @@ const nextConfig = {
   // lookup, so keep it external and let it resolve from node_modules directly.
   serverExternalPackages: ["pdfkit"],
 
+  async redirects() {
+    return [
+      {
+        source: '/resources/consumer-information/data-retention-policy/privacy-policy-sms-terms',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+    ]
+  },
+
   async rewrites() {
     return [
       {
