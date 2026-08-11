@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
 import { EventsCalendar } from "@/components/events-calendar"
+import { ShuttleSchedule } from "@/components/shuttle-schedule"
 
 import { Users, Home, Shield, BookOpen, Scale, Calendar, Dumbbell, Mail } from "lucide-react"
 
@@ -84,6 +85,19 @@ export default function CampusLifePage() {
             { label: "Campus Life" },
           ]}
         />
+
+        {/* Student Shuttle Schedule */}
+        <SectionWrapper>
+          <div className="mx-auto max-w-5xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Student Shuttle</h2>
+            <p className="mt-2 text-muted-foreground">
+              Free shuttle service connecting the apartments, hotel, and campus throughout the day. Select a time block to view departures.
+            </p>
+            <div className="mt-8">
+              <ShuttleSchedule />
+            </div>
+          </div>
+        </SectionWrapper>
 
         {/* Buffalo Events */}
         <SectionWrapper id="events-calendar" variant="muted">
