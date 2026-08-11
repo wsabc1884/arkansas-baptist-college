@@ -18,6 +18,11 @@ const nextConfig = {
         destination: '/privacy-policy',
         permanent: true,
       },
+      {
+        source: '/resources/consumer-information/data-retention-policy/campaign-privacy-policy',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
     ]
   },
 
