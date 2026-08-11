@@ -38,6 +38,18 @@ export interface CollegeEvent {
 // ---------------------------------------------------------------------------
 export const COLLEGE_EVENTS: CollegeEvent[] = [
   {
+    id: "new-student-shuttle-schedule-2026-08-11",
+    title: "New Student Shuttle Schedule Available",
+    date: "2026-08-11",
+    endDate: "2026-08-22",
+    location: "18th & Bishop St.",
+    category: "Announcement",
+    description:
+      "New Student Shuttle Schedule available! Go to the Campus Life page to see when the bus is scheduled to run.",
+    href: "/student-life/campus-life#events-calendar",
+    featured: true,
+  },
+  {
     id: "yoga-2026-07-09",
     title: "Yoga",
     date: "2026-07-09",
