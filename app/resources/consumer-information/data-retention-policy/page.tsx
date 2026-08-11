@@ -7,7 +7,7 @@ import { SectionWrapper } from "@/components/section-wrapper"
 export const metadata: Metadata = {
   title: "Data Retention & Privacy Policies | Arkansas Baptist College",
   description:
-    "Arkansas Baptist College data retention and privacy policies, including the institutional Data Retention Policy and the Campaign Privacy Policy for Jenzabar Mobile and Blackboard Mobile SMS communications.",
+    "Arkansas Baptist College data retention and privacy policies, including the institutional Data Retention Policy and the College's SMS Privacy Policy and Messaging Terms & Conditions.",
 }
 
 const policies = [
@@ -19,18 +19,18 @@ const policies = [
     icon: FileText,
   },
   {
-    title: "Campaign Privacy Policy & Terms and Conditions",
+    title: "SMS Privacy Policy",
     description:
-      "Privacy practices and SMS terms and conditions governing text message communications through Jenzabar Mobile and Blackboard Mobile.",
-    href: "/resources/consumer-information/data-retention-policy/campaign-privacy-policy",
-    icon: Smartphone,
+      "How the College collects, uses, and protects information associated with our SMS text messaging programs, including consent and opt-out.",
+    href: "/privacy-policy",
+    icon: MessageSquare,
   },
   {
-    title: "Privacy Policy & SMS Terms and Conditions",
+    title: "SMS Messaging Terms & Conditions",
     description:
-      "How the College collects, uses, and protects your information, including SMS consent, opt-out, and text messaging terms.",
-    href: "/resources/consumer-information/data-retention-policy/privacy-policy-sms-terms",
-    icon: MessageSquare,
+      "Terms governing participation in the College's SMS text messaging programs, including consent, message frequency, opt-out, and eligibility.",
+    href: "/terms-and-conditions",
+    icon: Smartphone,
   },
 ]
 
