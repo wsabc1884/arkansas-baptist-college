@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-  import { Menu, X, Phone, ChevronDown, Search, MapPin, ExternalLink, Smartphone } from "lucide-react"
+  import { Menu, X, Phone, ChevronDown, Search, MapPin, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -375,6 +375,7 @@ export function Header({siteSettings}: Props) {
                   <Phone className="h-3 w-3" aria-hidden="true" />
                   <a href={`tel:${phone.replace(/\D/g, '')}`} className="hover:underline">{phone}</a>
                 </span>
+                <Link href="/mobile-app" className="hover:underline">Jenzabar Mobile</Link>
               </div>
               <div className="flex items-center gap-3">
                 <a href={portalUrl} target="_blank" rel="noopener noreferrer" className="hidden hover:underline sm:inline">myABC Portal</a>
@@ -450,14 +451,7 @@ export function Header({siteSettings}: Props) {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden items-center gap-2 lg:flex">
-              <Link
-                href="/mobile-app"
-                className="flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary-foreground/10"
-              >
-                <Smartphone className="h-4 w-4" aria-hidden="true" />
-                Jenzabar Mobile
-              </Link>
+            <div className="hidden items-center lg:flex">
               <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
                 <Link href="/enrollment/apply">Apply Now</Link>
               </Button>
@@ -487,7 +481,6 @@ export function Header({siteSettings}: Props) {
                 <a href={blackboardUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>Blackboard</a>
                 <Link href="/resources/it-self-service" onClick={() => setMobileMenuOpen(false)}>myABC IT Self Service</Link>
                 <Link href="/give" onClick={() => setMobileMenuOpen(false)}>Give to ABC</Link>
-                <Link href="/mobile-app" onClick={() => setMobileMenuOpen(false)}>Jenzabar Mobile</Link>
               </div>
 
               {navigation.map((item) => (
