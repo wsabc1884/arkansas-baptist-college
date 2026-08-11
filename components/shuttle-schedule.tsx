@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Bus, MapPin, Info, Phone, Clock } from "lucide-react"
+import { Bus, MapPin, Info, Phone, Clock, ChevronDown } from "lucide-react"
 
 type Trip = {
   time: string
@@ -68,11 +68,18 @@ const drivers = [
 
 export function ShuttleSchedule() {
   const [active, setActive] = useState("morning")
+  const [open, setOpen] = useState(false)
 
   return (
     <div className="rounded-xl border bg-card">
-      {/* Header */}
-      <div className="flex flex-col gap-3 border-b p-6 sm:flex-row sm:items-center sm:justify-between">
+      {/* Header / toggle */}
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-expanded={open}
+        aria-controls="shuttle-schedule-panel"
+        className="flex w-full items-center justify-between gap-3 rounded-xl p-6 text-left transition-colors hover:bg-muted/40"
+      >
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <Bus className="h-5 w-5" aria-hidden="true" />
@@ -85,8 +92,18 @@ export function ShuttleSchedule() {
             </p>
           </div>
         </div>
-      </div>
+        <span className="flex items-center gap-2 text-sm font-medium text-primary">
+          <span className="hidden sm:inline">{open ? "Hide" : "View schedule"}</span>
+          <ChevronDown
+            className={`h-5 w-5 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+            aria-hidden="true"
+          />
+        </span>
+      </button>
 
+      {!open ? null : (
+      <div id="shuttle-schedule-panel">
+      <div className="border-t" />
       <Tabs value={active} onValueChange={setActive} className="p-6">
         <TabsList className="grid w-full grid-cols-3">
           {schedule.map((block) => (
@@ -157,6 +174,8 @@ export function ShuttleSchedule() {
           </ul>
         </div>
       </div>
+      </div>
+      )}
     </div>
   )
 }
