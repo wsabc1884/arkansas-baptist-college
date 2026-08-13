@@ -29,6 +29,9 @@ export default function VeteransAffairsPage() {
 
             <h2>Contact</h2>
             <p>Registrar&apos;s Office<br />Phone: <a href="tel:5014201237">(501) 420-1237</a><br />Main: <a href="tel:5014201200">501-420-1200</a></p>
+
+            <hr />
+            <p className="text-sm text-muted-foreground">GI Bill&reg; is a registered trademark of the U.S. Department of Veterans Affairs (VA). More information about education benefits offered by VA is available at the official U.S. government website at <a href="http://www.benefits.va.gov/gibill" target="_blank" rel="noopener noreferrer">http://www.benefits.va.gov/gibill</a>.</p>
           </div>
         </SectionWrapper>
       </main>
