@@ -19,7 +19,7 @@ export default function VeteransAffairsPage() {
             <h2>VA Benefits</h2>
             <p>Arkansas Baptist College is approved for the education and training of veterans and their eligible dependents under various chapters of Title 38, U.S. Code. Eligible students may receive benefits under:</p>
             <ul>
-              <li>Post-9/11 GI Bill (Chapter 33)</li>
+              <li>Post-9/11 GI Bill&reg; (Chapter 33)</li>
               <li>Montgomery GI Bill (Chapter 30)</li>
               <li>Vocational Rehabilitation (Chapter 31)</li>
               <li>Dependents Educational Assistance (Chapter 35)</li>
