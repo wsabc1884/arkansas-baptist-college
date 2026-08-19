@@ -8,6 +8,7 @@ import { BuffaloRadioSection } from "@/components/buffalo-radio-section"
 import { NewsSection } from "@/components/news-section"
 import { TodaysEventPopup } from "@/components/todays-event-popup"
 import { WelcomeHomePopup } from "@/components/welcome-home-popup"
+import { HbcuDripPopup } from "@/components/hbcu-drip-popup"
 import { sanityFetch } from "@/sanity/lib/live"
 import { ALL_NEWS_QUERY, SITE_SETTINGS_QUERY } from "@/lib/queries"
 
@@ -39,6 +40,7 @@ export default async function HomePage() {
       </main>
       <TodaysEventPopup />
       <WelcomeHomePopup />
+      <HbcuDripPopup />
     </div>
   )
 }
