@@ -78,7 +78,6 @@ export default function AcademicAffairsPage() {
           <h3>Department of Christian Studies</h3>
           <ul>
             <li>Bachelor of Arts in Christian Studies</li>
-            <li>Bachelor of Arts in Religious Studies</li>
             <li>Associate of Arts in Church Administration</li>
           </ul>
 
