@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { FileText, Users, Building2, GraduationCap, Briefcase } from "lucide-react"
+import { Users, Building2, GraduationCap, Briefcase } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Organization Chart - Arkansas Baptist College",
@@ -86,20 +86,6 @@ export default function OrganizationChartPage() {
       <SectionWrapper>
         <div className="mx-auto max-w-5xl">
           <div className="space-y-10">
-            {/* Download PDF */}
-            <a
-              href="/documents/ABC-Organizational-Chart-2025.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-lg border-2 border-primary/20 bg-primary/5 p-6 transition-colors hover:border-primary/40 hover:bg-primary/10"
-            >
-              <FileText className="h-10 w-10 shrink-0 text-primary" />
-              <div>
-                <p className="font-semibold text-foreground">Download Organization Chart (PDF)</p>
-                <p className="mt-1 text-sm text-muted-foreground">ABC Full Organizational Chart - Effective January 1, 2026</p>
-              </div>
-            </a>
-
             {/* Board of Trustees */}
             <div className="text-center">
               <div className="inline-block rounded-lg border-2 border-primary bg-primary/10 px-8 py-4">
