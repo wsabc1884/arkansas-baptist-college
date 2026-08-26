@@ -17,7 +17,7 @@ const executiveLeadership = [
   { name: "Lorna Claudio", title: "Chief Financial Officer" },
   { name: "Vacant", title: "VP for Academic Affairs" },
   { name: "Dr. Darryl A. Peal", title: "Vice President, EMSA" },
-  { name: "Dr. Jaqueline MaGehee", title: "Title III Coordinator" },
+  { name: "Dr. Jacqueline McGehee", title: "Title III Coordinator" },
 ]
 
 const directReports = [
@@ -30,7 +30,7 @@ const directReports = [
 
 const academicAffairs = [
   { name: "Dr. Tracey Moore", title: "Department Chair" },
-  { name: "Dr. Jaqueline MaGehee", title: "Librarian" },
+  { name: "Dr. Jacqueline McGehee", title: "Librarian" },
   { name: "Vacant", title: "Upward Bound" },
   { name: "Vacant", title: "HLC/Accreditation" },
   { name: "Dr. T. Moore/P. Conard", title: "Registrar's Office" },
