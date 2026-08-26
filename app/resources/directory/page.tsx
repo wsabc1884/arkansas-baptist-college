@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Campus directory for Arkansas Baptist College departments, offices, and contact information.",
 }
 
-const fallbackDepartments = [
+const fallbackDepartments: { name: string; phone: string; email?: string }[] = [
   { name: "Office of the President", phone: "501-420-1202", email: "President@arkansasbaptist.edu" },
   { name: "Academic Affairs", phone: "501-420-1312", email: "AcademicAffairs@arkansasbaptist.edu" },
   { name: "Office of Admissions", phone: "501-420-1234", email: "Admissions@arkansasbaptist.edu" },
@@ -20,7 +20,7 @@ const fallbackDepartments = [
   { name: "Registrar", phone: "501-420-1237", email: "Registrarsoffice@arkansasbaptist.edu" },
   { name: "Student Affairs", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "J.C. Oliver Library", phone: "501-420-1252", email: "Jacqueline.mcgehee@arkansasbaptist.edu" },
-  { name: "Upward Bound TRIO", phone: "501-420-1276", email: "Michael.Isaac@arkansasbaptist.edu" },
+  { name: "Upward Bound TRIO", phone: "501-420-1276" },
   { name: "Campus Safety", phone: "501-420-1211", email: "Security@arkansasbaptist.edu" },
   { name: "IT Help Desk", phone: "501-420-1200", email: "Info@arkansasbaptist.edu" },
   { name: "Human Resources", phone: "501-420-1219", email: "HR@arkansasbaptist.edu" },
@@ -107,7 +107,9 @@ export default async function DirectoryPage() {
                 <div key={dept.name} className="flex items-start justify-between gap-4 rounded-lg border bg-card px-5 py-4">
                   <div>
                     <p className="font-medium text-foreground">{dept.name}</p>
-                    <a href={`mailto:${dept.email}`} className="text-sm text-primary hover:underline">{dept.email}</a>
+                    {dept.email && (
+                      <a href={`mailto:${dept.email}`} className="text-sm text-primary hover:underline">{dept.email}</a>
+                    )}
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <Phone className="h-4 w-4 text-muted-foreground" />
