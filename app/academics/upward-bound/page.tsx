@@ -33,7 +33,7 @@ export default function UpwardBoundPage() {
             </div>
             <p>Like their students, many Upward Bound professionals had to overcome class, social, academic and cultural barriers to succeed in higher education. As a result, Upward Bound Staff members can effectively relate to their students and know how to motivate young people and adults in spite of the obstacles that often serve to discourage.</p>
             <h2>Contact</h2>
-            <p><strong>Reverend Michael Isaac</strong><br />Director of Upward Bound<br />Email: <a href="mailto:Michael.Isaac@arkansasbaptist.edu">Michael.Isaac@arkansasbaptist.edu</a><br />Phone: <a href="tel:5014201276">501-420-1276</a></p>
+            <p><strong>Upward Bound TRIO Program</strong><br />Phone: <a href="tel:5014201276">501-420-1276</a></p>
           </div>
         </SectionWrapper>
         <CTABand title="Get Started" description="Contact us today to learn if the Upward Bound TRIO Program is right for you." primaryLabel="Contact Upward Bound" primaryHref="tel:5014201276" secondaryLabel="Apply to ABC" secondaryHref="/enrollment/apply" />
