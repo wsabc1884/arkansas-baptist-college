@@ -87,7 +87,7 @@ const presidents = [
   { name: "Mrs. Regina Favors*", years: "2024", role: "Interim President" },
   { name: "Dr. Leslie McClellon Rodriguez", years: "2024-2025", role: "President" },
   { name: "Dr. George E. Hertz*", years: "2025", role: "Interim President" },
-  { name: 'Mr. William L. "Bill" Walker', years: "2025-Present", role: "President" },
+  { name: "Dr. George E. Hertz", years: "2025-Present", role: "President" },
 ]
 
 export default function HistoryPage() {

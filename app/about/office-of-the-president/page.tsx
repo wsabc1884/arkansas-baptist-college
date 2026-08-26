@@ -16,9 +16,9 @@ export const metadata = {
 
 // ── Hardcoded fallbacks ────────────────────────────────────────
 const defaults = {
-  presidentName: 'Mr. William L. "Bill" Walker, Jr.',
+  presidentName: "Dr. George E. Hertz",
   presidentTitle: "President",
-  presidentInitials: "BW",
+  presidentInitials: "GH",
   quote:
     "Arkansas Baptist College remains committed to its founding mission of Truth and Light, preparing students to lead and serve with excellence.",
   contactEmail: "president@arkansasbaptist.edu",
