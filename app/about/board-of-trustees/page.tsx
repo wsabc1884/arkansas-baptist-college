@@ -79,15 +79,11 @@ const TRUSTEES = [
     title: "Board Member",
   },
   {
-    name: "Seven B. Jones",
+    name: "Steven B. Jones",
     title: "Board Member",
   },
   {
     name: "Janet Miles-Bartee",
-    title: "Board Member",
-  },
-  {
-    name: "Dr. George E. Herts",
     title: "Board Member",
   },
   {

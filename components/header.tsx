@@ -117,7 +117,6 @@ const navigation = [
     ],
   },
   { name: "Athletics", href: "https://abcbuffaloes.com", external: true },
-  { name: "META24 Program", href: "/academics/meta-24" },
     { name: "Band & Fine Arts", href: "/academics/fine-arts" },
 ]
 
