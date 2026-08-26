@@ -9,7 +9,7 @@ export const presidentPage = defineType({
       name: 'presidentName',
       title: 'President Name',
       type: 'string',
-      description: 'e.g. "Mr. William L. Bill Walker, Jr."',
+      description: 'e.g. "Dr. George E. Hertz"',
     }),
     defineField({
       name: 'presidentTitle',

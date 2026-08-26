@@ -96,7 +96,7 @@ export default function PartnershipsPage() {
             <h3 className="font-serif text-xl font-bold text-foreground">HBCU C2 Contact</h3>
             <div className="mt-4 rounded-lg border bg-muted/50 p-6">
               <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Dr. Jaqueline McGehee</strong>, Faculty Lead<br />
+                <strong className="text-foreground">Dr. Jacqueline McGehee</strong>, Faculty Lead<br />
                 Email:{" "}
                 <a href="mailto:jacqueline.mcgehee@arkansasbaptist.edu" className="text-primary hover:underline">
                   jacqueline.mcgehee@arkansasbaptist.edu

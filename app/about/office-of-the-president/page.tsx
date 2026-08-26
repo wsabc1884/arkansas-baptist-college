@@ -3,7 +3,6 @@ import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { StatsRow } from "@/components/stats-row"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, MapPin, Quote } from "lucide-react"
 import { sanityFetch } from "@/sanity/lib/live"
@@ -17,15 +16,9 @@ export const metadata = {
 
 // ── Hardcoded fallbacks ────────────────────────────────────────
 const defaults = {
-  presidentName: 'Mr. William L. "Bill" Walker, Jr.',
+  presidentName: "Dr. George E. Hertz",
   presidentTitle: "President",
-  presidentInitials: "BW",
-  bioParagraphs: [
-    'William "Bill" L. Walker, Jr. is a proven leader in both business and public service with decades of experience shaping education, workforce development, and economic growth in Arkansas.',
-    "Mr. Walker served as a State Representative, a State Senator, and the Director of the Arkansas Department of Career Education, managing a $120 million budget and leading statewide programs in career and technical education. Under his leadership, Arkansas became a national leader in GED success rates and launched innovative programs like the Microsoft Academy.",
-    "In addition to his public service, Bill was the former Chair of the Little Rock Airport Commission for five years, helping to guide a key economic engine in the city with a budget of over $100 million. He's also a successful entrepreneur, serving as President of Power Group Enterprises, which manages several restaurants in Little Rock area — and operating Premier Funeral Home, a family business that has served the community for over 25 years.",
-    "In Higher Education Bill has served on the Board of Trustees for over 8 years, in which he held such positions as Finance Chair and Chairman of the Board. Now serving as President of Arkansas Baptist College, Bill continues his lifelong mission to help young people build skills and access opportunities for a brighter future and success.",
-  ],
+  presidentInitials: "GH",
   quote:
     "Arkansas Baptist College remains committed to its founding mission of Truth and Light, preparing students to lead and serve with excellence.",
   contactEmail: "president@arkansasbaptist.edu",
@@ -54,7 +47,6 @@ export default async function OfficeOfThePresidentPage() {
   const name = data?.presidentName || defaults.presidentName
   const title = data?.presidentTitle || defaults.presidentTitle
   const initials = data?.presidentInitials || defaults.presidentInitials
-  const bio = data?.bioParagraphs?.length ? data.bioParagraphs : defaults.bioParagraphs
   const quote = data?.quote || defaults.quote
   const email = data?.contactEmail || defaults.contactEmail
   const phone = data?.contactPhone || defaults.contactPhone
@@ -78,23 +70,8 @@ export default async function OfficeOfThePresidentPage() {
 
         {/* President Section */}
         <SectionWrapper>
-          <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
-            <div className="lg:col-span-2 flex items-start justify-center">
-              <div className="relative flex h-80 w-80 items-center justify-center rounded-full bg-gradient-to-br from-[#3d1a5c] to-[#5a2d82] p-6 shadow-xl">
-                <div className="h-full w-full overflow-hidden rounded-full">
-                  <Image
-                    src="/images/president.png"
-                    alt={`${name}, ${title} of Arkansas Baptist College`}
-                    width={400}
-                    height={400}
-                    className="h-full w-full object-cover object-center"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-3">
+          <div className="mx-auto max-w-3xl">
+            <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#3d1a5c]/70">
                 {title}
               </p>
@@ -104,12 +81,6 @@ export default async function OfficeOfThePresidentPage() {
               <p className="mt-2 text-lg text-[#3d1a5c] font-medium">
                 {title}, Arkansas Baptist College
               </p>
-
-              <div className="mt-8 space-y-4 text-muted-foreground leading-relaxed">
-                {bio.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
 
               <div className="mt-8 rounded-lg border-l-4 border-[#3d1a5c] bg-muted p-6">
                 <Quote className="h-8 w-8 text-[#3d1a5c]/30" aria-hidden="true" />

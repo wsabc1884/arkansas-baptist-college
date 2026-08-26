@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 }
 
 const executiveLeadership = [
-  { name: "William \"Bill\" Walker, Jr.", title: "President" },
+  { name: "Dr. George E. Hertz", title: "President" },
   { name: "Ms. Patsy Biggs", title: "Executive Assistant to the President" },
   { name: "Dr. O Fitzgerald Hill", title: "Chief Operating Officer" },
   { name: "Phillip W.W.D. Rodgers, Sr.", title: "Executive Vice President" },
   { name: "Lorna Claudio", title: "Chief Financial Officer" },
-  { name: "Dr. Jennifer Nelson", title: "Interim VP for Academic Affairs" },
+  { name: "Vacant", title: "VP for Academic Affairs" },
   { name: "Dr. Darryl A. Peal", title: "Vice President, EMSA" },
-  { name: "Dr. Jaqueline MaGehee", title: "Title III Coordinator" },
+  { name: "Dr. Jacqueline McGehee", title: "Title III Coordinator" },
 ]
 
 const directReports = [
@@ -25,26 +25,26 @@ const directReports = [
   { name: "Marlow Rockwell", title: "Athletic Director" },
   { name: "Dr. Latrice Small", title: "Institutional Research" },
   { name: "Cpt. Christopher Gregory", title: "Campus Safety" },
-  { name: "Dr. Vickie Williams", title: "Title IX" },
+  { name: "Vacant", title: "Title IX" },
 ]
 
 const academicAffairs = [
   { name: "Dr. Tracey Moore", title: "Department Chair" },
-  { name: "Dr. Jaqueline MaGehee", title: "Librarian" },
-  { name: "Michael Isaac", title: "Upward Bound" },
-  { name: "Dr. Vickie Williams", title: "HLC/Accreditation" },
-  { name: "Dr. T. Moore/P. Connard", title: "Registrar's Office" },
+  { name: "Dr. Jacqueline McGehee", title: "Librarian" },
+  { name: "Vacant", title: "Upward Bound" },
+  { name: "Vacant", title: "HLC/Accreditation" },
+  { name: "Dr. T. Moore/P. Conard", title: "Registrar's Office" },
 ]
 
 const studentServices = [
   { name: "Pamela Conard", title: "Admissions" },
-  { name: "Cody Charles", title: "Residential Life/Housing" },
-  { name: "Lamarius Q. McGraw, M.A., HESA", title: "Student Activities" },
+  { name: "Vacant", title: "Residential Life/Housing" },
+  { name: "Vacant", title: "Student Activities" },
 ]
 
 const businessAffairs = [
   { name: "Ms. Pamela Brimley", title: "Human Resources" },
-  { name: "Dr. Felicia Burns", title: "Controller" },
+  { name: "Vacant", title: "Controller" },
   { name: "Atrisha Hollis", title: "Student Accounts" },
   { name: "Tracye Smith", title: "Food Services" },
 ]
@@ -117,7 +117,7 @@ export default function OrganizationChartPage() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {executiveLeadership.map((person) => (
                   <div
-                    key={person.name}
+                    key={person.name + person.title}
                     className="rounded-lg border bg-card p-4 text-center"
                   >
                     <p className="font-semibold text-foreground">{person.name}</p>
@@ -136,7 +136,7 @@ export default function OrganizationChartPage() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {directReports.map((person) => (
                   <div
-                    key={person.name}
+                    key={person.name + person.title}
                     className="rounded-lg border bg-card p-4 text-center"
                   >
                     <p className="font-semibold text-foreground">{person.name}</p>
@@ -174,7 +174,7 @@ export default function OrganizationChartPage() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {studentServices.map((person) => (
                   <div
-                    key={person.name}
+                    key={person.name + person.title}
                     className="rounded-lg border bg-card p-4 text-center"
                   >
                     <p className="font-semibold text-foreground">{person.name}</p>
@@ -193,7 +193,7 @@ export default function OrganizationChartPage() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {businessAffairs.map((person) => (
                   <div
-                    key={person.name}
+                    key={person.name + person.title}
                     className="rounded-lg border bg-card p-4 text-center"
                   >
                     <p className="font-semibold text-foreground">{person.name}</p>
