@@ -41,9 +41,9 @@ const degreeOptions = [
   },
   {
     icon: GraduationCap,
-    title: "Religious Studies",
+    title: "Christian Studies",
     description: "Explore theology, ministry, and faith-based leadership.",
-    href: "/academics/religious-studies",
+    href: "/christianstudies",
   },
 ]
 
