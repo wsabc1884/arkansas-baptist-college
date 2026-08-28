@@ -25,7 +25,7 @@ const directReports = [
   { name: "Marlow Rockwell", title: "Athletic Director" },
   { name: "Dr. Latrice Small", title: "Institutional Research" },
   { name: "Cpt. Christopher Gregory", title: "Campus Safety" },
-  { name: "Vacant", title: "Title IX" },
+  { name: "Dr. Darryl A. Peal", title: "Title IX" },
 ]
 
 const academicAffairs = [
