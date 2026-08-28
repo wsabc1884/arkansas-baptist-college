@@ -25,7 +25,7 @@ export const TRUSTEES: Trustee[] = [
     title: "Chairman",
     department: "Executive Officer",
     image: "/images/trustees/roland-gosey.png",
-    cardImageClass: "object-[50%_10%] origin-[50%_10%] scale-[1.55]",
+    cardImageClass: "object-top origin-top scale-[2.1]",
     role: "Owner & Managing Funeral Director, Williams Funeral Home",
     bio: [
       "Roland L. Gosey is the owner and managing funeral director of Williams Funeral Home in Arkadelphia, Arkansas. He is a 1996 graduate of Arkadelphia Sr. High School and a 2004 graduate of the University of Arkansas Community College at Hope where he earned an Associate of Applied Science in Funeral Services.",
