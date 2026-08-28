@@ -198,7 +198,7 @@ export default function TitleIXPage() {
         Office: Community Union 3rd Floor
         <br />
         Telephone:{" "}
-        <a href="tel:5014201329">501.420.1329</a>
+        <a href="tel:5014201231">501.420.1231</a>
         <br />
         Email:{" "}
         <a href="mailto:darryl.peal@arkansasbaptist.edu">
@@ -353,7 +353,7 @@ export default function TitleIXPage() {
         <em>
           For information and support, please visit the Arkansas Baptist College Title IX Webpage or
           contact Title IX Coordinator, Dr. Darryl A. Peal at:{" "}
-          <a href="tel:5014201329">501.420.1329</a> (office) or{" "}
+          <a href="tel:5014201231">501.420.1231</a> (office) or{" "}
           <a href="mailto:darryl.peal@arkansasbaptist.edu">
             darryl.peal@arkansasbaptist.edu
           </a>
