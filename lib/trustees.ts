@@ -59,7 +59,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Daryl E. Bassett",
     title: "Board Member",
     image: "/images/trustees/daryl-bassett.png",
-    cardImageClass: "object-top origin-top scale-[1.35]",
+    cardImageClass: "object-[50%_18%] origin-[50%_18%] scale-[1.12]",
     role: "Cabinet Secretary, Arkansas Department of Labor and Licensing",
     bio: [
       "Daryl E. Bassett currently serves as the Cabinet Secretary for the Arkansas Department of Labor and Licensing. He is the former Director of the Arkansas Department of Workforce Services. He previously served as Director of Business and Commercial Services for the Arkansas Secretary of State. Prior to that service, he was a Commissioner with the Arkansas Public Service Commission for nine years and Chief Economic Development Advisor to former Governor Mike Huckabee.",
