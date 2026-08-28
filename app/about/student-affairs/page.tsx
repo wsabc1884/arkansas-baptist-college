@@ -46,7 +46,7 @@ export default function StudentAffairsPage() {
               { name: "Pamela Conard", title: "Director of Admissions", email: "pamela.conard@arkansasbaptist.edu" },
               { name: "Cody Charles", title: "Director of Residential Life & Housing", email: "cody.charles@arkansasbaptist.edu" },
               { name: "Lamarius Q. McGraw, M.A., HESA", title: "Director of Student Activities", email: "lamarius.mcgraw@arkansasbaptist.edu" },
-              { name: "Dr. Vickie Williams", title: "Title IX Coordinator", email: "vickie.williams@arkansasbaptist.edu" },
+              { name: "Dr. Darryl A. Peal", title: "Title IX Coordinator", email: "darryl.peal@arkansasbaptist.edu" },
             ].map((person) => (
               <div key={person.name} className="rounded-lg border bg-card p-5">
                 <h3 className="font-semibold text-foreground">{person.name}</h3>

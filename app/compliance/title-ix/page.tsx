@@ -193,7 +193,7 @@ export default function TitleIXPage() {
 
       <h3>College Title IX Coordinator</h3>
       <p>
-        <strong>Vicki A. Williams, Ph.D.</strong>
+        <strong>Dr. Darryl A. Peal</strong>
         <br />
         Office: Community Union 3rd Floor
         <br />
@@ -201,8 +201,8 @@ export default function TitleIXPage() {
         <a href="tel:5014201329">501.420.1329</a>
         <br />
         Email:{" "}
-        <a href="mailto:Vicki.williams@arkansasbaptist.edu">
-          Vicki.williams@arkansasbaptist.edu
+        <a href="mailto:darryl.peal@arkansasbaptist.edu">
+          darryl.peal@arkansasbaptist.edu
         </a>
       </p>
 
