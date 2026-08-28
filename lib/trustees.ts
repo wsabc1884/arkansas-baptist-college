@@ -59,7 +59,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Daryl E. Bassett",
     title: "Board Member",
     image: "/images/trustees/daryl-bassett.png",
-    cardImageClass: "object-top",
+    cardImageClass: "object-top origin-top scale-[1.35]",
     role: "Cabinet Secretary, Arkansas Department of Labor and Licensing",
     bio: [
       "Daryl E. Bassett currently serves as the Cabinet Secretary for the Arkansas Department of Labor and Licensing. He is the former Director of the Arkansas Department of Workforce Services. He previously served as Director of Business and Commercial Services for the Arkansas Secretary of State. Prior to that service, he was a Commissioner with the Arkansas Public Service Commission for nine years and Chief Economic Development Advisor to former Governor Mike Huckabee.",
@@ -156,8 +156,8 @@ export const TRUSTEES: Trustee[] = [
     slug: "joe-booker",
     name: "\u201cBroadway\u201d Joe Booker",
     title: "Board Member",
-    image: "/images/trustees/joe-booker.png",
-    cardImageClass: "object-[78%_25%] origin-[78%_25%] scale-[1.6]",
+    image: "/images/trustees/joe-booker.jpg",
+    cardImageClass: "object-top",
     role: "Broadcasting Executive & Arkansas Hall of Fame Inductee",
     bio: [
       "\u201cBroadway\u201d Joe Booker is a dynamic broadcasting executive, media innovator, and community leader with 40+ years of experience across radio, television, and digital platforms. He has a proven record of organizational leadership, strategic programming, and community impact across Arkansas. As an Arkansas Hall of Fame inductee, \u201cBroadway\u201d Joe is recognized for pioneering contributions to broadcasting, nonprofit engagement, and cultural advancement.",
