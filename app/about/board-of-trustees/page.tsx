@@ -32,7 +32,7 @@ function TrusteeCard({ member, highlight = false, reportsTo }: TrusteeCardProps)
             alt={`Portrait of ${member.name}`}
             width={96}
             height={96}
-            className="h-full w-full object-cover"
+            className={`h-full w-full object-cover ${member.cardImageClass ?? "object-center"}`}
           />
         ) : (
           <User

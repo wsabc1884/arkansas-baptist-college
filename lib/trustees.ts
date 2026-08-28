@@ -9,6 +9,8 @@ export interface Trustee {
   department?: string
   /** Path to the full portrait, when available */
   image?: string
+  /** Tailwind classes to fine-tune how the portrait is cropped in the circular card bubble */
+  cardImageClass?: string
   /** Short line shown on the profile hero, derived from the bio */
   role?: string
   /** Full biography as an array of paragraphs */
@@ -23,6 +25,7 @@ export const TRUSTEES: Trustee[] = [
     title: "Chairman",
     department: "Executive Officer",
     image: "/images/trustees/roland-gosey.png",
+    cardImageClass: "object-top origin-top scale-[1.7]",
     role: "Owner & Managing Funeral Director, Williams Funeral Home",
     bio: [
       "Roland L. Gosey is the owner and managing funeral director of Williams Funeral Home in Arkadelphia, Arkansas. He is a 1996 graduate of Arkadelphia Sr. High School and a 2004 graduate of the University of Arkansas Community College at Hope where he earned an Associate of Applied Science in Funeral Services.",
@@ -36,6 +39,7 @@ export const TRUSTEES: Trustee[] = [
     title: "Treasurer",
     department: "Executive Officer",
     image: "/images/trustees/mitch-bettis.png",
+    cardImageClass: "object-top",
     role: "President & Owner, Arkansas Business Publishing Group",
     bio: [
       "Mitch Bettis is a seasoned media executive with more than 30 years of experience in journalism, publishing and business leadership. He currently serves as president and owner of Arkansas Business Publishing Group, overseeing a diverse portfolio of more than 30 media brands across Arkansas and Texas.",
@@ -55,6 +59,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Daryl E. Bassett",
     title: "Board Member",
     image: "/images/trustees/daryl-bassett.png",
+    cardImageClass: "object-top",
     role: "Cabinet Secretary, Arkansas Department of Labor and Licensing",
     bio: [
       "Daryl E. Bassett currently serves as the Cabinet Secretary for the Arkansas Department of Labor and Licensing. He is the former Director of the Arkansas Department of Workforce Services. He previously served as Director of Business and Commercial Services for the Arkansas Secretary of State. Prior to that service, he was a Commissioner with the Arkansas Public Service Commission for nine years and Chief Economic Development Advisor to former Governor Mike Huckabee.",
@@ -67,6 +72,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Dr. Shannon Lewis",
     title: "Board Member",
     image: "/images/trustees/shannon-lewis.png",
+    cardImageClass: "object-top",
     role: "Director & Principal, Success Achievement Academy, Jonesboro School District",
     bio: [
       "Dr. Shannon Lewis is an accomplished educator, pastor, community advocate, and public servant whose career spans more than two decades of leadership in education, ministry, and civic engagement. Dr. Lewis serves as Director of Success Achievement Academy and Principal for the Jonesboro School District, overseeing an alternative learning environment that serves students from school districts throughout Craighead County. Dr. Lewis also serves as an adjunct professor in Arkansas State University's School of Teacher Education and Leadership, preparing future educational administrators through graduate-level instruction.",
@@ -80,6 +86,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Rev. Dr. Milton R. Graham, Sr.",
     title: "Board Member",
     image: "/images/trustees/milton-graham.png",
+    cardImageClass: "object-top",
     role: "Senior Pastor, Mount Zion Baptist Church of Little Rock",
     bio: [
       "Rev. Dr. Milton R. Graham, Sr. has been married to Jacqueline F. Graham for 33 years and has four grown children and seven grandchildren. Rev. Dr. Milton Graham is the Senior Pastor at Mount Zion Baptist Church of Little Rock, Arkansas, elected in December 2024. Previously, he served 26 years as Senior Pastor at Bethesda Missionary Baptist Church. He had a distinguished 31-year career with the Arkansas Department of Human Services (DHS), including serving as Pulaski County (Area 6) Director for the Division of Children and Family Services, overseeing staff and services across five county offices. In September 2024, he became the Human Resources Labor and Employee Relations Manager for the City of Little Rock.",
@@ -96,6 +103,7 @@ export const TRUSTEES: Trustee[] = [
     credentials: "PT, MOMT, FAAPT, FAAOMPT",
     title: "Board Member",
     image: "/images/trustees/robert-tillman.png",
+    cardImageClass: "object-top",
     role: "Owner & President, Orthopedic Rehabilitation and Specialty Center",
     bio: [
       "Robert C. Tillman is an accomplished physical therapist, orthopedic manual therapy specialist, healthcare executive, educator, author, and community leader with decades of experience in clinical practice and rehabilitation. He has served as owner and president of Orthopedic Rehabilitation and Specialty Center since 2003 and previously served as Vice President of Clinical Development for HEALTHSOUTH Corporation, with responsibilities extending across the United States and United Kingdom. His professional background also includes advanced Norwegian manual therapy training, service as an instructor and member of the Board of Examiners for the Ola Grimsby Institute, and clinical practice in Little Rock dating to 1991.",
@@ -135,6 +143,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Janet Miles-Bartee",
     title: "Board Member",
     image: "/images/trustees/janet-miles-bartee.png",
+    cardImageClass: "object-top",
     role: "President & CEO, Greater Kansas City LINC, Inc.",
     bio: [
       "Janet Miles-Bartee is a transformational nonprofit executive and community leader with nearly three decades of experience advancing equity, strengthening families, and building cross-sector partnerships that drive lasting community impact. As President and Chief Executive Officer of LINC (Greater Kansas City LINC, Inc.), she leads one of the region's most respected nonprofit organizations dedicated to supporting children, families, and neighborhoods across the Kansas City metropolitan area.",
@@ -148,6 +157,7 @@ export const TRUSTEES: Trustee[] = [
     name: "\u201cBroadway\u201d Joe Booker",
     title: "Board Member",
     image: "/images/trustees/joe-booker.png",
+    cardImageClass: "object-[78%_25%] origin-[78%_25%] scale-[1.6]",
     role: "Broadcasting Executive & Arkansas Hall of Fame Inductee",
     bio: [
       "\u201cBroadway\u201d Joe Booker is a dynamic broadcasting executive, media innovator, and community leader with 40+ years of experience across radio, television, and digital platforms. He has a proven record of organizational leadership, strategic programming, and community impact across Arkansas. As an Arkansas Hall of Fame inductee, \u201cBroadway\u201d Joe is recognized for pioneering contributions to broadcasting, nonprofit engagement, and cultural advancement.",
