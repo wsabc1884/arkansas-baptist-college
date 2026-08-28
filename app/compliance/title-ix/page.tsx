@@ -352,10 +352,10 @@ export default function TitleIXPage() {
       <p>
         <em>
           For information and support, please visit the Arkansas Baptist College Title IX Webpage or
-          contact Title IX Coordinator, Vicki A. Williams, PhD at:{" "}
+          contact Title IX Coordinator, Dr. Darryl A. Peal at:{" "}
           <a href="tel:5014201329">501.420.1329</a> (office) or{" "}
-          <a href="mailto:vicki.williams@arkansasbaptist.edu">
-            vicki.williams@arkansasbaptist.edu
+          <a href="mailto:darryl.peal@arkansasbaptist.edu">
+            darryl.peal@arkansasbaptist.edu
           </a>
         </em>
       </p>
