@@ -198,28 +198,11 @@ export default function TitleIXPage() {
         Office: Community Union 3rd Floor
         <br />
         Telephone:{" "}
-        <a href="tel:5014201329">501.420.1329</a>
+        <a href="tel:5014201231">501.420.1231</a>
         <br />
         Email:{" "}
         <a href="mailto:darryl.peal@arkansasbaptist.edu">
           darryl.peal@arkansasbaptist.edu
-        </a>
-      </p>
-
-      <h3>Deputy Title IX Coordinator for Students</h3>
-      <p>
-        <strong>Mr. Cleodis Colbert</strong>
-        <br />
-        Dean of Students
-        <br />
-        Office: 1st Floor South-end Science Building
-        <br />
-        Telephone:{" "}
-        <a href="tel:5014201343">501.420.1343</a>
-        <br />
-        Email:{" "}
-        <a href="mailto:cleodis.colbert@arkansasbaptist.edu">
-          cleodis.colbert@arkansasbaptist.edu
         </a>
       </p>
 
@@ -369,10 +352,10 @@ export default function TitleIXPage() {
       <p>
         <em>
           For information and support, please visit the Arkansas Baptist College Title IX Webpage or
-          contact Title IX Coordinator, Vicki A. Williams, PhD at:{" "}
-          <a href="tel:5014201329">501.420.1329</a> (office) or{" "}
-          <a href="mailto:vicki.williams@arkansasbaptist.edu">
-            vicki.williams@arkansasbaptist.edu
+          contact Title IX Coordinator, Dr. Darryl A. Peal at:{" "}
+          <a href="tel:5014201231">501.420.1231</a> (office) or{" "}
+          <a href="mailto:darryl.peal@arkansasbaptist.edu">
+            darryl.peal@arkansasbaptist.edu
           </a>
         </em>
       </p>
