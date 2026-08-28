@@ -114,7 +114,6 @@ const navigation = [
       { name: "myABC IT Self Service", href: "/resources/it-self-service" },
       { name: "Derek Olivier Research Institute", href: "/resources/derek-olivier-research-institute" },
       { name: "Institutional Advancement", href: "/resources/institutional-advancement" },
-      { name: "Procurement & Solicitations", href: "/resources/procurement" },
     ],
   },
   { name: "Athletics", href: "https://abcbuffaloes.com", external: true },
