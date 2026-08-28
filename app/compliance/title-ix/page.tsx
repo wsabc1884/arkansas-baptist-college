@@ -206,23 +206,6 @@ export default function TitleIXPage() {
         </a>
       </p>
 
-      <h3>Deputy Title IX Coordinator for Students</h3>
-      <p>
-        <strong>Mr. Cleodis Colbert</strong>
-        <br />
-        Dean of Students
-        <br />
-        Office: 1st Floor South-end Science Building
-        <br />
-        Telephone:{" "}
-        <a href="tel:5014201343">501.420.1343</a>
-        <br />
-        Email:{" "}
-        <a href="mailto:cleodis.colbert@arkansasbaptist.edu">
-          cleodis.colbert@arkansasbaptist.edu
-        </a>
-      </p>
-
       <h3>Deputy Title IX Coordinator for Faculty &amp; Staff</h3>
       <p>
         <strong>Ms. Pamela Brimley</strong>
