@@ -1,96 +1,64 @@
+import Image from "next/image"
+import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { CTABand } from "@/components/cta-band"
 import { SectionWrapper, SectionHeader } from "@/components/section-wrapper"
 import { FeatureGrid } from "@/components/feature-grid"
-import { TeamDirectory } from "@/components/team-directory"
-import { Shield, Users, BookOpen, Heart, User } from "lucide-react"
+import { Shield, Users, BookOpen, Heart, User, ArrowRight } from "lucide-react"
+import { TRUSTEES, type Trustee } from "@/lib/trustees"
 
-interface ExecutiveCardProps {
-  member: { name: string; title: string; department?: string }
+interface TrusteeCardProps {
+  member: Trustee
   highlight?: boolean
   reportsTo?: string
 }
 
-function ExecutiveCard({ member, highlight = false, reportsTo }: ExecutiveCardProps) {
+function TrusteeCard({ member, highlight = false, reportsTo }: TrusteeCardProps) {
   return (
-    <div
-      className={`flex w-full max-w-sm flex-col items-center rounded-lg border p-6 text-center ${
+    <Link
+      href={`/about/board-of-trustees/${member.slug}`}
+      className={`group flex w-full max-w-sm flex-col items-center rounded-lg border p-6 text-center transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a5c] ${
         highlight ? "border-[#3d1a5c] bg-[#3d1a5c] text-white" : "border-border bg-card"
       }`}
     >
       <div
-        className={`flex h-20 w-20 items-center justify-center rounded-full ${
+        className={`flex h-24 w-24 items-center justify-center overflow-hidden rounded-full ${
           highlight ? "bg-white/15" : "bg-[#3d1a5c]/10"
         }`}
       >
-        <User className={`h-10 w-10 ${highlight ? "text-white/80" : "text-[#3d1a5c]/60"}`} aria-hidden="true" />
+        {member.image ? (
+          <Image
+            src={member.image || "/placeholder.svg"}
+            alt={`Portrait of ${member.name}`}
+            width={96}
+            height={96}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <User
+            className={`h-10 w-10 ${highlight ? "text-white/80" : "text-[#3d1a5c]/60"}`}
+            aria-hidden="true"
+          />
+        )}
       </div>
       <h3 className={`mt-4 text-base font-semibold ${highlight ? "text-white" : "text-foreground"}`}>
         {member.name}
       </h3>
-      <p className={`mt-1 text-sm font-medium ${highlight ? "text-white/90" : "text-[#3d1a5c]"}`}>{member.title}</p>
-      {reportsTo && (
-        <p className="mt-0.5 text-xs text-muted-foreground/70">Reports to {reportsTo}</p>
-      )}
-    </div>
+      <p className={`mt-1 text-sm font-medium ${highlight ? "text-white/90" : "text-[#3d1a5c]"}`}>
+        {member.title}
+      </p>
+      {reportsTo && <p className="mt-0.5 text-xs text-muted-foreground/70">Reports to {reportsTo}</p>}
+      <span
+        className={`mt-4 inline-flex items-center gap-1 text-xs font-semibold ${
+          highlight ? "text-white/90" : "text-[#3d1a5c]"
+        }`}
+      >
+        View Profile
+        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+      </span>
+    </Link>
   )
 }
-
-const TRUSTEES = [
-  // Executive Officers
-  {
-    name: "Roland L. Gosey",
-    title: "Chairman",
-    department: "Executive Officer",
-  },
-  {
-    name: "Mitch Bettis",
-    title: "Treasurer",
-    department: "Executive Officer",
-  },
-  {
-    name: "Alicia Ferguson Smith",
-    title: "Secretary",
-    department: "Executive Officer",
-  },
-  // Board Members
-  {
-    name: "Daryl E. Bassett",
-    title: "Board Member",
-  },
-  {
-    name: "Rev. Sharron Lewis",
-    title: "Board Member",
-  },
-  {
-    name: "Rev. Milton Graham",
-    title: "Board Member",
-  },
-  {
-    name: "Dr. Rob Tillman",
-    title: "Board Member",
-  },
-  {
-    name: "Mike Richardson",
-    title: "Board Member",
-  },
-  {
-    name: "Gene McKissic, Esq.",
-    title: "Board Member",
-  },
-  {
-    name: "Steven B. Jones",
-    title: "Board Member",
-  },
-  {
-    name: "Janet Miles-Bartee",
-    title: "Board Member",
-  },
-  {
-    name: "\"Broadway\" Joe Booker",
-    title: "Board Member",
-  },
-]
 
 export const metadata = {
   title: "Board of Trustees | Arkansas Baptist College",
@@ -178,7 +146,7 @@ export default function BoardOfTrusteesPage() {
               <div className="mx-auto max-w-4xl">
                 {/* Chairman (top of hierarchy) */}
                 <div className="flex justify-center">
-                  <ExecutiveCard member={TRUSTEES.find((t) => t.title === "Chairman")!} highlight />
+                  <TrusteeCard member={TRUSTEES.find((t) => t.title === "Chairman")!} highlight />
                 </div>
 
                 {/* Connector */}
@@ -192,11 +160,11 @@ export default function BoardOfTrusteesPage() {
                 </div>
 
                 {/* Direct reports */}
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="flex flex-wrap justify-center gap-6">
                   {TRUSTEES.filter(
                     (t) => t.department === "Executive Officer" && t.title !== "Chairman",
                   ).map((member) => (
-                    <ExecutiveCard key={member.name} member={member} reportsTo="Chairman" />
+                    <TrusteeCard key={member.slug} member={member} reportsTo="Chairman" />
                   ))}
                 </div>
               </div>
@@ -212,10 +180,11 @@ export default function BoardOfTrusteesPage() {
                   Board Members
                 </h3>
               </div>
-              <TeamDirectory
-                members={TRUSTEES.filter((t) => t.department !== "Executive Officer")}
-                columns={3}
-              />
+              <div className="grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {TRUSTEES.filter((t) => t.department !== "Executive Officer").map((member) => (
+                  <TrusteeCard key={member.slug} member={member} />
+                ))}
+              </div>
             </div>
           </div>
         </SectionWrapper>
