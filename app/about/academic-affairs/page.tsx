@@ -78,10 +78,6 @@ export default function AcademicAffairsPage() {
           <h3>Department of Christian Studies</h3>
           <ul>
             <li>Bachelor of Arts in Christian Studies</li>
-            <li>Concentration in Christian Education</li>
-            <li>Concentration in Church Administration</li>
-            <li>Concentration in Worship Arts</li>
-            <li>Concentration in Homiletics &amp; Pastoral Leadership</li>
           </ul>
 
           <h3>Department of Social & Behavioral Sciences</h3>
