@@ -97,7 +97,7 @@ const navigation = [
     children: [
       { name: "Student Organizations", href: "/student-life/organizations" },
       { name: "Campus Life", href: "/student-life/campus-life" },
-      { name: "Student Handbook", href: "/student-life/student-handbook" },
+      { name: "Student Code of Conduct Handbook", href: "/student-life/student-handbook" },
       { name: "Student Complaint Process", href: "/student-life/complaint-process" },
     ],
   },

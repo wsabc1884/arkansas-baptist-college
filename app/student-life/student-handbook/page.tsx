@@ -5,7 +5,7 @@ import { CTABand } from "@/components/cta-band"
 import { Download, BookOpen, Users, Home, Scale, ShieldCheck, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Student Handbook | Arkansas Baptist College",
+  title: "Student Code of Conduct Handbook | Arkansas Baptist College",
   description:
     "The Arkansas Baptist College Student Handbook and Student Code of Conduct outlining policies, procedures, community standards, and student rights.",
 }
@@ -48,12 +48,12 @@ export default function StudentHandbookPage() {
     <div className="min-h-screen">
       <main id="main-content">
         <PageHero
-          title="Student Handbook"
+          title="Student Code of Conduct Handbook"
           subtitle="Student Life"
           description="The Arkansas Baptist College Student Handbook and Student Code of Conduct outlines the policies, procedures, community standards, and rights that guide student life on campus."
           breadcrumbs={[
             { label: "Student Life", href: "/student-life/campus-life" },
-            { label: "Student Handbook" },
+            { label: "Student Code of Conduct Handbook" },
           ]}
         />
 
