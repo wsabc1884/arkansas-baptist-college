@@ -1,140 +1,243 @@
 import type { Metadata } from "next"
-import { ComplianceLayout } from "@/components/compliance-layout"
+import Link from "next/link"
+import { PageHero } from "@/components/page-hero"
+import { SectionWrapper } from "@/components/section-wrapper"
+import { SummerEnrollmentData } from "@/components/summer-enrollment-data"
+import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Consumer Information | Arkansas Baptist College",
-  description: "Student consumer information disclosures required by federal regulation.",
+  description:
+    "Consumer information disclosures as required by the Higher Education Opportunity Act (HEOA) of 2008 at Arkansas Baptist College.",
 }
+
+type DisclosureLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+type DisclosureSection = {
+  title: string
+  links: DisclosureLink[]
+}
+
+const disclosureSections: DisclosureSection[] = [
+  {
+    title: "Enrollment Information",
+    links: [
+      { label: "Fall IPEDS Enrollment", href: "/resources/consumer-information/fall-ipeds-enrollment" },
+      { label: "Current Term Enrollment", href: "/resources/consumer-information/current-term-enrollment" },
+    ],
+  },
+  {
+    title: "Student Outcomes",
+    links: [
+      { label: "Graduation and Retention Rate", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#retgrad", external: true },
+      { label: "Student Profiles", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#enrolmt", external: true },
+    ],
+  },
+  {
+    title: "Employee Outcomes",
+    links: [
+      { label: "Employment Status", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245", external: true },
+    ],
+  },
+  {
+    title: "Executive Financial Summary",
+    links: [
+      { label: "Budget", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#expenses", external: true },
+    ],
+  },
+  {
+    title: "General Institutional Information",
+    links: [
+      { label: "Admissions and Registration", href: "/enrollment/office-of-admissions" },
+      { label: "Academic Programs", href: "/academics/departments" },
+      { label: "Arkansas Baptist College Academic Catalog", href: "/academics/academic-catalog" },
+      { label: "Accreditation", href: "/about/history" },
+      { label: "Academic Success and Career Center", href: "/academics/career-services" },
+      { label: "Computer Use", href: "/about/technology-services" },
+      { label: "Veterans Affairs", href: "/academics/veterans-affairs" },
+      { label: "Copyright Infringement", href: "/about/technology-services" },
+      { label: "Faculty and Staff Information", href: "/resources/directory" },
+      { label: "Illegal File Sharing Policy", href: "/about/technology-services" },
+      { label: "Net Price Calculator", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#expenses", external: true },
+      { label: "Cost of Attendance", href: "/enrollment/tuition-fees" },
+      { label: "ABC FERPA 2020", href: "/academics/registrar" },
+      { label: "Student Diversity", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#enrolmt", external: true },
+      { label: "Student Activities", href: "/student-life/organizations" },
+      { label: "Students with Disabilities", href: "/academics/academic-advising" },
+      { label: "Textbook Information", href: "/academics/academic-catalog" },
+      { label: "Transfer Credit Policies", href: "/enrollment/office-of-admissions" },
+    ],
+  },
+  {
+    title: "Health and Safety",
+    links: [
+      { label: "Campus Crime and Fire Information", href: "/resources/campus-safety" },
+      { label: "Campus Sex Crimes Prevention Act", href: "/resources/campus-safety" },
+      { label: "Drug and Alcohol Abuse Prevention Program", href: "/student-life/campus-life" },
+      { label: "Active Shooter Instructions", href: "/resources/campus-safety" },
+      { label: "Emergency Procedures", href: "/resources/campus-safety" },
+      { label: "Vaccination Policies", href: "/enrollment/office-of-admissions" },
+    ],
+  },
+  {
+    title: "Intercollegiate Athletics",
+    links: [
+      { label: "Program Participation Rates and Financial Support Data (Equity in Athletics Disclosure Act)", href: "https://ope.ed.gov/athletics/", external: true },
+    ],
+  },
+  {
+    title: "Information Technology",
+    links: [
+      { label: "Cyber Security Policy", href: "/about/technology-services" },
+    ],
+  },
+  {
+    title: "Student Financial Assistance",
+    links: [
+      { label: "Estimate Your Federal Aid", href: "https://studentaid.gov/aid-estimator/", external: true },
+      { label: "Free Application for Federal Student Aid (FAFSA)", href: "https://studentaid.gov/h/apply-for-aid/fafsa", external: true },
+      { label: "Assistance Available from Federal Aid Programs", href: "/enrollment/financial-aid" },
+      { label: "Assistance Available from State Programs", href: "/enrollment/financial-aid" },
+      { label: "Assistance Available from Local and Institutional Aid Programs", href: "/enrollment/scholarships" },
+      { label: "Financial Aid Contact Information", href: "/enrollment/financial-aid" },
+      { label: "Federal Student Financial Aid Penalties for Drug Law Violations", href: "/enrollment/financial-aid" },
+      { label: "Code of Conduct for Student Loan Related Activities", href: "/enrollment/financial-aid" },
+      { label: "Loan Counseling", href: "https://studentaid.gov/app/counselingInstructions.action?counselingType=entrance", external: true },
+      { label: "National Student Loan Data System for Students", href: "https://nslds.ed.gov/nslds/nslds_SA/", external: true },
+      { label: "Alternative Loans", href: "/enrollment/financial-aid" },
+      { label: "Institutional Refund Policy, Requirements for Withdrawal, and Return of Federal Financial Aid", href: "/enrollment/financial-aid" },
+      { label: "Student Loan Information from the U.S. Department of Education", href: "https://studentaid.gov/", external: true },
+      { label: "Federal Student Aid Ombudsman Group", href: "https://studentaid.gov/feedback-ombudsman/disputes/prepare", external: true },
+      { label: "Resolving Student Loan Disputes", href: "https://studentaid.gov/feedback-ombudsman/disputes/prepare", external: true },
+      { label: "Default Prevention", href: "/enrollment/default-prevention" },
+      { label: "Default Resolution Form", href: "/enrollment/default-prevention" },
+      { label: "Statement of Educational Purpose & ID", href: "/enrollment/financial-aid-forms" },
+      { label: "Unusual Enrollment History", href: "/enrollment/financial-aid" },
+      { label: "Verification Policy", href: "/enrollment/financial-aid" },
+      { label: "Financial Aid Disbursement Information", href: "/enrollment/financial-aid" },
+      { label: "Financial Awareness Counseling Tool", href: "https://studentaid.gov/resources/financial-awareness-counseling", external: true },
+      { label: "Satisfactory Academic Progress", href: "/enrollment/sap" },
+      { label: "Apply for Financial Aid", href: "/enrollment/apply-for-financial-aid" },
+      { label: "Financial Aid Forms", href: "/enrollment/financial-aid-forms" },
+    ],
+  },
+  {
+    title: "Institutional Policies",
+    links: [
+      { label: "Assignment of Credit Hours Policy", href: "/resources/consumer-information/assignment-of-credit-hours-policy" },
+      { label: "Student Complaint Process", href: "/student-life/complaint-process" },
+      { label: "Data Retention Policy", href: "/resources/consumer-information/data-retention-policy" },
+      { label: "Student Identification Policy", href: "/resources/consumer-information/student-identification-policy" },
+      { label: "Academic Expression Policy", href: "/resources/consumer-information/academic-expression-policy" },
+    ],
+  },
+  {
+    title: "Policy and Agreements",
+    links: [
+      { label: "Baptist Health MOU", href: "/about/partnerships" },
+      { label: "VA Benefits Addendum", href: "/academics/veterans-affairs" },
+      { label: "ABC Constitution and Citizenship Day", href: "/about/history" },
+    ],
+  },
+  {
+    title: "Enrollment Management",
+    links: [
+      { label: "Credit Hour Policy", href: "/academics/registrar" },
+    ],
+  },
+  {
+    title: "Voter Registration Information",
+    links: [
+      { label: "State of Arkansas", href: "https://www.sos.arkansas.gov/elections/voter-information", external: true },
+      { label: "Out-of-State Residents", href: "https://vote.gov/", external: true },
+    ],
+  },
+]
 
 export default function ConsumerInformationPage() {
   return (
-    <ComplianceLayout title="Consumer Information" subtitle="Student Right-to-Know" lastUpdated="January 2026">
-      <h2>Overview</h2>
-      <p>
-        In compliance with the Higher Education Act, as amended, Arkansas Baptist College provides the
-        following consumer information to prospective and enrolled students, families, and the public.
-        These disclosures are intended to help students and families make informed decisions about their
-        educational investment.
-      </p>
+    <div className="min-h-screen">
+      <main id="main-content">
+        <PageHero
+          title="Consumer Information"
+          subtitle="About Us"
+          description="Institutional disclosures as required by the Higher Education Opportunity Act (HEOA) of 2008."
+          breadcrumbs={[
+            { label: "About Us", href: "/about/history" },
+            { label: "Consumer Information" },
+          ]}
+        />
 
-      <hr />
+        {/* HEOA Introduction */}
+        <SectionWrapper>
+          <div className="prose-abc mx-auto max-w-4xl">
+            <h2>Arkansas Baptist College Consumer Information Disclosures</h2>
+            <p>
+              The Higher Education Opportunity Act (HEOA) of 2008 requires that colleges and universities make available to current and prospective students important information concerning each institution&apos;s academic programs, retention rates, graduation rates, crime reports, financial aid procedures and more in an effort to ensure fairness and transparency for all higher education consumers. Arkansas Baptist College has developed this web page for current and prospective students to access the necessary information according to HEOA.
+            </p>
+            <p>
+              For additional information about Arkansas Baptist College, please see the{" "}
+              <a href="https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245" target="_blank" rel="noopener noreferrer">
+                College Navigator Website
+              </a>{" "}
+              maintained by the U.S. Department of Education in which you can compare Arkansas Baptist College to over 7,000 colleges and universities across the United States.
+            </p>
+          </div>
+        </SectionWrapper>
 
-      <h2>General Institutional Information</h2>
-      <ul>
-        <li>Cost of attendance, including tuition, fees, room and board, and estimated personal expenses</li>
-        <li>Financial aid programs available, including federal, state, institutional, and private sources</li>
-        <li>Refund policies and requirements for return of Title IV financial aid</li>
-        <li>Academic programs, facilities, and faculty</li>
-        <li>Accreditation information (see <a href="/compliance/accreditation">Accreditation page</a>)</li>
-        <li>Transfer of credit policies</li>
-        <li>Copyright infringement and peer-to-peer file sharing policies</li>
-        <li>Student diversity and demographics</li>
-      </ul>
+        {/* Disclosure Sections */}
+        <SectionWrapper className="bg-muted/30">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid gap-6">
+              {disclosureSections.map((section) => (
+                <div key={section.title} className="rounded-lg border bg-card p-6">
+                  <h3 className="font-serif text-lg font-bold text-foreground">{section.title}</h3>
+                  <ul className="mt-3 space-y-2">
+                    {section.links.map((link) => (
+                      <li key={link.label}>
+                        {link.external ? (
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                          >
+                            {link.label}
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        ) : (
+                          <Link href={link.href} className="text-sm text-primary hover:underline">
+                            {link.label}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SectionWrapper>
 
-      <hr />
+        {/* Contact */}
+        <SectionWrapper>
+          <div className="prose-abc mx-auto max-w-4xl">
+            <h2>Contact</h2>
+            <p>For questions about consumer information disclosures, contact the Office of Institutional Research at <a href="tel:5014201200">501-420-1200</a>.</p>
+          </div>
+        </SectionWrapper>
 
-      <h2>Student Financial Aid</h2>
-      <p>
-        The Office of Financial Aid provides assistance to students in securing funding for their education.
-        Available aid types include:
-      </p>
-      <ul>
-        <li><strong>Federal Pell Grants</strong> for eligible undergraduate students</li>
-        <li><strong>Federal Supplemental Educational Opportunity Grants (FSEOG)</strong></li>
-        <li><strong>Federal Work-Study</strong> employment opportunities</li>
-        <li><strong>Federal Direct Loans</strong> (subsidized and unsubsidized)</li>
-        <li><strong>State grants and scholarships</strong> through the Arkansas Division of Higher Education</li>
-        <li><strong>Institutional scholarships</strong> based on merit and need</li>
-      </ul>
-
-      <hr />
-
-      <h2>Student Outcomes</h2>
-      <h3>Retention and Graduation Rates</h3>
-      <p>
-        As required by the Student Right-to-Know Act, Arkansas Baptist College reports retention and
-        graduation rates for its student body. Current rates are available through the{" "}
-        <a href="https://nces.ed.gov/collegenavigator/?q=arkansas+baptist+college" target="_blank" rel="noopener noreferrer">
-          NCES College Navigator
-        </a>.
-      </p>
-
-      <h3>Gainful Employment</h3>
-      <p>
-        Information about program outcomes and employment rates for graduates is available from the
-        Office of Academic Affairs.
-      </p>
-
-      <hr />
-
-      <h2>Health and Safety</h2>
-      <ul>
-        <li>Annual Security Report (see <a href="/compliance/campus-safety">Campus Safety page</a>)</li>
-        <li>Drug and alcohol abuse prevention programs</li>
-        <li>Vaccination policies</li>
-        <li>Emergency response and evacuation procedures</li>
-      </ul>
-
-      <hr />
-
-      <h2>Student Rights</h2>
-      <ul>
-        <li>Family Educational Rights and Privacy Act (FERPA) (see <a href="/compliance/ferpa">FERPA page</a>)</li>
-        <li>Title IX rights and protections (see <a href="/compliance/title-ix">Title IX page</a>)</li>
-        <li>Disability services and ADA compliance</li>
-        <li>Student complaint and grievance procedures</li>
-      </ul>
-
-      <hr />
-
-      <h2>Institutional Policies</h2>
-      <p>
-        The following institutional policies are available for review by prospective and enrolled students,
-        families, and the public:
-      </p>
-      <ul>
-        <li>
-          <a href="/resources/consumer-information/student-identification-policy">Student Identification Policy</a>
-        </li>
-        <li>
-          <a href="/resources/consumer-information/data-retention-policy">Data Retention Policy</a>
-        </li>
-        <li>
-          <a href="/resources/consumer-information/assignment-of-credit-hours-policy">Assignment of Credit Hours Policy</a>
-        </li>
-        <li>
-          <a href="/resources/consumer-information/academic-expression-policy">Academic Expression Policy</a>
-        </li>
-        <li>
-          <a href="/student-life/complaint-process">Student Complaint Process</a>
-        </li>
-      </ul>
-
-      <hr />
-
-      <h2>Voter Registration</h2>
-      <p>
-        Arkansas Baptist College encourages all eligible students to participate in the democratic process.
-        Voter registration information and assistance is available through Student Affairs. Students may
-        register to vote in Arkansas at{" "}
-        <a href="https://www.sos.arkansas.gov/elections/voter-information" target="_blank" rel="noopener noreferrer">
-          Arkansas Secretary of State
-        </a>.
-      </p>
-
-      <hr />
-
-      <h2>Contact</h2>
-      <p>
-        For questions about any of the consumer information disclosures listed above, please contact:
-      </p>
-      <p>
-        Arkansas Baptist College<br />
-        1600 Dr. Martin Luther King Jr. Drive<br />
-        Little Rock, AR 72202<br />
-        Phone: <a href="tel:5014201200">501-420-1200</a><br />
-        Email: <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a>
-      </p>
-    </ComplianceLayout>
+        {/* Summer Enrollment & Fall IPEDS Data */}
+        <SectionWrapper className="bg-muted/30">
+          <div className="mx-auto max-w-4xl">
+            <SummerEnrollmentData />
+          </div>
+        </SectionWrapper>
+      </main>
+    </div>
   )
 }

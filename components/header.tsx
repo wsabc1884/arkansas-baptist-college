@@ -107,7 +107,6 @@ const navigation = [
     children: [
       { name: "ABC Entrepreneurship Fund", href: "/resources/entrepreneurship-fund" },
       { name: "Campus Safety", href: "/resources/campus-safety" },
-      { name: "Consumer Information", href: "/resources/consumer-information" },
       { name: "Directory", href: "/resources/directory" },
       { name: "Facilities", href: "/resources/facilities" },
       { name: "Human Resources", href: "/resources/human-resources" },
