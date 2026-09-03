@@ -87,6 +87,48 @@ export const jobPostings: JobPosting[] = [
     applicationInstructions:
       "A complete application packet must include a letter of application, curriculum vita, master and doctorate transcripts, and contact information for three references. Official transcripts, three letters of recommendation, and a completed ABC Application for Employment will be required for the successful candidate after selection. Applications will be reviewed immediately.",
   },
+  {
+    slug: "director-of-student-activities",
+    title: "Director of Student Activities",
+    department: "Division for Student Affairs",
+    employmentType: "Full-Time",
+    location: "Little Rock, AR",
+    summary:
+      "Responsible for creating and supporting a high-quality student life experience, leading co-curricular learning, student leadership development, engagement, and retention initiatives.",
+    overview: [
+      "The Director of Student Activities is responsible for creating and supporting a high-quality student life experience for all students at Arkansas Baptist College. The Director creates, implements, and facilitates opportunities for co-curricular learning and student leadership development, promotes proactive retention activities and student engagement, and collaborates with college organizations and departments in a professional manner.",
+      "The Director functions as a student advocate by responding directly to student needs and issues affecting student well-being, and reports to the Dean of Students. The Director is responsible for managing all aspects of student engagement, including programming, internal and external reporting, retention, and external student engagement. Superior leadership development planning, organization, supervision, interpersonal, and scheduling skills are essential.",
+      "The duties of this position require considerable evening and weekend work, including attendance at meetings of student organizations and a variety of events. Office hours may be adjusted if working late nights and weekends, with supervisor approval.",
+    ],
+    responsibilities: [
+      "Manage the Office of Student Activities, including strategic planning, developing and adhering to the area budget, ultimate responsibility for programs, and leadership development for student leaders, clubs, organizations, and groups served by Student Engagement.",
+      "Oversee the overall functioning of the Office of Student Activities, developing and monitoring the office budget to ensure effective fiscal management.",
+      "Provide strategic direction and ensure thorough assessment of office programs and services reflecting a holistic approach to student outreach and learning.",
+      "Serve as Chair of the Homecoming Committee (Miss and Mister ABC Coronation and week of student events): prepare logistics and budget, convene and facilitate weekly meetings, negotiate contracts, and develop marketing plans for the annual Homecoming week activities.",
+      "Serve as the primary advisor to the Student Government Association (SGA) and Greek Life organizations, providing guidance on policies and procedures, financial management, budgeting, marketing, communication, vendor and donor relationships, student travel, inventory management, and document review.",
+      "Offer leadership development, training, and support to student leaders, advisors, and the SGA, and facilitate risk management, programming, event logistics, recruitment, retention, and program evaluation.",
+      "Develop collaborative relationships with key campus stakeholders, including Greek Organizations, the Office of Student Conduct, Student Government Association, Campus Security, and Facilities Departments.",
+      "Lead the development, planning, implementation, and assessment of all new and transfer undergraduate student orientation programs for the fall, spring, and summer semesters, collaborating with Academic Affairs, Student Affairs, and Enrollment Management (Admissions and Financial Aid).",
+      "Recruit, train, and mentor New Student Orientation Leaders and peer mentors; evaluate program effectiveness against student learning outcomes and student/parent satisfaction, and use findings to improve and develop programs.",
+      "Promote and foster an environment of diversity, equity, and inclusion among students and staff, and partner with the Department of Residential Life and Housing on programming and educational events.",
+      "Ensure student organization handbooks, trainings, and paperwork are updated and aligned with college policies and procedures.",
+      "Engage in ongoing professional development through conferences, workshops, and webinars, and participate in college-appointed committees as assigned.",
+      "Supervise student workers and collaborate with on-campus and off-campus advisors for student organizations.",
+      "Undertake other duties and responsibilities as assigned by college administration in support of the strategic goals and mission of the college.",
+    ],
+    qualifications: [
+      "Bachelor's degree from an accredited institution in psychology, education, social work, or a related field (required).",
+      "Minimum of two years of experience as a staff member or administrator directly working with student engagement and/or retention services at an institution of higher education (required).",
+      "Master's degree in Student Affairs Administration, Higher Education, Education, Counseling, Social Work, or a related field (preferred).",
+      "Experience with college student leadership development, student conduct, and working with an urban/diverse student population.",
+      "Experience providing intervention to college students lacking basic needs and other barriers to well-being.",
+      "Experience managing business social media accounts.",
+      "Knowledge of trends, issues, and accepted practices relevant to higher education, student affairs, student leadership development, and student well-being.",
+      "Proficiency in MS Word, PowerPoint, Excel, and Outlook; ability to develop marketing and communication plans; excellent diplomacy, interpersonal, and customer service skills; strong planning, organizational, and analytical skills with attention to detail.",
+      "Ability to deliver excellent written and oral communication appropriate to the audience, prioritize responsibilities, and synthesize complex information into clear recommendations.",
+      "Primary work location is an office environment; occasional lifting, pushing, climbing, and pulling may be required, along with occasional evening and/or weekend work.",
+    ],
+  },
 ]
 
 export function getJobBySlug(slug: string): JobPosting | undefined {
