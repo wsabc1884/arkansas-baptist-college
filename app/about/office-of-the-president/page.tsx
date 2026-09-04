@@ -16,7 +16,7 @@ export const metadata = {
 
 // ── Hardcoded fallbacks ────────────────────────────────────────
 const defaults = {
-  presidentName: "Dr. George E. Hertz",
+  presidentName: "Dr. George E. Herts",
   presidentTitle: "President",
   presidentInitials: "GH",
   quote:

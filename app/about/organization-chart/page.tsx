@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const executiveLeadership = [
-  { name: "Dr. George E. Hertz", title: "President" },
+  { name: "Dr. George E. Herts", title: "President" },
   { name: "Ms. Patsy Biggs", title: "Executive Assistant to the President" },
   { name: "Dr. O Fitzgerald Hill", title: "Chief Operating Officer" },
   { name: "Phillip W.W.D. Rodgers, Sr.", title: "Executive Vice President" },
