@@ -103,14 +103,7 @@ export default function AcademicAffairsPage() {
 
           <h3>Department of Fine and Performing Arts</h3>
           <ul>
-            <li>Bachelor of Arts in Music Performance
-              <ul>
-                <li>Concentration: Instrumental Performance</li>
-                <li>Concentration: Piano Performance</li>
-                <li>Concentration: Vocal Performance</li>
-              </ul>
-            </li>
-            <li>Associate of Arts in Music Business</li>
+            <li>Bachelor of Arts in Music Performance</li>
           </ul>
 
           <h2>Library and Media Services</h2>
