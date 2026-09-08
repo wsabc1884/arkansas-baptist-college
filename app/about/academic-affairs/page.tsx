@@ -101,6 +101,11 @@ export default function AcademicAffairsPage() {
             <li>Bachelor of Arts in Urban Community Leadership</li>
           </ul>
 
+          <h3>Department of Fine and Performing Arts</h3>
+          <ul>
+            <li>Bachelor of Arts in Music Performance</li>
+          </ul>
+
           <h2>Library and Media Services</h2>
           <p>
             <strong>Jacqueline McGehee, MS</strong><br />
