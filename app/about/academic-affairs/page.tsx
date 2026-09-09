@@ -81,22 +81,8 @@ export default function AcademicAffairsPage() {
 
           <h3>Department of Social & Behavioral Sciences</h3>
           <ul>
-            <li>Bachelor of Arts in Criminal Justice
-              <ul>
-                <li>Concentration: Juvenile Justice</li>
-                <li>Concentration: Police Administration</li>
-                <li>Concentration: Private Security</li>
-                <li>Concentration: Probation and Parole</li>
-              </ul>
-            </li>
-            <li>Bachelor of Arts in Human Services
-              <ul>
-                <li>Concentration: Addiction Studies</li>
-                <li>Concentration: Child Development</li>
-                <li>Concentration: Family Counseling</li>
-                <li>Concentration: Leadership and Administration</li>
-              </ul>
-            </li>
+            <li>Bachelor of Arts in Criminal Justice</li>
+            <li>Bachelor of Arts in Human Services</li>
             <li>Bachelor of Arts in Urban Community Leadership</li>
           </ul>
 
