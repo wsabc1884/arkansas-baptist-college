@@ -65,7 +65,6 @@ export default function AcademicAffairsPage() {
           <h3>Department of Interdisciplinary Studies</h3>
           <ul>
             <li>Bachelor of Arts in Interdisciplinary Studies</li>
-            <li>Bachelor of Science in Interdisciplinary Studies</li>
             <li>Associate of Arts in Interdisciplinary Studies</li>
           </ul>
 
@@ -99,11 +98,6 @@ export default function AcademicAffairsPage() {
               </ul>
             </li>
             <li>Bachelor of Arts in Urban Community Leadership</li>
-          </ul>
-
-          <h3>Department of Fine and Performing Arts</h3>
-          <ul>
-            <li>Bachelor of Arts in Music Performance</li>
           </ul>
 
           <h2>Library and Media Services</h2>
