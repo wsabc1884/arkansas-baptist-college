@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import {
   Dialog,
   DialogContent,
@@ -12,6 +13,36 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { CalendarDays, Clock, MapPin, Star } from "lucide-react"
+
+interface Flyer {
+  id: string
+  src: string
+  alt: string
+  width: number
+  height: number
+  deadline: Date
+}
+
+// Promotional flyers shown at the top of the popup until their deadline.
+// Arkansas is Central Time; September is CDT (UTC-5). Edit the deadlines here.
+const FLYERS: Flyer[] = [
+  {
+    id: "open-house",
+    src: "/open-house.jpg",
+    alt: "Arkansas Adult Education Open House. Thursday, September 17, 11 AM to 1 PM. Free event at Arkansas Baptist College Adult Education, 1600 Dr. Martin Luther King Jr. Drive, Old Main Building Room B107, Little Rock, AR 72202.",
+    width: 1275,
+    height: 1650,
+    deadline: new Date("2026-09-17T11:00:00-05:00"),
+  },
+  {
+    id: "war-fitness",
+    src: "/war-fitness.jpg",
+    alt: "WAR Boxing & Fitness Grand Opening. Saturday, September 26, 10 AM to 2 PM at 1515 Martin Luther King Jr. Drive, Little Rock, AR 72202. A day of fun, fitness and community with a DJ, exhibitions, and food and drinks.",
+    width: 855,
+    height: 1265,
+    deadline: new Date("2026-09-27T09:00:00-05:00"),
+  },
+]
 import { getEventsOnDate, toDateKey, type CollegeEvent } from "@/lib/college-events"
 import {
   getAcademicEventsOnDate,
@@ -57,6 +88,7 @@ function isEventExpired(eventTime: string | undefined): boolean {
 export function TodaysEventPopup() {
   const [open, setOpen] = useState(false)
   const [events, setEvents] = useState<UnifiedEvent[]>([])
+  const [flyers, setFlyers] = useState<Flyer[]>([])
   const [dateKey, setDateKey] = useState("")
 
   useEffect(() => {
@@ -64,7 +96,11 @@ export function TodaysEventPopup() {
     const collegeEvents = getEventsOnDate(todayKey)
     const academicEvents = getAcademicEventsOnDate(todayKey)
 
-    if (collegeEvents.length === 0 && academicEvents.length === 0) return
+    // Flyers stay up until their individual deadline passes.
+    const nowMs = Date.now()
+    const activeFlyers = FLYERS.filter((f) => nowMs < f.deadline.getTime())
+
+    if (collegeEvents.length === 0 && academicEvents.length === 0 && activeFlyers.length === 0) return
 
     // Only show once per day per browser (until dismissed key changes).
     const dismissedKey = `abc-event-popup-dismissed:${todayKey}`
@@ -121,8 +157,12 @@ export function TodaysEventPopup() {
     })
 
     setEvents(unified)
+    setFlyers(activeFlyers)
     setDateKey(todayKey)
     setOpen(true)
+
+    // If a flyer is active we always show, regardless of event timing.
+    if (activeFlyers.length > 0) return
 
     // Check if all events have expired (2 hours after start time)
     const allExpired = unified.length > 0 && unified.every((e) => isEventExpired(e.collegeEvent?.time))
@@ -173,10 +213,10 @@ export function TodaysEventPopup() {
     }
   }
 
-  if (events.length === 0) return null
+  if (events.length === 0 && flyers.length === 0) return null
 
-  const bothCount = events.filter((e) => e.type === "both").length
   const multiple = events.length > 1
+  const hasFlyers = flyers.length > 0
 
   // Route each "View Calendar" action to the calendar the event actually lives on.
   const ACADEMIC_CALENDAR_HREF = "/academics/academic-calendar#calendar-view"
@@ -188,16 +228,37 @@ export function TodaysEventPopup() {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
+      <DialogContent className={hasFlyers ? "max-h-[92vh] overflow-y-auto sm:max-w-3xl" : "sm:max-w-md"}>
+        {hasFlyers && (
+          <div className={`grid items-start gap-4 ${flyers.length > 1 ? "sm:grid-cols-2" : "sm:grid-cols-1"}`}>
+            {flyers.map((f) => (
+              <div key={f.id} className="overflow-hidden rounded-lg border border-border bg-muted/30">
+                <Image
+                  src={f.src || "/placeholder.svg"}
+                  alt={f.alt}
+                  width={f.width}
+                  height={f.height}
+                  priority
+                  className="h-auto w-full"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
+        <DialogHeader className={events.length === 0 ? "sr-only" : undefined}>
           <span className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#3d1a5c]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#3d1a5c]">
             <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
-            Happening Today
+            {events.length > 0 ? "Happening Today" : "Upcoming at ABC"}
           </span>
           <DialogTitle className="font-serif text-xl">
-            {multiple ? `${events.length} events today at ABC` : events[0].title}
+            {events.length === 0
+              ? "Upcoming events at ABC"
+              : multiple
+                ? `${events.length} events today at ABC`
+                : events[0].title}
           </DialogTitle>
-          {!multiple && events[0].collegeEvent?.description && (
+          {events.length === 1 && !multiple && events[0].collegeEvent?.description && (
             <DialogDescription>{events[0].collegeEvent.description}</DialogDescription>
           )}
           {multiple && (
@@ -205,7 +266,8 @@ export function TodaysEventPopup() {
           )}
         </DialogHeader>
 
-        <ul className="space-y-3">
+        {events.length > 0 && (
+          <ul className="space-y-3">
           {events.map((e) => {
             const isBoth = e.type === "both"
             const isAcademic = e.type === "academic"
@@ -274,7 +336,8 @@ export function TodaysEventPopup() {
               </li>
             )
           })}
-        </ul>
+          </ul>
+        )}
 
         <DialogFooter className="sm:justify-between">
           <Button variant="outline" onClick={() => handleOpenChange(false)}>
