@@ -48,7 +48,7 @@ const degreePrograms = [
   {
     name: "Interdisciplinary Studies",
     icon: BookOpen,
-    description: "Design a flexible, well-rounded degree in General Studies tailored to your goals and interests.",
+    description: "Design a flexible, well-rounded degree in Interdisciplinary Studies tailored to your goals and interests.",
     href: "/academics/interdisciplinary-studies",
     degrees: ["Bachelor's", "Associate's"],
   },
