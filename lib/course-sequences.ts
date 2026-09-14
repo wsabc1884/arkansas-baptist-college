@@ -46,12 +46,12 @@ export const courseSequences: CourseSequence[] = [
   {
     title: "BA in Criminal Justice",
     file: `${DOC_BASE}/ba-criminal-justice.pdf`,
-    departments: ["criminal-justice", "social-behavioral-sciences"],
+    departments: ["criminal-justice", "public-service"],
   },
   {
     title: "BA in Human Services",
     file: `${DOC_BASE}/ba-human-services.pdf`,
-    departments: ["human-services", "social-behavioral-sciences"],
+    departments: ["human-services", "public-service"],
   },
 ]
 

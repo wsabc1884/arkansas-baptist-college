@@ -39,11 +39,11 @@ const programs = [
     degrees: ["Bachelor's", "Associate's"],
   },
   {
-    name: "Social & Behavioral Sciences",
+    name: "Public Service",
     icon: Brain,
-    description: "Apply psychology, sociology, and human services frameworks to solve real-world challenges.",
-    href: "/academics/social-behavioral-sciences",
-    degrees: ["Bachelor's"],
+    description: "Prepare for careers that make a difference across criminal justice, human services, and public administration.",
+    href: "/academics/public-service",
+    degrees: ["Bachelor's", "Associate's"],
   },
 ]
 
