@@ -9,12 +9,12 @@ const DOC_BASE = "/documents/course-sequences"
 
 export const courseSequences: CourseSequence[] = [
   {
-    title: "AA in General Studies",
+    title: "AA in Interdisciplinary Studies",
     file: `${DOC_BASE}/aa-interdisciplinary-studies.pdf`,
     departments: ["interdisciplinary-studies"],
   },
   {
-    title: "BA in General Studies",
+    title: "BA in Interdisciplinary Studies",
     file: `${DOC_BASE}/ba-interdisciplinary-studies.pdf`,
     departments: ["interdisciplinary-studies"],
   },
