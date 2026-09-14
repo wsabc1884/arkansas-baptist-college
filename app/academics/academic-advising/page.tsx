@@ -45,8 +45,8 @@ export default function AcademicAdvisingPage() {
             <h2>Faculty Advisors by Area</h2>
             <ul>
               <li><strong>Pre-Nursing</strong> — Dr. Taiquitha Robins, <a href="mailto:Taiquitha.Robins@arkansasbaptist.edu">Taiquitha.Robins@arkansasbaptist.edu</a></li>
-              <li><strong>General Studies (Last Name A&ndash;L)</strong> — Dr. Tabatha Scott, <a href="mailto:Tabatha.Scott@arkansasbaptist.edu">Tabatha.Scott@arkansasbaptist.edu</a></li>
-              <li><strong>General Studies (Last Name M&ndash;Z)</strong> — Dr. Janet Anokye, <a href="mailto:Janet.Anokye@arkansasbaptist.edu">Janet.Anokye@arkansasbaptist.edu</a></li>
+              <li><strong>Interdisciplinary Studies (Last Name A&ndash;L)</strong> — Dr. Tabatha Scott, <a href="mailto:Tabatha.Scott@arkansasbaptist.edu">Tabatha.Scott@arkansasbaptist.edu</a></li>
+              <li><strong>Interdisciplinary Studies (Last Name M&ndash;Z)</strong> — Dr. Janet Anokye, <a href="mailto:Janet.Anokye@arkansasbaptist.edu">Janet.Anokye@arkansasbaptist.edu</a></li>
               <li><strong>Public Administration</strong> — Mr. Michal Harris, <a href="mailto:Michal.Harris@arkansasbaptist.edu">Michal.Harris@arkansasbaptist.edu</a></li>
               <li><strong>Human Services</strong> — Dr. Cheryl Gittens, <a href="mailto:Cheryl.Gittens@arkansasbaptist.edu">Cheryl.Gittens@arkansasbaptist.edu</a></li>
               <li><strong>Criminal Justice</strong> — Mrs. Myra Woolfolk, <a href="mailto:Myra.Summers-Woolfolk@arkansasbaptist.edu">Myra.Summers-Woolfolk@arkansasbaptist.edu</a></li>
