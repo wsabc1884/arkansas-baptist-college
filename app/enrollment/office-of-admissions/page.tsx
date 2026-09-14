@@ -318,7 +318,7 @@ export default function OfficeOfAdmissionsPage() {
                 { dept: "Business, Entrepreneurship & Technology", name: "Dr. Tracey Moore (Interim)" },
                 { dept: "Interdisciplinary Studies", name: "Philis Taylor" },
                 { dept: "Religious Studies", name: "Rev. Clifton Conley, DMIN." },
-                { dept: "Social & Behavioral Sciences", name: "Tracey D. Moore, PhD (Interim)" },
+                { dept: "Public Service", name: "Tracey D. Moore, PhD (Interim)" },
               ].map((advisor) => (
                 <div key={advisor.dept} className="rounded-lg border bg-card p-4">
                   <p className="text-sm font-medium text-foreground">{advisor.name}</p>

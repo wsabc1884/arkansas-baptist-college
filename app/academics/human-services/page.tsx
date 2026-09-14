@@ -17,10 +17,6 @@ export default function HumanServicesPage() {
         "Make a difference in your community with our Bachelor of Arts in Human Services. This comprehensive 122-hour program equips you with the knowledge and skills to support individuals and families in need.",
         "Our curriculum covers essential topics such as counseling, community resources, ethics, and program development, preparing you for impactful roles in social services, counseling, and community leadership.",
       ]}
-      emphasis={{
-        heading: "Emphasis in Christian Education & Leadership",
-        body: "Students have the option to specialize in Christian Education and Leadership, blending human services with spiritual guidance and community leadership for a faith-centered approach to service.",
-      }}
       credits="122 Hours"
       format="On campus"
       careers={[
@@ -31,7 +27,7 @@ export default function HumanServicesPage() {
         "Family Support Worker",
         "Christian Education Director",
       ]}
-      contact={{ name: "Nathanael Palmer", email: "Nathanael.Palmer@arkansasbaptist.edu" }}
+      contact={{ name: "Dr. Cheryl Gittens", email: "cheryl.gittens@arkansasbaptist.edu" }}
       sequenceSlug="human-services"
       cta={{
         title: "Begin a Transformative Journey",

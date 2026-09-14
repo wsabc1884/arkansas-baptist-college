@@ -48,7 +48,7 @@ const degreePrograms = [
   {
     name: "Interdisciplinary Studies",
     icon: BookOpen,
-    description: "Design a flexible, well-rounded degree in General Studies tailored to your goals and interests.",
+    description: "Design a flexible, well-rounded degree in Interdisciplinary Studies tailored to your goals and interests.",
     href: "/academics/interdisciplinary-studies",
     degrees: ["Bachelor's", "Associate's"],
   },
@@ -102,11 +102,11 @@ const degreePrograms = [
     degrees: ["Bachelor's"],
   },
   {
-    name: "Social & Behavioral Sciences",
+    name: "Public Service",
     icon: Brain,
-    description: "Apply psychology, sociology, and human services frameworks to solve real-world challenges.",
-    href: "/academics/social-behavioral-sciences",
-    degrees: ["Bachelor's"],
+    description: "Prepare for careers that make a difference across criminal justice, human services, and public administration.",
+    href: "/academics/public-service",
+    degrees: ["Bachelor's", "Associate's"],
   },
   {
     name: "Public Administration",

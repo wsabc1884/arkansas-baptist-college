@@ -19,17 +19,14 @@ export default function InterdisciplinaryStudiesPage() {
           <div className="prose-abc max-w-4xl mx-auto">
             <h2>Department Mission</h2>
             <p>The Mission of the Department of Interdisciplinary Studies is to provide an integrated, comprehensive program designed to strengthen the student&apos;s academic skills, build self-esteem and citizenship, move students through the core curriculum to program level courses, and enhance student ability to complete a degree program.</p>
-            <h2>Department Chair</h2>
-            <p><strong>Vacant</strong><br />Chair, Interdisciplinary Studies<br /><a href="tel:5014201312">501-420-1312</a></p>
             <h2>Degree Programs</h2>
             <ul>
-              <li><strong>AA- General Studies</strong></li>
-              <li><strong>BA- General Studies</strong></li>
-              <li><strong>AS- General Studies/ Pre-Nursing</strong></li>
+              <li><strong>AA- Interdisciplinary Studies</strong></li>
+              <li><strong>BA- Interdisciplinary Studies</strong></li>
             </ul>
-            <p className="text-sm">The Bachelor of Arts in General Studies lets you customize your education with up to three concentration areas, including Business, Health, Human Services, Education, Criminal Justice, Esports, Entrepreneurship, Religious Studies, and Public Administration.</p>
+            <p className="text-sm">The Bachelor of Arts in General Studies lets you customize your education with up to three concentration areas, including Business, Human Services, Criminal Justice, Esports, Entrepreneurship, Religious Studies, and Public Administration.</p>
             <h2>Contact</h2>
-            <p>Phone: Pending<br />Email: Vacant</p>
+            <p>For questions, contact: <a href="mailto:InterdisciplinaryStudies@arkansasbaptist.edu">InterdisciplinaryStudies@arkansasbaptist.edu</a></p>
           </div>
         </SectionWrapper>
         <SectionWrapper>

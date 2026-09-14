@@ -33,7 +33,7 @@
 | Fine Arts | /academics/fine-arts | /academics/departments/fine-arts/ | PENDING |
 | Public Administration | /academics/public-administration | /academics/departments/public-administration/ | PENDING |
 | Religious Studies | /academics/religious-studies | /academics/departments/religious-studies/ | PENDING |
-| Social & Behavioral Sciences | /academics/social-behavioral-sciences | /academics/departments/social-behaviorial-sciences/ | PENDING |
+| Public Service | /academics/public-service | /academics/departments/social-behaviorial-sciences/ | DONE |
 | Academic Affairs | /academics/academic-affairs | /academics/academic-resources/academic-affairs/ | PENDING |
 | Academic Catalog | /academics/academic-catalog | /academics/academic-resources/academic-catalog/ | PENDING |
 | Academic Calendar (Main) | /academics/academic-calendar | /academics/academic-resources/academic-calendar-main-campus/ | PENDING |
