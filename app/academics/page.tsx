@@ -90,14 +90,14 @@ const degreePrograms = [
   {
     name: "Criminal Justice",
     icon: Scale,
-    description: "Understand the systems of law, justice, and corrections, with an optional Probation & Parole emphasis.",
+    description: "Understand the systems of law, justice, and corrections that shape communities and public safety.",
     href: "/academics/criminal-justice",
     degrees: ["Bachelor's"],
   },
   {
     name: "Human Services",
     icon: HandHeart,
-    description: "Support individuals and families in need, with an optional emphasis in Christian Education & Leadership.",
+    description: "Support individuals and families in need through compassionate, community-centered service.",
     href: "/academics/human-services",
     degrees: ["Bachelor's"],
   },

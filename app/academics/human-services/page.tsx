@@ -4,7 +4,7 @@ import { ProgramPage } from "@/components/program-page"
 export const metadata: Metadata = {
   title: "Human Services | Arkansas Baptist College",
   description:
-    "Make a difference in your community with the Bachelor of Arts in Human Services at Arkansas Baptist College, with an optional emphasis in Christian Education and Leadership.",
+    "Make a difference in your community with the Bachelor of Arts in Human Services at Arkansas Baptist College.",
 }
 
 export default function HumanServicesPage() {
