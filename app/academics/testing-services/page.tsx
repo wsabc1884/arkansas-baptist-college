@@ -18,7 +18,7 @@ export default function TestingServicesPage() {
         <SectionWrapper>
           <div className="prose-abc mx-auto max-w-4xl">
             <h2>Mission</h2>
-            <p>The Testing Services Lab supports the Arkansas Baptist College&apos;s Mission Statement by administering standardized assessments for Admissions and Academics. Testing Services administers the Admission Department&apos;s entrance exam for student class assignment, diagnostic exams to General Studies classes, and a rising junior exam to assess student progress and college programs.</p>
+            <p>The Testing Services Lab supports the Arkansas Baptist College&apos;s Mission Statement by administering standardized assessments for Admissions and Academics. Testing Services administers the Admission Department&apos;s entrance exam for student class assignment, diagnostic exams to Interdisciplinary Studies classes, and a rising junior exam to assess student progress and college programs.</p>
             <p>The placement exams are administered to incoming freshmen and transfer students when ACT or SAT Exam scores are unavailable. Students are assigned to Enrichment classes if scores are not proficient. Diagnostic exams are administered to Enrichment classes at the beginning of the semester to define individual strengths and weaknesses, and at the end of the semester to verify student improvement.</p>
           </div>
         </SectionWrapper>

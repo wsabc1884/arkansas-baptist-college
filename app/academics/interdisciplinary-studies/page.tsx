@@ -24,7 +24,7 @@ export default function InterdisciplinaryStudiesPage() {
               <li><strong>AA- Interdisciplinary Studies</strong></li>
               <li><strong>BA- Interdisciplinary Studies</strong></li>
             </ul>
-            <p className="text-sm">The Bachelor of Arts in General Studies lets you customize your education with up to three concentration areas, including Business, Human Services, Criminal Justice, Esports, Entrepreneurship, Religious Studies, and Public Administration.</p>
+            <p className="text-sm">The Bachelor of Arts in Interdisciplinary Studies lets you customize your education with up to three concentration areas, including Business, Human Services, Criminal Justice, Esports, Entrepreneurship, Religious Studies, and Public Administration.</p>
             <h2>Contact</h2>
             <p>For questions, contact: <a href="mailto:InterdisciplinaryStudies@arkansasbaptist.edu">InterdisciplinaryStudies@arkansasbaptist.edu</a></p>
           </div>

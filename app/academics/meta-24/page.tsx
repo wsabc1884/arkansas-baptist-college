@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
@@ -7,6 +8,7 @@ import { Lightbulb, Rocket, Users, GraduationCap, Building2, Cpu, FlaskConical, 
 export const metadata: Metadata = {
   title: "META24 Program | Arkansas Baptist College",
   description: "META24 is a 21st century learning environment combining innovative skills-based curriculum with entrepreneurial incubators known as METALABS.",
+  robots: { index: false, follow: false },
 }
 
 const metalabs = [
@@ -42,6 +44,10 @@ const focusAreas = [
 ]
 
 export default function Meta24Page() {
+  // Page deactivated: not deleted, but intentionally unreachable from the website.
+  // Remove this notFound() call to reactivate the META24 page.
+  notFound()
+
   return (
     <div className="min-h-screen">
       <main id="main-content">

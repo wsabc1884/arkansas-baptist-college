@@ -61,21 +61,21 @@ export const jobPostings: JobPosting[] = [
   },
   {
     slug: "general-studies-instructor",
-    title: "General Studies Instructor",
-    department: "Department of General Studies",
+    title: "Interdisciplinary Studies Instructor",
+    department: "Department of Interdisciplinary Studies",
     employmentType: "Full-Time & Adjunct",
     location: "Little Rock, AR",
     applicationEmail: "HR@arkansasbaptist.edu",
     summary:
-      "Full-time and adjunct instructor positions in the Department of General Studies for the 2026-27 academic year, beginning Fall 2026.",
+      "Full-time and adjunct instructor positions in the Department of Interdisciplinary Studies for the 2026-27 academic year, beginning Fall 2026.",
     overview: [
-      "Arkansas Baptist College invites applicants for full-time and adjunct instructors in the Department of General Studies. The teaching opportunities for instructors are nine-month appointments, and for adjuncts are semester to semester.",
+      "Arkansas Baptist College invites applicants for full-time and adjunct instructors in the Department of Interdisciplinary Studies. The teaching opportunities for instructors are nine-month appointments, and for adjuncts are semester to semester.",
       "The contract is for the 2026-27 academic year, starting the Fall 2026 semester.",
     ],
     availablePositions: ["Mathematics", "History", "Psychology", "English", "Speech"],
     responsibilities: [
       "Full-time instructors teach 12 undergraduate hours per semester; adjunct instructors teach 3-11 hours.",
-      "Serve as academic advisor to General Studies students.",
+      "Serve as academic advisor to Interdisciplinary Studies students.",
       "Hold office hours.",
       "Other responsibilities as assigned.",
     ],
