@@ -49,11 +49,6 @@ export const courseSequences: CourseSequence[] = [
     departments: ["criminal-justice", "social-behavioral-sciences"],
   },
   {
-    title: "BA in Criminal Justice — Probation & Parole Emphasis",
-    file: `${DOC_BASE}/ba-criminal-justice-probation-parole.pdf`,
-    departments: ["criminal-justice", "social-behavioral-sciences"],
-  },
-  {
     title: "BA in Human Services",
     file: `${DOC_BASE}/ba-human-services.pdf`,
     departments: ["human-services", "social-behavioral-sciences"],
