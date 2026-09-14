@@ -68,7 +68,7 @@ export default function AcademicAffairsPage() {
             <li>Associate of Arts in Interdisciplinary Studies</li>
           </ul>
 
-          <h3>Department of Public Administration</h3>
+          <h3>Department of Public Service</h3>
           <ul>
             <li>Bachelor of Arts in Public Administration</li>
             <li>Associate of Arts in Public Administration</li>
