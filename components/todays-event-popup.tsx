@@ -27,6 +27,14 @@ interface Flyer {
 // Arkansas is Central Time; September is CDT (UTC-5). Edit the deadlines here.
 const FLYERS: Flyer[] = [
   {
+    id: "buffalo-stampede",
+    src: "/buffalo-stampede.png",
+    alt: "Arkansas Baptist College Buffalo Stampede mini-semester, September 28 to November 24, 2026. Pre-registration begins September 8, 2026. Enroll for Fall 2026 in online or in-person courses and complete up to 12 hours of academic course work. For more information call Financial Aid at (501) 420-1225 or Admissions at (501) 420-1231, or Residence Life at (501) 402-1227. Apply online at www.ArkansasBaptist.edu.",
+    width: 1242,
+    height: 1242,
+    deadline: new Date("2026-10-01T23:59:59-05:00"),
+  },
+  {
     id: "open-house",
     src: "/open-house.jpg",
     alt: "Arkansas Adult Education Open House. Thursday, September 17, 11 AM to 1 PM. Free event at Arkansas Baptist College Adult Education, 1600 Dr. Martin Luther King Jr. Drive, Old Main Building Room B107, Little Rock, AR 72202.",
@@ -228,9 +236,19 @@ export function TodaysEventPopup() {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className={hasFlyers ? "max-h-[92vh] overflow-y-auto sm:max-w-3xl" : "sm:max-w-md"}>
+      <DialogContent
+        className={
+          hasFlyers
+            ? `max-h-[92vh] overflow-y-auto ${flyers.length >= 3 ? "sm:max-w-5xl" : "sm:max-w-3xl"}`
+            : "sm:max-w-md"
+        }
+      >
         {hasFlyers && (
-          <div className={`grid items-start gap-4 ${flyers.length > 1 ? "sm:grid-cols-2" : "sm:grid-cols-1"}`}>
+          <div
+            className={`grid items-start gap-4 ${
+              flyers.length >= 3 ? "sm:grid-cols-3" : flyers.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-1"
+            }`}
+          >
             {flyers.map((f) => (
               <div key={f.id} className="overflow-hidden rounded-lg border border-border bg-muted/30">
                 <Image
