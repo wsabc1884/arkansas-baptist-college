@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
-import { Download, BookOpen, Users, Home, Scale, ShieldCheck, FileText } from "lucide-react"
+import { BookOpen, Users, Home, Scale, ShieldCheck, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Student Code of Conduct Handbook | Arkansas Baptist College",
@@ -59,17 +59,6 @@ export default function StudentHandbookPage() {
 
         <SectionWrapper>
           <div className="mx-auto max-w-4xl">
-            <div className="mb-8 flex justify-end">
-              <a
-                href="/documents/student-life/student-handbook.pdf"
-                download
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                <Download className="h-4 w-4" aria-hidden="true" />
-                Download PDF
-              </a>
-            </div>
-
             <div className="prose-abc max-w-none">
               <p>
                 This Handbook is designed to inform students of the policies, procedures, and expectations of Arkansas
