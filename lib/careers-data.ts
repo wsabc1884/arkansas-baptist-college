@@ -129,6 +129,41 @@ export const jobPostings: JobPosting[] = [
       "Primary work location is an office environment; occasional lifting, pushing, climbing, and pulling may be required, along with occasional evening and/or weekend work.",
     ],
   },
+  {
+    slug: "controller",
+    title: "Controller",
+    department: "Finance / Business Office",
+    employmentType: "Full-Time",
+    location: "Little Rock, AR",
+    summary:
+      "A key member of the Finance team who plans, develops, and supervises the College's overall financial management system in close collaboration with the Chief Finance Officer.",
+    overview: [
+      "Working closely with the Chief Finance Officer, the Controller is a key member of the Finance team. Under limited supervision, the Controller plans, develops, and supervises the College's overall financial management system.",
+    ],
+    responsibilities: [
+      "Reports to the Chief Finance Officer and supervises the work of the Business Office Staff.",
+      "Collaborates in the revision and preparation of annual and long-range budgets for presentation to the Chief Finance Officer, the President, and Board of Directors.",
+      "Ensures that approved College expenditures are properly controlled within the limits of approved budgets.",
+      "Supervises the maintenance of all accounting records and bank accounts.",
+      "Supervises the receipting and disbursing of all College funds.",
+      "Coordinates with all program directors supported by restricted funds to ensure the proper management of all such funds.",
+      "Supervises the receipting and accounting of all funds received by the College from students, from donors, and from the operation of its auxiliary enterprises.",
+      "Coordinates with internal and external auditors, financial planners, and consultants regarding appropriate financial management and budgetary practices and procedures.",
+      "Assists with the College's overall purchasing and leasing program and its program of insurance for all College property.",
+      "Supervises the College's programs of cash management, investment management, and risk management.",
+      "Performs any other duties that may be assigned by the Chief Finance Officer.",
+    ],
+    qualifications: [
+      "Extensive knowledge of the principles, theories, and practices of accounting, auditing, budgeting, and financial management.",
+      "Ability to design, implement, and evaluate new accounting and financial management procedures.",
+      "Ability to prepare and analyze budgets and complex financial statements.",
+      "Ability to supervise professional and clerical employees.",
+      "Well-developed skills in written and oral communication.",
+      "Bachelor's degree in accounting, finance, or business administration from an accredited institution (Master's degree preferred).",
+      "Minimum of 5 years of progressive experience in college, university, or related experience in accounting, financial management, or business management.",
+      "Minimum of 3 years of supervisory experience.",
+    ],
+  },
 ]
 
 export function getJobBySlug(slug: string): JobPosting | undefined {
