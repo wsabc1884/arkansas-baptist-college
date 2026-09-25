@@ -50,6 +50,13 @@ const degreePrograms = [
     degrees: ["Bachelor's", "Associate's"],
   },
   {
+    name: "Education",
+    icon: GraduationCap,
+    description: "Shape young minds through a foundation in child development, instructional strategies, and classroom management.",
+    href: "/academics/education",
+    degrees: ["Associate's"],
+  },
+  {
     name: "Fine Arts",
     icon: Music,
     description: "Express, create, and innovate through visual arts, performance, and digital media disciplines.",

@@ -56,6 +56,7 @@ const navigation = [
       { name: "Christian Studies", href: "/christianstudies" },
       { name: "Course Search", href: "/academics/course-search" },
       { name: "Criminal Justice", href: "/academics/criminal-justice" },
+      { name: "Education", href: "/academics/education" },
       { name: "Human Services", href: "/academics/human-services" },
       { name: "Interdisciplinary Studies", href: "/academics/interdisciplinary-studies" },
       { name: "Library", href: "/academics/library" },
