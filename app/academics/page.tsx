@@ -18,9 +18,6 @@ import {
   Users,
   Library,
   HeadphonesIcon,
-  HeartPulse,
-  Stethoscope,
-  Activity,
   HandHeart,
   ArrowRight
 } from "lucide-react"
@@ -51,34 +48,6 @@ const degreePrograms = [
     description: "Design a flexible, well-rounded degree in Interdisciplinary Studies tailored to your goals and interests.",
     href: "/academics/interdisciplinary-studies",
     degrees: ["Bachelor's", "Associate's"],
-  },
-  {
-    name: "Education",
-    icon: GraduationCap,
-    description: "Shape young minds through child development, instructional strategies, and a hands-on teacher residency.",
-    href: "/academics/education",
-    degrees: ["Bachelor's", "Associate's"],
-  },
-  {
-    name: "Pre-Nursing",
-    icon: Stethoscope,
-    description: "Build a strong foundation in the sciences and health care concepts to advance into a nursing program.",
-    href: "/academics/pre-nursing",
-    degrees: ["Associate's"],
-  },
-  {
-    name: "Health Studies",
-    icon: HeartPulse,
-    description: "Explore health promotion, disease prevention, and health care systems — in person or 100% online.",
-    href: "/academics/health-studies",
-    degrees: ["Associate's"],
-  },
-  {
-    name: "Health, PE & Recreation",
-    icon: Activity,
-    description: "Inspire healthy lifestyles through fitness, sports management, and recreational programming.",
-    href: "/academics/hper",
-    degrees: ["Bachelor's"],
   },
   {
     name: "Fine Arts",
