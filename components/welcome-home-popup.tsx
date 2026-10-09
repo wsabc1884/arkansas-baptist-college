@@ -5,13 +5,13 @@ import Image from "next/image"
 import { X } from "lucide-react"
 
 // The popup shows on every fresh visit until this moment, then never again.
-// Arkansas is in Central Time; August is CDT (UTC-5). Change the date here to
-// adjust (or remove) the deadline.
-const DEADLINE = new Date("2026-08-09T23:59:59-05:00")
+// Arkansas is in Central Time; October 23 is still CDT (UTC-5). Change the date
+// here to adjust (or remove) the deadline.
+const DEADLINE = new Date("2026-10-23T23:59:59-05:00")
 
 // Once closed, stay closed for the rest of this browser tab session so it does
 // not re-open every time the visitor navigates back to the home page.
-const SESSION_KEY = "abc-welcome-home-dismissed"
+const SESSION_KEY = "abc-spring-2027-registration-dismissed"
 
 export function WelcomeHomePopup() {
   const [open, setOpen] = useState(false)
@@ -54,7 +54,7 @@ export function WelcomeHomePopup() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Welcome Home move-in schedule"
+      aria-label="Spring 2027 registration schedule"
       className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-black/70 p-4 backdrop-blur-sm"
       onClick={handleClose}
     >
@@ -72,10 +72,10 @@ export function WelcomeHomePopup() {
         </button>
 
         <Image
-          src="/popup.jpg"
-          alt="Welcome Home! Fall move-in schedule: Thursday, August 6 (Non Athletic Returners and New Students); Friday, August 7 (Basketball / Track / Baseball); Saturday, August 8 (All Offense); Sunday, August 9 (All Defense). All move-in times are from 9:00 AM to 6:00 PM."
-          width={1200}
-          height={1600}
+          src="/popup-spring-registration.jpg"
+          alt="Secure your spring schedule! Spring 2027 Registration, October 19-23, 2026, 9:00 a.m. to 4:00 p.m. daily at the Arkansas Baptist Student Center (Building 7). Monday, Oct 19: Band and New Students (non-athletes). Tuesday, Oct 20: Men's and Women's Basketball, Track, and Men's Baseball. Wednesday, Oct 21: Football offensive players. Thursday, Oct 22: Football defensive players. Friday, Oct 23: Last day to pre-register. Register according to your assigned student group. Office of Enrollment Management and Student Affairs."
+          width={1008}
+          height={1560}
           priority
           className="h-auto max-h-[90vh] w-full rounded-xl object-contain shadow-2xl"
         />
