@@ -9,6 +9,7 @@
 import { readdir, readFile, writeFile, mkdir } from "node:fs/promises"
 import { join, relative, sep, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
+import { DELISTED_ROUTES } from "../lib/delisted-routes.mjs"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, "..")
@@ -120,6 +121,7 @@ async function main() {
   for (const file of files) {
     const route = fileToRoute(file)
     if (!route || seenRoutes.has(route)) continue
+    if (DELISTED_ROUTES.some((r) => route === r || route.startsWith(`${r}/`))) continue
 
     const src = await readFile(file, "utf8")
     const title = extractTitle(src, route)

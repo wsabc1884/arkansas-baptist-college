@@ -1,5 +1,14 @@
+import { DELISTED_ROUTES, DELISTED_DOCUMENTS } from "./lib/delisted-routes.mjs"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    return DELISTED_DOCUMENTS.map((source) => ({
+      source,
+      headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+    }))
+  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -13,6 +22,10 @@ const nextConfig = {
 
   async redirects() {
     return [
+      ...DELISTED_ROUTES.flatMap((route) => [
+        { source: route, destination: '/academics', permanent: false },
+        { source: `${route}/:path*`, destination: '/academics', permanent: false },
+      ]),
       {
         source: '/resources/consumer-information/data-retention-policy/privacy-policy-sms-terms',
         destination: '/privacy-policy',

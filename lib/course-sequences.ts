@@ -24,6 +24,20 @@ export const courseSequences: CourseSequence[] = [
     departments: ["education"],
   },
   {
+    title: "BA in Criminal Justice",
+    file: `${DOC_BASE}/ba-criminal-justice.pdf`,
+    departments: ["criminal-justice", "public-service"],
+  },
+  {
+    title: "BA in Human Services",
+    file: `${DOC_BASE}/ba-human-services.pdf`,
+    departments: ["human-services", "public-service"],
+  },
+]
+
+/** Hidden from the site (see lib/delisted-routes.mjs). Move back into courseSequences to restore. */
+export const delistedCourseSequences: CourseSequence[] = [
+  {
     title: "BS in Elementary Education",
     file: `${DOC_BASE}/bs-elementary-education.pdf`,
     departments: ["education"],
@@ -42,16 +56,6 @@ export const courseSequences: CourseSequence[] = [
     title: "BS in Health, Physical Education & Recreation (HPER)",
     file: `${DOC_BASE}/bs-hper.pdf`,
     departments: ["hper"],
-  },
-  {
-    title: "BA in Criminal Justice",
-    file: `${DOC_BASE}/ba-criminal-justice.pdf`,
-    departments: ["criminal-justice", "public-service"],
-  },
-  {
-    title: "BA in Human Services",
-    file: `${DOC_BASE}/ba-human-services.pdf`,
-    departments: ["human-services", "public-service"],
   },
 ]
 

@@ -21,7 +21,7 @@ interface ProgramPageProps {
   /** Delivery format, e.g. "In person or 100% online" */
   format?: string
   careers: string[]
-  contact: { name?: string; email: string }
+  contact?: { name?: string; email: string }
   /** Department slug for pulling course sequences */
   sequenceSlug: string
   cta?: { title: string; description: string }
@@ -99,18 +99,20 @@ export function ProgramPage({
                   </dl>
                 </div>
 
-                <div className="rounded-xl border border-border bg-card p-6">
-                  <h3 className="font-serif text-lg font-bold text-foreground">Questions?</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {contact.name ? `Contact ${contact.name} for more information.` : "Reach out for more information."}
-                  </p>
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="mt-3 inline-block break-all text-sm font-medium text-primary hover:underline"
-                  >
-                    {contact.email}
-                  </a>
-                </div>
+                {contact && (
+                  <div className="rounded-xl border border-border bg-card p-6">
+                    <h3 className="font-serif text-lg font-bold text-foreground">Questions?</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {contact.name ? `Contact ${contact.name} for more information.` : "Reach out for more information."}
+                    </p>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="mt-3 inline-block break-all text-sm font-medium text-primary hover:underline"
+                    >
+                      {contact.email}
+                    </a>
+                  </div>
+                )}
 
                 <div className="rounded-xl border border-border bg-card p-6">
                   <h3 className="font-serif text-lg font-bold text-foreground">Course Sequence</h3>
