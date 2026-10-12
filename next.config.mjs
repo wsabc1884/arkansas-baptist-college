@@ -13,7 +13,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2678400,
   },
   // pdfkit ships built-in .afm font metric files that it reads from disk at
   // runtime. Bundling it (Turbopack/webpack) rewrites __dirname and breaks that
