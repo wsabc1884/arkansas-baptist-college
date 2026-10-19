@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const policyDetails = [
   { label: "Policy owner", value: "Office of Human Resources" },
   { label: "Oversight", value: "Office of the President and Board of Trustees" },
-  { label: "Effective date", value: "Upon approval by the Board of Trustees" },
+  { label: "Effective date", value: "September 17, 2026" },
   { label: "Review cycle", value: "At least every two years" },
   { label: "Supersedes", value: "Any prior whistleblower policy or interim guidance" },
 ]
