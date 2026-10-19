@@ -36,6 +36,7 @@ const navigation = [
       { name: "Student Affairs", href: "/about/student-affairs" },
       { name: "Title III & SAFRA Grants", href: "/about/title-iii-safra" },
       { name: "Title IX", href: "/compliance/title-ix" },
+      { name: "Whistleblower Policy", href: "/resources/human-resources/whistleblower-policy" },
       { name: "Partnerships", href: "/about/partnerships" },
       { name: "Careers", href: "/about/careers" },
     ],
