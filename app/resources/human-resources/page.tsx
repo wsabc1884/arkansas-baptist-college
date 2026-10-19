@@ -90,6 +90,7 @@ export default function HumanResourcesPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
                 { title: "Staff Handbook (2024-2026)", desc: "Comprehensive guide covering policies, procedures, and benefits for non-instructional staff.", file: "/resources/human-resources/staff-handbook" },
+                { title: "Whistleblower Policy", desc: "How to report suspected wrongdoing in good faith, anonymous reporting options, and protection from retaliation.", file: "/resources/human-resources/whistleblower-policy" },
               ].map((doc) => (
                 <Link key={doc.title} href={doc.file} className="group flex items-start gap-3 rounded-lg border bg-card p-5 transition-colors hover:border-primary">
                   <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
