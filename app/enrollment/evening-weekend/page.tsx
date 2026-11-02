@@ -34,12 +34,6 @@ const degreeOptions = [
     href: "/academics/interdisciplinary-studies",
   },
   {
-    icon: Users,
-    title: "Public Administration",
-    description: "Prepare for leadership in government and nonprofit organizations.",
-    href: "/academics/public-administration",
-  },
-  {
     icon: GraduationCap,
     title: "Christian Studies",
     description: "Explore theology, ministry, and faith-based leadership.",
