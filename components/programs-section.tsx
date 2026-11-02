@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { BookOpen, Briefcase, Music, Building, Cross, Brain, ArrowRight, Scale, GraduationCap } from "lucide-react"
+import { Briefcase, Music, Building, Cross, Brain, ArrowRight, Scale, GraduationCap } from "lucide-react"
 
 const programs = [
   {
@@ -16,13 +16,6 @@ const programs = [
     description: "Explore theology, ministry, and the philosophical foundations of faith traditions.",
     href: "/christianstudies",
     degrees: ["Bachelor's"],
-  },
-  {
-    name: "Elementary Education",
-    icon: BookOpen,
-    description: "Shape the next generation with evidence-based teaching practices and community-centered pedagogy.",
-    href: "/academics/interdisciplinary-studies",
-    degrees: ["Bachelor's", "Certification"],
   },
   {
     name: "Band & Fine Arts",
