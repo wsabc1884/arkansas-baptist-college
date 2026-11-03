@@ -94,6 +94,20 @@ const enrollmentTables: EnrollmentTable[] = [
   },
 ]
 
+const tableByTitle = Object.fromEntries(enrollmentTables.map((t) => [t.title, t])) as Record<
+  string,
+  EnrollmentTable
+>
+
+const sections: { title: string; tables: string[] }[] = [
+  { title: "Student Classification", tables: ["Enrollment Status", "Student Level"] },
+  { title: "Student Attendance", tables: ["Student Attendance"] },
+  { title: "Gender Distribution", tables: ["Student Gender"] },
+  { title: "Student Age", tables: ["Age Range"] },
+  { title: "Geographic Distribution", tables: ["Origin Geography"] },
+  { title: "Race and Ethnicity", tables: ["Race and Ethnicity Indicators"] },
+]
+
 function DataTable({
   caption,
   columns,
@@ -150,19 +164,30 @@ export default function CurrentTermEnrollmentPage() {
             <h2>Current Term Enrollment Data</h2>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-4xl gap-x-6 gap-y-10 md:grid-cols-2">
-            {enrollmentTables.map((table) => (
-              <section key={table.title}>
-                <h3 className="font-serif text-lg font-bold text-foreground">{table.title}</h3>
-                <div className="mt-4">
-                  <DataTable caption={table.title} columns={table.columns} rows={table.rows} />
+          <div className="mx-auto mt-8 flex max-w-4xl flex-col gap-12">
+            {sections.map((section) => (
+              <section key={section.title}>
+                <h3 className="font-serif text-lg font-bold text-foreground">{section.title}</h3>
+                <div className="mt-4 grid gap-6 md:grid-cols-2">
+                  {section.tables.map((key) => {
+                    const table = tableByTitle[key]
+                    return (
+                      <div key={table.title} className="flex flex-col gap-4">
+                        <div>
+                          {section.tables.length > 1 ? (
+                            <h4 className="mb-3 font-semibold text-foreground">{table.title}</h4>
+                          ) : null}
+                          <DataTable caption={table.title} columns={table.columns} rows={table.rows} />
+                          {table.note ? <p className="mt-2 text-xs text-muted-foreground">{table.note}</p> : null}
+                        </div>
+                        {table.chart && section.tables.length > 1 ? <EnrollmentChart chartKey={table.chart} /> : null}
+                      </div>
+                    )
+                  })}
+                  {section.tables.length === 1 && tableByTitle[section.tables[0]].chart ? (
+                    <EnrollmentChart chartKey={tableByTitle[section.tables[0]].chart!} />
+                  ) : null}
                 </div>
-                {table.note ? <p className="mt-2 text-xs text-muted-foreground">{table.note}</p> : null}
-                {table.chart ? (
-                  <div className="mt-4">
-                    <EnrollmentChart chartKey={table.chart} />
-                  </div>
-                ) : null}
               </section>
             ))}
           </div>
