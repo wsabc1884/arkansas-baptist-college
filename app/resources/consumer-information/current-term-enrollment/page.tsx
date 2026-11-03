@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
-import { EnrollmentChart, type EnrollmentChartKey } from "@/components/enrollment-charts"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Current Term Enrollment | Arkansas Baptist College",
@@ -11,12 +11,47 @@ export const metadata: Metadata = {
 
 type Row = { label: string; value: string }
 
+type ChartImage = { src: string; alt: string; width: number; height: number }
+
+const charts = {
+  enrollmentStatus: {
+    src: "/images/enrollment/enrollment-status.png",
+    alt: "Bar chart of enrollment status: First-Time In College about 40 students, Transfer Student about 36, Returning Student about 525.",
+    width: 1300,
+    height: 563,
+  },
+  studentLevel: {
+    src: "/images/enrollment/student-level.png",
+    alt: "Bar chart of student level: Freshman about 394 students, Sophomore about 94, Junior about 67, Senior about 46.",
+    width: 1300,
+    height: 579,
+  },
+  ageRange: {
+    src: "/images/enrollment/age-range.png",
+    alt: "Pie chart of age range: 18-24 is 88.2%, 25-39 is 7.8%, 40 and over is 2.8%, 17 and under is 1.0%.",
+    width: 1300,
+    height: 596,
+  },
+  attendance: {
+    src: "/images/enrollment/attendance-status.png",
+    alt: "Bar chart of attendance status: Full-time about 512 students, Part-time about 89.",
+    width: 1300,
+    height: 613,
+  },
+  topStates: {
+    src: "/images/enrollment/top-states.png",
+    alt: "Bar chart of top states of origin: AR about 208 students, LA 80, TX 70, MS 39, TN 38, FL 36, AL 26, FC 15, IL 10, MO 8.",
+    width: 1300,
+    height: 629,
+  },
+} satisfies Record<string, ChartImage>
+
 type EnrollmentTable = {
   title: string
   columns: [string, string]
   rows: Row[]
   note?: string
-  chart?: EnrollmentChartKey
+  chart?: ChartImage
 }
 
 const enrollmentTables: EnrollmentTable[] = [
@@ -28,7 +63,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Transfer Student", value: "6.0%" },
       { label: "Returning Student", value: "87.3%" },
     ],
-    chart: "enrollmentStatus",
+    chart: charts.enrollmentStatus,
   },
   {
     title: "Student Level",
@@ -39,7 +74,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Junior", value: "11.1%" },
       { label: "Senior", value: "7.7%" },
     ],
-    chart: "studentLevel",
+    chart: charts.studentLevel,
   },
   {
     title: "Age Range",
@@ -50,7 +85,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "25-39", value: "7.8%" },
       { label: "40 and over", value: "2.8%" },
     ],
-    chart: "ageRange",
+    chart: charts.ageRange,
   },
   {
     title: "Student Attendance",
@@ -59,7 +94,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Full-time", value: "85.2%" },
       { label: "Part-time", value: "14.8%" },
     ],
-    chart: "attendance",
+    chart: charts.attendance,
   },
   {
     title: "Student Gender",
@@ -76,7 +111,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Arkansas", value: "34.8%" },
       { label: "Out-of-state", value: "65.2%" },
     ],
-    chart: "topStates",
+    chart: charts.topStates,
   },
   {
     title: "Race and Ethnicity Indicators",
@@ -168,25 +203,31 @@ export default function CurrentTermEnrollmentPage() {
             {sections.map((section) => (
               <section key={section.title}>
                 <h3 className="font-serif text-lg font-bold text-foreground">{section.title}</h3>
-                <div className="mt-4 grid gap-6 md:grid-cols-2">
+                <div className="mt-4 flex flex-col gap-8">
                   {section.tables.map((key) => {
                     const table = tableByTitle[key]
                     return (
                       <div key={table.title} className="flex flex-col gap-4">
-                        <div>
+                        <div className="max-w-md">
                           {section.tables.length > 1 ? (
                             <h4 className="mb-3 font-semibold text-foreground">{table.title}</h4>
                           ) : null}
                           <DataTable caption={table.title} columns={table.columns} rows={table.rows} />
                           {table.note ? <p className="mt-2 text-xs text-muted-foreground">{table.note}</p> : null}
                         </div>
-                        {table.chart && section.tables.length > 1 ? <EnrollmentChart chartKey={table.chart} /> : null}
+                        {table.chart ? (
+                          <Image
+                            src={table.chart.src}
+                            alt={table.chart.alt}
+                            width={table.chart.width}
+                            height={table.chart.height}
+                            sizes="(min-width: 896px) 896px, 100vw"
+                            className="h-auto w-full rounded-lg border border-border"
+                          />
+                        ) : null}
                       </div>
                     )
                   })}
-                  {section.tables.length === 1 && tableByTitle[section.tables[0]].chart ? (
-                    <EnrollmentChart chartKey={tableByTitle[section.tables[0]].chart!} />
-                  ) : null}
                 </div>
               </section>
             ))}
