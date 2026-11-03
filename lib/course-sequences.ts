@@ -19,11 +19,6 @@ export const courseSequences: CourseSequence[] = [
     departments: ["interdisciplinary-studies"],
   },
   {
-    title: "AA in Education",
-    file: `${DOC_BASE}/aa-education.pdf`,
-    departments: ["education"],
-  },
-  {
     title: "BA in Criminal Justice",
     file: `${DOC_BASE}/ba-criminal-justice.pdf`,
     departments: ["criminal-justice", "public-service"],

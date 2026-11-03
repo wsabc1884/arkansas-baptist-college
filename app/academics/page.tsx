@@ -50,13 +50,6 @@ const degreePrograms = [
     degrees: ["Bachelor's", "Associate's"],
   },
   {
-    name: "Education",
-    icon: GraduationCap,
-    description: "Shape young minds through a foundation in child development, instructional strategies, and classroom management.",
-    href: "/academics/education",
-    degrees: ["Associate's"],
-  },
-  {
     name: "Fine Arts",
     icon: Music,
     description: "Express, create, and innovate through visual arts, performance, and digital media disciplines.",
@@ -83,13 +76,6 @@ const degreePrograms = [
     description: "Prepare for careers that make a difference across criminal justice, human services, and public administration.",
     href: "/academics/public-service",
     degrees: ["Bachelor's", "Associate's"],
-  },
-  {
-    name: "Public Administration",
-    icon: Users,
-    description: "Prepare for leadership roles in government, nonprofit organizations, and public service.",
-    href: "/academics/public-administration",
-    degrees: ["Bachelor's"],
   },
 ]
 
