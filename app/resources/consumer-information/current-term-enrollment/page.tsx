@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
+import { EnrollmentChart, type EnrollmentChartKey } from "@/components/enrollment-charts"
 
 export const metadata: Metadata = {
   title: "Current Term Enrollment | Arkansas Baptist College",
@@ -15,6 +16,7 @@ type EnrollmentTable = {
   columns: [string, string]
   rows: Row[]
   note?: string
+  chart?: EnrollmentChartKey
 }
 
 const enrollmentTables: EnrollmentTable[] = [
@@ -26,6 +28,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Transfer Student", value: "6.0%" },
       { label: "Returning Student", value: "87.3%" },
     ],
+    chart: "enrollmentStatus",
   },
   {
     title: "Student Level",
@@ -36,6 +39,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Junior", value: "11.1%" },
       { label: "Senior", value: "7.7%" },
     ],
+    chart: "studentLevel",
   },
   {
     title: "Age Range",
@@ -46,6 +50,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "25-39", value: "7.8%" },
       { label: "40 and over", value: "2.8%" },
     ],
+    chart: "ageRange",
   },
   {
     title: "Student Attendance",
@@ -54,6 +59,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Full-time", value: "85.2%" },
       { label: "Part-time", value: "14.8%" },
     ],
+    chart: "attendance",
   },
   {
     title: "Student Gender",
@@ -70,6 +76,7 @@ const enrollmentTables: EnrollmentTable[] = [
       { label: "Arkansas", value: "34.8%" },
       { label: "Out-of-state", value: "65.2%" },
     ],
+    chart: "topStates",
   },
   {
     title: "Race and Ethnicity Indicators",
@@ -151,6 +158,11 @@ export default function CurrentTermEnrollmentPage() {
                   <DataTable caption={table.title} columns={table.columns} rows={table.rows} />
                 </div>
                 {table.note ? <p className="mt-2 text-xs text-muted-foreground">{table.note}</p> : null}
+                {table.chart ? (
+                  <div className="mt-4">
+                    <EnrollmentChart chartKey={table.chart} />
+                  </div>
+                ) : null}
               </section>
             ))}
           </div>
