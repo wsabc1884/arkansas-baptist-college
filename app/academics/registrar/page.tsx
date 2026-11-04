@@ -48,7 +48,7 @@ export default function RegistrarPage() {
             <p>Intra-College transcripts from the registrar&apos;s office to a department, division, school, dean, placement office, or adviser are free. Such transcripts are issued under the terms and conditions of the <strong>Family Education Rights and Privacy Act (FERPA)</strong> with the specific understanding that the transcript will not be released to a third party.</p>
 
             <h3>Official Transcript Fees</h3>
-            <p>Due to social distancing policies, official transcripts are processed through the National Student Clearinghouse.</p>
+            <p>All transcript requests are made through the National Student Clearinghouse at <a href="https://www.studentclearinghouse.org/" target="_blank" rel="noopener noreferrer">www.studentclearinghouse.org</a>. Arkansas Baptist College no longer accepts paper transcript request forms.</p>
             <div className="not-prose my-4">
               <a
                 href="https://www.studentclearinghouse.org/"
@@ -96,7 +96,6 @@ export default function RegistrarPage() {
             <p className="mt-2 text-muted-foreground">Download the forms you need below.</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
-                { title: "Transcript Request Form", file: "transcript-request.pdf" },
                 { title: "Change of Address Request Form", file: "change-of-address.pdf" },
                 { title: "Change of Name Form", file: "change-of-name.pdf" },
                 { title: "Change of Major Request Form", file: "change-of-major.pdf" },
