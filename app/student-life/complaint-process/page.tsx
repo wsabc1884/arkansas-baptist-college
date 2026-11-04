@@ -93,9 +93,9 @@ export default function StudentComplaintPage() {
               Email: <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a>
             </p>
             <p>
-              <strong>Dean of Students and Title IX Coordinator</strong><br />
-              Cleodis J. Colbert, M.Ed.<br />
-              Email: <a href="mailto:cleodis.colbert@arkansasbaptist.edu">cleodis.colbert@arkansasbaptist.edu</a>
+              <strong>Dean of Students</strong><br />
+              Brian Miller<br />
+              Email: <a href="mailto:brian.miller@arkansasbaptist.edu">brian.miller@arkansasbaptist.edu</a>
             </p>
           </div>
         </SectionWrapper>
