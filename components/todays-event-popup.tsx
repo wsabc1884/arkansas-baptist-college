@@ -108,7 +108,8 @@ export function TodaysEventPopup() {
     const nowMs = Date.now()
     const activeFlyers = FLYERS.filter((f) => nowMs < f.deadline.getTime())
 
-    if (collegeEvents.length === 0 && academicEvents.length === 0 && activeFlyers.length === 0) return
+    // Only show the popup on days with an entry on either calendar; flyers ride along with events.
+    if (collegeEvents.length === 0 && academicEvents.length === 0) return
 
     // Only show once per day per browser (until dismissed key changes).
     const dismissedKey = `abc-event-popup-dismissed:${todayKey}`
