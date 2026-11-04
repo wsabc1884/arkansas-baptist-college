@@ -37,7 +37,7 @@ export default function StudentComplaintPage() {
             <h3>2. File a Formal Complaint</h3>
             <p>If the issue cannot be resolved directly or informally, students may file a formal complaint with Student Affairs. To do so:</p>
             <ul>
-              <li><strong>Submit a Complaint Form:</strong> Complete the complaint form.</li>
+              <li><strong>Submit a Complaint Form:</strong> Complete the <a href="https://forms.cloud.microsoft/r/cMKRRfxQ6Z" target="_blank" rel="noopener noreferrer">Arkansas Baptist College STUDENT COMPLAINT FORM – Fill out form</a>.</li>
               <li><strong>Provide Detailed Information:</strong> Be sure to include a description of the issue, the individuals or departments involved, any steps already taken to resolve the matter, and the desired outcome. Please include any supporting documentation or evidence that may help in addressing your concern.</li>
               <li><strong>Submit the Form:</strong> The form can be submitted electronically or in person.</li>
             </ul>
@@ -93,9 +93,9 @@ export default function StudentComplaintPage() {
               Email: <a href="mailto:info@arkansasbaptist.edu">info@arkansasbaptist.edu</a>
             </p>
             <p>
-              <strong>Dean of Students and Title IX Coordinator</strong><br />
-              Cleodis J. Colbert, M.Ed.<br />
-              Email: <a href="mailto:cleodis.colbert@arkansasbaptist.edu">cleodis.colbert@arkansasbaptist.edu</a>
+              <strong>Dean of Students</strong><br />
+              Brian Miller<br />
+              Email: <a href="mailto:brian.miller@arkansasbaptist.edu">brian.miller@arkansasbaptist.edu</a>
             </p>
           </div>
         </SectionWrapper>
