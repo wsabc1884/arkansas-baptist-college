@@ -61,6 +61,7 @@ const navigation = [
       { name: "Library", href: "/academics/library" },
       { name: "Public Service", href: "/academics/public-service" },
       { name: "Registrar", href: "/academics/registrar" },
+      { name: "SP 2027 Course Schedule", href: "/academics/sp-2027-course-schedule" },
       { name: "Testing Services", href: "/academics/testing-services" },
       { name: "Upward Bound TRIO Program", href: "/academics/upward-bound" },
       { name: "Veterans Affairs", href: "/academics/veterans-affairs" },
