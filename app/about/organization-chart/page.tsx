@@ -66,6 +66,129 @@ const divisions: Division[] = [
 
 const LINE = "bg-primary/60"
 
+/*
+ * Desktop layout coordinates measured from the official PDF (768pt-wide page).
+ * Every box and connector is placed at the same position as the source document.
+ */
+const CANVAS = { width: 768, top: 50, height: 440 }
+const DIVISION_Y = 145
+const DIVISION_H = 43
+const BAR_Y = 134
+const UNIT_START_Y = 209
+const UNIT_PITCH = 31
+const UNIT_H = 25
+
+const divisionLayout = [
+  { x: 12, w: 102, spineX: 20, unitX: 26, unitW: 88 },
+  { x: 126, w: 88, spineX: 0, unitX: 0, unitW: 0 },
+  { x: 228, w: 125, spineX: 233, unitX: 240, unitW: 113 },
+  { x: 367, w: 95, spineX: 373, unitX: 379, unitW: 83 },
+  { x: 493, w: 224, spineX: 499, unitX: 506, unitW: 211 },
+]
+
+const pct = (value: number, total: number) => `${(value / total) * 100}%`
+
+function boxStyle(x: number, y: number, w: number, h: number) {
+  return {
+    left: pct(x, CANVAS.width),
+    top: pct(y - CANVAS.top, CANVAS.height),
+    width: pct(w, CANVAS.width),
+    height: pct(h, CANVAS.height),
+  }
+}
+
+function DesktopChart() {
+  const lines: { x1: number; y1: number; x2: number; y2: number }[] = [
+    { x1: 384, y1: 90, x2: 384, y2: 99 },
+    { x1: 472, y1: 112, x2: 500, y2: 112 },
+    { x1: 384, y1: 132, x2: 384, y2: BAR_Y },
+  ]
+
+  const centers = divisionLayout.map((d) => d.x + d.w / 2)
+  lines.push({ x1: centers[0], y1: BAR_Y, x2: centers[centers.length - 1], y2: BAR_Y })
+  centers.forEach((cx) => lines.push({ x1: cx, y1: BAR_Y, x2: cx, y2: DIVISION_Y }))
+
+  divisions.forEach((division, i) => {
+    const layout = divisionLayout[i]
+    if (division.units.length === 0) return
+    const lastMid = UNIT_START_Y + (division.units.length - 1) * UNIT_PITCH + UNIT_H / 2
+    lines.push({ x1: layout.spineX, y1: DIVISION_Y + DIVISION_H, x2: layout.spineX, y2: lastMid })
+    division.units.forEach((_, u) => {
+      const mid = UNIT_START_Y + u * UNIT_PITCH + UNIT_H / 2
+      lines.push({ x1: layout.spineX, y1: mid, x2: layout.unitX, y2: mid })
+    })
+  })
+
+  return (
+    <div
+      className="relative mx-auto hidden w-full lg:block [container-type:inline-size]"
+      style={{ aspectRatio: `${CANVAS.width} / ${CANVAS.height}` }}
+    >
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full text-primary"
+        viewBox={`0 ${CANVAS.top} ${CANVAS.width} ${CANVAS.height}`}
+        preserveAspectRatio="none"
+      >
+        {lines.map((l, i) => (
+          <line
+            key={i}
+            x1={l.x1}
+            y1={l.y1}
+            x2={l.x2}
+            y2={l.y2}
+            stroke="currentColor"
+            strokeWidth={3}
+            strokeLinecap="square"
+          />
+        ))}
+      </svg>
+
+      <div
+        className="absolute flex items-center justify-center rounded-md bg-primary text-center font-serif text-[1.45cqw] font-bold leading-tight text-primary-foreground shadow-sm"
+        style={boxStyle(297, 58, 175, 32)}
+      >
+        Board of Trustees
+      </div>
+      <div
+        className="absolute flex items-center justify-center rounded-md bg-primary text-center font-serif text-[1.45cqw] font-bold leading-tight text-primary-foreground shadow-sm"
+        style={boxStyle(297, 99, 175, 33)}
+      >
+        President
+      </div>
+      <div
+        className="absolute flex items-center justify-center rounded-md border border-primary/30 bg-primary/10 px-[0.5cqw] text-center text-[1.05cqw] font-semibold leading-tight text-foreground"
+        style={boxStyle(500, 99, 136, 25)}
+      >
+        {"President's Assistant"}
+      </div>
+
+      {divisions.map((division, i) => {
+        const layout = divisionLayout[i]
+        return (
+          <div key={division.title}>
+            <h3
+              className="absolute flex items-center justify-center rounded-md border border-primary/30 bg-primary/10 px-[0.6cqw] text-center font-serif text-[1.1cqw] font-bold leading-tight text-foreground"
+              style={boxStyle(layout.x, DIVISION_Y, layout.w, DIVISION_H)}
+            >
+              {division.title}
+            </h3>
+            {division.units.map((unit, u) => (
+              <div
+                key={unit}
+                className="absolute flex items-center justify-center rounded-md border border-primary/20 bg-card px-[0.4cqw] text-center text-[0.85cqw] leading-none text-muted-foreground shadow-sm"
+                style={boxStyle(layout.unitX, UNIT_START_Y + u * UNIT_PITCH, layout.unitW, UNIT_H)}
+              >
+                {unit}
+              </div>
+            ))}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 function TopBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-lg bg-primary px-8 py-3 text-center font-serif text-lg font-bold text-primary-foreground shadow-sm">
@@ -145,6 +268,9 @@ export default function OrganizationChartPage() {
             Arkansas Baptist College Organizational Chart
           </h2>
 
+          <DesktopChart />
+
+          <div className="lg:hidden">
           <div className="flex flex-col items-center">
             <TopBox>Board of Trustees</TopBox>
             <span aria-hidden="true" className={`h-6 w-0.5 ${LINE}`} />
@@ -171,6 +297,7 @@ export default function OrganizationChartPage() {
               <DivisionColumn key={division.title} division={division} index={index} />
             ))}
           </ul>
+          </div>
         </div>
       </SectionWrapper>
 
