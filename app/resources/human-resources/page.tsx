@@ -4,7 +4,9 @@ import { PageHero } from "@/components/page-hero"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { CTABand } from "@/components/cta-band"
 
-import { Mail, FileText, Briefcase } from "lucide-react"
+import { jobPostings } from "@/lib/careers-data"
+
+import { Mail, FileText, Briefcase, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Human Resources | Arkansas Baptist College",
@@ -42,9 +44,41 @@ export default function HumanResourcesPage() {
         <SectionWrapper className="bg-muted/30">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Staff Openings</h2>
-            <p className="mt-4 text-muted-foreground">
-              There are currently no position vacancies at this time.
-            </p>
+            {jobPostings.length === 0 ? (
+              <p className="mt-4 text-muted-foreground">
+                There are currently no position vacancies at this time.
+              </p>
+            ) : (
+              <>
+                <p className="mt-4 text-muted-foreground">
+                  Select a position to view the full job description and how to apply.
+                </p>
+                <ul className="mt-6 flex flex-col gap-3">
+                  {jobPostings.map((job) => (
+                    <li key={job.slug}>
+                      <Link
+                        href={`/about/careers/${job.slug}`}
+                        className="group flex items-center justify-between gap-4 rounded-lg border bg-card p-5 transition-colors hover:border-primary"
+                      >
+                        <div className="flex items-start gap-3">
+                          <Briefcase className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                          <div>
+                            <h3 className="font-semibold text-foreground group-hover:text-primary">{job.title}</h3>
+                            <p className="mt-1 text-sm text-muted-foreground">
+                              {job.department} &middot; {job.employmentType} &middot; {job.location}
+                            </p>
+                          </div>
+                        </div>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/about/careers" className="mt-4 inline-block text-sm font-semibold text-primary hover:underline">
+                  View all openings on the Careers page
+                </Link>
+              </>
+            )}
             <p className="mt-6 text-sm text-muted-foreground">
               <strong>Arkansas Baptist College is committed to compliance with federal and state laws with regards to equal opportunity employment and affirmative action</strong> without regard to race, color, religion, gender, age, national origin, disability, veteran status or any other protected class applicable to federal and state laws.
             </p>
