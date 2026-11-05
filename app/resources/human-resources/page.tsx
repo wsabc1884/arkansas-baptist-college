@@ -97,8 +97,8 @@ export default function HumanResourcesPage() {
                 <p className="mt-2 text-sm text-muted-foreground">
                   Send a cover letter, resume/CV, and three (3) professional letters of reference to:
                 </p>
-                <a href="mailto:HR@arkansasbaptist.edu" className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
-                  HR@arkansasbaptist.edu
+                <a href="mailto:Applications@arkansasbaptist.edu" className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
+                  Applications@arkansasbaptist.edu
                 </a>
               </div>
               <div className="rounded-lg border bg-card p-6">
@@ -141,7 +141,7 @@ export default function HumanResourcesPage() {
         <CTABand
           heading="Join the ABC Team"
           description="Explore career opportunities and become part of the Arkansas Baptist College community."
-          primaryAction={{ label: "Email HR", href: "mailto:HR@arkansasbaptist.edu" }}
+          primaryAction={{ label: "Email HR", href: "mailto:Applications@arkansasbaptist.edu" }}
           secondaryAction={{ label: "Contact Administration", href: "/about/administration" }}
         />
       </main>
