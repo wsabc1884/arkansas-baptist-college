@@ -64,28 +64,66 @@ const divisions: Division[] = [
   },
 ]
 
-function ChartBox({
-  children,
-  variant = "default",
-}: {
-  children: React.ReactNode
-  variant?: "primary" | "default"
-}) {
+const LINE = "bg-primary/60"
+
+function TopBox({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className={
-        variant === "primary"
-          ? "rounded-lg border-2 border-primary bg-primary px-6 py-3 text-center text-primary-foreground"
-          : "rounded-lg border-2 border-primary bg-card px-6 py-3 text-center text-foreground"
-      }
-    >
+    <div className="rounded-lg bg-primary px-8 py-3 text-center font-serif text-lg font-bold text-primary-foreground shadow-sm">
       {children}
     </div>
   )
 }
 
-function Connector() {
-  return <div className="mx-auto h-6 w-0.5 bg-primary/40" aria-hidden="true" />
+function DivisionColumn({ division, index }: { division: Division; index: number }) {
+  const isFirst = index === 0
+  const isLast = index === divisions.length - 1
+
+  return (
+    <li className="relative flex flex-col px-0 pt-6 lg:px-2">
+      {/* Horizontal bar segment linking this column to its neighbors */}
+      <span
+        aria-hidden="true"
+        className={`absolute top-0 hidden h-0.5 lg:block ${LINE} ${
+          isFirst ? "left-1/2 right-0" : isLast ? "left-0 right-1/2" : "left-0 right-0"
+        }`}
+      />
+      {/* Drop line from the bar to the division box */}
+      <span
+        aria-hidden="true"
+        className={`absolute left-1/2 top-0 hidden h-6 w-0.5 -translate-x-1/2 lg:block ${LINE}`}
+      />
+
+      <div className="relative z-10 flex min-h-16 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 px-3 py-3 text-center">
+        <h3 className="text-balance font-serif text-sm font-bold leading-snug text-foreground">
+          {division.title}
+        </h3>
+      </div>
+
+      {division.units.length > 0 && (
+        <ul className="relative ml-3 flex flex-col gap-2 pt-4" aria-label={`Departments under ${division.title}`}>
+          {division.units.map((unit, unitIndex) => {
+            const isLastUnit = unitIndex === division.units.length - 1
+            return (
+              <li key={unit} className="relative pl-5">
+                {/* Vertical spine running down the left of the units */}
+                <span
+                  aria-hidden="true"
+                  className={`absolute -top-4 left-0 w-0.5 ${LINE} ${
+                    isLastUnit ? "h-[calc(50%+1rem)]" : "h-[calc(100%+1.5rem)]"
+                  }`}
+                />
+                {/* Elbow tick into each unit box */}
+                <span aria-hidden="true" className={`absolute left-0 top-1/2 h-0.5 w-5 ${LINE}`} />
+                <div className="rounded-md border border-primary/20 bg-card px-3 py-2 text-center text-xs leading-snug text-muted-foreground shadow-sm">
+                  {unit}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </li>
+  )
 }
 
 export default function OrganizationChartPage() {
@@ -103,47 +141,34 @@ export default function OrganizationChartPage() {
 
       <SectionWrapper>
         <div className="mx-auto max-w-7xl">
-          <h2 className="sr-only">Arkansas Baptist College Organizational Chart</h2>
+          <h2 className="mb-10 text-balance text-center font-serif text-2xl font-bold text-foreground md:text-3xl">
+            Arkansas Baptist College Organizational Chart
+          </h2>
 
           <div className="flex flex-col items-center">
-            <ChartBox variant="primary">
-              <p className="font-serif text-lg font-bold">Board of Trustees</p>
-            </ChartBox>
-            <Connector />
-            <ChartBox variant="primary">
-              <p className="font-serif text-lg font-bold">President</p>
-            </ChartBox>
-            <Connector />
-            <ChartBox>
-              <p className="font-semibold">{"President's Assistant"}</p>
-            </ChartBox>
-            <Connector />
+            <TopBox>Board of Trustees</TopBox>
+            <span aria-hidden="true" className={`h-6 w-0.5 ${LINE}`} />
+
+            {/* President row with the President's Assistant connected to the right */}
+            <div className="grid w-full grid-cols-1 items-center gap-4 lg:grid-cols-[1fr_auto_1fr] lg:gap-0">
+              <div className="hidden lg:block" />
+              <div className="flex justify-center">
+                <TopBox>President</TopBox>
+              </div>
+              <div className="flex items-center justify-center lg:justify-start">
+                <span aria-hidden="true" className={`hidden h-0.5 w-8 lg:block ${LINE}`} />
+                <div className="rounded-lg border border-primary/30 bg-primary/10 px-6 py-2.5 text-center text-sm font-semibold text-foreground">
+                  {"President's Assistant"}
+                </div>
+              </div>
+            </div>
+
+            <span aria-hidden="true" className={`hidden h-6 w-0.5 lg:block ${LINE}`} />
           </div>
 
-          <div className="hidden h-0.5 bg-primary/40 lg:mx-[10%] lg:block" aria-hidden="true" />
-
-          <ul className="mt-0 grid gap-6 sm:grid-cols-2 lg:mt-0 lg:grid-cols-5 lg:gap-4">
-            {divisions.map((division) => (
-              <li key={division.title} className="flex flex-col">
-                <div className="mx-auto hidden h-6 w-0.5 bg-primary/40 lg:block" aria-hidden="true" />
-                <div className="rounded-lg border-2 border-primary bg-primary/10 px-4 py-3 text-center">
-                  <h3 className="text-balance font-serif text-base font-bold text-foreground">
-                    {division.title}
-                  </h3>
-                </div>
-                {division.units.length > 0 && (
-                  <ul className="mt-3 flex flex-col gap-2">
-                    {division.units.map((unit) => (
-                      <li
-                        key={unit}
-                        className="rounded-md border bg-card px-3 py-2 text-center text-sm text-muted-foreground"
-                      >
-                        {unit}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
+          <ul className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-0 lg:grid-cols-[1fr_0.9fr_1.2fr_0.95fr_2fr] lg:gap-0">
+            {divisions.map((division, index) => (
+              <DivisionColumn key={division.title} division={division} index={index} />
             ))}
           </ul>
         </div>
