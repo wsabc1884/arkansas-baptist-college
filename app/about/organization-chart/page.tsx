@@ -86,15 +86,88 @@ const divisionLayout = [
   { x: 493, w: 224, spineX: 499, unitX: 506, unitW: 211 },
 ]
 
-const pct = (value: number, total: number) => `${(value / total) * 100}%`
-
-function boxStyle(x: number, y: number, w: number, h: number) {
-  return {
-    left: pct(x, CANVAS.width),
-    top: pct(y - CANVAS.top, CANVAS.height),
-    width: pct(w, CANVAS.width),
-    height: pct(h, CANVAS.height),
+function wrapLabel(label: string, maxChars: number) {
+  const lines: string[] = []
+  let current = ""
+  for (const word of label.split(" ")) {
+    const next = current ? `${current} ${word}` : word
+    if (next.length > maxChars && current) {
+      lines.push(current)
+      current = word
+    } else {
+      current = next
+    }
   }
+  if (current) lines.push(current)
+  return lines
+}
+
+type BoxVariant = "top" | "assistant" | "division" | "unit"
+
+const boxVariants: Record<
+  BoxVariant,
+  { rect: string; text: string; fontSize: number; charWidth: number }
+> = {
+  top: { rect: "fill-primary", text: "fill-primary-foreground font-serif font-bold", fontSize: 13, charWidth: 0.6 },
+  assistant: {
+    rect: "fill-[color-mix(in_oklab,var(--primary)_10%,var(--card))] stroke-primary/40",
+    text: "fill-foreground font-sans font-semibold",
+    fontSize: 9,
+    charWidth: 0.56,
+  },
+  division: {
+    rect: "fill-[color-mix(in_oklab,var(--primary)_10%,var(--card))] stroke-primary/40",
+    text: "fill-foreground font-serif font-bold",
+    fontSize: 9.5,
+    charWidth: 0.55,
+  },
+  unit: {
+    rect: "fill-card stroke-primary/30",
+    text: "fill-muted-foreground font-sans",
+    fontSize: 7.5,
+    charWidth: 0.52,
+  },
+}
+
+function ChartBox({
+  x,
+  y,
+  w,
+  h,
+  label,
+  variant,
+}: {
+  x: number
+  y: number
+  w: number
+  h: number
+  label: string
+  variant: BoxVariant
+}) {
+  const style = boxVariants[variant]
+  const maxChars = Math.max(1, Math.floor((w - 8) / (style.fontSize * style.charWidth)))
+  const lines = wrapLabel(label, maxChars)
+  const lineHeight = style.fontSize * 1.15
+  const cx = x + w / 2
+  const firstY = y + h / 2 - ((lines.length - 1) * lineHeight) / 2
+
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx={4} className={style.rect} strokeWidth={1} />
+      <text
+        textAnchor="middle"
+        dominantBaseline="central"
+        fontSize={style.fontSize}
+        className={style.text}
+      >
+        {lines.map((line, i) => (
+          <tspan key={line} x={cx} y={firstY + i * lineHeight}>
+            {line}
+          </tspan>
+        ))}
+      </text>
+    </g>
+  )
 }
 
 function DesktopChart() {
@@ -120,72 +193,54 @@ function DesktopChart() {
   })
 
   return (
-    <div
-      className="relative mx-auto hidden w-full lg:block [container-type:inline-size]"
-      style={{ aspectRatio: `${CANVAS.width} / ${CANVAS.height}` }}
+    <svg
+      role="img"
+      aria-labelledby="org-chart-svg-title"
+      className="hidden h-auto w-full lg:block"
+      viewBox={`0 ${CANVAS.top} ${CANVAS.width} ${CANVAS.height}`}
     >
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full text-primary"
-        viewBox={`0 ${CANVAS.top} ${CANVAS.width} ${CANVAS.height}`}
-        preserveAspectRatio="none"
-      >
-        {lines.map((l, i) => (
-          <line
-            key={i}
-            x1={l.x1}
-            y1={l.y1}
-            x2={l.x2}
-            y2={l.y2}
-            stroke="currentColor"
-            strokeWidth={3}
-            strokeLinecap="square"
-          />
-        ))}
-      </svg>
+      <title id="org-chart-svg-title">
+        Arkansas Baptist College organizational chart: Board of Trustees, President, President&apos;s
+        Assistant, and five divisions with their departments
+      </title>
 
-      <div
-        className="absolute flex items-center justify-center rounded-md bg-primary text-center font-serif text-[1.45cqw] font-bold leading-tight text-primary-foreground shadow-sm"
-        style={boxStyle(297, 58, 175, 32)}
-      >
-        Board of Trustees
-      </div>
-      <div
-        className="absolute flex items-center justify-center rounded-md bg-primary text-center font-serif text-[1.45cqw] font-bold leading-tight text-primary-foreground shadow-sm"
-        style={boxStyle(297, 99, 175, 33)}
-      >
-        President
-      </div>
-      <div
-        className="absolute flex items-center justify-center rounded-md border border-primary/30 bg-primary/10 px-[0.5cqw] text-center text-[1.05cqw] font-semibold leading-tight text-foreground"
-        style={boxStyle(500, 99, 136, 25)}
-      >
-        {"President's Assistant"}
-      </div>
+      <g className="stroke-primary/60" strokeWidth={2} strokeLinecap="square">
+        {lines.map((l, i) => (
+          <line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} />
+        ))}
+      </g>
+
+      <ChartBox x={297} y={58} w={175} h={32} label="Board of Trustees" variant="top" />
+      <ChartBox x={297} y={99} w={175} h={33} label="President" variant="top" />
+      <ChartBox x={500} y={99} w={136} h={25} label="President's Assistant" variant="assistant" />
 
       {divisions.map((division, i) => {
         const layout = divisionLayout[i]
         return (
-          <div key={division.title}>
-            <h3
-              className="absolute flex items-center justify-center rounded-md border border-primary/30 bg-primary/10 px-[0.6cqw] text-center font-serif text-[1.1cqw] font-bold leading-tight text-foreground"
-              style={boxStyle(layout.x, DIVISION_Y, layout.w, DIVISION_H)}
-            >
-              {division.title}
-            </h3>
+          <g key={division.title}>
+            <ChartBox
+              x={layout.x}
+              y={DIVISION_Y}
+              w={layout.w}
+              h={DIVISION_H}
+              label={division.title}
+              variant="division"
+            />
             {division.units.map((unit, u) => (
-              <div
+              <ChartBox
                 key={unit}
-                className="absolute flex items-center justify-center rounded-md border border-primary/20 bg-card px-[0.4cqw] text-center text-[0.85cqw] leading-none text-muted-foreground shadow-sm"
-                style={boxStyle(layout.unitX, UNIT_START_Y + u * UNIT_PITCH, layout.unitW, UNIT_H)}
-              >
-                {unit}
-              </div>
+                x={layout.unitX}
+                y={UNIT_START_Y + u * UNIT_PITCH}
+                w={layout.unitW}
+                h={UNIT_H}
+                label={unit}
+                variant="unit"
+              />
             ))}
-          </div>
+          </g>
         )
       })}
-    </div>
+    </svg>
   )
 }
 
