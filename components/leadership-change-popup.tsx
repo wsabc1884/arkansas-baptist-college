@@ -57,7 +57,7 @@ export function LeadershipChangePopup() {
               className="text-xs font-semibold uppercase tracking-widest"
               style={{ color: ORANGE }}
             >
-              Buffaloe Football
+              Buffalo Football
             </p>
             <DialogTitle className="font-serif text-xl leading-tight text-balance sm:text-2xl">
               Statement Regarding Change of Leadership
@@ -72,7 +72,7 @@ export function LeadershipChangePopup() {
             its most competitive team since joining the National Association of Intercollegiate
             Athletics (NAIA). The future is extremely bright. After birthing and leading the football
             program since 2007, Coach Richard Wilson has passed the baton to Ashdone Bailey, an
-            Arkadelphia native, former Buffaloe and the program&apos;s current Associate Head
+            Arkadelphia native, former Buffalo and the program&apos;s current Associate Head
             Football Coach.
           </DialogDescription>
 
@@ -96,7 +96,7 @@ export function LeadershipChangePopup() {
             <p className="italic">
               &ldquo;This is a dream come true for me. Where God guides, He provides. We want to
               develop quality football players and raise young men who will aspire to pursue and live
-              out their Godly purpose by committing to join the Buffaloe Family as I did when
+              out their Godly purpose by committing to join the Buffalo Family as I did when
               graduating high school. The best is yet to come and I am totally committed to making
               this opportunity count.&rdquo;
             </p>
@@ -104,7 +104,7 @@ export function LeadershipChangePopup() {
           </blockquote>
 
           <p>
-            Buffaloe Family, let&apos;s get on Board with Bailey as he takes the baton from Coach
+            Buffalo Family, let&apos;s get on Board with Bailey as he takes the baton from Coach
             Wilson and navigates the next steps in bringing a championship-caliber football team to
             1600 Dr. Martin Luther King Drive.
           </p>
