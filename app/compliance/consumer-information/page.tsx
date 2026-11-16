@@ -38,12 +38,6 @@ const disclosureSections: DisclosureSection[] = [
     ],
   },
   {
-    title: "Employee Outcomes",
-    links: [
-      { label: "Employment Status", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306", external: true },
-    ],
-  },
-  {
     title: "Executive Financial Summary",
     links: [
       { label: "Budget", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306#expenses", external: true },
