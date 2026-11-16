@@ -40,13 +40,13 @@ const disclosureSections: DisclosureSection[] = [
   {
     title: "Employee Outcomes",
     links: [
-      { label: "Employment Status", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245", external: true },
+      { label: "Employment Status", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306", external: true },
     ],
   },
   {
     title: "Executive Financial Summary",
     links: [
-      { label: "Budget", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#expenses", external: true },
+      { label: "Budget", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306#expenses", external: true },
     ],
   },
   {
@@ -62,10 +62,10 @@ const disclosureSections: DisclosureSection[] = [
       { label: "Copyright Infringement", href: "/about/technology-services" },
       { label: "Faculty and Staff Information", href: "/resources/directory" },
       { label: "Illegal File Sharing Policy", href: "/about/technology-services" },
-      { label: "Net Price Calculator", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#expenses", external: true },
+      { label: "Net Price Calculator", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306#expenses", external: true },
       { label: "Cost of Attendance", href: "/enrollment/tuition-fees" },
       { label: "ABC FERPA 2020", href: "/academics/registrar" },
-      { label: "Student Diversity", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#enrolmt", external: true },
+      { label: "Student Diversity", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306#enrolmt", external: true },
       { label: "Student Activities", href: "/student-life/organizations" },
       { label: "Students with Disabilities", href: "/academics/academic-advising" },
       { label: "Textbook Information", href: "/academics/academic-catalog" },
@@ -181,7 +181,7 @@ export default function ConsumerInformationPage() {
             </p>
             <p>
               For additional information about Arkansas Baptist College, please see the{" "}
-              <a href="https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245" target="_blank" rel="noopener noreferrer">
+              <a href="https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306" target="_blank" rel="noopener noreferrer">
                 College Navigator Website
               </a>{" "}
               maintained by the U.S. Department of Education in which you can compare Arkansas Baptist College to over 7,000 colleges and universities across the United States.
