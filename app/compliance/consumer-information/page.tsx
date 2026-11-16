@@ -33,8 +33,8 @@ const disclosureSections: DisclosureSection[] = [
   {
     title: "Student Outcomes",
     links: [
-      { label: "Graduation and Retention Rate", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#retgrad", external: true },
-      { label: "Student Profiles", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106245#enrolmt", external: true },
+      { label: "Graduation and Retention Rate", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306#retgrad", external: true },
+      { label: "Student Profiles", href: "https://nces.ed.gov/collegenavigator/?q=arkansas+baptist&s=all&id=106306#enrolmt", external: true },
     ],
   },
   {
