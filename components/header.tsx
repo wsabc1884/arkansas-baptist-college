@@ -23,6 +23,7 @@ const navigation = [
       { name: "History of the College", href: "/about/history" },
       { name: "Mission & Vision", href: "/about/mission-vision" },
       { name: "Strategic Plan", href: "/about/strategic-plan" },
+      { name: "Special Announcements", href: "/about/special-announcements" },
       { name: "Consumer Information Disclosures", href: "/compliance/consumer-information" },
       { name: "Board of Trustees", href: "/about/board-of-trustees" },
       { name: "Office of the President", href: "/about/office-of-the-president" },
