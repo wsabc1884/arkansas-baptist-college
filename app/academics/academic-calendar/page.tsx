@@ -144,28 +144,28 @@ export default function AcademicCalendarPage() {
               <li><strong>New Student Orientation:</strong> August 9</li>
               <li><strong>Regular Classes Begin:</strong> August 10</li>
               <li><strong>Last Day for Registration/Schedule Changes:</strong> August 17</li>
-              <li><strong>Chapel Services Begin:</strong> August 20</li>
-              <li><strong>Enrollment Verification (Census) by Noon:</strong> August 24</li>
+              <li><strong>Chapel Services Begins:</strong> August 20</li>
+              <li><strong>Enrollment Verification/Non-Attendance Roster Due in Registrar&apos;s Office by Noon:</strong> August 24</li>
               <li><strong>Reinstatement Period:</strong> August 25-27</li>
-              <li><strong>Last Day for Payment Arrangements:</strong> August 30</li>
-              <li><strong>Labor Day Holiday (Campus Closed):</strong> September 7</li>
+              <li><strong>Last Day for Satisfactory Payment Arrangements:</strong> August 30</li>
+              <li><strong>Labor Day Holiday (Observed) - No Classes:</strong> September 7</li>
               <li><strong>Classes Resume:</strong> September 8</li>
-              <li><strong>Fall 2026 Graduation Application Pickup:</strong> September 14</li>
+              <li><strong>Fall 2026 Graduation Application Pickup in Registrar&apos;s Office:</strong> September 14</li>
               <li><strong>Constitution Day:</strong> September 17</li>
               <li><strong>Homecoming Week:</strong> September 20-26</li>
               <li><strong>Mid-Semester Evaluations:</strong> October 5-9</li>
-              <li><strong>Mid-Semester Grades Due by 5PM:</strong> October 12</li>
-              <li><strong>Last Day to Withdraw from Individual Course:</strong> October 26</li>
-              <li><strong>Exit Exams Begin (Associate Degree):</strong> October 26</li>
+              <li><strong>Mid-Semester Grades Due to Registrar by 5PM:</strong> October 12</li>
+              <li><strong>Last Day for Student Withdrawal from an Individual Course:</strong> October 26</li>
+              <li><strong>Exit Exams Begin for Students Completing Associate Degree by Appointment:</strong> October 26</li>
               <li><strong>Spring 2027 Pre-Registration Begins:</strong> October 28</li>
-              <li><strong>Fall 2026 Graduation Application Due:</strong> November 20</li>
+              <li><strong>Fall 2026 Graduation Application Due in Registrar&apos;s Office:</strong> November 20</li>
               <li><strong>Last Day to Withdraw from the College:</strong> November 20</li>
               <li><strong>Last Day of Instruction:</strong> November 20</li>
               <li><strong>Final Exams:</strong> November 23-24</li>
-              <li><strong>Residence Halls Closed by 5PM:</strong> November 24</li>
+              <li><strong>Residence Halls Closed for Winter Break by 5PM:</strong> November 24</li>
               <li><strong>Thanksgiving Break (Offices Closed):</strong> November 25-27</li>
               <li><strong>Offices Reopen:</strong> November 30</li>
-              <li><strong>Grades Due (All Terms) by 5PM:</strong> December 1</li>
+              <li><strong>Grades Due All Terms to Registrar&apos;s Office by 5PM:</strong> December 1</li>
               <li><strong>Campus Closed for Winter Break:</strong> December 18 - January 1, 2027</li>
               <li><strong>Faculty &amp; Staff Return:</strong> January 4, 2027</li>
             </ul>
