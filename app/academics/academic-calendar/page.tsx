@@ -214,14 +214,6 @@ export default function AcademicCalendarPage() {
               <li><strong>Last Day to Add/Drop a Class:</strong> September 30</li>
               <li><strong>Enrollment Verification (Census):</strong> October 2</li>
               <li><strong>Last Day to Withdraw from Individual Course:</strong> October 19</li>
-              <li><strong>Spring 2027 Pre-Registration Begins:</strong> October 28</li>
-              <li><strong>Last Day to Withdraw from the College:</strong> November 20</li>
-              <li><strong>Last Day of Instruction:</strong> November 20</li>
-              <li><strong>Final Examinations:</strong> November 23-24</li>
-              <li><strong>Residence Halls Closed by 5PM:</strong> November 24</li>
-              <li><strong>Thanksgiving Break (Offices Closed):</strong> November 25-27</li>
-              <li><strong>Offices Reopen:</strong> November 30</li>
-              <li><strong>Grades Due (All Terms) by 5PM:</strong> December 1</li>
             </ul>
 
             <h3>Fall 2026 Winter Session</h3>
