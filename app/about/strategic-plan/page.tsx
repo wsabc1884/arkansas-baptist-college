@@ -31,7 +31,7 @@ export default function StrategicPlanPage() {
             Strategic Planning (2026-2029)
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            The Arkansas Baptist College Strategic Plan serves as a roadmap for the institution, establishing priorities and measurable goals across academics, enrollment, student success, financial sustainability, and community engagement.
+            The 2026–2029 Strategic Plan is a focused three-year plan for institutional sustainability, academic quality, enrollment growth, and student success. It builds on the College&apos;s prior strategic plan and concentrates institutional effort on four measurable priorities: Fiscal Resources, Academic Programs, Enrollment, and Student Services.
           </p>
 
           <div className="mt-10 rounded-lg border bg-muted/50 p-8">
@@ -66,23 +66,19 @@ export default function StrategicPlanPage() {
               <ul className="mt-4 space-y-3 text-muted-foreground leading-relaxed">
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <span><strong className="text-foreground">Academic Excellence:</strong> Strengthen academic programs, enhance curriculum, and improve student learning outcomes across all departments.</span>
+                  <span><strong className="text-foreground">Priority 1 — Fiscal Resources and Institutional Sustainability:</strong> Strengthen the College&apos;s financial position through disciplined budgeting, improved revenue collection, diversified resource development, and cost-effective operations.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <span><strong className="text-foreground">Enrollment & Retention:</strong> Increase enrollment through targeted recruitment and improve retention through enhanced student support services.</span>
+                  <span><strong className="text-foreground">Priority 2 — Academic Programs and Educational Excellence:</strong> Strengthen academic quality, program viability, assessment, faculty capacity, and career relevance while developing programs that respond to student and workforce needs.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <span><strong className="text-foreground">Institutional Sustainability:</strong> Secure long-term financial health through diversified revenue streams, grants, and fundraising initiatives.</span>
+                  <span><strong className="text-foreground">Priority 3 — Enrollment Growth, Retention, and Completion:</strong> Build a sustainable enrollment pipeline and improve retention and completion through coordinated recruitment, advising, early intervention, and student engagement.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <span><strong className="text-foreground">Community Engagement:</strong> Deepen partnerships with local, state, and national organizations to expand opportunities for students and the community.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <span><strong className="text-foreground">Infrastructure & Technology:</strong> Modernize campus facilities and technology systems to support 21st-century learning environments.</span>
+                  <span><strong className="text-foreground">Priority 4 — Student Services, Experience, and Success:</strong> Provide coordinated, accessible, responsive student services that support students from entry through graduation and prepare them for service, employment, and lifelong learning.</span>
                 </li>
               </ul>
             </div>
