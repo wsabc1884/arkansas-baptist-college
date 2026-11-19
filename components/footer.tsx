@@ -259,6 +259,10 @@ export function Footer({siteSettings}: Props) {
               <iframe 
                 frameBorder="0" 
                 scrolling="no" 
+                // @ts-expect-error allowTransparency is a legacy attribute required by HLC's embed code
+                allowTransparency="true"
+                // HLC's badge verifies the embedding domain via document.referrer, so the host must always be sent
+                referrerPolicy="no-referrer-when-downgrade"
                 width="150" 
                 height="166" 
                 src="https://cdn.yoshki.com/iframe/54732.html" 
