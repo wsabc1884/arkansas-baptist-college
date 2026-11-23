@@ -252,24 +252,27 @@ export function Footer({siteSettings}: Props) {
         <div className="mt-6 border-t border-secondary-foreground/10 pt-6">
           <div className="flex flex-col items-center gap-6">
             {/* HLC Mark of Accreditation Status - Required per HLC Obligations of Membership */}
-            <div 
-              className="flex items-center justify-center"
-              aria-label="Accredited by the Higher Learning Commission - Click to verify status"
-            >
-              <iframe 
-                frameBorder="0" 
-                scrolling="no" 
-                // @ts-expect-error allowTransparency is a legacy attribute required by HLC's embed code
-                allowTransparency="true"
-                // HLC's badge verifies the embedding domain via document.referrer, so the host must always be sent
-                referrerPolicy="no-referrer-when-downgrade"
-                width="150" 
-                height="166" 
-                src="https://cdn.yoshki.com/iframe/54732.html" 
-                style={{ border: 0, margin: 0, padding: 0, backgroundColor: 'transparent' }}
-                title="Higher Learning Commission Accreditation Status"
-              />
-            </div>
+  <div style={{ width: '100%', maxWidth: '150px', maxHeight: '166px' }}>
+  <div style={{ position: 'relative', paddingBottom: '110.67%', height: 'auto', overflow: 'hidden' }}>
+  <iframe
+  id="HLC"
+  src="https://cdn2.yoshki.com/badgeframe?34"
+  style={{
+  overflow: 'hidden',
+  border: 0,
+  margin: 0,
+  padding: 0,
+  backgroundColor: 'transparent',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  position: 'absolute',
+  }}
+  title="Higher Learning Commission Accreditation Status"
+  />
+  </div>
+  </div>
             <div className="flex flex-col items-center gap-1 text-xs text-secondary-foreground/50">
               <p>
                 &copy; {new Date().getFullYear()} Arkansas Baptist College. All rights reserved.
